@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="keywords" content="{{ site.keywords }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.min.css" rel="stylesheet" />
+  <link href="{{ "/assets/images/favicon.ico" | prepend: site.baseurl }}" rel="icon" type="image/png" />
+  <link href="{{ "/assets/css/font-awesome.min.css" | prepend: site.baseurl }}" rel="stylesheet" />
+  <link href="{{ "/assets/css/style.css" | prepend: site.baseurl }}" rel="stylesheet" />
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+</head>
+<body class="csf">
+
+<div class="csf-header">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      <a class="csf-logo" href="/">Codestar Framework</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="/" class="nav-link{% if page.title == nil %} active{% endif %}"><i class="fa fa-home"></i> Home</a></li>
+          <li class="nav-item"><a href="{{ site.baseurl }}/codestar/" class="nav-link{% if page.title == 'Codestar' %} active{% endif %}"><i class="fa fa-star"></i> Codestar</a></li>
+          <li class="nav-item"><a href="{{ site.baseurl }}/themes/" class="nav-link{% if page.title == 'Themes' %} active{% endif %}"><i class="fa fa-flask"></i> Themes</a></li>
+          <li class="nav-item"><a href="{{ site.baseurl }}/documentation/" class="nav-link nav-link-doc"><i class="fa fa-book"></i> Documentation</a></li>
+          <li class="nav-item"><a href="{{ site.baseurl }}/license/" class="nav-link{% if page.title == 'License' %} active{% endif %}"><i class="fa fa-file-text"></i> License</a></li>
+          <li class="nav-item"><a href="{{ site.baseurl }}/support/" class="nav-link{% if page.title == 'Support' %} active{% endif %}"><i class="fa fa-life-ring"></i> Support</a></li>
+          <li class="nav-item"><a href="{{ site.github }}" class="nav-link"><i class="fa fa-github"></i> Github</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+# Basic
+title: Codestar Framework
+description: A Simple and Lightweight WordPress Option Framework for Themes and Plugins
+keywords: wordpress, wordpress options framework, wordpress plugin, customizer, metaboxes, wordpress theme, wordpress theme development, option framework
+
+url: http://codestarframework.com/
+version: 2.0
+
+# Settings
+permalink: pretty
+markdown: kramdown
+exclude: ['README.md', 'Guardfile', 'CNAME']
+
+# Github
+github: https://github.com/Codestar/codestar-framework
+zipball: /archive/master.zip
+
+# Codecanyon
+codecanyon_url: https://codecanyon.net/user/codestar/portfolio?ref=Codestar
+support_url: http://support.codestarthemes.com/
+
+# Google Analytics
+google_analytics: UA-21936069-3

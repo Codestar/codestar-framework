@@ -1,0 +1,701 @@
+/**
+ * Base
+ */
+body{
+  color: #444;
+  background-color: #f5f5f5;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+p:last-child{
+  margin-bottom: 0;
+}
+
+h1,h2,h3,h4,h5,h6,strong{
+  color: #111;
+}
+
+/**
+ * Bootstrap Hack
+ */
+.navbar{
+  padding: 0;
+}
+
+.navbar-nav{
+  margin-left: auto;
+  font-size: 14px;
+  line-height: 1em;
+}
+
+.navbar-nav .nav-link i{
+  font-size: 13px;
+  min-width: 13px;
+}
+
+.navbar-nav .nav-link{
+  position: relative;
+  color: #555;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: all .2s;
+  border-right: 1px solid #eee;
+}
+
+.navbar-nav .nav-item:last-child .nav-link{
+  border-right: none;
+}
+
+.navbar-nav .active,
+.navbar-nav .nav-link:hover{
+  color: #2d67cb;
+}
+
+.navbar-nav .nav-link-doc{
+  z-index: 2;
+  margin: 0 -1px;
+  color: #fff;
+  background-color: #5cb85c;
+  border: none;
+}
+
+
+.navbar-nav .nav-link-doc:hover{
+  color: #fff;
+  background-color: #4aa14a;
+}
+
+.navbar-toggler{
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1em;
+  padding: 20px;
+  color: #fff;
+  background-color: #222;
+  border-radius: 0;
+}
+
+.navbar-toggler:focus{
+  outline: none;
+}
+
+.navbar-toggler:hover{
+  background-color: #444;
+}
+
+.btn-outline-inverse{
+  color: #fff;
+  border-color: rgba(255,255,255,0.5);
+}
+
+.btn-outline-inverse:hover{
+  color: #2d67cb;
+  border-color: #fff;
+  background-color: #fff;
+}
+
+.table{
+  margin-bottom: 0;
+}
+
+/**
+ * Header
+ */
+.csf-header{
+  background-color: #fff;
+}
+
+/**
+ * Logo
+ */
+.csf-logo{
+  float: left;
+  font-size: 13px;
+  line-height: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 7px 10px;
+  color: #2d67cb;
+  border: 1px solid #2d67cb;
+  border-radius: 4px;
+}
+
+.csf-logo:hover{
+  color: #2d67cb;
+  text-decoration: none;
+}
+
+/**
+ * Banner
+ */
+.csf-banner{
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(45deg, #2d67cb, #ad19f3);
+  background-color: #2d67cb;
+}
+
+.csf-banner-image{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-top: 5px solid rgba(0,0,0,0.25);
+  border-bottom: 5px solid rgba(0,0,0,0.25);
+  background-image: url('../images/octicons-bg.png');
+}
+
+/**
+ * Jumbotron
+ */
+.csf-jumbotron{
+  text-align: center;
+  padding: 100px 15px;
+  color: #fff;
+}
+
+.csf-core-logos{
+  margin-bottom: 25px;
+}
+
+.csf-core-logos img{
+  vertical-align: top;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.15);
+  border-radius: 100%;
+}
+
+.csf-wp-plugin-logo{
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  border: 6px solid #fff;
+}
+
+.csf-wp-logo{
+  width: 40px;
+  height: 40px;
+  margin-right: -10px;
+}
+
+.csf-jumbotron h1{
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.15);
+}
+
+.csf-jumbotron h2{
+  color: #fff;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.csf-jumbotron-buttons{
+  margin: 20px 0;
+}
+
+.csf-jumbotron-buttons .btn{
+  min-width: 230px;
+  margin: 5px;
+}
+
+.csf-jumbotron-buttons i{
+  margin-right: 6px;
+  opacity: 0.5;
+}
+
+.csf-jumbotron .csf-version{
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+/**
+ * Page Header
+ */
+.csf-page-header{
+  font-size: 20px;
+  padding: 60px 0;
+}
+
+.csf-page-header h1{
+  margin-top: 0;
+  font-size: 60px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.csf-page-header p{
+  line-height: 1.4;
+  color: #fff;
+  opacity: 0.5;
+}
+
+/**
+ * Frameworks
+ */
+.csf-frameworks{
+  text-align: center;
+}
+
+.csf-frameworks h4{
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.csf-frameworks-texts{
+  position: relative;
+  z-index: 10;
+}
+
+.csf-frameworks-texts .fa{
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.csf-frameworks-texts .fa-check-circle{
+  color: #5cb85c;
+}
+
+.csf-frameworks-texts .fa-times-circle{
+  color: #e14d43;
+}
+
+.csf-frameworks-button{
+  position: relative;
+}
+
+.csf-frameworks-button a{
+  position: relative;
+  z-index: 10;
+}
+
+.csf-frameworks-button:before{
+  position: absolute;
+  content: " ";
+  left: 10px;
+  right: 10px;
+  top: -60px;
+  height: 75px;
+  border: 1px dashed transparent;
+  border-top: 0;
+}
+
+.csf-frameworks-button-download{
+  flex-basis: 20%;
+}
+
+.csf-frameworks-button-download:before{
+  border-color: #6c757d;
+}
+
+.csf-frameworks-button-buy{
+  flex-basis: 80%;
+}
+
+.csf-frameworks-button-buy:before{
+  border-color: #28a745;
+}
+
+.csf-5-in-1{
+  font-size: 75px;
+  line-height: 1em;
+}
+
+.csf-in{
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 5px;
+  vertical-align: top;
+  color: #fff;
+  background-color: #2d67cb;
+  border-radius: 100%;
+}
+
+/**
+ * Features
+ */
+.csf-feature-block{
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.csf-feature-list{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.csf-feature-list .fa{
+  font-size: 14px;
+  width: 20px;
+  text-align: center;
+  color: #2d67cb;
+}
+
+.csf-feature-list li{
+  margin: 0;
+  padding: 0;
+  padding-bottom: 3px;
+}
+
+.csf-more-text{
+  margin-top: 10px;
+}
+
+/**
+ * Free vs Premium
+ */
+.csf-free-vs-premium{
+  position: relative;
+  padding: 75px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background-color: #2d67cb;
+}
+
+.csf-free-vs-premium .table-responsive{
+  background-color: #fff;
+  box-shadow: 0 0 50px rgba(0,0,0,0.2);
+}
+
+.csf-free-vs-premium .table .fa-times-circle{
+  color: #e14d43;
+}
+
+.csf-free-vs-premium .table .fa-check-circle{
+  color: #5cb85c;
+}
+
+.csf-free-vs-premium .table th{
+  position: relative;
+}
+
+.csf-free-vs-premium .table tbody th{
+  text-align: left;
+  font-weight: normal;
+}
+
+.csf-free-vs-premium .table tbody td{
+  text-align: center;
+}
+
+.csf-free-vs-premium .table .csf-vs{
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  margin-top: -12px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background-color: #2d67cb;
+  border-radius: 100%;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.25);
+}
+
+/**
+ * Content
+ */
+.csf-content{
+  padding: 75px 0;
+  background-color: #fff;
+}
+
+.csf-content h3{
+  font-size: 22px;
+}
+
+/**
+ * Container
+ */
+.container{
+  position: relative;
+  z-index: 10;
+}
+
+/**
+ * Footer
+ */
+.csf-footer{
+  position: relative;
+  padding: 40px 0;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5;
+}
+
+.csf-footer-networks{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.csf-footer-networks li{
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1em;
+  padding: 0 4px;
+}
+
+.csf-footer-networks iframe{
+  overflow: hidden;
+  border: 0;
+}
+
+.csf-footer-links{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.csf-footer-links li{
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1em;
+}
+
+.csf-footer-links li:after{
+  content: "/";
+  color: #999;
+}
+
+.csf-footer-links li:last-child:after{
+  display: none;
+}
+
+.csf-footer-links li a{
+  color: #555;
+  margin-left: 2px;
+  padding-right: 4px;
+  text-decoration: none;
+}
+
+.csf-footer-links li a:hover{
+  color: #222;
+}
+
+.csf-footer-links li .csf-footer-link-doc{
+  color: #4cae4c;
+}
+
+.csf-footer-links li .csf-footer-link-doc:hover{
+  color: #5cb85c;
+}
+
+/**
+ * Github Fork Link
+ */
+.github-fork-link{
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  z-index: 9999;
+}
+
+.csf-divider {
+  width: 100px;
+  margin: 40px auto;
+  border-color: #ddd;
+}
+
+.csf-divider-xs {
+  width: 75px;
+  margin: 10px auto;
+  border-color: #ddd;
+}
+
+/**
+ * Screenshots
+ */
+.csf-screenshots a{
+  display: inline-block;
+}
+
+.csf-screenshots a img{
+  transition: all .2s;
+}
+
+.csf-screenshots a:hover img{
+  border-color: #999;
+}
+
+.csf-screenshots .img-thumbnail{
+  margin-bottom: 25px;
+}
+
+/**
+ * Helpers
+ */
+.csf-space-25{
+  height: 25px;
+}
+
+.csf-space-50{
+  height: 50px;
+}
+
+.csf-space-75{
+  height: 75px;
+}
+
+.csf-space-100{
+  height: 100px;
+}
+
+/**
+ * Responsivess
+ */
+@media (max-width: 1400px) {
+
+  .github-fork-link{
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+
+  .btn{
+    white-space: normal;
+  }
+
+  .csf-page-header{
+    font-size: 16px;
+    padding: 30px 0;
+  }
+
+  .csf-page-header h1{
+    font-size: 30px;
+  }
+
+  .table{
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .csf-space-50{
+    height: 25px;
+  }
+
+  .csf-space-75{
+    height: 50px;
+  }
+
+  .csf-space-100{
+    height: 75px;
+  }
+
+  .csf-content{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .csf-free-vs-premium{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .navbar-collapse{
+    border: 1px solid #eee;
+    background-color: #f5f5f5;
+  }
+
+  .navbar-nav .nav-link{
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    border-right: none;
+  }
+
+  .navbar-nav .nav-item:first-child .nav-link{
+    border-top: 0;
+  }
+
+  .csf-jumbotron{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .csf-core-logos{
+    margin-bottom: 15px;
+  }
+
+  .csf-wp-plugin-logo{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border: 3px solid #fff;
+  }
+
+  .csf-wp-logo{
+    width: 26px;
+    height: 26px;
+  }
+
+  .csf-jumbotron h1{
+    font-size: 26px;
+  }
+
+  .csf-jumbotron h2{
+    font-size: 14px;
+    line-height: 1.65em;
+  }
+
+  .csf-jumbotron-buttons{
+  }
+
+  .csf-jumbotron-buttons .btn{
+    font-size: 14px;
+    line-height: 1em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .csf-jumbotron-buttons i{
+    font-size: 14px;
+    line-height: 1em;
+    margin-top: 0;
+    margin-right: 6px;
+    vertical-align: top;
+  }
+
+  .csf-5-in-1{
+    font-size: 50px;
+  }
+
+  .csf-in{
+    top: 15px;
+    font-size: 14px;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+  }
+
+  .csf-free-vs-premium .table .csf-vs{
+    right: -10px;
+    margin-top: -10px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 11px;
+  }
+
+  .csf-faq .p-5{
+    padding: 1.5rem !important;
+  }
+
+  .csf-faq .m-4{
+    margin-bottom: 1.5rem !important;
+  }
+}
