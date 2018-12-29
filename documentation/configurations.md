@@ -1,4 +1,4 @@
-## Options Configure
+## Admin Options Framework
 
 <div class="pre-heading">Config Examples</div>
 <div class="csf-tabs">
@@ -388,7 +388,7 @@ echo $options['opt-textarea']; // id of the field
 
 ---
 
-## Customize Options Configure
+## Customize Option Framework
 
 <div class="pre-heading">Config Examples</div>
 <div class="csf-tabs">
@@ -618,7 +618,7 @@ echo $options['opt-textarea']; // id of the field
 
 ---
 
-## Metabox Configure
+## Metabox Option Framework
 
 <div class="pre-heading">Config Examples</div>
 <div class="csf-tabs">
@@ -839,7 +839,79 @@ echo get_post_meta( get_the_ID(), 'opt-textarea', true ); // id of the field
 
 ---
 
-## Shortcoder Configure
+## Taxonomy Option Framework
+
+<div class="pre-heading">Config Example</div>
+
+```php
+// Control core classes for avoid errors
+if( class_exists( 'CSF' ) ) {
+
+  //
+  // Set a unique slug-like ID
+  $prefix = 'my_taxonomy_options';
+
+  //
+  // Create taxonomy options
+  CSF::createTaxonomyOptions( $prefix, array(
+    'taxonomy'  => 'category',
+    'data_type' => 'serialize', // The type of the database save options. `serialize` or `unserialize`
+  ) );;
+
+  //
+  // Create a section
+  CSF::createSection( $prefix, array(
+    'fields' => array(
+
+      array(
+        'id'    => 'opt-text',
+        'type'  => 'text',
+        'title' => 'Text',
+      ),
+
+      array(
+        'id'    => 'opt-textarea',
+        'type'  => 'textarea',
+        'title' => 'Textarea',
+      ),
+
+    )
+  ) );
+
+}
+```
+
+<div class="pre-heading">Usage in data type => serialize</div>
+
+```php
+//
+// You should use my_taxonomy_options as this is the id for your key declared into config
+$term = get_category_by_slug( 'uncategorized' );
+$meta = get_term_meta( $term->term_id, 'my_taxonomy_options', true );
+
+echo $meta['opt-text']; // id of the field
+echo $meta['opt-textarea']; // id of the field
+```
+<div class="pre-heading">Usage in data type => unserialize</div>
+
+```php
+//
+// Get options
+$term = get_category_by_slug( 'uncategorized' );
+echo get_term_meta( $term->term_id, 'opt-text', true ); // id of the field
+echo get_term_meta( $term->term_id, 'opt-textarea', true ); // id of the field
+```
+
+<div class="pre-heading">Arguments</div>
+
+| Name         | Type          | Default    | Description |
+|--------------|---------------|------------|-------------|
+| `taxonomy`   | array/string  |            | The box display to specific taxonomy. *for eg* `category`, `products` or both.
+| `data_type`  | string        | serialize  | The type of the database save options. *for eg* `serialize` or `unserialize`
+
+---
+
+## Shortcode Generate Framework
 
 <div class="pre-heading">Config Examples</div>
 <div class="csf-tabs">
@@ -1179,75 +1251,3 @@ array(
 | `shortcode_name`   | string  | Set a unique slug-like name of shortcode.
 | `group_shortcode`  | string  | Set a unique slug-like name of group shortcode.
 | `group_fields`     | array   | An associative array containing fields for the fieldsets.
-
----
-
-## Taxonomy Options Configure
-
-<div class="pre-heading">Config Example</div>
-
-```php
-// Control core classes for avoid errors
-if( class_exists( 'CSF' ) ) {
-
-  //
-  // Set a unique slug-like ID
-  $prefix = 'my_taxonomy_options';
-
-  //
-  // Create taxonomy options
-  CSF::createTaxonomyOptions( $prefix, array(
-    'taxonomy'  => 'category',
-    'data_type' => 'serialize', // The type of the database save options. `serialize` or `unserialize`
-  ) );;
-
-  //
-  // Create a section
-  CSF::createSection( $prefix, array(
-    'fields' => array(
-
-      array(
-        'id'    => 'opt-text',
-        'type'  => 'text',
-        'title' => 'Text',
-      ),
-
-      array(
-        'id'    => 'opt-textarea',
-        'type'  => 'textarea',
-        'title' => 'Textarea',
-      ),
-
-    )
-  ) );
-
-}
-```
-
-<div class="pre-heading">Usage in data type => serialize</div>
-
-```php
-//
-// You should use my_taxonomy_options as this is the id for your key declared into config
-$term = get_category_by_slug( 'uncategorized' );
-$meta = get_term_meta( $term->term_id, 'my_taxonomy_options', true );
-
-echo $meta['opt-text']; // id of the field
-echo $meta['opt-textarea']; // id of the field
-```
-<div class="pre-heading">Usage in data type => unserialize</div>
-
-```php
-//
-// Get options
-$term = get_category_by_slug( 'uncategorized' );
-echo get_term_meta( $term->term_id, 'opt-text', true ); // id of the field
-echo get_term_meta( $term->term_id, 'opt-textarea', true ); // id of the field
-```
-
-<div class="pre-heading">Arguments</div>
-
-| Name         | Type          | Default    | Description |
-|--------------|---------------|------------|-------------|
-| `taxonomy`   | array/string  |            | The box display to specific taxonomy. *for eg* `category`, `products` or both.
-| `data_type`  | string        | serialize  | The type of the database save options. *for eg* `serialize` or `unserialize`
