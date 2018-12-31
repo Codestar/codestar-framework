@@ -351,40 +351,40 @@ echo $options['opt-textarea']; // id of the field
 | `menu_capability`          | string    | manage_options | Capability required for this menu to be displayed to the user.
 | `menu_icon`                | string    |                | URL to the icon to be used for this menu. *for eg. "dashicons-chart-pie"*
 | `menu_position`            | number    |                | Position in the menu.
-| `menu_hidden`              | bool      | false          | Whether to show this menu in the admin panel.
-| `show_bar_menu`            | bool      | true           | Whether to show this menu in the admin bar.
-| `show_sub_menu`            | bool      | true           | Whether to show this sub menus in the admin bar.
-| `show_network_menu`        | bool      | true           | Whether to show this menu in the network menu.
-| `show_in_customizer`       | bool      | false          | Whether to include this options of the customizer panel.
-| `show_search`              | bool      | true           | Whether to show *search* of the framework.
-| `show_reset_all`           | bool      | true           | Whether to show *reset button* of the framework.
-| `show_reset_section`       | bool      | true           | Whether to show *reset section button* of the framework.
-| `show_all_options`         | bool      | true           | Whether to show *show all options* of the framework.
-| `sticky_header`            | bool      | true           | Whether to enable *sticky header* feature of the framework.
-| `save_defaults`            | bool      | true           | Whether to save to default values of the framework.
-| `ajax_save`                | bool      | true           | Whether to enable *ajax save* feature of the framework.
+| `menu_hidden`              | bool      | false          | Flag to display menu in the admin panel.
+| `show_bar_menu`            | bool      | true           | Flag to display menu in the admin bar.
+| `show_sub_menu`            | bool      | true           | Flag to display sub menus in the admin bar.
+| `show_network_menu`        | bool      | true           | Flag to diplay menu in the network bar.
+| `show_in_customizer`       | bool      | false          | Flag to display option panel in customizer.
+| `show_search`              | bool      | true           | Flag to display *search* of the framework.
+| `show_reset_all`           | bool      | true           | Flag to display *reset button* of the framework.
+| `show_reset_section`       | bool      | true           | Flag to display *reset section button* of the framework.
+| `show_all_options`         | bool      | true           | Flag to display *show all options* of the framework.
+| `sticky_header`            | bool      | true           | Flag to display *sticky header* feature of the framework.
+| `save_defaults`            | bool      | true           | Flag to save to default values of the framework.
+| `ajax_save`                | bool      | true           | Flag to enable *ajax save* feature of the framework.
 | `admin_bar_menu_icon`      | string    |                | Icon to display before menu title.
 | `admin_bar_menu_priority`  | number    | 80             | Position in the bar menu.
 | `footer_text`              | string    |                | Text to display in the footer of the framework.
-| `footer_after`             | string    |                | The content to display after of the framework footer.
-| `footer_credit`            | string    |                | The text to display in footer of the framework.
-| `database`                 | string    | option         | The database save data type. *for eg.* `option` `theme_mod` `transient` `network`
+| `footer_after`             | string    |                | Content to display after of the framework footer.
+| `footer_credit`            | string    |                | Text to display in footer of the framework.
+| `database`                 | string    | option         | Database save *data* type. *for eg.* `option` `theme_mod` `transient` `network`
 | `transient_time`           | number    | 0              | The time until expiration in seconds from now, or 0 for never expires. If used *database* as *transient*.
-| `contextual_help`          | array     |                | The contextual helps of the framework
-| `contextual_help_sidebar`  | string    |                | The contextual sidebar help of the framework
-| `enqueue_webfont`          | bool      | true           | Whether to load web fonts of the framework.
-| `async_webfont`            | bool      | false          | Whether to load google fonts with *async* method of the framework.
-| `output_css`               | bool      | true           | Whether to load output css of the framework.
+| `contextual_help`          | array     |                | Contextual helps of the framework.
+| `contextual_help_sidebar`  | string    |                | Contextual sidebar help of the framework.
+| `enqueue_webfont`          | bool      | true           | Flag to load web fonts of the framework.
+| `async_webfont`            | bool      | false          | Flag to load google fonts with *async* method of the framework.
+| `output_css`               | bool      | true           | Flag to load output css of the framework.
 
 <div class="pre-heading">Section Arguments</div>
 
 | Name      | Type    | Description |
 |-----------|---------|-------------|
-| `id`      | string  | A unique slug-like ID.
-| `parent`  | string  | The slug id for the parent section
-| `title`   | string  | The title of the section.
-| `icon`    | string  | The icon of the section.
-| `fields`  | array   | An associative array containing fields for the fieldsets.
+| `id`      | string  | A unique slug ID.
+| `parent`  | string  | Slug id for the parent section.
+| `title`   | string  | Title of the section.
+| `icon`    | string  | Icon of the section.
+| `fields`  | array   | Associative array containing fields for the field sets.
 
 ---
 
@@ -608,13 +608,13 @@ echo $options['opt-textarea']; // id of the field
 
 | Name               | Type     | Default        | Description |
 |--------------------|----------|----------------|-------------|
-| `database`         | string   | option         | The database save data type. *for eg.* `option` `theme_mod`
+| `database`         | string   | option         | Data type for database. *for eg.* `option` `theme_mod`
 | `transport`        | string   | refresh        | This can be either 'refresh' (default) or 'postMessage'. Only set this to 'postMessage' if you are writing custom Javascript to control the Theme Customizer's live preview.
-| `capability`       | string   | manage_options | The capability required for this menu to be displayed to the user.
-| `save_defaults`    | bool     | true           | Whether to save to default values of the framework.
-| `enqueue_webfont`  | bool     | true           | Whether to load web fonts of the framework.
-| `async_webfont`    | bool     | false          | Whether to load google fonts with *async* method of the framework.
-| `output_css`       | bool     | true           | Whether to load output css of the framework.
+| `capability`       | string   | manage_options | Capability required for this menu to be displayed to the user.
+| `save_defaults`    | bool     | true           | Flag to save to default values of the framework.
+| `enqueue_webfont`  | bool     | true           | Flag to load web fonts of the framework.
+| `async_webfont`    | bool     | false          | Flag to load google fonts with *async* method of the framework.
+| `output_css`       | bool     | true           | Flag to load output css of the framework.
 
 ---
 
@@ -825,17 +825,17 @@ echo get_post_meta( get_the_ID(), 'opt-textarea', true ); // id of the field
 | Name                 | Type          | Default    | Description |
 |----------------------|---------------|------------|-------------|
 | `title`              | string        |            | Title of the meta box.
-| `post_type`          | array\|string | post       | The box display to specific post types. *for eg* `post`, `page`, `products` or both.
-| `data_type`          | string        | serialize  | The type of the database save options. *for eg* `serialize` or `unserialize`
+| `post_type`          | array\|string | post       | Provide any number of post_types for a given metabox to appear.
+| `data_type`          | string        | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
 | `context`            | string        | normal     | The context within the screen where the boxes should display. *for eg* `normal`, `side`, `advanced`
-| `priority`           | string        | default    | The priority within the context where the boxes should show. *for eg* `normal`, `hight`, `low`
-| `exclude_post_types` | array         |            | The array of post types to exclude. *for eg* `post`, `page`, `products`
-| `page_templates`     | array\|string |            | The box display to specific page templates. *for eg* `default`, `sidebar-page.php`, `about-page.php`.
-| `post_formats`       | array\|string |            | The box display to specific post types. *for eg* `post`, `page`, `portfolio` or both.
-| `show_restore`       | bool          | false      | Whether to show *restore button* of the metabox.
-| `enqueue_webfont`    | bool          | true       | Whether to load web fonts of the framework.
-| `async_webfont`      | bool          | false      | Whether to load google fonts with *async* method of the framework.
-| `output_css`         | bool          | true       | Whether to load output css of the framework.
+| `priority`           | string        | default    | Where you want to place your metabox. Normal and advanced are the to left and side is, well, to the side.
+| `exclude_post_types` | array         |            | Array of post types to exclude. *for eg* `post`, `page`, `products`
+| `page_templates`     | array\|string |            | Bind visibility of a metabox to any number of page templates. The value will be equal to the filename of the custom page template.
+| `post_formats`       | array\|string |            | Bind the visibility of a metabox to a given post format. <a href="https://codex.wordpress.org/Post_Formats#Supported_FormatsList"> List of post formats.</a>
+| `show_restore`       | bool          | false      | Flag to display *restore button* of the metabox.
+| `enqueue_webfont`    | bool          | true       | Flag to load web fonts of the framework.
+| `async_webfont`      | bool          | false      | Flag to load google fonts with *async* method of the framework.
+| `output_css`         | bool          | true       | Flag to load output css of the framework.
 
 ---
 
@@ -881,7 +881,7 @@ if( class_exists( 'CSF' ) ) {
 }
 ```
 
-<div class="pre-heading">Usage in data type => serialize</div>
+<div class="pre-heading">Usage: Data type as serialize</div>
 
 ```php
 //
@@ -892,7 +892,7 @@ $meta = get_term_meta( $term->term_id, 'my_taxonomy_options', true );
 echo $meta['opt-text']; // id of the field
 echo $meta['opt-textarea']; // id of the field
 ```
-<div class="pre-heading">Usage in data type => unserialize</div>
+<div class="pre-heading">Usage: Data type as unserialize</div>
 
 ```php
 //
@@ -906,8 +906,8 @@ echo get_term_meta( $term->term_id, 'opt-textarea', true ); // id of the field
 
 | Name         | Type          | Default    | Description |
 |--------------|---------------|------------|-------------|
-| `taxonomy`   | array/string  |            | The box display to specific taxonomy. *for eg* `category`, `products` or both.
-| `data_type`  | string        | serialize  | The type of the database save options. *for eg* `serialize` or `unserialize`
+| `taxonomy`   | array/string  |            | Provide any number of taxonomy slugs for a given “term” box to appear.
+| `data_type`  | string        | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
 
 ---
 
@@ -1223,7 +1223,7 @@ if( class_exists( 'CSF' ) ) {
 <div class="clear"></div>
 </div>
 
-<div class="pre-heading">Usage in Textarea</div>
+<div class="pre-heading">Usage: Textarea</div>
 
 ```php
 array(
@@ -1238,10 +1238,10 @@ array(
 
 | Name              | Type    | Default            | Description |
 |-------------------|---------|--------------------|-------------|
-| `button_title`    | string  | Add Shortcode      | The text to display on the shortcode trigger button.
-| `select_title`    | string  | Select a shortcode | The placeholder to be displayed when nothing is selected.
-| `insert_title`    | string  | Insert Shortcode   | The text to display on the insert button.
-| `show_in_editor`  | bool    | true               | Whether to display media insert/upload buttons.
+| `button_title`    | string  | Add Shortcode      | Text to display on the shortcode trigger button.
+| `select_title`    | string  | Select a shortcode | Placeholder to be displayed when nothing is selected.
+| `insert_title`    | string  | Insert Shortcode   | Text to display on the insert button.
+| `show_in_editor`  | bool    | true               | Flag to display media insert/upload buttons.
 
 <div class="pre-heading">EXtra Section Arguments for Shortcoder</div>
 

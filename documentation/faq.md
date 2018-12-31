@@ -1,6 +1,6 @@
 # F.A.Q.
 
-### How to use dependencies
+### How to use dependencies ?
 
 <div class="csf-tabs">
 <div class="csf-tab-buttons">
@@ -191,7 +191,7 @@ Available dependency conditions: `==`  `!=` `>=` `>` `<=` `<` `any` `not-any`
 
 ---
 
-### How to use attributes
+### How to use attributes ?
 
 <div class="csf-tabs">
 <div class="csf-tab-buttons">
@@ -245,7 +245,7 @@ array(
 
 ---
 
-### How to use sanitize
+### How to use sanitize ?
 
 ```php
 array(
@@ -255,8 +255,6 @@ array(
   'sanitize' => 'csf_sanitize_replace_a_to_b', // This sanitize meaning, replace letter a to letter b.
 ),
 ```
-
-and specified there **csf_sanitize_replace_a_to_b** sanitize function defined in **framework/functions/sanitize.php**. *for eg:*
 
 ```php
 //
@@ -268,11 +266,9 @@ if( ! function_exists( 'csf_sanitize_replace_a_to_b' ) ) {
 }
 ```
 
-can be create your own sanitize filters.
-
 ---
 
-### How to use validate
+### How to use validate ?
 
 <div class="csf-tabs">
 <div class="csf-tab-buttons">
@@ -292,7 +288,6 @@ array(
   'validate' => 'csf_validate_email',
 ),
 ```
-and specified there **csf_validate_email** validate function defined in **framework/funcions/validate.php**. *for eg:*
 
 ```php
 //
@@ -305,7 +300,7 @@ if( ! function_exists( 'csf_validate_email' ) ) {
   }
 }
 ```
-can be create your own validate functions.
+
 </div>
 <div class="csf-tab-content">
 
@@ -317,7 +312,6 @@ array(
   'validate' => 'csf_validate_numeric',
 ),
 ```
-and specified there **csf_validate_numeric** validate function defined in **framework/functions/validate.php**. *for eg:*
 
 ```php
 //
@@ -330,7 +324,7 @@ if( ! function_exists( 'csf_validate_numeric' ) ) {
   }
 }
 ```
-can be create your own validate functions.
+
 </div>
 <div class="csf-tab-content">
 
@@ -342,7 +336,6 @@ array(
   'validate' => 'csf_customize_validate_email',
 ),
 ```
-and specified there **csf_customize_validate_email** validate function defined in **framework/functions/validate.php**. *for eg:*
 
 ```php
 //
@@ -356,7 +349,7 @@ if( ! function_exists( 'csf_customize_validate_email' ) ) {
   }
 }
 ```
-can be create your own validate functions.
+
 </div>
 <div class="csf-tab-content">
 
@@ -368,7 +361,6 @@ array(
   'validate' => 'csf_customize_validate_numeric',
 ),
 ```
-and specified there **csf_customize_validate_numeric** validate function defined in **framework/functions/validate.php**. *for eg:*
 
 ```php
 //
@@ -382,13 +374,13 @@ if( ! function_exists( 'csf_customize_validate_numeric' ) ) {
   }
 }
 ```
-can be create your own validate functions.
+
 </div>
 </div>
 <div class="clear"></div>
 </div>
 
-### How to use common arguments
+### How to use common arguments ?
 
 <div class="csf-tabs">
 <div class="csf-tab-buttons">
@@ -461,7 +453,6 @@ array(
 ),
 ```
 </div>
-
 <div class="csf-tab-content">
 
 ```php
@@ -492,9 +483,10 @@ array(
 ```
 </div>
 </div>
+<div class="clear"></div>
 </div>
 
-### How to add a new field
+### How to add a new field ?
 
 1. Create your field class php file.
 
@@ -540,7 +532,7 @@ array(
 ),
 ```
 
-### How to enqueue your custom css/js
+### How to enqueue your custom css/js ?
 
 ```php
 if( ! function_exists( 'csf_add_my_custom_css' ) ) {
@@ -619,7 +611,7 @@ if( ! function_exists('csf_customize_preview_init') ) {
 }
 ```
 
-### How to add custom icons
+### How to add custom icons ?
 
 1. Use **csf_field_icon_add_icons** filter for add custom icons.
 
@@ -654,7 +646,7 @@ function my_custom_icons( $icons ) {
 }
 ```
 
-### How to add custom font family
+### How to add custom font family ?
 
 1. Use **csf_field_typography_customwebfonts** filter for add custom font family.
 
