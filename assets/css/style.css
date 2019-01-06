@@ -211,10 +211,10 @@ h1,h2,h3,h4,h5,h6,strong{
   opacity: 0.75;
 }
 
-.csf-jumbotron-buttons .btn-sm{
+.csf-jumbotron-buttons .btn-demo{
   min-width: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /**
