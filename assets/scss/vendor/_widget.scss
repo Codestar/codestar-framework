@@ -1,0 +1,35 @@
+//
+// Widget UI
+//
+.widget-content{
+  .csf-field{
+    position: relative;
+    top: -1px;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 12px 15px;
+
+    .csf-field{
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .csf-title{
+      float: none;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+
+    .csf-fieldset{
+      margin-left: 0;
+    }
+  }
+
+  .csf-field-text input{
+    width: 100%;
+  }
+
+  .csf-field-notice .csf-notice{
+    padding: 15px;
+  }
+}
