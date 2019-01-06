@@ -16,8 +16,9 @@ github: https://github.com/Codestar/codestar-framework
 zipball: /archive/master.zip
 
 # Codecanyon
-codecanyon_url: https://codecanyon.net/user/codestar/portfolio?ref=Codestar
+codecanyon_url: https://codecanyon.net/item/codestar-framework-a-simple-and-lightweight-wordpress-option-framework-for-themes-and-plugins/23079100?ref=Codestar
 support_url: http://support.codestarthemes.com/
+demo_url: http://codestarthemes.com/plugins/codestar-framework/wp-login.php?login=demo
 
 # Google Analytics
 google_analytics: UA-21936069-3

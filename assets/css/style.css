@@ -211,6 +211,12 @@ h1,h2,h3,h4,h5,h6,strong{
   opacity: 0.75;
 }
 
+.csf-jumbotron-buttons .btn-sm{
+  min-width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 /**
  * Page Header
  */
@@ -650,9 +656,6 @@ h1,h2,h3,h4,h5,h6,strong{
   .csf-jumbotron h2{
     font-size: 14px;
     line-height: 1.65em;
-  }
-
-  .csf-jumbotron-buttons{
   }
 
   .csf-jumbotron-buttons .btn{
