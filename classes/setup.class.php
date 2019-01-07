@@ -198,11 +198,42 @@ if( ! class_exists( 'CSF' ) ) {
 
     }
 
-    public static function include_plugin_file( $file ) {
-      $path = self::$dir .'/'. ltrim( $file, '/' );
-      if( file_exists( $path ) ) {
-        require_once $path;
+    public static function include_plugin_file( $file, $load = true ) {
+
+      $path     = '';
+      $file     = ltrim( $file, '/' );
+      $override = apply_filters( 'csf_override', 'csf-override' );
+
+      if( file_exists( get_parent_theme_file_path( $override .'/'. $file ) ) ) {
+        $path = get_parent_theme_file_path( $override .'/'. $file );
+      } elseif ( file_exists( get_theme_file_path( $override .'/'. $file ) ) ) {
+        $path = get_theme_file_path( $override .'/'. $file );
+      } elseif ( file_exists( self::$dir .'/'. $override .'/'. $file ) ) {
+        $path = self::$dir .'/'. $override .'/'. $file;
+      } elseif ( file_exists( self::$dir .'/'. $file ) ) {
+        $path = self::$dir .'/'. $file;
       }
+
+      if( ! empty( $path ) && ! empty( $file ) && $load ) {
+
+        global $wp_query;
+
+        if( is_object( $wp_query ) && function_exists( 'load_template' ) ) {
+
+          load_template( $path, true );
+
+        } else {
+
+          require_once( $path );
+
+        }
+
+      } else {
+
+        return self::$dir .'/'. $file;
+
+      }
+
     }
 
     // Sanitize dirname
