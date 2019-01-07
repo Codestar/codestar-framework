@@ -561,7 +561,7 @@ if( ! class_exists( 'CSF_Options' ) ) {
         echo '<div class="csf-header-inner">';
 
           echo '<div class="csf-header-left">';
-          echo '<h1>'. $this->args['framework_title'] .'</h1>';
+          echo '<h1>'. esc_html(wp_get_theme()->get('Name')) .'</h1>';
           echo '</div>';
 
           echo '<div class="csf-header-right">';
