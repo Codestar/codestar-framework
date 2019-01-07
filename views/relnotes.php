@@ -4,6 +4,7 @@
 <ul>
   <li>Added: Override files feature again</li>
   <li>Added: Validate URL function callback ( <code>cs_validate_url</code> )</li>
+  <li>Fixed: Group field save issue.</li>
   <li>Fixed: Multiple given post formats metabox hide/show issue.</li>
 </ul>
 
