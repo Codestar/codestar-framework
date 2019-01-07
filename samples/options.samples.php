@@ -2743,7 +2743,7 @@ CSF::createSection( $prefix, array(
       'type'     => 'text',
       'title'    => 'URL validate',
       'subtitle' => 'This text field only allows validated url address.',
-      'default'  => 'Lorem ipsum value',
+      'default'  => 'http://codestarframework.com',
       'validate' => 'csf_validate_url',
     ),
 
