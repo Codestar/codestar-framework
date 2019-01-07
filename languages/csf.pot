@@ -71,15 +71,15 @@ msgstr ""
 msgid "Reset All"
 msgstr ""
 
-#: classes/setup.class.php:325
+#: classes/setup.class.php:356
 msgid "Ooops! This field type (%s) can not be used here, yet."
 msgstr ""
 
-#: classes/setup.class.php:368
+#: classes/setup.class.php:399
 msgid "This field class is not available!"
 msgstr ""
 
-#: classes/setup.class.php:372
+#: classes/setup.class.php:403
 msgid "This type is not found!"
 msgstr ""
 
@@ -251,14 +251,18 @@ msgstr ""
 msgid "Search a Icon..."
 msgstr ""
 
-#: functions/validate.php:14 functions/validate.php:68
+#: functions/validate.php:14 functions/validate.php:86
 msgid "Please write a valid email address!"
 msgstr ""
 
-#: functions/validate.php:32 functions/validate.php:88
+#: functions/validate.php:32 functions/validate.php:106
 msgid "Please write a numeric data!"
 msgstr ""
 
-#: functions/validate.php:50 functions/validate.php:108
+#: functions/validate.php:50
+msgid "Please write a valid url!"
+msgstr ""
+
+#: functions/validate.php:68 functions/validate.php:126
 msgid "Fatal Error! This field is required!"
 msgstr ""
