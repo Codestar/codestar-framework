@@ -1350,7 +1350,7 @@ CSF::createSection( $prefix, array(
 CSF::createSection( $prefix, array(
   'parent'      => 'editor_fields',
   'title'       => 'Code Editor',
-  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=code_editor" target="_blank">Field: code_editor</a>',
+  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=code-editor" target="_blank">Field: code_editor</a>',
   'fields'      => array(
 
     array(
@@ -1423,7 +1423,7 @@ CSF::createSection( $prefix, array(
 CSF::createSection( $prefix, array(
   'parent'      => 'editor_fields',
   'title'       => 'WP Editor',
-  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=wp_editor" target="_blank">Field: wp_editor</a>',
+  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=wp-editor" target="_blank">Field: wp_editor</a>',
   'fields'      => array(
 
     array(
@@ -1500,7 +1500,7 @@ CSF::createSection( $prefix, array(
 CSF::createSection( $prefix, array(
   'parent'      => 'color_fields',
   'title'       => 'Link Color',
-  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=link_color" target="_blank">Field: link_color</a>',
+  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=link-color" target="_blank">Field: link_color</a>',
   'fields'      => array(
 
     array(
@@ -1539,7 +1539,7 @@ CSF::createSection( $prefix, array(
 CSF::createSection( $prefix, array(
   'parent'      => 'color_fields',
   'title'       => 'Color Group',
-  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=color_group" target="_blank">Field: color_group</a>',
+  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=color-group" target="_blank">Field: color_group</a>',
   'fields'      => array(
 
     array(
@@ -2300,7 +2300,7 @@ CSF::createSection( $prefix, array(
   'parent'      => 'additional_fields',
   'title'       => 'Image Select',
   'icon'        => 'fa fa-th',
-  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=image_select" target="_blank">Field: image_select</a>',
+  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=image-select" target="_blank">Field: image_select</a>',
   'fields'      => array(
 
     array(
@@ -2372,7 +2372,7 @@ CSF::createSection( $prefix, array(
   'parent'      => 'additional_fields',
   'title'       => 'Button Set',
   'icon'        => 'fa fa-ellipsis-h',
-  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=button_set" target="_blank">Field: button_set</a>',
+  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=button-set" target="_blank">Field: button_set</a>',
   'fields'      => array(
 
     array(
@@ -2736,6 +2736,15 @@ CSF::createSection( $prefix, array(
       'after'    => ' <small class="csf-text-warning">( * required )</small>',
       'default'  => 'Lorem ipsum value',
       'validate' => 'csf_validate_required',
+    ),
+
+    array(
+      'id'       => 'opt-validate-4',
+      'type'     => 'text',
+      'title'    => 'URL validate',
+      'subtitle' => 'This text field only allows validated url address.',
+      'default'  => 'Lorem ipsum value',
+      'validate' => 'csf_validate_url',
     ),
 
   )
