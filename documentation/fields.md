@@ -536,7 +536,7 @@ array(
 | `validate`       | string         |             | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
 | **Extras**       | ---            | ---         | ---
 | `label`          | string         |             | The text to display with the checkbox, when use to single checkbox.
-| `options`        | array\|string  |             | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus`
+| `options`        | array\|string  |             | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars`
 | `query_args`     | array          |             | An associative array of query arguments.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -1654,7 +1654,7 @@ array(
 | `sanitize`       | string         |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
 | `validate`       | string         |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
 | **Extras**       | ---            | ---      | ---
-| `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus`
+| `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars`
 | `query_args`     | array          |          | An associative array of query arguments.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -1888,9 +1888,18 @@ array(
   'options'     => 'menus',
 ),
 
-// Select with CPT (custom post type) pages
+// Select with Sidebars
 array(
   'id'          => 'opt-select-9',
+  'type'        => 'select',
+  'title'       => 'Selec with Sidebars',
+  'placeholder' => 'Select a sidebar',
+  'options'     => 'sidebars',
+),
+
+// Select with CPT (custom post type) pages
+array(
+  'id'          => 'opt-select-10',
   'type'        => 'select',
   'title'       => 'Selec with CPT (custom post type) pages',
   'placeholder' => 'Select a page',
@@ -1902,7 +1911,7 @@ array(
 
 // Select with CPT (custom post type) categories
 array(
-  'id'          => 'opt-select-10',
+  'id'          => 'opt-select-11',
   'type'        => 'select',
   'title'       => 'Selec with CPT (custom post type) category',
   'placeholder' => 'Select a category',
@@ -1940,7 +1949,7 @@ array(
 | `placeholder`    | string         |          | The placeholder to be displayed when nothing is selected.
 | `chosen`         | bool           | false    | Flag to enable [ChosenJS](https://harvesthq.github.io/chosen/) style select.
 | `multiple`       | bool           | false    | Flag to allows multiple options choose.
-| `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus`
+| `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars`
 | `query_args`     | array          |          | An associative array of query arguments.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
