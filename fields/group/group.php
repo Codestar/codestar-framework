@@ -97,10 +97,10 @@ if( ! class_exists( 'CSF_Field_group' ) ) {
               $field['sub']   = true;
               $field['class'] = ( ! empty( $field['class'] ) ) ? $field['class'] .' csf-no-script' : 'csf-no-script';
 
-              $unique = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
-              $value  = ( ! empty( $field['id'] ) && ! empty( $value[$field['id']] ) ) ? $value[$field['id']] : '';
+              $unique_id   = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
+              $field_value = ( isset( $field['id'] ) && isset( $value[$field['id']] ) ) ? $value[$field['id']] : '';
 
-              CSF::field( $field, $value, $unique, 'field/group' );
+              CSF::field( $field, $field_value, $unique_id, 'field/group' );
 
             }
 

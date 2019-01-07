@@ -69,10 +69,10 @@ if( ! class_exists( 'CSF_Field_repeater' ) ) {
             if( in_array( $field['type'], $unallows ) ) { $field['_notice'] = true; }
 
             $field['sub'] = true;
-            $unique = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
-            $value  = ( isset( $field['id'] ) && isset( $this->value[$key][$field['id']] ) ) ? $this->value[$key][$field['id']] : '';
+            $unique       = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
+            $field_value  = ( isset( $field['id'] ) && isset( $this->value[$key][$field['id']] ) ) ? $this->value[$key][$field['id']] : '';
 
-            CSF::field( $field, $value, $unique, 'field/repeater' );
+            CSF::field( $field, $field_value, $unique, 'field/repeater' );
 
           }
           echo '</div>';
