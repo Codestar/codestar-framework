@@ -22,6 +22,7 @@ if( ! class_exists( 'CSF_Field_code_editor' ) ) {
       $default_settings = array(
         'tabSize'       => 2,
         'lineNumbers'   => true,
+        'theme'         => 'default',
         'mode'          => 'htmlmixed',
         'cdnURL'        => $this->cdn_url . $this->version,
       );
@@ -45,12 +46,6 @@ if( ! class_exists( 'CSF_Field_code_editor' ) ) {
 
       if( ! wp_style_is( 'csf-codemirror' ) ) {
         wp_enqueue_style( 'csf-codemirror', $this->cdn_url . $this->version .'/lib/codemirror.min.css', array(), $this->version );
-      }
-
-      $theme = ( ! empty( $this->field['settings']['theme'] ) ) ? $this->field['settings']['theme'] : '';
-
-      if( ! empty( $theme ) && ! wp_style_is( 'csf-codemirror-theme-'. $theme ) ) {
-        wp_enqueue_style( 'csf-codemirror-theme-'. $theme, $this->cdn_url . $this->version .'/theme/'. $theme .'.min.css', array( 'csf-codemirror' ), $this->version );
       }
 
     }

@@ -329,7 +329,7 @@ if( ! class_exists( 'CSF_Field_typography' ) ) {
 
     }
 
-    public function once_enqueue() {
+    public function enqueue() {
 
       if( ! wp_style_is( 'csf-webfont-loader' ) ) {
 

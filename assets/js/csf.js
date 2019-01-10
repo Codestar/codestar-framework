@@ -565,6 +565,21 @@
           data_editor = $textarea.data('editor'),
           code_editor = CodeMirror.fromTextArea( $textarea[0], data_editor );
 
+      // load code-mirror theme css.
+      if( data_editor.theme !== 'default' ) {
+
+        var $cssLink = $('<link>');
+
+        $('#csf-codemirror-css').append( $cssLink );
+
+        $cssLink.attr({
+          rel: 'stylesheet',
+          type: 'text/css',
+          href: data_editor.cdnURL +'/theme/'+ data_editor.theme +'.min.css'
+        });
+
+      }
+
       CodeMirror.modeURL = data_editor.cdnURL +'/mode/%N/%N.min.js';
       CodeMirror.autoLoadMode(code_editor, data_editor.mode);
 

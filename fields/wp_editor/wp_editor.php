@@ -51,7 +51,7 @@ if( ! class_exists( 'CSF_Field_wp_editor' ) ) {
 
     }
 
-    public function once_enqueue() {
+    public function enqueue() {
 
       if( csf_wp_editor_api() && function_exists( 'wp_enqueue_editor' ) ) {
 

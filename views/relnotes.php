@@ -8,7 +8,7 @@
   <li>Added: Validate URL function callback. <a href="http://codestarframework.com/documentation/#/faq?id=how-to-use-validate-" target="_blank"><small>(doc)</small></a></li>
   <li>Fixed: Group field save issue.</li>
   <li>Fixed: Multiple given post formats metabox hide/show issue.</li>
-  <li>Fixed: Minor Bugs.</li>
+  <li>Fixed: Minor bugs.</li>
 </ul>
 
 <h3>v2.0</h3>

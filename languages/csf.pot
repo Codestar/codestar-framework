@@ -71,15 +71,15 @@ msgstr ""
 msgid "Reset All"
 msgstr ""
 
-#: classes/setup.class.php:377
+#: classes/setup.class.php:372
 msgid "Ooops! This field type (%s) can not be used here, yet."
 msgstr ""
 
-#: classes/setup.class.php:420
+#: classes/setup.class.php:415
 msgid "This field class is not available!"
 msgstr ""
 
-#: classes/setup.class.php:424
+#: classes/setup.class.php:419
 msgid "This type is not found!"
 msgstr ""
 

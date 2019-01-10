@@ -23,7 +23,6 @@ if( ! class_exists( 'CSF' ) ) {
       'metaboxes'          => array(),
       'shortcoders'        => array(),
       'taxonomy_options'   => array(),
-      'once_enqueue'       => array(),
     );
 
     // shortcode instances
@@ -345,14 +344,10 @@ if( ! class_exists( 'CSF' ) ) {
           if( ! empty( $field['type'] ) ) {
             $classname = 'CSF_Field_' . $field['type'];
             self::maybe_include_field( $field['type'] );
-            if( class_exists( $classname ) && method_exists( $classname, 'enqueue' ) || method_exists( $classname, 'once_enqueue' ) ) {
+            if( class_exists( $classname ) && method_exists( $classname, 'enqueue' ) ) {
               $instance = new $classname( $field );
               if( method_exists( $classname, 'enqueue' ) ) {
                 $instance->enqueue();
-              }
-              if( method_exists( $classname, 'once_enqueue' ) && ! in_array( $classname, $enqueued ) ) {
-                $instance->once_enqueue();
-                $enqueued[] = $classname;
               }
               unset( $instance );
             }
@@ -446,16 +441,11 @@ if( ! class_exists( 'CSF' ) ) {
 
       self::maybe_include_field( $field['type'] );
 
-      if( class_exists( $classname ) && method_exists( $classname, 'enqueue' ) || method_exists( $classname, 'once_enqueue' ) ) {
+      if( class_exists( $classname ) && method_exists( $classname, 'enqueue' ) ) {
 
         $instance = new $classname( $field );
         if( method_exists( $classname, 'enqueue' ) ) {
           $instance->enqueue();
-        }
-
-        if( method_exists( $classname, 'once_enqueue' ) && ! in_array( $classname, $loaded ) ) {
-          $instance->once_enqueue();
-          $loaded[] = $classname;
         }
 
         unset( $instance );
