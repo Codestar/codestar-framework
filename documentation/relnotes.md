@@ -10,7 +10,7 @@
 - Fixed: Minor Bugs.
 
 ## v2.0
-- Pro version release
+- Premium version release.
 
 ## v1.0
-- Initial release
+- Initial release.
