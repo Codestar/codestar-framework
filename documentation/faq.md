@@ -667,3 +667,16 @@ function my_custom_font_family( $fonts ) {
   add_filter( 'csf_field_typography_customwebfonts', 'my_custom_font_family' );
 }
 ```
+
+### How to add custom color palette ?
+
+1. Use **csf_color_palette** filter for add custom color palette.
+
+```php
+if( ! function_exists( 'my_custom_color_palette' ) ) {
+  function my_custom_color_palette( $colors ) {
+    return array( '#d81cb3', '#c119a1', '#ab168e', '#94137b', '#7d1068', '#670d55', '#500a43', '#400835' );
+  }
+  add_filter( 'csf_color_palette', 'my_custom_color_palette' );
+}
+```

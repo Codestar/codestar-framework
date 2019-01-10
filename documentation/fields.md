@@ -2957,14 +2957,13 @@ array(
 
 ```php
 array(
-  'id'       => 'opt-wp-editor-2',
-  'type'     => 'wp_editor',
-  'title'    => 'WP Editor',
-  'settings' => array(
-    'textarea_rows' => 5,
-    'tinymce'       => false,
-    'media_buttons' => false,
-  )
+  'id'            => 'opt-wp-editor-2',
+  'type'          => 'wp_editor',
+  'title'         => 'WP Editor with Custom Settings',
+  'tinymce'       => true,
+  'quicktags'     => true,
+  'media_buttons' => true,
+  'height'        => '100px',
 ),
 ```
 </div>
@@ -2974,34 +2973,27 @@ array(
 
 <div class="pre-heading">Arguments</div>
 
-| Name          | Type    | Default    | Description |
-|---------------|---------|------------|-------------|
-| `id`          | string  |            | A unique **ID**. This **ID** will be used to get the value.
-| `type`        | string  | wp_editor  | Type of the field.
-| `title`       | string  |            | Title of the field.
-| `default`     | string  |            | Default value from database, if the option doesn't exist.
-| `subtitle`    | string  |            | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`        | string  |            | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`        | string  |            | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `class`       | string  |            | Extra CSS classes (space separated) to append to the field.
-| `before`      | string  |            | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`       | string  |            | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`  | array   |            | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`  | array   |            | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`    | string  |            | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`    | string  |            | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
-| **Extras**    | ---     | ---        | ---
-| `settings`    | array   |            | An associative array containing arguments for the setting.
-
-<div class="pre-heading">Settings Arguments</div>
-
-| Name             | Type         | Default    | Description |
-|------------------|--------------|------------|-------------|
-| `textarea_rows`  | number       | 10         | The number of rows to display for the textarea.
-| `tinymce`        | bool         | true       | Load TinyMCE, can be used to pass settings directly to TinyMCE using an array.
-| `media_buttons`  | bool         | true       | Flag to display media insert/upload buttons.
-
-Get more informations for [wp_editor arguments](https://codex.wordpress.org/Function_Reference/wp_editor#Arguments)
+| Name             | Type    | Default    | Description |
+|------------------|---------|------------|-------------|
+| `id`             | string  |            | A unique **ID**. This **ID** will be used to get the value.
+| `type`           | string  | wp_editor  | Type of the field.
+| `title`          | string  |            | Title of the field.
+| `default`        | string  |            | Default value from database, if the option doesn't exist.
+| `subtitle`       | string  |            | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `desc`           | string  |            | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `help`           | string  |            | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `class`          | string  |            | Extra CSS classes (space separated) to append to the field.
+| `before`         | string  |            | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `after`          | string  |            | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `dependency`     | array   |            | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
+| `attributes`     | array   |            | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
+| `sanitize`       | string  |            | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
+| `validate`       | string  |            | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| **Extras**       | ---     | ---        | ---
+| `tinymce`        | bool    | true       | Flag to load Load TinyMCE.
+| `quicktags`      | bool    | true       | Flag to load Quicktags.
+| `media_buttons`  | bool    | true       | Flag to display media insert/upload buttons.
+| `height`         | string  | 250px      | The height of the editor area.
 
 ---
 
