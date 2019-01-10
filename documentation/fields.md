@@ -102,16 +102,16 @@ array(
 | `type`           | string       | accordion  | Type of the field.
 | `title`          | string       |            | Title of the field.
 | `default`        | array        |            | Default value from database, if the option doesn't exist.
-| `subtitle`       | string       |            | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string       |            | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string       |            | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string       |            | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string       |            | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string       |            | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string       |            | Extra CSS classes (space separated) to append to the field.
-| `before`         | string       |            | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string       |            | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array        |            | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array        |            | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string       |            | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string       |            | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string       |            | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string       |            | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array        |            | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array        |            | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string       |            | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string       |            | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---          | ---        | ---
 | `accordions`     | array        |            | An associative array containing fields for the fieldsets.
 
@@ -170,16 +170,16 @@ array(
 | `type`                     | string        | background  | Type of the field.
 | `title`                    | string        |             | Title of the field.
 | `default`                  | array         |             | Default value to return if the option does not exist in the database
-| `subtitle`                 | string        |             | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`                     | string        |             | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`                     | string        |             | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`                 | string        |             | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`                     | string        |             | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`                     | string        |             | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`                    | string        |             | Extra CSS classes (space separated) to append to the field.
-| `before`                   | string        |             | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`                    | string        |             | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`               | array         |             | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`               | array         |             | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`                 | string        |             | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`                 | string        |             | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`                   | string        |             | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`                    | string        |             | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`               | array         |             | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`               | array         |             | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`                 | string        |             | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`                 | string        |             | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**                 | ---           | ---         | ---
 | `background_color`         | bool          | true        | Flag to display *background color* of the field.
 | `background_image`         | bool          | true        | Flag to display *background image* of the field.
@@ -228,12 +228,12 @@ array(
 |-------------|---------|----------|-------------|
 | `type`      | string  | backup   | Type of the field.
 | `title`     | string  |          | Title of the field.
-| `subtitle`  | string  |          | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`      | string  |          | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`      | string  |          | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`  | string  |          | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`      | string  |          | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`      | string  |          | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`     | string  |          | Extra CSS classes (space separated) to append to the field.
-| `before`    | string  |          | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`     | string  |          | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `before`    | string  |          | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`     | string  |          | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -342,16 +342,16 @@ array(
 | `type`              | string         | border       | Type of the field.
 | `title`             | string         |              | Title of the field.
 | `default`           | array          |              | Default value from database, if the option doesn't exist.
-| `subtitle`          | string         |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`              | string         |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`              | string         |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`          | string         |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`              | string         |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`              | string         |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`             | string         |              | Extra CSS classes (space separated) to append to the field.
-| `before`            | string         |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`             | string         |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`        | array          |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`        | array          |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`          | string         |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`          | string         |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`            | string         |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`             | string         |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`        | array          |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`        | array          |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`          | string         |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`          | string         |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**          | ---            | ---          | ---
 | `top_icon`          | string         | top-icon     | Display icon/text on the *top* of the field.
 | `right_icon`        | string         | right-icon   | Display icon/text on the *right* of the field.
@@ -442,16 +442,16 @@ array(
 | `type`           | string         | button_set  | Type of the field.
 | `title`          | string         |             | Title of the field.
 | `default`        | array\|string  |             | Default value from database, if the option doesn't exist.
-| `subtitle`       | string         |             | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string         |             | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string         |             | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string         |             | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string         |             | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string         |             | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string         |             | Extra CSS classes (space separated) to append to the field.
-| `before`         | string         |             | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string         |             | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array          |             | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array          |             | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string         |             | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string         |             | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string         |             | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string         |             | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array          |             | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array          |             | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string         |             | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string         |             | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---            | ---         | ---
 | `multiple`       | bool           | false       | Flag to allows multiple options to choose.
 | `options`        | array          |             | An array of object containing key/value pairs representing the options.
@@ -524,16 +524,16 @@ array(
 | `type`           | string         | checkbox    | Type of the field.
 | `title`          | string         |             | Title of the field.
 | `default`        | array\|string  |             | Default value from database, if the option doesn't exist.
-| `subtitle`       | string         |             | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string         |             | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string         |             | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string         |             | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string         |             | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string         |             | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string         |             | Extra CSS classes (space separated) to append to the field.
-| `before`         | string         |             | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string         |             | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array          |             | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array          |             | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string         |             | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string         |             | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string         |             | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string         |             | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array          |             | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array          |             | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string         |             | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string         |             | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---            | ---         | ---
 | `label`          | string         |             | The text to display with the checkbox, when use to single checkbox.
 | `options`        | array\|string  |             | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars`
@@ -620,16 +620,16 @@ array(
 | `type`           | string       | code_editor  | Type of the field.
 | `title`          | string       |              | Title of the field.
 | `default`        | string       |              | Default value from database, if the option doesn't exist.
-| `subtitle`       | string       |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string       |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string       |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string       |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string       |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string       |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string       |              | Extra CSS classes (space separated) to append to the field.
-| `before`         | string       |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string       |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array        |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array        |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string       |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string       |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string       |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string       |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array        |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array        |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string       |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string       |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---          | ---          | ---
 | `settings`       | array        |              | An associative array containing arguments for the setting.
 
@@ -717,16 +717,16 @@ array(
 | `type`              | string         | color    | Type of the field.
 | `title`             | string         |          | Title of the field.
 | `default`           | string         |          | Default value from database, if the option doesn't exist.
-| `subtitle`          | string         |          | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`              | string         |          | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`              | string         |          | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`          | string         |          | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`              | string         |          | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`              | string         |          | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`             | string         |          | Extra CSS classes (space separated) to append to the field.
-| `before`            | string         |          | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`             | string         |          | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`        | array          |          | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`        | array          |          | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`          | string         |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`          | string         |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`            | string         |          | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`             | string         |          | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`        | array          |          | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`        | array          |          | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`          | string         |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`          | string         |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**          | ---            | ---      | ---
 | `output`            | array\|string  |          | CSS elements selector.
 | `output_mode`       | string         |          | Output CSS property of an element. for eg. `background-color` `color` `border-color`
@@ -790,16 +790,16 @@ array(
 | `type`             | string   | color_group  | Type of the field.
 | `title`            | string   |              | Title of the field.
 | `default`          | array    |              | Default value from database, if the option doesn't exist.
-| `subtitle`         | string   |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`             | string   |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`             | string   |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`         | string   |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`             | string   |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`             | string   |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`            | string   |              | Extra CSS classes (space separated) to append to the field.
-| `before`           | string   |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`            | string   |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`       | array    |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`       | array    |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`         | string   |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`         | string   |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`           | string   |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`            | string   |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`       | array    |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`       | array    |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`         | string   |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`         | string   |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**         | ---      | ---          | ---
 | `options`          | array    |              | An array of object containing key/value(color) pairs representing the options.
 
@@ -857,16 +857,16 @@ array(
 | `type`           | string   | date     | Type of the field.
 | `title`          | string   |          | Title of the field.
 | `default`        | string   |          | Default value from database, if the option doesn't exist.
-| `subtitle`       | string   |          | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string   |          | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string   |          | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string   |          | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string   |          | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string   |          | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string   |          | Extra CSS classes (space separated) to append to the field.
-| `before`         | string   |          | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string   |          | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array    |          | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array    |          | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string   |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string   |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string   |          | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string   |          | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array    |          | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array    |          | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string   |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string   |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---      | ---      | ---
 | `settings`       | array    |          | An associative array containing arguments for the setting.
 
@@ -946,16 +946,16 @@ array(
 | `type`              | string         | dimensions   | Type of the field.
 | `title`             | string         |              | Title of the field.
 | `default`           | array          |              | Default value from database, if the option doesn't exist.
-| `subtitle`          | string         |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`              | string         |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`              | string         |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`          | string         |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`              | string         |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`              | string         |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`             | string         |              | Extra CSS classes (space separated) to append to the field.
-| `before`            | string         |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`             | string         |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`        | array          |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`        | array          |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`          | string         |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`          | string         |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`            | string         |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`             | string         |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`        | array          |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`        | array          |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`          | string         |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`          | string         |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**          | ---            | ---          | ---
 | `width_icon`        | string         | width-icon   | The icon/text to display on the *width* of the field.
 | `height_icon`       | string         | height-icon  | The icon/text to display on the *height* of the field.
@@ -1057,16 +1057,16 @@ array(
 | `type`           | string       | fieldset    | Type of the field.
 | `title`          | string       |             | Title of the field.
 | `default`        | array        |             | Default value from database, if the option doesn't exist.
-| `subtitle`       | string       |             | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string       |             | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string       |             | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string       |             | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string       |             | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string       |             | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string       |             | Extra CSS classes (space separated) to append to the field.
-| `before`         | string       |             | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string       |             | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array        |             | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array        |             | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string       |             | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string       |             | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string       |             | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string       |             | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array        |             | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array        |             | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string       |             | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string       |             | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---          | ---         | ---
 | `fields`         | array        |             | An associative array containing fields for the fieldsets.
 
@@ -1116,16 +1116,16 @@ array(
 | `type`           | string       | gallery        | Type of the field.
 | `title`          | string       |                | Title of the field.
 | `default`        | string       |                | Default value from database, if the option doesn't exist.
-| `subtitle`       | string       |                | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string       |                | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string       |                | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string       |                | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string       |                | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string       |                | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string       |                | Extra CSS classes (space separated) to append to the field.
-| `before`         | string       |                | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string       |                | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array        |                | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array        |                | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string       |                | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string       |                | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string       |                | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string       |                | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array        |                | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array        |                | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string       |                | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string       |                | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---          | ---            | ---
 | `add_title`      | string       | Add Gallery    | Text to display on the *add* button.
 | `edit_title`     | string       | Edit Gallery   | Text to display on the *edit* button.
@@ -1220,16 +1220,16 @@ array(
 | `type`                    | string       | group      | Type of the field.
 | `title`                   | string       |            | Title of the field.
 | `default`                 | array        |            | Default value from database, if the option doesn't exist.
-| `subtitle`                | string       |            | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`                    | string       |            | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`                    | string       |            | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`                | string       |            | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`                    | string       |            | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`                    | string       |            | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`                   | string       |            | Extra CSS classes (space separated) to append to the field.
-| `before`                  | string       |            | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`                   | string       |            | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`              | array        |            | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`              | array        |            | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`                | string       |            | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`                | string       |            | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`                  | string       |            | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`                   | string       |            | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`              | array        |            | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`              | array        |            | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`                | string       |            | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`                | string       |            | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**                | ---          | ---        | ---
 | `fields`                  | array        |            | An associative array containing fields for the fieldsets.
 | `max`                     | number       | 0          | Maximum number of items the user can add.
@@ -1284,16 +1284,16 @@ array(
 | `type`           | string       | icon         | Type of the field.
 | `title`          | string       |              | Title of the field.
 | `default`        | string       |              | Default value from database, if the option doesn't exist.
-| `subtitle`       | string       |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string       |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string       |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string       |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string       |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string       |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string       |              | Extra CSS classes (space separated) to append to the field.
-| `before`         | string       |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string       |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array        |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array        |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string       |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string       |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string       |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string       |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array        |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array        |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string       |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string       |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---          | ---          | ---
 | `button_title`   | string       | Add Icon     | Text to display on the *add* button.
 | `remove_title`   | string       | Remove Icon  | Text to display on the *remove* button.
@@ -1354,16 +1354,16 @@ array(
 | `type`              | string         | image_select  | Type of the field.
 | `title`             | string         |               | Title of the field.
 | `default`           | array\|string  |               | Default value from database, if the option doesn't exist.
-| `subtitle`          | string         |               | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`              | string         |               | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`              | string         |               | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`          | string         |               | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`              | string         |               | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`              | string         |               | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`             | string         |               | Extra CSS classes (space separated) to append to the field.
-| `before`            | string         |               | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`             | string         |               | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`        | array          |               | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`        | array          |               | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`          | string         |               | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`          | string         |               | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`            | string         |               | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`             | string         |               | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`        | array          |               | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`        | array          |               | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`          | string         |               | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`          | string         |               | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**          | ---            | ---           | ---
 | `options`           | array          |               | An array of object containing key/value pairs representing the options.
 | `multiple`          | bool           | false         | Flag to allows multiple options choose.
@@ -1456,16 +1456,16 @@ array(
 | `type`             | string         | link_color   | Type of the field.
 | `title`            | string         |              | Title of the field.
 | `default`          | array          |              | Default value from database, if the option doesn't exist.
-| `subtitle`         | string         |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`             | string         |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`             | string         |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`         | string         |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`             | string         |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`             | string         |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`            | string         |              | Extra CSS classes (space separated) to append to the field.
-| `before`           | string         |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`            | string         |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`       | array          |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`       | array          |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`         | string         |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`         | string         |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`           | string         |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`            | string         |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`       | array          |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`       | array          |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`         | string         |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`         | string         |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**         | ---            | ---          | ---
 | `color`            | bool           | true         | Flag to display *color* of the field. (normal, unvisited link)
 | `hover`            | bool           | true         | Flag to display *hover* of the field. (link when the user mouses over it)
@@ -1541,16 +1541,16 @@ array(
 | `type`            | string         | media             | Type of the field.
 | `title`           | string         |                   | Title of the field.
 | `default`         | array          |                   | Default value from database, if the option doesn't exist.
-| `subtitle`        | string         |                   | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`            | string         |                   | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`            | string         |                   | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`        | string         |                   | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`            | string         |                   | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`            | string         |                   | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`           | string         |                   | Extra CSS classes (space separated) to append to the field.
-| `before`          | string         |                   | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`           | string         |                   | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`      | array          |                   | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`      | array          |                   | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`        | string         |                   | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`        | string         |                   | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`          | string         |                   | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`           | string         |                   | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`      | array          |                   | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`      | array          |                   | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`        | string         |                   | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`        | string         |                   | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**        | ---            | ---               | ---
 | `url`             | bool           | true              | Flag to display *url* of the field.
 | `preview`         | bool           | true              | Flag to display *preview* of the field.
@@ -1603,16 +1603,16 @@ array(
 | `type`        | string   | palette   | Type of the field.
 | `title`       | string   |           | Title of the field.
 | `default`     | string   |           | Default value from database, if the option doesn't exist.
-| `subtitle`    | string   |           | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`        | string   |           | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`        | string   |           | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`    | string   |           | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`        | string   |           | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`        | string   |           | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`       | string   |           | Extra CSS classes (space separated) to append to the field.
-| `before`      | string   |           | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`       | string   |           | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`  | array    |           | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`  | array    |           | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`    | string   |           | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`    | string   |           | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`      | string   |           | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`       | string   |           | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`  | array    |           | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`  | array    |           | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`    | string   |           | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`    | string   |           | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**    | ---      | ---       | ---
 | `options`     | array    |           | An array of object containing key/array(colors) pairs representing the options.
 
@@ -1643,16 +1643,16 @@ array(
 | `type`           | string         | radio    | Type of the field.
 | `title`          | string         |          | Title of the field.
 | `default`        | string         |          | Default value from database, if the option doesn't exist.
-| `subtitle`       | string         |          | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string         |          | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string         |          | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string         |          | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string         |          | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string         |          | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string         |          | Extra CSS classes (space separated) to append to the field.
-| `before`         | string         |          | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string         |          | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array          |          | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array          |          | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string         |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string         |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string         |          | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string         |          | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array          |          | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array          |          | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string         |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string         |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---            | ---      | ---
 | `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars`
 | `query_args`     | array          |          | An associative array of query arguments.
@@ -1734,16 +1734,16 @@ array(
 | `type`           | string   | repeater  | Type of the field.
 | `title`          | string   |           | Title of the field.
 | `default`        | array    |           | Default value from database, if the option doesn't exist.
-| `subtitle`       | string   |           | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string   |           | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string   |           | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string   |           | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string   |           | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string   |           | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string   |           | Extra CSS classes (space separated) to append to the field.
-| `before`         | string   |           | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string   |           | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array    |           | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array    |           | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string   |           | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string   |           | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string   |           | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string   |           | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array    |           | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array    |           | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string   |           | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string   |           | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---      | ---       | ---
 | `fields`         | array    |           | An associative array containing fields for the fieldsets.
 | `max`            | number   | 0         | Maximum number of items the user can add.
@@ -1935,16 +1935,16 @@ array(
 | `type`           | string         | select   | Type of the field.
 | `title`          | string         |          | Title of the field.
 | `default`        | array\|string  |          | Default value from database, if the option doesn't exist.
-| `subtitle`       | string         |          | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string         |          | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string         |          | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string         |          | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string         |          | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string         |          | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string         |          | Extra CSS classes (space separated) to append to the field.
-| `before`         | string         |          | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string         |          | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array          |          | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array          |          | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string         |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string         |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string         |          | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string         |          | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array          |          | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array          |          | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string         |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string         |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---            | ---      | ---
 | `placeholder`    | string         |          | The placeholder to be displayed when nothing is selected.
 | `chosen`         | bool           | false    | Flag to enable [ChosenJS](https://harvesthq.github.io/chosen/) style select.
@@ -2013,16 +2013,16 @@ array(
 | `type`              | string         | slider   | Type of the field.
 | `title`             | string         |          | Title of the field.
 | `default`           | string         |          | Default value from database, if the option doesn't exist.
-| `subtitle`          | string         |          | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`              | string         |          | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`              | string         |          | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`          | string         |          | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`              | string         |          | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`              | string         |          | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`             | string         |          | Extra CSS classes (space separated) to append to the field.
-| `before`            | string         |          | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`             | string         |          | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`        | array          |          | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`        | array          |          | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`          | string         |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`          | string         |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`            | string         |          | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`             | string         |          | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`        | array          |          | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`        | array          |          | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`          | string         |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`          | string         |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**          | ---            | ---      | ---
 | `max`               | number         | 100      | Value to set the maximum slider value.
 | `min`               | number         | 0        | Value to set the minimum slider value.
@@ -2116,16 +2116,16 @@ array(
 | `type`           | string       | sortable  | Type of the field.
 | `title`          | string       |           | Title of the field.
 | `default`        | array        |           | Default value from database, if the option doesn't exist.
-| `subtitle`       | string       |           | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string       |           | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string       |           | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string       |           | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string       |           | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string       |           | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string       |           | Extra CSS classes (space separated) to append to the field.
-| `before`         | string       |           | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string       |           | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array        |           | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array        |           | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string       |           | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string       |           | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string       |           | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string       |           | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array        |           | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array        |           | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string       |           | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string       |           | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---          | ---       | ---
 | `fields`         | array        |           | An associative array containing fields for the fieldsets.
 
@@ -2215,16 +2215,16 @@ array(
 | `type`           | string       | sorter    | Type of the field.
 | `title`          | string       |           | Title of the field.
 | `default`        | array        |           | Default value from database, if the option doesn't exist.
-| `subtitle`       | string       |           | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string       |           | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string       |           | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string       |           | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string       |           | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string       |           | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string       |           | Extra CSS classes (space separated) to append to the field.
-| `before`         | string       |           | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string       |           | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array        |           | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array        |           | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string       |           | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string       |           | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string       |           | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string       |           | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array        |           | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array        |           | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string       |           | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string       |           | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---          | ---       | ---
 | `disabled`       | bool         | true      | Flag to display *disabled items* of the field.
 | `enabled_title`  | bool\|string | Enabled   | Text to display title of *Enabled* items. Set to *false* if want to hide title.
@@ -2315,16 +2315,16 @@ array(
 | `type`              | string         | spacing      | Type of the field.
 | `title`             | string         |              | Title of the field.
 | `default`           | array          |              | Default value from database, if the option doesn't exist.
-| `subtitle`          | string         |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`              | string         |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`              | string         |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`          | string         |              | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`              | string         |              | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`              | string         |              | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`             | string         |              | Extra CSS classes (space separated) to append to the field.
-| `before`            | string         |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`             | string         |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`        | array          |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`        | array          |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`          | string         |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`          | string         |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`            | string         |              | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`             | string         |              | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`        | array          |              | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`        | array          |              | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`          | string         |              | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`          | string         |              | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**          | ---            | ---          | ---
 | `top_icon`          | string         | top-icon     | The icon/text to display on the border top field.
 | `right_icon`        | string         | right-icon   | The icon/text to display on the border right field.
@@ -2432,16 +2432,16 @@ array(
 | `type`              | string         | spinner | Type of the field.
 | `title`             | string         |         | Title of the field.
 | `default`           | string         |         | Default value from database, if the option doesn't exist.
-| `subtitle`          | string         |         | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`              | string         |         | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`              | string         |         | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`          | string         |         | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`              | string         |         | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`              | string         |         | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`             | string         |         | Extra CSS classes (space separated) to append to the field.
-| `before`            | string         |         | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`             | string         |         | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`        | array          |         | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`        | array          |         | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`          | string         |         | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`          | string         |         | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`            | string         |         | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`             | string         |         | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`        | array          |         | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`        | array          |         | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`          | string         |         | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`          | string         |         | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**          | ---            | ---     | ---
 | `max`               | number         | 100     | Value to set the maximum spinner value.
 | `min`               | number         | 0       | Value to set the minimum spinner value.
@@ -2517,16 +2517,16 @@ array(
 | `type`        | string   | switcher  | Type of the field.
 | `title`       | string   |           | Title of the field.
 | `default`     | string   |           | Default value from database, if the option doesn't exist.
-| `subtitle`    | string   |           | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`        | string   |           | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`        | string   |           | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`    | string   |           | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`        | string   |           | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`        | string   |           | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`       | string   |           | Extra CSS classes (space separated) to append to the field.
-| `before`      | string   |           | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`       | string   |           | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`  | array    |           | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`  | array    |           | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`    | string   |           | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`    | string   |           | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`      | string   |           | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`       | string   |           | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`  | array    |           | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`  | array    |           | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`    | string   |           | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`    | string   |           | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**    | ---      | ---       | ---
 | `label`       | string   |           | The text to display along with the switcher.
 
@@ -2637,16 +2637,16 @@ array(
 | `type`        | string  | tabbed  | Type of the field.
 | `title`       | string  |         | Title of the field.
 | `default`     | array   |         | Default value from database, if the option doesn't exist.
-| `subtitle`    | string  |         | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`        | string  |         | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`        | string  |         | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`    | string  |         | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`        | string  |         | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`        | string  |         | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`       | string  |         | Extra CSS classes (space separated) to append to the field.
-| `before`      | string  |         | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`       | string  |         | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`  | array   |         | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`  | array   |         | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`    | string  |         | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`    | string  |         | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`      | string  |         | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`       | string  |         | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`  | array   |         | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`  | array   |         | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`    | string  |         | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`    | string  |         | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**    | ---     | ---     | ---
 | `tabs`        | array   |         | An associative array containing fields for the fieldsets.
 
@@ -2680,16 +2680,16 @@ echo $my_options['opt-text']; // id of field
 | `type`         | string  | text    | Type of the field.
 | `title`        | string  |         | Title of the field.
 | `default`      | string  |         | Default value from database, if the option doesn't exist.
-| `subtitle`     | string  |         | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`         | string  |         | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`         | string  |         | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`     | string  |         | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`         | string  |         | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`         | string  |         | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`        | string  |         | Extra CSS classes (space separated) to append to the field.
-| `before`       | string  |         | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`        | string  |         | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`   | array   |         | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`   | array   |         | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`     | string  |         | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`     | string  |         | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`       | string  |         | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`        | string  |         | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`   | array   |         | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`   | array   |         | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`     | string  |         | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`     | string  |         | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**     | ---     | ---     | ---
 | `placeholder`  | string  |         | The placeholder to be displayed when nothing is typed.
 
@@ -2723,16 +2723,16 @@ echo $my_options['opt-textarea']; // id of field
 | `type`         | string         | textarea  | Type of the field.
 | `title`        | string         |           | Title of the field.
 | `default`      | string         |           | Default value from database, if the option doesn't exist.
-| `subtitle`     | string         |           | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`         | string         |           | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`         | string         |           | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`     | string         |           | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`         | string         |           | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`         | string         |           | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`        | string         |           | Extra CSS classes (space separated) to append to the field.
-| `before`       | string         |           | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`        | string         |           | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`   | array          |           | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`   | array          |           | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`     | string         |           | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`     | string         |           | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`       | string         |           | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`        | string         |           | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`   | array          |           | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`   | array          |           | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`     | string         |           | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`     | string         |           | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**     | ---            | ---       | ---
 | `placeholder`  | string         |           | The placeholder to be displayed when nothing is typed.
 | `shortcoder`   | array\|string  |           | The call a shortcode trigger button by shortcode id(s).
@@ -2812,16 +2812,16 @@ array(
 | `type`               | string         | typography | Type of the field.
 | `title`              | string         |            | Title of the field.
 | `default`            | array          |            | Default value from database, if the option doesn't exist.
-| `subtitle`           | string         |            | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`               | string         |            | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`               | string         |            | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`           | string         |            | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`               | string         |            | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`               | string         |            | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`              | string         |            | Extra CSS classes (space separated) to append to the field.
-| `before`             | string         |            | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`              | string         |            | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`         | array          |            | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`         | array          |            | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`           | string         |            | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`           | string         |            | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`             | string         |            | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`              | string         |            | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`         | array          |            | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`         | array          |            | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`           | string         |            | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`           | string         |            | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**           | ---            | ---        | ---
 | `font_family`        | bool           | true       | Flag to display *font_family* of the field. (specifies the font)
 | `font_weight`        | bool           | true       | Flag to display *font_weight* of the field. (sets the size of a font)
@@ -2916,16 +2916,16 @@ array(
 | `type`            | string         | upload     | Type of the field.
 | `title`           | string         |            | Title of the field.
 | `default`         | string         |            | Default value from database, if the option doesn't exist.
-| `subtitle`        | string         |            | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`            | string         |            | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`            | string         |            | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`        | string         |            | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`            | string         |            | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`            | string         |            | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`           | string         |            | Extra CSS classes (space separated) to append to the field.
-| `before`          | string         |            | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`           | string         |            | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`      | array          |            | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`      | array          |            | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`        | string         |            | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`        | string         |            | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`          | string         |            | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`           | string         |            | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`      | array          |            | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`      | array          |            | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`        | string         |            | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`        | string         |            | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**        | ---            | ---        | ---
 | `library`         | array\|string  | all        | Tell the modal to show specific formats. for eg. `image` or `video` or both etc.
 | `placeholder`     | string         |            | Placeholder to be displayed when nothing is selected.
@@ -2979,16 +2979,16 @@ array(
 | `type`           | string  | wp_editor  | Type of the field.
 | `title`          | string  |            | Title of the field.
 | `default`        | string  |            | Default value from database, if the option doesn't exist.
-| `subtitle`       | string  |            | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `desc`           | string  |            | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `help`           | string  |            | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
+| `subtitle`       | string  |            | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string  |            | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string  |            | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `class`          | string  |            | Extra CSS classes (space separated) to append to the field.
-| `before`         | string  |            | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `after`          | string  |            | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments" class="csf-more-link">?</a>
-| `dependency`     | array   |            | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies" class="csf-more-link">?</a>
-| `attributes`     | array   |            | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes" class="csf-more-link">?</a>
-| `sanitize`       | string  |            | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize" class="csf-more-link">?</a>
-| `validate`       | string  |            | Callback function for validating value. <a href="#/faq?id=how-to-use-validate" class="csf-more-link">?</a>
+| `before`         | string  |            | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string  |            | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array   |            | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array   |            | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string  |            | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string  |            | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---     | ---        | ---
 | `tinymce`        | bool    | true       | Flag to load Load TinyMCE.
 | `quicktags`      | bool    | true       | Flag to load Quicktags.

@@ -274,8 +274,10 @@ if( ! function_exists( 'csf_sanitize_replace_a_to_b' ) ) {
 <div class="csf-tab-buttons">
 <span class="csf-tab-title csf-tab-active">E-Mail</span>
 <span class="csf-tab-title">Numeric</span>
+<span class="csf-tab-title">URL</span>
 <span class="csf-tab-title">E-Mail (usage in Customizer)</span>
 <span class="csf-tab-title">Numeric (usage in Customizer)</span>
+<span class="csf-tab-title">URL (usage in Customizer)</span>
 </div>
 <div class="csf-tab-contents">
 <div class="csf-tab-content csf-tab-active">
@@ -284,14 +286,14 @@ if( ! function_exists( 'csf_sanitize_replace_a_to_b' ) ) {
 array(
   'id'       => 'opt-email',
   'type'     => 'text',
-  'title'    => 'Email Text',
+  'title'    => 'Email validate',
   'validate' => 'csf_validate_email',
 ),
 ```
 
 ```php
 //
-// Validate email function
+// Validate email function (This function has been defined, this is only for FYI)
 if( ! function_exists( 'csf_validate_email' ) ) {
   function csf_validate_email( $value ) {
     if ( ! sanitize_email( $value ) ) {
@@ -300,7 +302,6 @@ if( ! function_exists( 'csf_validate_email' ) ) {
   }
 }
 ```
-
 </div>
 <div class="csf-tab-content">
 
@@ -308,14 +309,14 @@ if( ! function_exists( 'csf_validate_email' ) ) {
 array(
   'id'       => 'opt-numeric',
   'type'     => 'text',
-  'title'    => 'Number Text',
+  'title'    => 'Number validate',
   'validate' => 'csf_validate_numeric',
 ),
 ```
 
 ```php
 //
-// Validate numeric function
+// Validate numeric function (This function has been defined, this is only for FYI)
 if( ! function_exists( 'csf_validate_numeric' ) ) {
   function csf_validate_numeric( $value ) {
     if ( ! is_numeric( $value ) ) {
@@ -324,7 +325,29 @@ if( ! function_exists( 'csf_validate_numeric' ) ) {
   }
 }
 ```
+</div>
+<div class="csf-tab-content">
 
+```php
+array(
+  'id'       => 'opt-url',
+  'type'     => 'text',
+  'title'    => 'URL validate',
+  'validate' => 'csf_validate_url',
+),
+```
+
+```php
+//
+// Validate numeric function (This function has been defined, this is only for FYI)
+if( ! function_exists( 'csf_validate_url' ) ) {
+  function csf_validate_url( $value ) {
+    if ( ! is_numeric( $value ) ) {
+      return esc_html__( 'Please write a numeric data!', 'csf' );
+    }
+  }
+}
+```
 </div>
 <div class="csf-tab-content">
 
@@ -332,14 +355,14 @@ if( ! function_exists( 'csf_validate_numeric' ) ) {
 array(
   'id'       => 'opt-email',
   'type'     => 'text',
-  'title'    => 'Email Text',
+  'title'    => 'Email validate',
   'validate' => 'csf_customize_validate_email',
 ),
 ```
 
 ```php
 //
-// Validate email value
+// Validate email value (This function has been defined, this is only for FYI)
 if( ! function_exists( 'csf_customize_validate_email' ) ) {
   function csf_customize_validate_email( $validity, $value, $wp_customize ) {
     if ( ! sanitize_email( $value ) ) {
@@ -349,7 +372,6 @@ if( ! function_exists( 'csf_customize_validate_email' ) ) {
   }
 }
 ```
-
 </div>
 <div class="csf-tab-content">
 
@@ -357,14 +379,14 @@ if( ! function_exists( 'csf_customize_validate_email' ) ) {
 array(
   'id'       => 'opt-numeric',
   'type'     => 'text',
-  'title'    => 'Number Text',
+  'title'    => 'Number validate',
   'validate' => 'csf_customize_validate_numeric',
 ),
 ```
 
 ```php
 //
-// Validate numeric value
+// Validate numeric value (This function has been defined, this is only for FYI)
 if( ! function_exists( 'csf_customize_validate_numeric' ) ) {
   function csf_customize_validate_numeric( $validity, $value, $wp_customize ) {
     if ( ! is_numeric( $value ) ) {
@@ -374,7 +396,30 @@ if( ! function_exists( 'csf_customize_validate_numeric' ) ) {
   }
 }
 ```
+</div>
+<div class="csf-tab-content">
 
+```php
+array(
+  'id'       => 'opt-url',
+  'type'     => 'text',
+  'title'    => 'URL validate',
+  'validate' => 'csf_customize_validate_url',
+),
+```
+
+```php
+//
+// Validate numeric value (This function has been defined, this is only for FYI)
+if( ! function_exists( 'csf_customize_validate_url' ) ) {
+  function csf_customize_validate_url( $validity, $value, $wp_customize ) {
+    if( ! filter_var( $value, FILTER_VALIDATE_URL ) ) {
+      $validity->add( 'required', esc_html__( 'Please write a valid url!', 'csf' ) );
+    }
+    return $validity;
+  }
+}
+```
 </div>
 </div>
 <div class="clear"></div>
@@ -680,3 +725,22 @@ if( ! function_exists( 'my_custom_color_palette' ) ) {
   add_filter( 'csf_color_palette', 'my_custom_color_palette' );
 }
 ```
+
+### How to override files ?
+
+You can modify framework files without touch main files. Only create a `csf-override` folder inside theme root. for eg:
+
+```
+.
+├── wp-content
+|   ├── themes
+|   |   ├── theme-name
+|   |   |   ├── csf-override <--- create
+|   |   |   |   ├── fields
+|   |   |   |   |   ├── text
+|   |   |   |   |   |   ├── text.php <--- and edit any file.
+|   |   |   |   |   |   |
+|   |   |   |   |   |   |
+```
+
+Attention: Be sure for do not change or remove javascript id/classnames on elements.
