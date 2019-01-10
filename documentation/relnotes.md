@@ -7,7 +7,7 @@
 - Added: Validate URL function callback. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 - Fixed: Group field save issue.
 - Fixed: Multiple given post formats metabox hide/show issue.
-- Fixed: Minor Bugs.
+- Fixed: Minor bugs.
 
 ## v2.0
 - Premium version release.
