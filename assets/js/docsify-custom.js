@@ -21,7 +21,7 @@ window.$docsify = {
         '<img src="/assets/images/wp-logo.svg" alt="Codestar Framework" class="csf-wp-logo">' +
         '<img src="/assets/images/wp-plugin-logo.svg" alt="Codestar Framework" class="csf-wp-plugin-logo">' +
         '</div>' +
-        '<div class="csf-logo-title">Codestar Framework</div><div class="csf-logo-version">v2.0</div></div>';
+        '<div class="csf-logo-title">Codestar Framework</div></div>';
 
         var search = document.querySelector('.search');
         search.parentNode.insertBefore(logo, search);
