@@ -91,3 +91,21 @@ if ( ! function_exists( 'csf_microtime' ) ) {
 
   }
 }
+
+/**
+ *
+ * Check for wp editor api
+ *
+ * @since 1.0.0
+ * @version 1.0.0
+ *
+ */
+if ( ! function_exists( 'csf_wp_editor_api' ) ) {
+  function csf_wp_editor_api() {
+
+    global $wp_version;
+
+    return version_compare( $wp_version, '4.8', '>=' );
+
+  }
+}

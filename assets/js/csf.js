@@ -40,6 +40,13 @@
     },
 
     //
+    // Generate UID
+    //
+    uid: function( prefix ) {
+      return ( prefix || '' ) + Math.random().toString(36).substr(2, 9);
+    },
+
+    //
     // Debounce
     //
     debounce: function( callback, threshold, immediate ) {
@@ -481,7 +488,7 @@
   $.fn.csf_field_backup = function() {
     return this.each( function() {
 
-      if( wp.customize === undefined ) { return; }
+      if( window.wp.customize === undefined ) { return; }
 
       var $this    = $(this),
           $body    = $('body'),
@@ -497,7 +504,7 @@
 
           $body.addClass('csf-opacity');
 
-          wp.ajax.post( 'csf-reset', {
+          window.wp.ajax.post( 'csf-reset', {
             unique: $reset.data('unique'),
             nonce: $reset.data('nonce')
           })
@@ -524,7 +531,7 @@
 
           $body.addClass('csf-opacity');
 
-          wp.ajax.post( 'csf-import', {
+          window.wp.ajax.post( 'csf-import', {
             unique: $import.data('unique'),
             nonce: $import.data('nonce'),
             import_data: $this.find('.csf-import-data').val()
@@ -608,10 +615,11 @@
   $.fn.csf_field_color = function() {
     return this.each( function() {
 
-      var $this        = $(this),
-          $input       = $this.find('.csf-color-picker'),
-          $wppicker    = $this.find('.wp-picker-container'),
-          picker_color = CSF.funcs.parse_color( $input.val() ),
+      var $this         = $(this),
+          $input        = $this.find('.csf-color-picker'),
+          $wppicker     = $this.find('.wp-picker-container'),
+          picker_color  = CSF.funcs.parse_color( $input.val() ),
+          palette_color = window.csf_vars.color_palette.length ? window.csf_vars.color_palette : true,
           $container;
 
       // Destroy and Reinit
@@ -619,8 +627,8 @@
         $wppicker.after($input).remove();
       }
 
-
       $input.wpColorPicker({
+        palettes: palette_color,
         clear: function() {
           $input.trigger('keyup');
         },
@@ -778,12 +786,12 @@
 
         e.preventDefault();
 
-        if ( typeof wp === 'undefined' || ! wp.media || ! wp.media.gallery ) { return; }
+        if ( typeof window.wp === 'undefined' || ! window.wp.media || ! window.wp.media.gallery ) { return; }
 
          // Open media with state
         if( state === 'gallery' ) {
 
-          wp_media_frame = wp.media({
+          wp_media_frame = window.wp.media({
             library: {
               type: 'image'
             },
@@ -796,7 +804,7 @@
 
         } else {
 
-          wp_media_frame = wp.media.gallery.edit( '[gallery ids="'+ ids +'"]' );
+          wp_media_frame = window.wp.media.gallery.edit( '[gallery ids="'+ ids +'"]' );
 
           if( what === 'add' ) {
             wp_media_frame.setState('gallery-library');
@@ -883,6 +891,12 @@
             $fields.removeClass('csf-no-script');
             $panel.csf_reload_script('sub');
             $panel.data( 'opened', true );
+            $panel.data( 'retry', false );
+
+          } else if( $panel.data( 'retry' ) ) {
+
+            $panel.csf_reload_script_retry();
+            $panel.data( 'retry', false );
 
           }
 
@@ -899,14 +913,15 @@
 
           $wrapper.accordion({ active:false });
           $wrapper.sortable('refreshPositions');
+          ui.item.find('.csf-cloneable-content').data('retry', true);
 
         },
-        stop: function( event, ui ) {
+        update: function( event, ui ) {
 
           CSF.helper.inputs_rename( $wrapper.find('.csf-cloneable-item') );
           $wrapper.csf_customizer_refresh();
 
-        }
+        },
       });
 
       $this.on('click', '.csf-cloneable-add', function( e ) {
@@ -1013,7 +1028,7 @@
 
           $modal.find('.csf-modal-loading').show();
 
-          wp.ajax.post( 'csf-get-icons', { nonce: $button.data('nonce') } ).done( function( response ) {
+          window.wp.ajax.post( 'csf-get-icons', { nonce: $button.data('nonce') } ).done( function( response ) {
 
             $modal.find('.csf-modal-loading').hide();
 
@@ -1095,7 +1110,7 @@
 
         e.preventDefault();
 
-        if ( typeof wp === 'undefined' || ! wp.media || ! wp.media.gallery ) {
+        if ( typeof window.wp === 'undefined' || ! window.wp.media || ! window.wp.media.gallery ) {
           return;
         }
 
@@ -1104,7 +1119,7 @@
           return;
         }
 
-        wp_media_frame = wp.media({
+        wp_media_frame = window.wp.media({
           library: {
             type: $upload_button.data('library').split(',')
           }
@@ -1176,10 +1191,11 @@
         helper: 'original',
         cursor: 'move',
         placeholder: 'widget-placeholder',
-        stop: function( event, ui ) {
+        update: function( event, ui ) {
 
           CSF.helper.inputs_rename( $wrapper.find('.csf-cloneable-item') );
           $wrapper.csf_customizer_refresh();
+          ui.item.csf_reload_script_retry();
 
         }
       });
@@ -1311,7 +1327,7 @@
         helper: 'original',
         cursor: 'move',
         placeholder: 'widget-placeholder',
-        stop: function( event, ui ) {
+        update: function( event, ui ) {
           $sortable.csf_customizer_refresh();
         }
       });
@@ -1860,7 +1876,7 @@
 
         e.preventDefault();
 
-        if ( typeof wp === 'undefined' || ! wp.media || ! wp.media.gallery ) {
+        if ( typeof window.wp === 'undefined' || ! window.wp.media || ! window.wp.media.gallery ) {
           return;
         }
 
@@ -1869,7 +1885,7 @@
           return;
         }
 
-        wp_media_frame = wp.media({
+        wp_media_frame = window.wp.media({
           library: {
             type: $upload_button.data('library').split(',')
           },
@@ -1948,11 +1964,7 @@
             $panel.addClass('csf-saving');
             $buttons.prop('disabled', true);
 
-            if( typeof tinyMCE === 'object' ) {
-              tinyMCE.triggerSave();
-            }
-
-            wp.ajax.post( 'csf_'+ $panel.data('unique') +'_ajax_save', {
+            window.wp.ajax.post( 'csf_'+ $panel.data('unique') +'_ajax_save', {
               data: $('#csf-form').serializeJSONCSF()
             })
             .done( function( response ) {
@@ -2234,7 +2246,7 @@
 
           $loading.show();
 
-          wp.ajax.post( 'csf-get-shortcode-'+ modal_id, {
+          window.wp.ajax.post( 'csf-get-shortcode-'+ modal_id, {
             shortcode_key: sc_key,
             nonce: nonce
           })
@@ -2477,7 +2489,7 @@
 
       $(document).trigger('csf-customizer-refresh', $this);
 
-      if( wp.customize === undefined || $complex.length === 0 ) { return; }
+      if( window.wp.customize === undefined || $complex.length === 0 ) { return; }
 
       var $input  = $complex.find(':input'),
           $unique = $complex.data('unique-id'),
@@ -2485,7 +2497,7 @@
           obj     = $input.serializeObjectCSF(),
           data    = ( !$.isEmptyObject(obj) ) ? obj[$unique][$option] : '';
 
-      wp.customize.control( $unique +'['+ $option +']' ).setting.set( data );
+      window.wp.customize.control( $unique +'['+ $option +']' ).setting.set( data );
 
     });
   };
@@ -2496,7 +2508,7 @@
   $.fn.csf_customizer_listen = function( has_closest ) {
     return this.each( function() {
 
-      if( wp.customize === undefined ) { return; }
+      if( window.wp.customize === undefined ) { return; }
 
       var $this   = ( has_closest ) ? $(this).closest('.csf-customize-complex') : $(this),
           $input  = $this.find(':input'),
@@ -2510,7 +2522,7 @@
         var obj  = $this.find(':input').serializeObjectCSF();
         var data = ( !$.isEmptyObject(obj) ) ? obj[$unique][$option] : '';
 
-        wp.customize.control( $unique +'['+ $option +']' ).setting.set( data );
+        window.wp.customize.control( $unique +'['+ $option +']' ).setting.set( data );
 
       }, 250 ) );
 
@@ -2558,7 +2570,107 @@
   });
 
   //
-  // Reload Widget Plugins
+  // Field: wp_editor
+  //
+  $.fn.csf_field_wp_editor = function() {
+    return this.each( function() {
+
+      if( typeof window.wp.editor === 'undefined' || typeof window.tinyMCEPreInit === 'undefined' || typeof window.tinyMCEPreInit.mceInit.csf_wp_editor === 'undefined' ) {
+        return;
+      }
+
+      var $this     = $(this),
+          $editor   = $this.find('.csf-wp-editor'),
+          $textarea = $this.find('textarea');
+
+      // If there is wp-editor remove it for avoid dupliated wp-editor conflicts.
+      var $has_wp_editor = $this.find('.wp-editor-wrap').length || $this.find('.mce-container').length;
+
+      if( $has_wp_editor ) {
+        $editor.empty();
+        $editor.append($textarea);
+        $textarea.css('display', '');
+      }
+
+      // Generate a unique id
+      var uid = CSF.helper.uid('csf-editor-');
+
+      $textarea.attr('id', uid);
+
+      // Get default editor settings
+      var default_editor_settings = {
+        tinymce: window.tinyMCEPreInit.mceInit.csf_wp_editor,
+        quicktags: window.tinyMCEPreInit.qtInit.csf_wp_editor
+      };
+
+      // Get default editor settings
+      var field_editor_settings = $editor.data('editor-settings');
+
+      // Add on change event handle
+      var editor_on_change = function( editor ) {
+        editor.on('keyup', CSF.helper.debounce( function() {
+          editor.save();
+          $textarea.trigger('change');
+        }, 250 ) );
+      };
+
+      // Extend editor selector and on change event handler
+      default_editor_settings.tinymce = $.extend( {}, default_editor_settings.tinymce, { selector: '#'+ uid, setup: editor_on_change } );
+
+      // Override editor tinymce settings
+      if( field_editor_settings.tinymce === false ) {
+        default_editor_settings.tinymce = false;
+        $editor.addClass('csf-no-tinymce');
+      }
+
+      // Override editor quicktags settings
+      if( field_editor_settings.quicktags === false ) {
+        default_editor_settings.quicktags = false;
+        $editor.addClass('csf-no-quicktags');
+      }
+
+      // Wait until :visible
+      setTimeout( function() {
+        window.wp.editor.initialize(uid, default_editor_settings);
+      }, 250);
+
+      // Add Media buttons
+      if( field_editor_settings.media_buttons && window.csf_media_buttons ) {
+
+        var $media_buttons = $(window.csf_media_buttons);
+
+        $media_buttons.find('.csf-shortcode-button').data('editor-id', uid);
+
+        $(document).on('wp-before-tinymce-init', function( event, init ) {
+
+          if ( init.selector === default_editor_settings.tinymce.selector ) {
+
+            $editor.prepend( $media_buttons );
+
+          }
+
+        });
+      }
+
+    });
+
+  };
+
+  //
+  // Retry Plugins
+  //
+  $.fn.csf_reload_script_retry = function() {
+    return this.each( function() {
+
+      var $this = $(this);
+
+      $this.find('.csf-field-wp_editor').not('.csf-no-script').csf_field_wp_editor();
+
+    });
+  };
+
+  //
+  // Reload Plugins
   //
   $.fn.csf_reload_script = function( has_sub, force_trigger ) {
     return this.each( function() {
@@ -2587,6 +2699,7 @@
         $this.find('.csf-field-tabbed').not('.csf-no-script').csf_field_tabbed();
         $this.find('.csf-field-typography').not('.csf-no-script').csf_field_typography();
         $this.find('.csf-field-upload').not('.csf-no-script').csf_field_upload();
+        $this.find('.csf-field-wp_editor').not('.csf-no-script').csf_field_wp_editor();
 
         // General plugins
         $this.find('.csf-help').not('.csf-no-script').csf_tooltip();

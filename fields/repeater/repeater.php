@@ -25,7 +25,7 @@ if( ! class_exists( 'CSF_Field_repeater' ) ) {
       echo $this->field_before();
 
       $fields    = $this->field['fields'];
-      $unallows  = array( 'wp_editor', 'group', 'repeater' );
+      $unallows  = array( 'group', 'repeater' );
       $unique_id = ( ! empty( $this->unique ) ) ? $this->unique : $this->field['id'];
 
       echo '<div class="csf-cloneable-item csf-cloneable-hidden">';

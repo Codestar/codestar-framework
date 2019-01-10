@@ -47,7 +47,7 @@ if( ! class_exists( 'CSF_Fields' ) ) {
         $attributes['placeholder'] = $this->field['placeholder'];
       }
 
-      $attributes = wp_parse_args( $custom_atts, $attributes );
+      $attributes = wp_parse_args( $attributes, $custom_atts );
 
       $atts = '';
 

@@ -28,7 +28,7 @@ if( ! class_exists( 'CSF_Field_group' ) ) {
 
       $prefix    = ( ! empty( $args['accordion_title_prefix'] ) ) ? $args['accordion_title_prefix'] .' ' : '';
       $countable = ( ! empty( $args['accordion_title_count'] ) ) ? $args['accordion_title_count'] : false;
-      $unallows  = array( 'wp_editor', 'group', 'repeater' );
+      $unallows  = array( 'group', 'repeater' );
 
       echo $this->field_before();
 

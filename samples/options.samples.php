@@ -861,6 +861,35 @@ CSF::createSection( $prefix, array(
       )
     ),
 
+    array(
+      'id'       => 'opt-group-4',
+      'type'     => 'group',
+      'title'    => 'Group with WP Editor',
+      'subtitle' => 'WP Editor integrated for Ajax Call.',
+      'fields'   => array(
+        array(
+          'id'    => 'opt-text',
+          'type'  => 'text',
+          'title' => 'Text',
+        ),
+        array(
+          'id'    => 'opt-editor',
+          'type'  => 'wp_editor',
+          'title' => 'WP Editor',
+        ),
+      ),
+      'default' => array(
+        array(
+          'opt-text'   => 'WP Editor 1',
+          'opt-editor' => 'Editor content 1',
+        ),
+        array(
+          'opt-text'   => 'WP Editor 2',
+          'opt-editor' => 'Editor content 2',
+        ),
+      )
+    ),
+
   )
 ) );
 
@@ -1433,14 +1462,32 @@ CSF::createSection( $prefix, array(
     ),
 
     array(
-      'id'              => 'opt-wp-editor-2',
-      'type'            => 'wp_editor',
-      'title'           => 'WP Editor with custom settings',
-      'settings'        => array(
-        'textarea_rows' => 5,
-        'tinymce'       => false,
-        'media_buttons' => false,
-      )
+      'id'            => 'opt-wp-editor-2',
+      'type'          => 'wp_editor',
+      'title'         => 'WP Editor with Custom Height and No Media Buttons',
+      'subtitle'      => 'Settings: height => 100px, media_buttons => false',
+      'height'        => '100px',
+      'media_buttons' => false,
+    ),
+
+    array(
+      'id'            => 'opt-wp-editor-3',
+      'type'          => 'wp_editor',
+      'title'         => 'WP Editor without QuickTags and Media Buttons',
+      'subtitle'      => 'Settings: height => 100px, media_buttons => false, quicktags => false',
+      'height'        => '100px',
+      'media_buttons' => false,
+      'quicktags'     => false,
+    ),
+
+    array(
+      'id'            => 'opt-wp-editor-4',
+      'type'          => 'wp_editor',
+      'title'         => 'WP Editor without Tinymce and Media Buttons',
+      'subtitle'      => 'Settings: height => 100px, media_buttons => false, tinymce => false',
+      'height'        => '100px',
+      'media_buttons' => false,
+      'tinymce'       => false,
     ),
 
   )

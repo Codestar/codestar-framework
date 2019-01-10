@@ -11,10 +11,12 @@ if( ! class_exists( 'CSF' ) ) {
   class CSF {
 
     // constants
+    public static $version = '2.0.1';
     public static $premium = false;
     public static $dir     = null;
     public static $url     = null;
     public static $setup   = false;
+    public static $fields  = array();
     public static $args    = array(
       'options'            => array(),
       'customize_options'  => array(),
@@ -179,6 +181,7 @@ if( ! class_exists( 'CSF' ) ) {
     // create section
     public static function createSection( $id, $sections ) {
       self::$args['sections'][$id][] = $sections;
+      self::set_used_fields( $sections );
     }
 
     // constants
@@ -284,6 +287,27 @@ if( ! class_exists( 'CSF' ) ) {
       load_textdomain( 'csf', self::$dir .'/languages/'. get_locale() .'.mo' );
     }
 
+    // Get all of fields
+    public static function set_used_fields( $sections ) {
+
+      if( ! empty( $sections['fields'] ) ) {
+
+        foreach( $sections['fields'] as $field ) {
+
+          if( ! empty( $field['fields'] ) ) {
+            self::set_used_fields( $field );
+          }
+
+          if( ! empty( $field['type'] ) ) {
+            self::$fields[$field['type']] = $field;
+          }
+
+        }
+
+      }
+
+    }
+
     //
     // Enqueue admin and fields styles and scripts.
     public static function add_admin_enqueue_scripts() {
@@ -301,7 +325,6 @@ if( ! class_exists( 'CSF' ) ) {
       // framework core styles
       wp_enqueue_style( 'faw', CSF::include_plugin_url( 'assets/css/font-awesome'. $min .'.css' ), array(), '4.7.0', 'all' );
       wp_enqueue_style( 'csf', CSF::include_plugin_url( 'assets/css/csf'. $min .'.css' ), array(), '1.0.0', 'all' );
-
       if ( is_rtl() ) {
         wp_enqueue_style( 'csf-rtl', CSF::include_plugin_url( 'assets/css/csf-rtl'. $min .'.css' ), array(), '1.0.0', 'all' );
       }
@@ -310,30 +333,28 @@ if( ! class_exists( 'CSF' ) ) {
       wp_enqueue_script( 'csf-plugins', CSF::include_plugin_url( 'assets/js/csf-plugins'. $min .'.js' ), array(), '1.0.0', true );
       wp_enqueue_script( 'csf',  CSF::include_plugin_url( 'assets/js/csf'. $min .'.js' ), array( 'csf-plugins' ), '1.0.0', true );
 
+      wp_localize_script( 'csf', 'csf_vars', array(
+        'color_palette' => apply_filters( 'csf_color_palette', array() ),
+      ) );
+
       // load admin enqueue scripts and styles
       $enqueued = array();
 
-      if( ! empty( self::$args['sections'] ) ) {
-        foreach( self::$args['sections'] as $sections ) {
-          foreach( $sections as $section ) {
-            if( ! empty( $section['fields'] ) ) {
-              foreach( $section['fields'] as $field ) {
-                if( ! empty( $field['type'] ) ) {
-                  $classname = 'CSF_Field_' . $field['type'];
-                  self::maybe_include_field( $field['type'] );
-                  if( class_exists( $classname ) && method_exists( $classname, 'enqueue' ) || method_exists( $classname, 'once_enqueue' ) ) {
-                    $instance = new $classname( $field );
-                    if( method_exists( $classname, 'enqueue' ) ) {
-                      $instance->enqueue();
-                    }
-                    if( method_exists( $classname, 'once_enqueue' ) && ! in_array( $classname, $enqueued ) ) {
-                      $instance->once_enqueue();
-                      $enqueued[] = $classname;
-                    }
-                    unset( $instance );
-                  }
-                }
+      if( ! empty( self::$fields ) ) {
+        foreach( self::$fields as $field ) {
+          if( ! empty( $field['type'] ) ) {
+            $classname = 'CSF_Field_' . $field['type'];
+            self::maybe_include_field( $field['type'] );
+            if( class_exists( $classname ) && method_exists( $classname, 'enqueue' ) || method_exists( $classname, 'once_enqueue' ) ) {
+              $instance = new $classname( $field );
+              if( method_exists( $classname, 'enqueue' ) ) {
+                $instance->enqueue();
               }
+              if( method_exists( $classname, 'once_enqueue' ) && ! in_array( $classname, $enqueued ) ) {
+                $instance->once_enqueue();
+                $enqueued[] = $classname;
+              }
+              unset( $instance );
             }
           }
         }
