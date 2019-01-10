@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Codestar Framework package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Codestar Framework 2.0\n"
+"Project-Id-Version: Codestar Framework 2.0.1\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/codestar-framework\n"
 "MIME-Version: 1.0\n"
@@ -71,15 +71,15 @@ msgstr ""
 msgid "Reset All"
 msgstr ""
 
-#: classes/setup.class.php:356
+#: classes/setup.class.php:377
 msgid "Ooops! This field type (%s) can not be used here, yet."
 msgstr ""
 
-#: classes/setup.class.php:399
+#: classes/setup.class.php:420
 msgid "This field class is not available!"
 msgstr ""
 
-#: classes/setup.class.php:403
+#: classes/setup.class.php:424
 msgid "This type is not found!"
 msgstr ""
 
@@ -259,10 +259,10 @@ msgstr ""
 msgid "Please write a numeric data!"
 msgstr ""
 
-#: functions/validate.php:50
-msgid "Please write a valid url!"
+#: functions/validate.php:50 functions/validate.php:126
+msgid "Fatal Error! This field is required!"
 msgstr ""
 
-#: functions/validate.php:68 functions/validate.php:126
-msgid "Fatal Error! This field is required!"
+#: functions/validate.php:68 functions/validate.php:146
+msgid "Please write a valid url!"
 msgstr ""
