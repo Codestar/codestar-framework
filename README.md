@@ -11,7 +11,7 @@ A Simple and Lightweight WordPress Option Framework for Themes and Plugins. Buil
 - [Free vs Premium](#free-vs-premium)
 - [Whats news?](#whats-news-)
 - [Support](#support)
-- [Changelog](#changelog)
+- [Release Notes](#release-notes)
 - [License](#license)
 
 ## Demo
@@ -160,8 +160,8 @@ Read the documentation for details :closed_book: [documentation](http://codestar
 
 We are provide [support service](http://support.codestarthemes.com/) for premium version users. You can join to support service for submit any question after purchasing. Free version users support is limited on [github](https://github.com/Codestar/codestar-framework/issues).
 
-## Changelog
-Check out the [changelog](http://codestarframework.com/documentation/#/relnotes)
+## Release Notes
+Check out the [release notes](http://codestarframework.com/documentation/#/relnotes)
 
 ## License
 Codestar Framework have two different version. Free version has limited features and offers only admin option panel feature. Premium version offers all extensions and more of settings for the best experience and advanced features. You can bundle the framework ( both free and premium ) in the premium theme/plugin and sell them on your own website or in marketplaces like ThemeForest. This framework is licensed 100% GPL.

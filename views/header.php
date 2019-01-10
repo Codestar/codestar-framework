@@ -17,7 +17,7 @@
 ?>
 <div class="csf-welcome csf-welcome-wrap">
 
-  <h1>Welcome to Codestar Framework v2.0</h1>
+  <h1>Welcome to Codestar Framework v<?php echo CSF::$version; ?></h1>
 
   <p class="csf-about-text">A Simple and Lightweight WordPress Option Framework for Themes and Plugins</p>
 
@@ -30,7 +30,7 @@
       <div class="csf--wp-plugin-logo"></div>
     </div>
     <div class="csf--text">Codestar Framework</div>
-    <div class="csf--text csf--version">v2.0</div>
+    <div class="csf--text csf--version">v<?php echo CSF::$version; ?></div>
   </div>
 
   <h2 class="nav-tab-wrapper wp-clearfix">
