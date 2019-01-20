@@ -59,7 +59,6 @@ h1,h2,h3,h4,h5,h6,strong{
   border: none;
 }
 
-
 .navbar-nav .nav-link-doc:hover{
   color: #fff;
   background-color: #4aa14a;
@@ -96,6 +95,17 @@ h1,h2,h3,h4,h5,h6,strong{
 
 .table{
   margin-bottom: 0;
+}
+
+.navbar-collapse{
+  -webkit-transition: height .25s ease;
+  -o-transition: height .25s ease;
+  transition: height .25s ease;
+  overflow: hidden;
+}
+
+.navbar-collapse:not(.active) {
+  display: none;
 }
 
 /**
