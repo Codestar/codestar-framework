@@ -726,6 +726,229 @@ if( ! function_exists( 'my_custom_color_palette' ) ) {
 }
 ```
 
+### How to add post formats metabox ?
+
+<div class="csf-tabs">
+<div class="csf-tab-buttons">
+<span class="csf-tab-title csf-tab-active">Simple</span>
+<span class="csf-tab-title">Default (Standard) Post Format</span>
+<span class="csf-tab-title">Multiple Post Formats</span>
+</div>
+<div class="csf-tab-contents">
+<div class="csf-tab-content csf-tab-active">
+
+```php
+//
+// A unique slug-like ID
+$prefix_page_opts = '_prefix_post_options';
+
+CSF::createMetabox( $prefix_page_opts, array(
+  'title'        => 'Aside Post Format Options',
+  'post_type'    => 'post',
+  'post_formats' => 'aside', // Spesific post format
+) );
+
+CSF::createSection( $prefix_page_opts, array(
+  'title'  => 'Overview',
+  'icon'   => 'fa fa-rocket',
+  'fields' => array(
+
+    array(
+      'id'    => 'opt-text',
+      'type'  => 'text',
+      'title' => 'Text',
+    ),
+
+  )
+);
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+//
+// A unique slug-like ID
+$prefix_page_opts = '_prefix_post_options';
+
+CSF::createMetabox( $prefix_page_opts, array(
+  'title'        => 'Default (Standard) Post Format Options',
+  'post_type'    => 'post',
+  'post_formats' => 'default', // Default post format,
+) );
+
+CSF::createSection( $prefix_page_opts, array(
+  'title'  => 'Overview',
+  'icon'   => 'fa fa-rocket',
+  'fields' => array(
+
+    array(
+      'id'    => 'opt-text',
+      'type'  => 'text',
+      'title' => 'Text',
+    ),
+
+  )
+);
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+//
+// A unique slug-like ID
+$prefix_page_opts = '_prefix_post_options';
+
+CSF::createMetabox( $prefix_page_opts, array(
+  'title'        => 'Aside Image and Video Format Options',
+  'post_type'    => 'post',
+  'post_formats' => array( 'image', 'video' ), // Spesific post formats
+) );
+
+CSF::createSection( $prefix_page_opts, array(
+  'title'  => 'Overview',
+  'icon'   => 'fa fa-rocket',
+  'fields' => array(
+
+    array(
+      'id'    => 'opt-text',
+      'type'  => 'text',
+      'title' => 'Text',
+    ),
+
+  )
+);
+```
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+### How to add page templates metabox ?
+
+<div class="csf-tabs">
+<div class="csf-tab-buttons">
+<span class="csf-tab-title csf-tab-active">Simple</span>
+<span class="csf-tab-title">Default Template</span>
+<span class="csf-tab-title">Multiple Page Templates</span>
+<span class="csf-tab-title">Subfolder Page Templates</span>
+</div>
+<div class="csf-tab-contents">
+<div class="csf-tab-content csf-tab-active">
+
+```php
+//
+// A unique slug-like ID
+$prefix_page_opts = '_prefix_page_options';
+
+CSF::createMetabox( $prefix_page_opts, array(
+  'title'          => 'About Page Options',
+  'post_type'      => 'page',
+  'page_templates' => 'about.php', // Spesific page template
+) );
+
+CSF::createSection( $prefix_page_opts, array(
+  'title'  => 'Overview',
+  'icon'   => 'fa fa-rocket',
+  'fields' => array(
+
+    array(
+      'id'    => 'opt-text',
+      'type'  => 'text',
+      'title' => 'Text',
+    ),
+
+  )
+);
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+//
+// A unique slug-like ID
+$prefix_page_opts = '_prefix_page_options';
+
+CSF::createMetabox( $prefix_page_opts, array(
+  'title'          => 'Default Page Options',
+  'post_type'      => 'page',
+  'page_templates' => 'default', // Default template
+) );
+
+CSF::createSection( $prefix_page_opts, array(
+  'title'  => 'Overview',
+  'icon'   => 'fa fa-rocket',
+  'fields' => array(
+
+    array(
+      'id'    => 'opt-text',
+      'type'  => 'text',
+      'title' => 'Text',
+    ),
+
+  )
+);
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+//
+// A unique slug-like ID
+$prefix_page_opts = '_prefix_page_options';
+
+CSF::createMetabox( $prefix_page_opts, array(
+  'title'          => 'About and Contact Pages Options',
+  'post_type'      => 'page',
+  'page_templates' => array( 'about.php', 'contact.php' ), // Spesific page templates
+) );
+
+CSF::createSection( $prefix_page_opts, array(
+  'title'  => 'Overview',
+  'icon'   => 'fa fa-rocket',
+  'fields' => array(
+
+    array(
+      'id'    => 'opt-text',
+      'type'  => 'text',
+      'title' => 'Text',
+    ),
+
+  )
+);
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+//
+// A unique slug-like ID
+$prefix_page_opts = '_prefix_page_options';
+
+CSF::createMetabox( $prefix_page_opts, array(
+  'title'          => 'About and Contact Pages Options',
+  'post_type'      => 'page',
+  'page_templates' => array( 'layouts/about.php', 'page-templates/contact.php', 'anywhere/template.php' ), // Spesific page templates
+) );
+
+CSF::createSection( $prefix_page_opts, array(
+  'title'  => 'Overview',
+  'icon'   => 'fa fa-rocket',
+  'fields' => array(
+
+    array(
+      'id'    => 'opt-text',
+      'type'  => 'text',
+      'title' => 'Text',
+    ),
+
+  )
+);
+```
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
 ### How to override files ?
 
 You can modify framework files without touch main files. Only create a `csf-override` folder inside theme root. for eg:

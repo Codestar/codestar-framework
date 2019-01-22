@@ -830,8 +830,8 @@ echo get_post_meta( get_the_ID(), 'opt-textarea', true ); // id of the field
 | `context`            | string        | normal     | The context within the screen where the boxes should display. *for eg* `normal`, `side`, `advanced`
 | `priority`           | string        | default    | Where you want to place your metabox. Normal and advanced are the to left and side is, well, to the side.
 | `exclude_post_types` | array         |            | Array of post types to exclude. *for eg* `post`, `page`, `products`
-| `page_templates`     | array\|string |            | Bind visibility of a metabox to any number of page templates. The value will be equal to the filename of the custom page template.
-| `post_formats`       | array\|string |            | Bind the visibility of a metabox to a given post format. <a href="https://codex.wordpress.org/Post_Formats#Supported_FormatsList"> List of post formats.</a>
+| `page_templates`     | array\|string |            | Bind visibility of a metabox to any number of page templates. The value will be equal to the filename of the custom page template. <a href="#/faq?id=how-to-add-page-templates-metabox-" class="csf-more-link">?</a>
+| `post_formats`       | array\|string |            | Bind the visibility of a metabox to a given post format. <a href="https://codex.wordpress.org/Post_Formats#Supported_FormatsList"> List of post formats.</a> <a href="#/faq?id=how-to-add-post-formats-metabox-" class="csf-more-link">?</a>
 | `show_restore`       | bool          | false      | Flag to display *restore button* of the metabox.
 | `enqueue_webfont`    | bool          | true       | Flag to load web fonts of the framework.
 | `async_webfont`      | bool          | false      | Flag to load google fonts with *async* method of the framework.
