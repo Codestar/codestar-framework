@@ -70,7 +70,7 @@ if( ! class_exists( 'CSF' ) ) {
               CSF_Options::instance( $key, $params );
 
               if( ! empty( $value['show_in_customizer'] ) ) {
-                self::$args['customize_opts'][$key] = ( is_array( $value['show_in_customizer'] ) ) ? $value['show_in_customizer'] : $value;
+                self::$args['customize_options'][$key] = ( is_array( $value['show_in_customizer'] ) ) ? $value['show_in_customizer'] : $value;
               }
 
             }
