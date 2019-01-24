@@ -2592,7 +2592,7 @@ CSF::createSection( $prefix, array(
     array(
       'id'       => 'opt-depend-checkbox',
       'type'     => 'checkbox',
-      'title'    => 'If selected to (Green)',
+      'title'    => 'If selected to (Green) or (Black)',
       'inline'   => true,
       'options'  => array(
         'blue'   => 'Blue',
