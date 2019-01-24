@@ -426,8 +426,6 @@
 
       $this.find('> [data-controller]').each( function() {
 
-        console.log( $this );
-
         var $field      = $(this),
             controllers = $field.data('controller').split('|'),
             conditions  = $field.data('condition').split('|'),
@@ -1144,7 +1142,7 @@
         CSF.helper.inputs_rename( $wrapper.find('.csf-cloneable-item') );
 
         $wrapper.csf_customizer_refresh();
-        $wrapper.csf_customizer_listen(true);
+        $wrapper.csf_customizer_listen({closest: true});
 
       });
 
@@ -1226,7 +1224,6 @@
       });
 
       $sortable.find('.csf--sortable-content').csf_reload_script();
-
 
     });
   };

@@ -53,8 +53,8 @@ if( ! class_exists( 'CSF_Field_media' ) ) {
         echo '</div>';
       }
 
-      echo '<div class="csf--placeholder'. $hidden_url .'">';
-      echo '<input type="text" name="'. $this->field_name('[url]') .'" value="'. $this->value['url'] .'" class="csf--url" readonly="readonly"'. $this->field_attributes() . $placeholder .' />';
+      echo '<div class="csf--placeholder">';
+      echo '<input type="text" name="'. $this->field_name('[url]') .'" value="'. $this->value['url'] .'" class="csf--url'. $hidden_url .'" readonly="readonly"'. $this->field_attributes() . $placeholder .' />';
       echo '<a href="#" class="button button-primary csf--button" data-library="'. esc_attr( $library ) .'" data-preview-size="'. esc_attr( $args['preview_size'] ) .'">'. $args['button_title'] .'</a>';
       echo '</div>';
 

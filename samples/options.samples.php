@@ -1273,10 +1273,10 @@ CSF::createSection( $prefix, array(
     ),
 
     array(
-      'id'      => 'opt-media-3',
-      'type'    => 'media',
-      'title'   => 'Media without url',
-      'preview' => false,
+      'id'    => 'opt-media-3',
+      'type'  => 'media',
+      'title' => 'Media without url',
+      'url'   => false,
     ),
 
     array(
