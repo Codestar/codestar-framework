@@ -44,11 +44,20 @@ if( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize_
 
     protected function render() {
 
-      $depend = ( ! empty( $this->field['dependency'] ) ) ? ' csf-dependency-control' : '';
-      $id     = 'customize-control-' . str_replace( array( '[', ']' ), array( '-', '' ), $this->id );
-      $class  = 'customize-control customize-control-' . $this->type . $depend;
+      $depend = '';
+      $hidden = '';
 
-      echo sprintf( '<li id="%s" class="%s">', esc_attr( $id ), esc_attr( $class ) );
+      if ( ! empty( $this->field['dependency'] ) ) {
+        $hidden  = ' csf-dependency-control hidden';
+        $depend .= ' data-controller="'. $this->field['dependency'][0] .'"';
+        $depend .= ' data-condition="'. $this->field['dependency'][1] .'"';
+        $depend .= ' data-value="'. $this->field['dependency'][2] .'"';
+      }
+
+      $id    = 'customize-control-' . str_replace( array( '[', ']' ), array( '-', '' ), $this->id );
+      $class = 'customize-control customize-control-' . $this->type . $hidden;
+
+      echo '<li id="'. $id .'" class="'. $class .'"'. $depend .'>';
       $this->render_content();
       echo '</li>';
 
@@ -69,6 +78,9 @@ if( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize_
       }
 
       $this->field['name'] = $this->settings['default']->id;
+
+      // Clear dependency
+      $this->field['dependency'] = array();
 
       if( in_array( $this->field['type'], $unallows ) ) { $this->field['_notice'] = true; }
 
