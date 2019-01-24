@@ -9,6 +9,7 @@
   <li>Fixed: Taxonomy framework jquery triggers. It was not working again after saving. It fixed now.</li>
   <li>Fixed: Code Editor style issue for used inside Group/Repeater.</li>
   <li>Fixed: Sortable field sortby issue.</li>
+  <li>Fixed: Options panel show in customizer option.</li>
   <li>Improved: Typography, Color, Spinner, Date, Chosen, Slider fields for used inside Group/Repeater.</li>
   <li>Improved: All fields javascript triggers for more performance.</li>
   <li>Improved: Customizer Framework field dependency feature.</li>
