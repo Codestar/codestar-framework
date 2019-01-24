@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Codestar Framework package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Codestar Framework 2.0.3\n"
+"Project-Id-Version: Codestar Framework 2.0.2\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/codestar-framework\n"
 "MIME-Version: 1.0\n"
