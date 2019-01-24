@@ -2281,20 +2281,13 @@
   $.fn.csf_checkbox = function() {
     return this.each( function() {
 
-      var $this     = $(this);
-      var value     = 0;
-      var $input    = $this.find('.csf--input');
-      var $checkbox = $this.find('.csf--checkbox');
+      var $this     = $(this),
+          $input    = $this.find('.csf--input'),
+          $checkbox = $this.find('.csf--checkbox');
 
-      if( $input.val() === '1' ) {
-        value = 0;
-        $checkbox.prop('checked', false);
-      } else {
-        value = 1;
-        $checkbox.prop('checked', true);
-      }
-
-      $input.val(value).trigger('change');
+      $checkbox.on('click', function() {
+        $input.val( Number( $checkbox.prop('checked') ) ).trigger('change');
+      });
 
     });
   };

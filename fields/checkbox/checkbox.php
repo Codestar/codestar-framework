@@ -41,11 +41,11 @@ if( ! class_exists( 'CSF_Field_checkbox' ) ) {
         }
 
       } else {
-        echo '<div class="csf-checkbox">';
+        echo '<label class="csf-checkbox">';
         echo '<input type="hidden" name="'. $this->field_name() .'" value="'. $this->value .'" class="csf--input"'. $this->field_attributes() .'/>';
         echo '<input type="checkbox" class="csf--checkbox"'. checked( $this->value, 1, false ) .'/>';
         echo ( ! empty( $this->field['label'] ) ) ? ' '. $this->field['label'] : '';
-        echo '</div>';
+        echo '</label>';
       }
 
       echo $this->field_after();
