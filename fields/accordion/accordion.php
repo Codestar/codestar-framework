@@ -39,8 +39,6 @@ if( ! class_exists( 'CSF_Field_accordion' ) ) {
 
             if( in_array( $field['type'], $unallows ) ) { $field['_notice'] = true; }
 
-            $field['class'] = ( ! empty( $field['class'] ) ) ? $field['class'] .' csf-no-script' : 'csf-no-script';
-
             $field_id      = ( isset( $field['id'] ) ) ? $field['id'] : '';
             $field_default = ( isset( $field['default'] ) ) ? $field['default'] : '';
             $field_value   = ( isset( $this->value[$field_id] ) ) ? $this->value[$field_id] : $field_default;

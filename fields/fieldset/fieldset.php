@@ -18,7 +18,7 @@ if( ! class_exists( 'CSF_Field_fieldset' ) ) {
 
       echo $this->field_before();
 
-      echo '<div class="csf-inner">';
+      echo '<div class="csf-fieldset-content">';
 
       foreach ( $this->field['fields'] as $field ) {
 

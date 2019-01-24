@@ -55,7 +55,7 @@ if( ! class_exists( 'CSF_Field_spacing' ) ) {
 
         echo '<div class="csf--input">';
         echo ( ! empty( $args['all_text'] ) ) ? '<span class="csf--label csf--label-icon">'. $args['all_text'] .'</span>' : '';
-        echo '<input type="text" name="'. $this->field_name('[all]') .'" value="'. $value['all'] .'"'. $placeholder .' />';
+        echo '<input type="text" name="'. $this->field_name('[all]') .'" value="'. $value['all'] .'"'. $placeholder .' class="csf-number" />';
         echo ( count( $args['units'] ) === 1 && ! empty( $args['unit'] ) ) ? '<span class="csf--label csf--label-unit">'. $args['units'][0] .'</span>' : '';
         echo '</div>';
 
@@ -77,7 +77,7 @@ if( ! class_exists( 'CSF_Field_spacing' ) ) {
 
           echo '<div class="csf--input">';
           echo ( ! empty( $args[$property.'_icon'] ) ) ? '<span class="csf--label csf--label-icon">'. $args[$property.'_icon'] .'</span>' : '';
-          echo '<input type="text" name="'. $this->field_name('['. $property .']') .'" value="'. $value[$property] .'"'. $placeholder .' />';
+          echo '<input type="text" name="'. $this->field_name('['. $property .']') .'" value="'. $value[$property] .'"'. $placeholder .' class="csf-number" />';
           echo ( count( $args['units'] ) === 1 && ! empty( $args['unit'] ) ) ? '<span class="csf--label csf--label-unit">'. $args['units'][0] .'</span>' : '';
           echo '</div>';
 

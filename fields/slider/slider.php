@@ -28,7 +28,7 @@ if( ! class_exists( 'CSF_Field_slider' ) ) {
       echo '<div class="csf-table">';
       echo '<div class="csf-table-cell csf-table-expanded"><div class="csf-slider-ui"></div></div>';
       echo '<div class="csf-table-cell csf-nowrap">';
-      echo '<input type="text" name="'. $this->field_name() .'" value="'. $this->value .'"'. $this->field_attributes() .' data-max="'. $args['max'] .'" data-min="'. $args['min'] .'" data-step="'. $args['step'] .'" />';
+      echo '<input type="text" name="'. $this->field_name() .'" value="'. $this->value .'"'. $this->field_attributes() .' data-max="'. $args['max'] .'" data-min="'. $args['min'] .'" data-step="'. $args['step'] .'" class="csf-number" />';
       echo ( ! empty( $args['unit'] ) ) ? '<em>'. $args['unit'] .'</em>' : '';
       echo '</div>';
       echo '</div>';

@@ -36,11 +36,10 @@ if( ! class_exists( 'CSF_Fields' ) ) {
     public function field_attributes( $custom_atts = array() ) {
 
       $field_id   = ( ! empty( $this->field['id'] ) ) ? $this->field['id'] : '';
-      $field_sub  = ( ! empty( $this->field['sub'] ) ) ? '-sub' : '';
       $attributes = ( ! empty( $this->field['attributes'] ) ) ? $this->field['attributes'] : array();
 
       if( ! empty( $field_id ) ) {
-        $attributes['data'. $field_sub .'-depend-id'] = $field_id;
+        $attributes['data-depend-id'] = $field_id;
       }
 
       if( ! empty( $this->field['placeholder'] ) ) {

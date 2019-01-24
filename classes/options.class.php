@@ -348,7 +348,7 @@ if( ! class_exists( 'CSF_Options' ) ) {
                 $has_validated  = call_user_func( $field['validate'], $value_validate );
 
                 if( ! empty( $has_validated ) ) {
-                  // $request[$field['id']] = ( isset( $this->options[$field['id']] ) ) ? $this->options[$field['id']] : '';
+                  $request[$field['id']] = ( isset( $this->options[$field['id']] ) ) ? $this->options[$field['id']] : '';
                   $this->errors[$field['id']] = $has_validated;
                 }
 
@@ -530,12 +530,13 @@ if( ! class_exists( 'CSF_Options' ) ) {
     // option page html output
     public function add_options_html() {
 
-      $has_nav      = ( count( $this->pre_tabs ) > 1 ) ? true : false;
-      $show_all     = ( ! $has_nav ) ? ' csf-show-all' : '';
-      $ajax_class   = ( $this->args['ajax_save'] ) ? ' csf-save-ajax' : '';
-      $sticky_class = ( $this->args['sticky_header'] ) ? ' csf-sticky-header' : '';
+      $has_nav       = ( count( $this->pre_tabs ) > 1 ) ? true : false;
+      $show_all      = ( ! $has_nav ) ? ' csf-show-all' : '';
+      $ajax_class    = ( $this->args['ajax_save'] ) ? ' csf-save-ajax' : '';
+      $sticky_class  = ( $this->args['sticky_header'] ) ? ' csf-sticky-header' : '';
+      $wrapper_class = ( $this->args['framework_class'] ) ? ' '. $this->args['framework_class'] : '';
 
-      echo '<div class="csf csf-options '. $this->args['framework_class'] .'" data-slug="'. $this->args['menu_slug'] .'" data-unique="'. $this->unique .'">';
+      echo '<div class="csf csf-options'. $wrapper_class .'" data-slug="'. $this->args['menu_slug'] .'" data-unique="'. $this->unique .'">';
 
         $notice_class = ( ! empty( $this->notice ) ) ? ' csf-form-show' : '';
         $notice_text  = ( ! empty( $this->notice ) ) ? $this->notice : '';

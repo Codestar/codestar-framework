@@ -25,7 +25,7 @@ if( ! class_exists( 'CSF_Field_spinner' ) ) {
 
       echo $this->field_before();
       echo '<div class="csf--spin">';
-      echo '<input type="text" name="'. $this->field_name() .'" value="'. $this->value .'"'. $this->field_attributes() .' data-max="'. $args['max'] .'" data-min="'. $args['min'] .'" data-step="'. $args['step'] .'"/>';
+      echo '<input type="text" name="'. $this->field_name() .'" value="'. $this->value .'"'. $this->field_attributes( array( 'class' => 'csf-number' ) ) .' data-max="'. $args['max'] .'" data-min="'. $args['min'] .'" data-step="'. $args['step'] .'"/>';
       echo ( ! empty( $args['unit'] ) ) ? '<div class="csf--unit">'. $args['unit'] .'</div>' : '';
       echo '</div>';
       echo '<div class="clear"></div>';

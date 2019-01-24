@@ -43,7 +43,7 @@ if( ! class_exists( 'CSF_Field_dimensions' ) ) {
 
         echo '<div class="csf--input">';
         echo ( ! empty( $args['width_icon'] ) ) ? '<span class="csf--label csf--label-icon">'. $args['width_icon'] .'</span>' : '';
-        echo '<input type="text" name="'. $this->field_name('[width]') .'" value="'. $value['width'] .'"'. $placeholder .' />';
+        echo '<input type="text" name="'. $this->field_name('[width]') .'" value="'. $value['width'] .'"'. $placeholder .' class="csf-number" />';
         echo ( count( $args['units'] ) === 1 && ! empty( $args['unit'] ) ) ? '<span class="csf--label csf--label-unit">'. $args['units'][0] .'</span>' : '';
         echo '</div>';
 
@@ -55,7 +55,7 @@ if( ! class_exists( 'CSF_Field_dimensions' ) ) {
 
         echo '<div class="csf--input">';
         echo ( ! empty( $args['height_icon'] ) ) ? '<span class="csf--label csf--label-icon">'. $args['height_icon'] .'</span>' : '';
-        echo '<input type="text" name="'. $this->field_name('[height]') .'" value="'. $value['height'] .'"'. $placeholder .' />';
+        echo '<input type="text" name="'. $this->field_name('[height]') .'" value="'. $value['height'] .'"'. $placeholder .' class="csf-number" />';
         echo ( count( $args['units'] ) === 1 && ! empty( $args['unit'] ) ) ? '<span class="csf--label csf--label-unit">'. $args['units'][0] .'</span>' : '';
         echo '</div>';
 

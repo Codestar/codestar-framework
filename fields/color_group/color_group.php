@@ -28,7 +28,7 @@ if( ! class_exists( 'CSF_Field_color_group' ) ) {
 
           echo '<div class="csf--left csf-field-color">';
           echo '<div class="csf--title">'. $option .'</div>';
-          echo '<input type="text" name="'. $this->field_name('['. $key .']') .'" value="'. $color_value .'" class="csf-color-picker"'. $default_attr . $this->field_attributes() .'/>';
+          echo '<input type="text" name="'. $this->field_name('['. $key .']') .'" value="'. $color_value .'" class="csf-color"'. $default_attr . $this->field_attributes() .'/>';
           echo '</div>';
 
         }

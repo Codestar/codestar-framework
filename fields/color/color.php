@@ -19,7 +19,7 @@ if( ! class_exists( 'CSF_Field_color' ) ) {
       $default_attr = ( ! empty( $this->field['default'] ) ) ? ' data-default-color="'. $this->field['default'] .'"' : '';
 
       echo $this->field_before();
-      echo '<input type="text" name="'. $this->field_name() .'" value="'. $this->value .'" class="csf-color-picker"'. $default_attr . $this->field_attributes() .'/>';
+      echo '<input type="text" name="'. $this->field_name() .'" value="'. $this->value .'" class="csf-color"'. $default_attr . $this->field_attributes() .'/>';
       echo $this->field_after();
 
     }

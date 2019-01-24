@@ -24,8 +24,7 @@ if( ! class_exists( 'CSF_Field_date' ) ) {
       $settings = wp_parse_args( $settings, $default_settings );
 
       echo $this->field_before();
-      echo '<input type="text" name="'. $this->field_name() .'" value="'. $this->value .'"'. $this->field_attributes() .'/>';
-      echo '<textarea class="csf-datepicker-settings hidden">'. json_encode( $settings ) .'</textarea>';
+      echo '<input type="text" name="'. $this->field_name() .'" value="'. $this->value .'" data-settings="'. esc_attr( json_encode( $settings ) ) .'"'. $this->field_attributes() .'/>';
       echo $this->field_after();
 
     }

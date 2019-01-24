@@ -15,13 +15,16 @@
   // Constants
   //
   var CSF   = CSF || {};
-  CSF.funcs = {};
-  CSF.vars  = {};
 
-  CSF.vars.onloaded  = false;
-  CSF.vars.$window   = $(window);
-  CSF.vars.$document = $(document);
-  CSF.vars.is_rtl    = $('body').hasClass('rtl');
+  CSF.funcs = {};
+
+  CSF.vars  = {
+    onloaded: false,
+    $window: $(window),
+    $document: $(document),
+    is_rtl: $('body').hasClass('rtl'),
+    code_themes: [],
+  };
 
   //
   // Helper Functions
@@ -271,36 +274,39 @@
   // Metabox Page Templates Listener
   //
   $.fn.csf_page_templates = function() {
-
     if( this.length ) {
 
       $(document).on('change', '.editor-page-attributes__template select, #page_template', function() {
 
-        $('.csf-page-templates').addClass('csf-hide');
-        $('.csf-page-'+$(this).val().toLowerCase().replace(/[^a-zA-Z0-9]+/g,'-')).removeClass('csf-hide');
+        var maybe_value = $(this).val() || 'default';
+
+        $('.csf-page-templates').removeClass('csf-show').addClass('csf-hide');
+        $('.csf-page-'+maybe_value.toLowerCase().replace(/[^a-zA-Z0-9]+/g,'-')).removeClass('csf-hide').addClass('csf-show');
 
       });
 
     }
-
   };
 
   //
   // Metabox Post Formats Listener
   //
   $.fn.csf_post_formats = function() {
-
     if( this.length ) {
 
       $(document).on('change', '.editor-post-format select, #formatdiv input[name="post_format"]', function() {
 
-        $('.csf-post-formats').addClass('csf-hide');
-        $('.csf-post-format-'+$(this).val()).removeClass('csf-hide');
+        var maybe_value = $(this).val() || 'default';
+
+        // Fallback for classic editor version
+        maybe_value = ( maybe_value === '0' ) ? 'default' : maybe_value;
+
+        $('.csf-post-formats').removeClass('csf-show').addClass('csf-hide');
+        $('.csf-post-format-'+maybe_value).removeClass('csf-hide').addClass('csf-show');
 
       });
 
     }
-
   };
 
   //
@@ -410,21 +416,22 @@
   //
   // Dependency System
   //
-  $.fn.csf_dependency = function( has_sub ) {
+  $.fn.csf_dependency = function() {
     return this.each( function() {
 
       var $this   = $(this),
-          is_sub  = ( has_sub === 'sub' ) ? 'sub-' : '',
           ruleset = $.csf_deps.createRuleset();
 
       var depends = [];
 
-      $this.find('[data-'+ is_sub +'controller]').not('.csf-no-script').each( function() {
+      $this.find('> [data-controller]').each( function() {
+
+        console.log( $this );
 
         var $field      = $(this),
-            controllers = $field.data( is_sub +'controller' ).split('|'),
-            conditions  = $field.data( is_sub +'condition' ).split('|'),
-            values      = $field.data( is_sub +'value' ).toString().split('|'),
+            controllers = $field.data('controller').split('|'),
+            conditions  = $field.data('condition').split('|'),
+            values      = $field.data('value').toString().split('|'),
             rules       = ruleset;
 
         $.each(controllers, function( index, depend_id ) {
@@ -432,7 +439,7 @@
           var value     = values[index] || '',
               condition = conditions[index] || conditions[0];
 
-          rules = rules.createRule('[data-'+ is_sub +'depend-id="'+ depend_id +'"]', condition, value);
+          rules = rules.createRule('[data-depend-id="'+ depend_id +'"]', condition, value);
 
           rules.include($field);
 
@@ -469,8 +476,7 @@
 
         if( !$content.data( 'opened' ) ) {
 
-          $content.find('.csf-field').removeClass('csf-no-script');
-          $content.csf_reload_script('sub');
+          $content.csf_reload_script();
           $content.data( 'opened', true );
 
         }
@@ -562,21 +568,31 @@
 
       var $this       = $(this),
           $textarea   = $this.find('textarea'),
-          data_editor = $textarea.data('editor'),
-          code_editor = CodeMirror.fromTextArea( $textarea[0], data_editor );
+          $inited     = $this.find('.CodeMirror'),
+          data_editor = $textarea.data('editor');
+
+      if( $inited.length ) {
+        $inited.remove();
+      }
+
+      var code_editor = CodeMirror.fromTextArea( $textarea[0], data_editor );
 
       // load code-mirror theme css.
-      if( data_editor.theme !== 'default' ) {
+      if( data_editor.theme !== 'default' && CSF.vars.code_themes.indexOf(data_editor.theme) === -1 ) {
 
         var $cssLink = $('<link>');
 
-        $('#csf-codemirror-css').append( $cssLink );
+        $('#csf-codemirror-css').after( $cssLink );
 
         $cssLink.attr({
           rel: 'stylesheet',
+          id: 'csf-codemirror-'+ data_editor.theme +'-css',
+          href: data_editor.cdnURL +'/theme/'+ data_editor.theme +'.min.css',
           type: 'text/css',
-          href: data_editor.cdnURL +'/theme/'+ data_editor.theme +'.min.css'
+          media: 'all'
         });
+
+        CSF.vars.code_themes.push(data_editor.theme);
 
       }
 
@@ -591,160 +607,6 @@
   };
 
   //
-  // Field: color
-  //
-  if( typeof Color === 'function' ) {
-
-    Color.fn.toString = function() {
-
-      if ( this._alpha < 1 ) {
-        return this.toCSS('rgba', this._alpha).replace(/\s+/g, '');
-      }
-
-      var hex = parseInt( this._color, 10 ).toString( 16 );
-
-      if ( this.error ) { return ''; }
-
-      if ( hex.length < 6 ) {
-        for (var i = 6 - hex.length - 1; i >= 0; i--) {
-          hex = '0' + hex;
-        }
-      }
-
-      return '#' + hex;
-
-    };
-
-  }
-
-  CSF.funcs.parse_color = function( color ) {
-
-    var value = color.replace(/\s+/g, ''),
-        trans = ( value.indexOf('rgba') !== -1 ) ? parseFloat( value.replace(/^.*,(.+)\)/, '$1') * 100 ) : 100,
-        rgba  = ( trans < 100 ) ? true : false;
-
-    return { value: value, transparent: trans, rgba: rgba };
-
-  };
-
-  $.fn.csf_field_color = function() {
-    return this.each( function() {
-
-      var $this         = $(this),
-          $input        = $this.find('.csf-color-picker'),
-          $wppicker     = $this.find('.wp-picker-container'),
-          picker_color  = CSF.funcs.parse_color( $input.val() ),
-          palette_color = window.csf_vars.color_palette.length ? window.csf_vars.color_palette : true,
-          $container;
-
-      // Destroy and Reinit
-      if( $wppicker.length ) {
-        $wppicker.after($input).remove();
-      }
-
-      $input.wpColorPicker({
-        palettes: palette_color,
-        clear: function() {
-          $input.trigger('keyup');
-        },
-        change: function( event, ui ) {
-
-          var ui_color_value = ui.color.toString();
-
-          $container.removeClass('csf--transparent-active');
-          $container.find('.csf--transparent-offset').css('background-color', ui_color_value);
-          $input.val(ui_color_value).trigger('change');
-
-        },
-        create: function() {
-
-          $container = $this.find('.wp-picker-container');
-
-          var a8cIris = $input.data('a8cIris'),
-              $transparent_wrap = $('<div class="csf--transparent-wrap">' +
-                                '<div class="csf--transparent-slider"></div>' +
-                                '<div class="csf--transparent-offset"></div>' +
-                                '<div class="csf--transparent-text"></div>' +
-                                '<div class="csf--transparent-button button button-small">transparent</div>' +
-                                '</div>').appendTo( $container.find('.wp-picker-holder') ),
-              $transparent_slider = $transparent_wrap.find('.csf--transparent-slider'),
-              $transparent_text   = $transparent_wrap.find('.csf--transparent-text'),
-              $transparent_offset = $transparent_wrap.find('.csf--transparent-offset'),
-              $transparent_button = $transparent_wrap.find('.csf--transparent-button');
-
-          if( $input.val() === 'transparent' ) {
-            $container.addClass('csf--transparent-active');
-          }
-
-          $transparent_button.on('click', function() {
-            if( $input.val() !== 'transparent' ) {
-              $input.val('transparent').trigger('change');
-              $container.addClass('csf--transparent-active');
-            } else {
-              $input.val( a8cIris._color.toString() ).trigger('change');
-              $container.removeClass('csf--transparent-active');
-            }
-          });
-
-          $transparent_slider.slider({
-            value: picker_color.transparent,
-            step: 1,
-            min: 0,
-            max: 100,
-            slide: function( event, ui ) {
-
-              var slide_value = parseFloat( ui.value / 100 );
-              a8cIris._color._alpha = slide_value;
-              $input.wpColorPicker( 'color', a8cIris._color.toString() );
-              $transparent_text.text( ( slide_value === 1 || slide_value === 0 ? '' : slide_value ) );
-
-            },
-            create: function() {
-
-              var slide_value = parseFloat( picker_color.transparent / 100 ),
-                  text_value  = slide_value < 1 ? slide_value : '';
-
-              $transparent_text.text(text_value);
-              $transparent_offset.css('background-color', picker_color.value);
-
-              $container.on('click', '.wp-picker-clear', function() {
-
-                a8cIris._color._alpha = 1;
-                $transparent_text.text('').trigger('change');
-                $transparent_slider.slider('option', 'value', 100).trigger('slide');
-
-              });
-
-              $container.on('click', '.wp-picker-default', function() {
-
-                var default_color = CSF.funcs.parse_color( $input.data('default-color') ),
-                    default_value = parseFloat( default_color.transparent / 100 ),
-                    default_text  = default_value < 1 ? default_value : '';
-
-                a8cIris._color._alpha = default_value;
-                $transparent_text.text(default_text);
-                $transparent_slider.slider('option', 'value', default_color.transparent).trigger('slide');
-
-              });
-
-              $container.on('click', '.wp-color-result', function() {
-                $transparent_wrap.toggle();
-              });
-
-              $('body').on( 'click.wpcolorpicker', function() {
-                $transparent_wrap.hide();
-              });
-
-            }
-          });
-        }
-      });
-
-    });
-
-  };
-
-  //
   // Field: date
   //
   $.fn.csf_field_date = function() {
@@ -752,7 +614,7 @@
 
       var $this    = $(this),
           $input   = $this.find('input'),
-          settings = JSON.parse( $this.find('.csf-datepicker-settings').val() ),
+          settings = $input.data('settings'),
           wrapper  = '<div class="csf-datepicker-wrapper"></div>',
           $datepicker;
 
@@ -773,8 +635,21 @@
 
       settings = $.extend({}, settings, defaults);
 
+      if( $input.hasClass('hasDatepicker') ) {
+        $input.removeAttr('id').removeClass('hasDatepicker');
+      }
+
       $input.datepicker(settings);
 
+    });
+  };
+
+  //
+  // Field: fieldset
+  //
+  $.fn.csf_field_fieldset = function() {
+    return this.each( function() {
+      $(this).find('.csf-fieldset-content').csf_reload_script();
     });
   };
 
@@ -888,7 +763,7 @@
           'header': 'csf-cloneable-header-icon fa fa-angle-right',
           'activeHeader': 'csf-cloneable-header-icon fa fa-angle-down'
         },
-        beforeActivate: function( event, ui ) {
+        activate: function( event, ui ) {
 
           var $panel  = ui.newPanel;
           var $header = ui.newHeader;
@@ -903,8 +778,7 @@
               $title.text($first.val());
             });
 
-            $fields.removeClass('csf-no-script');
-            $panel.csf_reload_script('sub');
+            $panel.csf_reload_script();
             $panel.data( 'opened', true );
             $panel.data( 'retry', false );
 
@@ -962,7 +836,7 @@
         $wrapper.accordion('refresh');
         $wrapper.accordion({active: count});
         $wrapper.csf_customizer_refresh();
-        $wrapper.csf_customizer_listen(true);
+        $wrapper.csf_customizer_listen({closest: true});
 
       });
 
@@ -990,7 +864,7 @@
 
         $wrapper.accordion('refresh');
         $wrapper.csf_customizer_refresh();
-        $wrapper.csf_customizer_listen(true);
+        $wrapper.csf_customizer_listen({closest: true});
 
       });
 
@@ -1023,7 +897,6 @@
   // Field: icon
   //
   $.fn.csf_field_icon = function() {
-
     return this.each( function() {
 
       var $this = $(this);
@@ -1200,6 +1073,8 @@
           max      = parseInt( $wrapper.data('max') ),
           min      = parseInt( $wrapper.data('min') );
 
+      $wrapper.find('.csf-cloneable-content').csf_reload_script();
+
       $wrapper.sortable({
         axis: 'y',
         handle: '.csf-cloneable-sort',
@@ -1236,11 +1111,10 @@
           this.name = this.name.replace('_nonce', unique).replace('num', count);
         });
 
-        $cloned.find('.csf-field').removeClass('csf-no-script');
-        $cloned.csf_reload_script('sub');
+        $cloned.find('.csf-cloneable-content').csf_reload_script();
 
         $wrapper.csf_customizer_refresh();
-        $wrapper.csf_customizer_listen(true);
+        $wrapper.csf_customizer_listen({closest: true});
 
       });
 
@@ -1265,7 +1139,7 @@
 
         $childs.eq($index).after($cloned);
 
-        $cloned.addClass('csf-cloned').csf_reload_script('sub');
+        $cloned.addClass('csf-cloned').find('.csf-cloneable-content').csf_reload_script();
 
         CSF.helper.inputs_rename( $wrapper.find('.csf-cloneable-item') );
 
@@ -1311,6 +1185,10 @@
           data    = $input.data(),
           value   = $input.val() || 0;
 
+      if( $slider.hasClass('ui-slider') ) {
+        $slider.empty();
+      }
+
       $slider.slider({
         range: 'min',
         value: value,
@@ -1346,6 +1224,9 @@
           $sortable.csf_customizer_refresh();
         }
       });
+
+      $sortable.find('.csf--sortable-content').csf_reload_script();
+
 
     });
   };
@@ -1397,8 +1278,13 @@
   $.fn.csf_field_spinner = function() {
     return this.each( function() {
 
-      var $this = $(this),
-          $input = $this.find('input');
+      var $this   = $(this),
+          $input  = $this.find('input'),
+          $inited = $this.find('.ui-spinner-button');
+
+      if( $inited.length ) {
+        $inited.remove();
+      }
 
       $input.spinner({
         max: $input.data('max') || 100,
@@ -1446,19 +1332,23 @@
   $.fn.csf_field_tabbed = function() {
     return this.each( function() {
 
-      var $this    = $(this),
-          $links   = $this.find('.csf-tabbed-nav a'),
-          $section = $this.find('.csf-tabbed-section');
+      var $this     = $(this),
+          $links    = $this.find('.csf-tabbed-nav a'),
+          $sections = $this.find('.csf-tabbed-section');
+
+      $sections.eq(0).csf_reload_script();
 
       $links.on( 'click', function( e ) {
 
        e.preventDefault();
 
-        var $link = $(this),
-            index = $link.index();
+        var $link    = $(this),
+            index    = $link.index(),
+            $section = $sections.eq(index);
 
         $link.addClass('csf-tabbed-active').siblings().removeClass('csf-tabbed-active');
-        $section.eq(index).removeClass('hidden').siblings().addClass('hidden');
+        $section.csf_reload_script();
+        $section.removeClass('hidden').siblings().addClass('hidden');
 
       });
 
@@ -1568,11 +1458,26 @@
         //
         // Chosen init
         if( $this.find('.csf--chosen').length ) {
-          $this.find('select').chosen({
-            allow_single_deselect: true,
-            disable_search_threshold: 15,
-            width: '100%'
+
+          var $chosen_selects = $this.find('select');
+
+          $chosen_selects.each( function(){
+
+            var $chosen_select = $(this),
+                $chosen_inited = $chosen_select.parent().find('.chosen-container');
+
+            if( $chosen_inited.length ) {
+              $chosen_inited.remove();
+            }
+
+            $chosen_select.chosen({
+              allow_single_deselect: true,
+              disable_search_threshold: 15,
+              width: '100%'
+            });
+
           });
+
         }
 
         //
@@ -1937,6 +1842,7 @@
   };
 
   $.fn.serializeObject = function(){
+
     var obj = {};
 
     $.each( this.serializeArray(), function(i,o){
@@ -1949,6 +1855,7 @@
     });
 
     return obj;
+
   };
 
   //
@@ -2057,39 +1964,29 @@
   $.fn.csf_taxonomy = function() {
     return this.each( function() {
 
-      var $this   = $(this),
-          $parent = $this.parent();
+      var $this = $(this),
+          $form = $this.parents('form');
 
-      if( $parent.attr('id') === 'addtag' ) {
+      if( $form.attr('id') === 'addtag' ) {
 
-        var $submit  = $parent.find('#submit'),
-            $clone   = $this.find('.csf-field').csf_clone(),
-            $list    = $('#the-list'),
-            flooding = false;
+        var $submit = $form.find('#submit'),
+            $cloned = $this.find('.csf-field').csf_clone();
 
         $submit.on( 'click', function() {
 
-          if( !flooding ) {
+          if( !$form.find('.form-required').hasClass('form-invalid') ) {
 
-            $list.on( 'DOMNodeInserted', function() {
+            $this.data('inited', false);
 
-              if( flooding ) {
+            $this.empty();
 
-                $this.empty();
-                $this.html( $clone );
-                $clone = $clone.csf_clone();
+            $this.html( $cloned );
 
-                $this.csf_reload_script();
+            $cloned = $cloned.csf_clone();
 
-                flooding = false;
-
-              }
-
-            });
+            $this.csf_reload_script();
 
           }
-
-          flooding = true;
 
         });
 
@@ -2275,7 +2172,8 @@
 
             $cloned = $appended.find('.csf--repeat-shortcode').csf_clone();
 
-            $appended.csf_reload_script('sub');
+            $appended.csf_reload_script();
+            $appended.find('.csf-fields').csf_reload_script();
 
           });
 
@@ -2352,11 +2250,11 @@
 
         var $repeatable = $modal.find('.csf--repeatable');
         var $new_clone  = $cloned.csf_clone();
-        var $remove_btn = $new_clone.find('.csf--remove');
+        var $remove_btn = $new_clone.find('.csf-repeat-remove');
 
-        $new_clone.appendTo( $repeatable );
+        var $appended = $new_clone.appendTo( $repeatable );
 
-        $new_clone.csf_reload_script('sub');
+        $new_clone.find('.csf-fields').csf_reload_script();
 
         CSF.helper.inputs_rename( $modal.find('.csf--repeat-shortcode') );
 
@@ -2380,209 +2278,26 @@
   //
   // Helper Checkbox Checker
   //
-  $.fn.csf_checker = function() {
+  $.fn.csf_checkbox = function() {
     return this.each( function() {
 
-      var $this = $(this);
+      var $this     = $(this);
+      var value     = 0;
+      var $input    = $this.find('.csf--input');
+      var $checkbox = $this.find('.csf--checkbox');
 
-      $this.on('click', function() {
+      if( $input.val() === '1' ) {
+        value = 0;
+        $checkbox.prop('checked', false);
+      } else {
+        value = 1;
+        $checkbox.prop('checked', true);
+      }
 
-        var value     = 0;
-        var $input    = $this.find('.csf--input');
-        var $checkbox = $this.find('.csf--checkbox');
-
-        if( $input.val() === '1' ) {
-          value = 0;
-          $checkbox.prop('checked', false);
-        } else {
-          value = 1;
-          $checkbox.prop('checked', true);
-        }
-
-        $input.val(value).trigger('change');
-
-      });
+      $input.val(value).trigger('change');
 
     });
   };
-
-  //
-  // Helper Siblings
-  //
-  $.fn.csf_siblings = function() {
-    return this.each( function() {
-
-      var $this     = $(this),
-          $siblings = $this.find('.csf--sibling'),
-          multiple  = $this.data('multiple') || false;
-
-      $siblings.on('click', function() {
-
-        var $sibling = $(this);
-
-        if( multiple ) {
-
-          if( $sibling.hasClass('csf--active') ) {
-            $sibling.removeClass('csf--active');
-            $sibling.find('input').prop('checked', false).trigger('change');
-          } else {
-            $sibling.addClass('csf--active');
-            $sibling.find('input').prop('checked', true).trigger('change');
-          }
-
-        } else {
-
-          $this.find('input').prop('checked', false);
-          $sibling.find('input').prop('checked', true).trigger('change');
-          $sibling.addClass('csf--active').siblings().removeClass('csf--active');
-
-        }
-
-      });
-
-    });
-  };
-
-  //
-  // Chosen
-  //
-  $.fn.csf_chosen = function() {
-    return this.each( function() {
-
-      $(this).chosen({
-        allow_single_deselect: true,
-        disable_search_threshold: 15,
-        width: '100%'
-      });
-
-    });
-  };
-
-  //
-  // Helper Tooltip
-  //
-  $.fn.csf_tooltip = function() {
-    return this.each( function() {
-
-      var $this = $(this),
-          $tooltip,
-          offset_left;
-
-      $this.on({
-        mouseenter: function() {
-
-          $tooltip = $( '<div class="csf-tooltip"></div>' ).html( $this.find('.csf-help-text').html() ).appendTo('body');
-          offset_left = ( CSF.vars.is_rtl ) ? ( $this.offset().left + 24 ) : ( $this.offset().left - $tooltip.outerWidth() );
-
-          $tooltip.css({
-            top: $this.offset().top - ( ( $tooltip.outerHeight() / 2 ) - 14 ),
-            left: offset_left,
-          });
-
-        },
-        mouseleave: function() {
-
-          if( $tooltip !== undefined ) {
-            $tooltip.remove();
-          }
-
-        }
-
-      });
-
-    });
-  };
-
-  //
-  // Customize Refresh
-  //
-  $.fn.csf_customizer_refresh = function() {
-    return this.each( function() {
-
-      var $this    = $(this),
-          $complex = $this.closest('.csf-customize-complex');
-
-      $(document).trigger('csf-customizer-refresh', $this);
-
-      if( window.wp.customize === undefined || $complex.length === 0 ) { return; }
-
-      var $input  = $complex.find(':input'),
-          $unique = $complex.data('unique-id'),
-          $option = $complex.data('option-id'),
-          obj     = $input.serializeObjectCSF(),
-          data    = ( !$.isEmptyObject(obj) ) ? obj[$unique][$option] : '';
-
-      window.wp.customize.control( $unique +'['+ $option +']' ).setting.set( data );
-
-    });
-  };
-
-  //
-  // Customize Listen Form Elements
-  //
-  $.fn.csf_customizer_listen = function( has_closest ) {
-    return this.each( function() {
-
-      if( window.wp.customize === undefined ) { return; }
-
-      var $this   = ( has_closest ) ? $(this).closest('.csf-customize-complex') : $(this),
-          $input  = $this.find(':input'),
-          $unique = $this.data('unique-id'),
-          $option = $this.data('option-id');
-
-      if( $unique === undefined ) { return; }
-
-      $input.on('change keyup', CSF.helper.debounce( function() {
-
-        var obj  = $this.find(':input').serializeObjectCSF();
-        var data = ( !$.isEmptyObject(obj) ) ? obj[$unique][$option] : '';
-
-        window.wp.customize.control( $unique +'['+ $option +']' ).setting.set( data );
-
-      }, 250 ) );
-
-    });
-  };
-
-  //
-  // Customizer Listener for Reload JS
-  //
-  $(document).on( 'expanded', '.control-section-csf', function() {
-
-    var $this = $(this);
-
-    if( !$this.data('inited') ) {
-      $this.csf_reload_script();
-      $this.find('.csf-customize-complex').csf_customizer_listen();
-    }
-
-  });
-
-  //
-  // Widgets Framework
-  //
-  $.fn.csf_widgets = function() {
-    return this.each( function() {
-
-      $(this).find('.widget-liquid-right .widget').each( function() {
-
-        var $this = $(this);
-
-        $this.find('.widget-top').on('click', function() {
-          $this.csf_reload_script();
-        });
-
-      });
-
-    });
-  };
-
-  //
-  // Widget Listener for Reload JS
-  //
-  $(document).on('widget-added widget-updated', function( event, $widget ) {
-    $widget.csf_reload_script();
-  });
 
   //
   // Field: wp_editor
@@ -2672,6 +2387,343 @@
   };
 
   //
+  // Siblings
+  //
+  $.fn.csf_siblings = function() {
+    return this.each( function() {
+
+      var $this     = $(this),
+          $siblings = $this.find('.csf--sibling'),
+          multiple  = $this.data('multiple') || false;
+
+      $siblings.on('click', function() {
+
+        var $sibling = $(this);
+
+        if( multiple ) {
+
+          if( $sibling.hasClass('csf--active') ) {
+            $sibling.removeClass('csf--active');
+            $sibling.find('input').prop('checked', false).trigger('change');
+          } else {
+            $sibling.addClass('csf--active');
+            $sibling.find('input').prop('checked', true).trigger('change');
+          }
+
+        } else {
+
+          $this.find('input').prop('checked', false);
+          $sibling.find('input').prop('checked', true).trigger('change');
+          $sibling.addClass('csf--active').siblings().removeClass('csf--active');
+
+        }
+
+      });
+
+    });
+  };
+
+  //
+  // WP Color Picker
+  //
+  if( typeof Color === 'function' ) {
+
+    Color.fn.toString = function() {
+
+      if ( this._alpha < 1 ) {
+        return this.toCSS('rgba', this._alpha).replace(/\s+/g, '');
+      }
+
+      var hex = parseInt( this._color, 10 ).toString( 16 );
+
+      if ( this.error ) { return ''; }
+
+      if ( hex.length < 6 ) {
+        for (var i = 6 - hex.length - 1; i >= 0; i--) {
+          hex = '0' + hex;
+        }
+      }
+
+      return '#' + hex;
+
+    };
+
+  }
+
+  CSF.funcs.parse_color = function( color ) {
+
+    var value = color.replace(/\s+/g, ''),
+        trans = ( value.indexOf('rgba') !== -1 ) ? parseFloat( value.replace(/^.*,(.+)\)/, '$1') * 100 ) : 100,
+        rgba  = ( trans < 100 ) ? true : false;
+
+    return { value: value, transparent: trans, rgba: rgba };
+
+  };
+
+  $.fn.csf_color = function() {
+    return this.each( function() {
+
+      var $input        = $(this),
+          picker_color  = CSF.funcs.parse_color( $input.val() ),
+          palette_color = window.csf_vars.color_palette.length ? window.csf_vars.color_palette : true,
+          $container;
+
+      // Destroy and Reinit
+      if( $input.hasClass('wp-color-picker') ) {
+        $input.closest('.wp-picker-container').after($input).remove();
+      }
+
+      $input.wpColorPicker({
+        palettes: palette_color,
+        clear: function() {
+          $input.trigger('keyup');
+        },
+        change: function( event, ui ) {
+
+          var ui_color_value = ui.color.toString();
+
+          $container.removeClass('csf--transparent-active');
+          $container.find('.csf--transparent-offset').css('background-color', ui_color_value);
+          $input.val(ui_color_value).trigger('change');
+
+        },
+        create: function() {
+
+          $container = $input.closest('.wp-picker-container');
+
+          var a8cIris = $input.data('a8cIris'),
+              $transparent_wrap = $('<div class="csf--transparent-wrap">' +
+                                '<div class="csf--transparent-slider"></div>' +
+                                '<div class="csf--transparent-offset"></div>' +
+                                '<div class="csf--transparent-text"></div>' +
+                                '<div class="csf--transparent-button button button-small">transparent</div>' +
+                                '</div>').appendTo( $container.find('.wp-picker-holder') ),
+              $transparent_slider = $transparent_wrap.find('.csf--transparent-slider'),
+              $transparent_text   = $transparent_wrap.find('.csf--transparent-text'),
+              $transparent_offset = $transparent_wrap.find('.csf--transparent-offset'),
+              $transparent_button = $transparent_wrap.find('.csf--transparent-button');
+
+          if( $input.val() === 'transparent' ) {
+            $container.addClass('csf--transparent-active');
+          }
+
+          $transparent_button.on('click', function() {
+            if( $input.val() !== 'transparent' ) {
+              $input.val('transparent').trigger('change');
+              $container.addClass('csf--transparent-active');
+            } else {
+              $input.val( a8cIris._color.toString() ).trigger('change');
+              $container.removeClass('csf--transparent-active');
+            }
+          });
+
+          $transparent_slider.slider({
+            value: picker_color.transparent,
+            step: 1,
+            min: 0,
+            max: 100,
+            slide: function( event, ui ) {
+
+              var slide_value = parseFloat( ui.value / 100 );
+              a8cIris._color._alpha = slide_value;
+              $input.wpColorPicker( 'color', a8cIris._color.toString() );
+              $transparent_text.text( ( slide_value === 1 || slide_value === 0 ? '' : slide_value ) );
+
+            },
+            create: function() {
+
+              var slide_value = parseFloat( picker_color.transparent / 100 ),
+                  text_value  = slide_value < 1 ? slide_value : '';
+
+              $transparent_text.text(text_value);
+              $transparent_offset.css('background-color', picker_color.value);
+
+              $container.on('click', '.wp-picker-clear', function() {
+
+                a8cIris._color._alpha = 1;
+                $transparent_text.text('').trigger('change');
+                $transparent_slider.slider('option', 'value', 100).trigger('slide');
+
+              });
+
+              $container.on('click', '.wp-picker-default', function() {
+
+                var default_color = CSF.funcs.parse_color( $input.data('default-color') ),
+                    default_value = parseFloat( default_color.transparent / 100 ),
+                    default_text  = default_value < 1 ? default_value : '';
+
+                a8cIris._color._alpha = default_value;
+                $transparent_text.text(default_text);
+                $transparent_slider.slider('option', 'value', default_color.transparent).trigger('slide');
+
+              });
+
+              $container.on('click', '.wp-color-result', function() {
+                $transparent_wrap.toggle();
+              });
+
+              $('body').on( 'click.wpcolorpicker', function() {
+                $transparent_wrap.hide();
+              });
+
+            }
+          });
+        }
+      });
+
+    });
+  };
+
+  //
+  // ChosenJS
+  //
+  $.fn.csf_chosen = function() {
+    return this.each( function() {
+
+      var $this       = $(this),
+          $inited     = $this.parent().find('.chosen-container'),
+          is_multi    = $this.attr('multiple') || false,
+          set_width   = is_multi ? '100%' : 'auto',
+          set_options = $.extend({
+            allow_single_deselect: true,
+            disable_search_threshold: 15,
+            width: set_width
+          }, $this.data());
+
+      if( $inited.length ) {
+        $inited.remove();
+      }
+
+      $this.chosen(set_options);
+
+    });
+  };
+
+  //
+  // Number (only allow numeric inputs)
+  //
+  $.fn.csf_number = function() {
+    return this.each( function() {
+
+      $(this).on('keypress', function( e ) {
+
+        if( e.keyCode !== 0 && e.keyCode !== 8 && e.keyCode !== 45 && e.keyCode !== 46 && ( e.keyCode < 48 || e.keyCode > 57 ) ) {
+          return false;
+        }
+
+      });
+
+    });
+  };
+
+  //
+  // Help Tooltip
+  //
+  $.fn.csf_help = function() {
+    return this.each( function() {
+
+      var $this = $(this),
+          $tooltip,
+          offset_left;
+
+      $this.on({
+        mouseenter: function() {
+
+          $tooltip = $( '<div class="csf-tooltip"></div>' ).html( $this.find('.csf-help-text').html() ).appendTo('body');
+          offset_left = ( CSF.vars.is_rtl ) ? ( $this.offset().left + 24 ) : ( $this.offset().left - $tooltip.outerWidth() );
+
+          $tooltip.css({
+            top: $this.offset().top - ( ( $tooltip.outerHeight() / 2 ) - 14 ),
+            left: offset_left,
+          });
+
+        },
+        mouseleave: function() {
+
+          if( $tooltip !== undefined ) {
+            $tooltip.remove();
+          }
+
+        }
+
+      });
+
+    });
+  };
+
+  //
+  // Customize Refresh
+  //
+  $.fn.csf_customizer_refresh = function() {
+    return this.each( function() {
+
+      var $this    = $(this),
+          $complex = $this.closest('.csf-customize-complex');
+
+      $(document).trigger('csf-customizer-refresh', $this);
+
+      if( window.wp.customize === undefined || $complex.length === 0 ) { return; }
+
+      var $input  = $complex.find(':input'),
+          $unique = $complex.data('unique-id'),
+          $option = $complex.data('option-id'),
+          obj     = $input.serializeObjectCSF(),
+          data    = ( !$.isEmptyObject(obj) ) ? obj[$unique][$option] : '';
+
+      window.wp.customize.control( $unique +'['+ $option +']' ).setting.set( data );
+
+    });
+  };
+
+  //
+  // Customize Listen Form Elements
+  //
+  $.fn.csf_customizer_listen = function( options ) {
+
+    var settings = $.extend({
+      closest: false,
+    }, options );
+
+    return this.each( function() {
+
+      if( window.wp.customize === undefined ) { return; }
+
+      var $this   = ( settings.closest ) ? $(this).closest('.csf-customize-complex') : $(this),
+          $input  = $this.find(':input'),
+          $unique = $this.data('unique-id'),
+          $option = $this.data('option-id');
+
+      if( $unique === undefined ) { return; }
+
+      $input.on('change keyup', CSF.helper.debounce( function() {
+
+        var obj  = $this.find(':input').serializeObjectCSF();
+        var data = ( !$.isEmptyObject(obj) ) ? obj[$unique][$option] : '';
+
+        window.wp.customize.control( $unique +'['+ $option +']' ).setting.set( data );
+
+      }, 250 ) );
+
+    });
+  };
+
+  //
+  // Customizer Listener for Reload JS
+  //
+  $(document).on( 'expanded', '.control-section-csf', function() {
+
+    var $this = $(this);
+
+    if( $this.hasClass('open') && !$this.data('inited') ) {
+      $this.csf_dependency();
+      $this.find('.csf-customize-field').csf_reload_script({dependency: false});
+      $this.find('.csf-customize-complex').csf_customizer_listen();
+      $this.data('inited', true);
+    }
+
+  });
+
+  //
   // Retry Plugins
   //
   $.fn.csf_reload_script_retry = function() {
@@ -2679,7 +2731,7 @@
 
       var $this = $(this);
 
-      $this.find('.csf-field-wp_editor').not('.csf-no-script').csf_field_wp_editor();
+      $this.find('> .csf-field-wp_editor').csf_field_wp_editor();
 
     });
   };
@@ -2687,42 +2739,72 @@
   //
   // Reload Plugins
   //
-  $.fn.csf_reload_script = function( has_sub, force_trigger ) {
+  $.fn.csf_reload_script = function( options ) {
+
+    var settings = $.extend({
+      dependency: true,
+    }, options );
+
     return this.each( function() {
 
       var $this = $(this);
 
       // Avoid for conflicts
-      if( !$this.data('inited') || force_trigger ) {
+      if( !$this.data('inited') ) {
 
         // Field plugins
-        $this.find('.csf-field-accordion').not('.csf-no-script').csf_field_accordion();
-        $this.find('.csf-field-backup').not('.csf-no-script').csf_field_backup();
-        $this.find('.csf-field-code_editor').not('.csf-no-script').csf_field_code_editor();
-        $this.find('.csf-field-color').not('.csf-no-script').csf_field_color();
-        $this.find('.csf-field-date').not('.csf-no-script').csf_field_date();
-        $this.find('.csf-field-gallery').not('.csf-no-script').csf_field_gallery();
-        $this.find('.csf-field-group').not('.csf-no-script').csf_field_group();
-        $this.find('.csf-field-icon').not('.csf-no-script').csf_field_icon();
-        $this.find('.csf-field-media').not('.csf-no-script').csf_field_media();
-        $this.find('.csf-field-repeater').not('.csf-no-script').csf_field_repeater();
-        $this.find('.csf-field-slider').not('.csf-no-script').csf_field_slider();
-        $this.find('.csf-field-sortable').not('.csf-no-script').csf_field_sortable();
-        $this.find('.csf-field-sorter').not('.csf-no-script').csf_field_sorter();
-        $this.find('.csf-field-spinner').not('.csf-no-script').csf_field_spinner();
-        $this.find('.csf-field-switcher').not('.csf-no-script').csf_field_switcher();
-        $this.find('.csf-field-tabbed').not('.csf-no-script').csf_field_tabbed();
-        $this.find('.csf-field-typography').not('.csf-no-script').csf_field_typography();
-        $this.find('.csf-field-upload').not('.csf-no-script').csf_field_upload();
-        $this.find('.csf-field-wp_editor').not('.csf-no-script').csf_field_wp_editor();
+        $this.find('> .csf-field-accordion').csf_field_accordion();
+        $this.find('> .csf-field-backup').csf_field_backup();
+        $this.find('> .csf-field-code_editor').csf_field_code_editor();
+        $this.find('> .csf-field-date').csf_field_date();
+        $this.find('> .csf-field-fieldset').csf_field_fieldset();
+        $this.find('> .csf-field-gallery').csf_field_gallery();
+        $this.find('> .csf-field-group').csf_field_group();
+        $this.find('> .csf-field-icon').csf_field_icon();
+        $this.find('> .csf-field-media').csf_field_media();
+        $this.find('> .csf-field-repeater').csf_field_repeater();
+        $this.find('> .csf-field-slider').csf_field_slider();
+        $this.find('> .csf-field-sortable').csf_field_sortable();
+        $this.find('> .csf-field-sorter').csf_field_sorter();
+        $this.find('> .csf-field-spinner').csf_field_spinner();
+        $this.find('> .csf-field-switcher').csf_field_switcher();
+        $this.find('> .csf-field-tabbed').csf_field_tabbed();
+        $this.find('> .csf-field-typography').csf_field_typography();
+        $this.find('> .csf-field-upload').csf_field_upload();
+        $this.find('> .csf-field-wp_editor').csf_field_wp_editor();
 
-        // General plugins
-        $this.find('.csf-help').not('.csf-no-script').csf_tooltip();
-        $this.find('.csf-chosen').not('.csf-no-script').csf_chosen();
-        $this.find('.csf-checker').not('.csf-no-script').csf_checker();
-        $this.find('.csf-siblings').not('.csf-no-script').csf_siblings();
+        // Field colors
+        $this.find('> .csf-field-border').find('.csf-color').csf_color();
+        $this.find('> .csf-field-background').find('.csf-color').csf_color();
+        $this.find('> .csf-field-color').find('.csf-color').csf_color();
+        $this.find('> .csf-field-color_group').find('.csf-color').csf_color();
+        $this.find('> .csf-field-link_color').find('.csf-color').csf_color();
+        $this.find('> .csf-field-typography').find('.csf-color').csf_color();
 
-        $this.csf_dependency(has_sub);
+        // Field allows only number
+        $this.find('> .csf-field-dimensions').find('.csf-number').csf_number();
+        $this.find('> .csf-field-slider').find('.csf-number').csf_number();
+        $this.find('> .csf-field-spacing').find('.csf-number').csf_number();
+        $this.find('> .csf-field-spinner').find('.csf-number').csf_number();
+        $this.find('> .csf-field-typography').find('.csf-number').csf_number();
+
+        // Field chosenjs
+        $this.find('> .csf-field-select').find('.csf-chosen').csf_chosen();
+
+        // Field Checkbox
+        $this.find('> .csf-field-checkbox').find('.csf-checkbox').csf_checkbox();
+
+        // Field Siblings
+        $this.find('> .csf-field-button_set').find('.csf-siblings').csf_siblings();
+        $this.find('> .csf-field-image_select').find('.csf-siblings').csf_siblings();
+        $this.find('> .csf-field-palette').find('.csf-siblings').csf_siblings();
+
+        // Help Tooptip
+        $this.find('> .csf-field').find('.csf-help').csf_help();
+
+        if( settings.dependency ) {
+          $this.csf_dependency();
+        }
 
         $this.data('inited', true);
 
@@ -2761,10 +2843,9 @@
     $('.csf-sticky-header').csf_sticky();
     $('.csf-taxonomy').csf_taxonomy();
     $('.csf-shortcode').csf_shortcode();
-    $('.widgets-php').csf_widgets();
-    $('.csf-onload').csf_reload_script();
     $('.csf-page-templates').csf_page_templates();
     $('.csf-post-formats').csf_post_formats();
+    $('.csf-onload').csf_reload_script();
 
   });
 

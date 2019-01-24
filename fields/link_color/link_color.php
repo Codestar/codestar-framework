@@ -44,7 +44,7 @@ if( ! class_exists( 'CSF_Field_link_color' ) ) {
 
           echo '<div class="csf--left csf-field-color">';
           echo '<div class="csf--title">'. ucfirst( $prop ) .'</div>';
-          echo '<input type="text" name="'. $this->field_name('['. $prop .']') .'" value="'. $value[$prop] .'" class="csf-color-picker"'. $default_attr . $this->field_attributes() .'/>';
+          echo '<input type="text" name="'. $this->field_name('['. $prop .']') .'" value="'. $value[$prop] .'" class="csf-color"'. $default_attr . $this->field_attributes() .'/>';
           echo '</div>';
 
         }

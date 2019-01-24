@@ -32,7 +32,7 @@ if( ! class_exists( 'CSF_Field_group' ) ) {
 
       echo $this->field_before();
 
-      echo '<div class="csf-cloneable-item csf-cloneable-hidden csf-no-script">';
+      echo '<div class="csf-cloneable-item csf-cloneable-hidden">';
 
         echo '<div class="csf-cloneable-helper">';
         echo '<i class="csf-cloneable-sort fa fa-arrows"></i>';
@@ -49,13 +49,10 @@ if( ! class_exists( 'CSF_Field_group' ) ) {
 
           if( in_array( $field['type'], $unallows ) ) { $field['_notice'] = true; }
 
-          $field['sub'] = true;
-          $field['class'] = ( ! empty( $field['class'] ) ) ? $field['class'] .' csf-no-script' : 'csf-no-script';
-
-          $unique = ( ! empty( $this->unique ) ) ? '_nonce['. $this->field['id'] .'][num]' : '_nonce[num]';
+          $field_unique  = ( ! empty( $this->unique ) ) ? '_nonce['. $this->field['id'] .'][num]' : '_nonce[num]';
           $field_default = ( isset( $field['default'] ) ) ? $field['default'] : '';
 
-          CSF::field( $field, $field_default, $unique, 'field/group' );
+          CSF::field( $field, $field_default, $field_unique, 'field/group' );
 
         }
         echo '<div class="csf-field csf-text-right"><a href="#" class="button csf-warning-primary csf-cloneable-remove">'. esc_html__( 'Remove', 'csf' ) .'</a></div>';
@@ -71,8 +68,8 @@ if( ! class_exists( 'CSF_Field_group' ) ) {
 
           foreach ( $this->value as $value ) {
 
-            $first_id    = ( ! empty( $this->field['fields'][0]['id'] ) ) ? $this->field['fields'][0]['id'] : '';
-            $first_value = ( ! empty( $value[$first_id] ) ) ? $value[$first_id] : '';
+            $first_id    = ( isset( $this->field['fields'][0]['id'] ) ) ? $this->field['fields'][0]['id'] : '';
+            $first_value = ( isset( $value[$first_id] ) ) ? $value[$first_id] : '';
 
             $count = ( $countable ) ? ( $num+1 ) .' - ' : '';
 
@@ -94,13 +91,10 @@ if( ! class_exists( 'CSF_Field_group' ) ) {
 
               if( in_array( $field['type'], $unallows ) ) { $field['_notice'] = true; }
 
-              $field['sub']   = true;
-              $field['class'] = ( ! empty( $field['class'] ) ) ? $field['class'] .' csf-no-script' : 'csf-no-script';
+              $field_unique = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
+              $field_value  = ( isset( $field['id'] ) && isset( $value[$field['id']] ) ) ? $value[$field['id']] : '';
 
-              $unique_id   = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
-              $field_value = ( isset( $field['id'] ) && isset( $value[$field['id']] ) ) ? $value[$field['id']] : '';
-
-              CSF::field( $field, $field_value, $unique_id, 'field/group' );
+              CSF::field( $field, $field_value, $field_unique, 'field/group' );
 
             }
 

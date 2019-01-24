@@ -57,7 +57,7 @@ if( ! class_exists( 'CSF_Field_border' ) ) {
 
         echo '<div class="csf--left csf--input">';
         echo ( ! empty( $args['all_icon'] ) ) ? '<span class="csf--label csf--label-icon">'. $args['all_icon'] .'</span>' : '';
-        echo '<input type="text" name="'. $this->field_name('[all]') .'" value="'. $value['all'] .'"'. $placeholder .' />';
+        echo '<input type="text" name="'. $this->field_name('[all]') .'" value="'. $value['all'] .'"'. $placeholder .' class="csf-number" />';
         echo ( ! empty( $args['unit'] ) ) ? '<span class="csf--label csf--label-unit">'. $args['unit'] .'</span>' : '';
         echo '</div>';
 
@@ -79,7 +79,7 @@ if( ! class_exists( 'CSF_Field_border' ) ) {
 
           echo '<div class="csf--left csf--input">';
           echo ( ! empty( $args[$property.'_icon'] ) ) ? '<span class="csf--label csf--label-icon">'. $args[$property.'_icon'] .'</span>' : '';
-          echo '<input type="text" name="'. $this->field_name('['. $property .']') .'" value="'. $value[$property] .'"'. $placeholder .' />';
+          echo '<input type="text" name="'. $this->field_name('['. $property .']') .'" value="'. $value[$property] .'"'. $placeholder .' class="csf-number" />';
           echo ( ! empty( $args['unit'] ) ) ? '<span class="csf--label csf--label-unit">'. $args['unit'] .'</span>' : '';
           echo '</div>';
 
@@ -100,7 +100,7 @@ if( ! class_exists( 'CSF_Field_border' ) ) {
 
       if( ! empty( $args['color'] ) ) {
         echo '<div class="csf--left csf-field-color">';
-        echo '<input type="text" name="'. $this->field_name('[color]') .'" value="'. $value['color'] .'" class="csf-color-picker" />';
+        echo '<input type="text" name="'. $this->field_name('[color]') .'" value="'. $value['color'] .'" class="csf-color" />';
         echo '</div>';
       }
 

@@ -34,13 +34,10 @@ if( ! class_exists( 'CSF_Field_repeater' ) ) {
 
         if( in_array( $field['type'], $unallows ) ) { $field['_notice'] = true; }
 
-        $field['sub']   = true;
-        $field['class'] = ( ! empty( $field['class'] ) ) ? $field['class'] .' csf-no-script' : 'csf-no-script';
-
-        $unique = ( ! empty( $this->unique ) ) ? '_nonce['. $this->field['id'] .'][num]' : '_nonce[num]';
+        $field_unique  = ( ! empty( $this->unique ) ) ? '_nonce['. $this->field['id'] .'][num]' : '_nonce[num]';
         $field_default = ( isset( $field['default'] ) ) ? $field['default'] : '';
 
-        CSF::field( $field, $field_default, $unique, 'field/repeater' );
+        CSF::field( $field, $field_default, $field_unique, 'field/repeater' );
 
       }
       echo '</div>';
@@ -68,11 +65,10 @@ if( ! class_exists( 'CSF_Field_repeater' ) ) {
 
             if( in_array( $field['type'], $unallows ) ) { $field['_notice'] = true; }
 
-            $field['sub'] = true;
-            $unique       = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
+            $field_unique = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
             $field_value  = ( isset( $field['id'] ) && isset( $this->value[$key][$field['id']] ) ) ? $this->value[$key][$field['id']] : '';
 
-            CSF::field( $field, $field_value, $unique, 'field/repeater' );
+            CSF::field( $field, $field_value, $field_unique, 'field/repeater' );
 
           }
           echo '</div>';
