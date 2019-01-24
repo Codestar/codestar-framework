@@ -10,9 +10,11 @@
   <li>Fixed: Code Editor style issue for used inside Group/Repeater.</li>
   <li>Fixed: Sortable field sortby issue.</li>
   <li>Fixed: Options panel show in customizer option.</li>
+  <li>Fixed: Media field URL show/hide option issue.</li>
   <li>Improved: Typography, Color, Spinner, Date, Chosen, Slider fields for used inside Group/Repeater.</li>
   <li>Improved: All fields javascript triggers for more performance.</li>
   <li>Improved: Customizer Framework field dependency feature.</li>
+  <li>Improved: Customizer Framework field styles.</li>
 </ul>
 
 <h3>v2.0.1</h3>
