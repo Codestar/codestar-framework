@@ -11,7 +11,7 @@ if( ! class_exists( 'CSF' ) ) {
   class CSF {
 
     // constants
-    public static $version = '2.0.1';
+    public static $version = '2.0.2';
     public static $premium = false;
     public static $dir     = null;
     public static $url     = null;
@@ -378,16 +378,15 @@ if( ! class_exists( 'CSF' ) ) {
       $depend     = '';
       $hidden     = '';
       $unique     = ( ! empty( $unique ) ) ? $unique : '';
-      $sub        = ( ! empty( $field['sub'] ) ) ? '-sub': '';
       $class      = ( ! empty( $field['class'] ) ) ? ' ' . $field['class'] : '';
       $is_pseudo  = ( ! empty( $field['pseudo'] ) ) ? ' csf-pseudo-field' : '';
       $field_type = ( ! empty( $field['type'] ) ) ? $field['type'] : '';
 
       if ( ! empty( $field['dependency'] ) ) {
         $hidden  = ' hidden';
-        $depend .= ' data'. $sub .'-controller="'. $field['dependency'][0] .'"';
-        $depend .= ' data'. $sub .'-condition="'. $field['dependency'][1] .'"';
-        $depend .= ' data'. $sub .'-value="'. $field['dependency'][2] .'"';
+        $depend .= ' data-controller="'. $field['dependency'][0] .'"';
+        $depend .= ' data-condition="'. $field['dependency'][1] .'"';
+        $depend .= ' data-value="'. $field['dependency'][2] .'"';
       }
 
       if( ! empty( $field_type ) ) {
