@@ -11,7 +11,7 @@ if( ! class_exists( 'CSF' ) ) {
   class CSF {
 
     // constants
-    public static $version = '2.0.2';
+    public static $version = '2.0.3';
     public static $premium = false;
     public static $dir     = null;
     public static $url     = null;
@@ -23,6 +23,7 @@ if( ! class_exists( 'CSF' ) ) {
       'metaboxes'          => array(),
       'shortcoders'        => array(),
       'taxonomy_options'   => array(),
+      'widgets'            => array(),
     );
 
     // shortcode instances
@@ -144,6 +145,17 @@ if( ! class_exists( 'CSF' ) ) {
 
         }
 
+        // create widgets
+        if ( ! empty( self::$args['widgets'] ) && class_exists( 'WP_Widget_Factory' ) ) {
+
+          $wp_widget_factory = new WP_Widget_Factory();
+
+          foreach( self::$args['widgets'] as $key => $value ) {
+            $wp_widget_factory->register( CSF_Widget::instance( $key, $value ) );
+          }
+
+        }
+
         do_action( 'csf_loaded' );
 
         self::$setup = true;
@@ -175,6 +187,12 @@ if( ! class_exists( 'CSF' ) ) {
     // create taxonomy options
     public static function createTaxonomyOptions( $id, $args = array() ) {
       self::$args['taxonomy_options'][$id] = $args;
+    }
+
+    // create widget
+    public static function createWidget( $id, $args = array() ) {
+      self::$args['widgets'][$id] = $args;
+      self::set_used_fields( $args );
     }
 
     // create section
@@ -238,6 +256,10 @@ if( ! class_exists( 'CSF' ) ) {
 
     }
 
+    public static function is_used_as_plugin() {
+      return in_array( 'codestar-framework/codestar-framework.php', (array) get_option( 'active_plugins', array() ) );
+    }
+
     // Sanitize dirname
     public static function sanitize_dirname( $dirname ) {
       return preg_replace( '/[^A-Za-z]/', '', $dirname );
@@ -270,6 +292,7 @@ if( ! class_exists( 'CSF' ) ) {
         self::include_plugin_file( 'classes/shortcoder.class.php'        );
         self::include_plugin_file( 'classes/taxonomy-options.class.php'  );
         self::include_plugin_file( 'classes/customize-options.class.php' );
+        self::include_plugin_file( 'classes/widgets.class.php'           );
       }
 
     }
@@ -321,19 +344,26 @@ if( ! class_exists( 'CSF' ) ) {
       wp_enqueue_style( 'wp-color-picker' );
       wp_enqueue_script( 'wp-color-picker' );
 
+      // cdn styles
+      wp_enqueue_style( 'csf-fa', 'https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css', array(), '4.7.0', 'all' );
+
       // framework core styles
-      wp_enqueue_style( 'faw', CSF::include_plugin_url( 'assets/css/font-awesome'. $min .'.css' ), array(), '4.7.0', 'all' );
       wp_enqueue_style( 'csf', CSF::include_plugin_url( 'assets/css/csf'. $min .'.css' ), array(), '1.0.0', 'all' );
+
+      // rtl styles
       if ( is_rtl() ) {
         wp_enqueue_style( 'csf-rtl', CSF::include_plugin_url( 'assets/css/csf-rtl'. $min .'.css' ), array(), '1.0.0', 'all' );
       }
 
       // framework core scripts
       wp_enqueue_script( 'csf-plugins', CSF::include_plugin_url( 'assets/js/csf-plugins'. $min .'.js' ), array(), '1.0.0', true );
-      wp_enqueue_script( 'csf',  CSF::include_plugin_url( 'assets/js/csf'. $min .'.js' ), array( 'csf-plugins' ), '1.0.0', true );
+      wp_enqueue_script( 'csf', CSF::include_plugin_url( 'assets/js/csf'. $min .'.js' ), array( 'csf-plugins' ), '1.0.0', true );
 
       wp_localize_script( 'csf', 'csf_vars', array(
-        'color_palette' => apply_filters( 'csf_color_palette', array() ),
+        'color_palette'  => apply_filters( 'csf_color_palette', array() ),
+        'i18n'           => array(
+          'confirm' => esc_html__( 'Are you sure?', 'csf' ),
+        ),
       ) );
 
       // load admin enqueue scripts and styles
@@ -408,7 +438,7 @@ if( ! class_exists( 'CSF' ) ) {
         $classname = 'CSF_Field_'. $field_type;
 
         if( class_exists( $classname ) ) {
-          $instance = new $classname( $field, $value, $unique, $where );
+          $instance = new $classname( $field, $value, $unique, $where, $parent );
           $instance->render();
         } else {
           echo '<p>'. esc_html__( 'This field class is not available!', 'csf' ) .'</p>';

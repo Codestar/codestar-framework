@@ -760,6 +760,45 @@ CSF::createSection( $prefix, array(
       ),
     ),
 
+    array(
+      'id'       => 'opt-repeater-6',
+      'type'     => 'repeater',
+      'title'    => 'Repeater nested repeater',
+      'subtitle' => 'Can be added unlimited nested repeater',
+      'fields'   => array(
+        array(
+          'id'    => 'opt-text',
+          'type'  => 'text',
+          'title' => 'Text',
+        ),
+        array(
+          'id'     => 'opt-repeater-6-nested-1',
+          'type'   => 'repeater',
+          'title'  => 'Repeater',
+          'fields' => array(
+            array(
+              'id'    => 'opt-text',
+              'type'  => 'text',
+              'title' => 'Text'
+            ),
+          ),
+        ),
+      ),
+      'default' => array(
+        array(
+          'opt-text' => 'Text default 1',
+          'opt-repeater-6-nested-1' => array(
+            array(
+              'opt-text' => 'Text default 1',
+            ),
+            array(
+              'opt-text' => 'Text default 2',
+            ),
+          ),
+        ),
+      ),
+    ),
+
   )
 ) );
 
@@ -886,6 +925,228 @@ CSF::createSection( $prefix, array(
         array(
           'opt-text'   => 'WP Editor 2',
           'opt-editor' => 'Editor content 2',
+        ),
+      )
+    ),
+
+    array(
+      'id'       => 'opt-group-5',
+      'type'     => 'group',
+      'title'    => 'Group nested',
+      'subtitle' => 'Can be added unlimited nested groups',
+      'fields'   => array(
+        array(
+          'id'    => 'opt-text',
+          'type'  => 'text',
+          'title' => 'Text',
+        ),
+        array(
+          'id'     => 'opt-group-5-sublevel-1',
+          'type'   => 'group',
+          'title'  => 'Group Nested',
+          'fields' => array(
+            array(
+              'id'    => 'opt-text',
+              'type'  => 'text',
+              'title' => 'Text',
+            ),
+            array(
+              'id'     => 'opt-group-5-sublevel-2',
+              'type'   => 'group',
+              'title'  => 'Group Nested',
+              'fields' => array(
+                array(
+                  'id'    => 'opt-text',
+                  'type'  => 'text',
+                  'title' => 'Text',
+                ),
+                array(
+                  'id'    => 'opt-switcher',
+                  'type'  => 'switcher',
+                  'title' => 'Switcher',
+                ),
+                array(
+                  'id'    => 'opt-textarea',
+                  'type'  => 'textarea',
+                  'title' => 'Textarea',
+                ),
+              )
+            ),
+            array(
+              'id'    => 'opt-switcher',
+              'type'  => 'switcher',
+              'title' => 'Switcher',
+            ),
+            array(
+              'id'    => 'opt-textarea',
+              'type'  => 'textarea',
+              'title' => 'Textarea',
+            ),
+          )
+        ),
+        array(
+          'id'    => 'opt-switcher',
+          'type'  => 'switcher',
+          'title' => 'Switcher',
+        ),
+        array(
+          'id'    => 'opt-textarea',
+          'type'  => 'textarea',
+          'title' => 'Textarea',
+        ),
+      ),
+      'default' => array(
+
+        // top level defaults
+        array(
+          'opt-text' => 'Top Level 1',
+
+          // sub level 1 defaults
+          'opt-group-5-sublevel-1' => array(
+            array(
+              'opt-text' => 'Sub Level 1',
+
+              // sub level 2 defaults
+              'opt-group-5-sublevel-2' => array(
+                array(
+                  'opt-text' => 'Sub Sub Level 1',
+                ),
+                array(
+                  'opt-text' => 'Sub Sub Level 2',
+                )
+              ),
+            ),
+            array(
+              'opt-text' => 'Sub Level 2',
+            )
+          ),
+        ),
+
+        // top level defaults
+        array(
+          'opt-text' => 'Top Level 2',
+        ),
+      )
+    ),
+
+    array(
+      'id'     => 'opt-group-6',
+      'type'   => 'group',
+      'title'  => 'Group with Repeater Field',
+      'fields' => array(
+        array(
+          'id'    => 'opt-text',
+          'type'  => 'text',
+          'title' => 'Text',
+        ),
+        array(
+          'id'     => 'opt-group-6-repeater',
+          'type'   => 'repeater',
+          'title'  => 'Repeater',
+          'fields' => array(
+            array(
+              'id'    => 'opt-text',
+              'type'  => 'text',
+              'title' => 'Text'
+            ),
+          ),
+        ),
+        array(
+          'id'    => 'opt-switcher',
+          'type'  => 'switcher',
+          'title' => 'Switcher',
+        ),
+        array(
+          'id'    => 'opt-textarea',
+          'type'  => 'textarea',
+          'title' => 'Textarea',
+        ),
+      ),
+      'default' => array(
+        array(
+          'opt-text' => 'Some text 1',
+          'opt-group-6-repeater' => array(
+            array(
+              'opt-text' => 'Some text 1',
+            ),
+              array(
+              'opt-text' => 'Some text 2',
+            ),
+          )
+        ),
+      )
+    ),
+
+    array(
+      'id'     => 'opt-group-7',
+      'type'   => 'group',
+      'title'  => 'Group with static prefix of title',
+      'subtitle'  => 'accordion_title_prefix => "Static Prefix:"',
+      'accordion_title_prefix' => 'Static Prefix:',
+      'fields' => array(
+        array(
+          'id'    => 'opt-text',
+          'type'  => 'text',
+          'title' => 'Text',
+        ),
+        array(
+          'id'    => 'opt-switcher',
+          'type'  => 'switcher',
+          'title' => 'Switcher',
+        ),
+        array(
+          'id'    => 'opt-textarea',
+          'type'  => 'textarea',
+          'title' => 'Textarea',
+        ),
+      ),
+      'default' => array(
+        array(
+          'opt-text'     => 'Some text 1',
+          'opt-switcher' => true,
+          'opt-textarea' => 'Some textarea content 1',
+        ),
+        array(
+          'opt-text'     => 'Some text 2',
+          'opt-switcher' => false,
+          'opt-textarea' => 'Some textarea content 2',
+        ),
+      )
+    ),
+
+    array(
+      'id'     => 'opt-group-8',
+      'type'   => 'group',
+      'title'  => 'Group with title numbers',
+      'subtitle'  => 'accordion_title_number => true',
+      'accordion_title_number' => true,
+      'fields' => array(
+        array(
+          'id'    => 'opt-text',
+          'type'  => 'text',
+          'title' => 'Text',
+        ),
+        array(
+          'id'    => 'opt-switcher',
+          'type'  => 'switcher',
+          'title' => 'Switcher',
+        ),
+        array(
+          'id'    => 'opt-textarea',
+          'type'  => 'textarea',
+          'title' => 'Textarea',
+        ),
+      ),
+      'default' => array(
+        array(
+          'opt-text'     => 'Some text 1',
+          'opt-switcher' => true,
+          'opt-textarea' => 'Some textarea content 1',
+        ),
+        array(
+          'opt-text'     => 'Some text 2',
+          'opt-switcher' => false,
+          'opt-textarea' => 'Some textarea content 2',
         ),
       )
     ),
@@ -2335,6 +2596,22 @@ CSF::createSection( $prefix, array(
         'monthNamesShort' => array( 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ),
         'dayNamesMin'     => array( 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ),
       )
+    ),
+
+    array(
+      'id'      => 'opt-date-3',
+      'type'    => 'date',
+      'title'   => 'Date with From &amp; To',
+      'from_to' => true,
+    ),
+
+    array(
+      'id'        => 'opt-date-4',
+      'type'      => 'date',
+      'title'     => 'Date with custom texts Begin &amp; End',
+      'from_to'   => true,
+      'text_from' => 'Begin',
+      'text_to'   => 'End',
     ),
 
   )

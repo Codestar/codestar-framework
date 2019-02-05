@@ -22,81 +22,85 @@ if( ! class_exists( 'CSF_Field_repeater' ) ) {
         'button_title' => '<i class="fa fa-plus-circle"></i>',
       ) );
 
-      echo $this->field_before();
-
       $fields    = $this->field['fields'];
-      $unallows  = array( 'group', 'repeater' );
       $unique_id = ( ! empty( $this->unique ) ) ? $this->unique : $this->field['id'];
 
-      echo '<div class="csf-cloneable-item csf-cloneable-hidden">';
-      echo '<div class="csf-cloneable-content">';
-      foreach ( $fields as $field ) {
+      if( $this->parent && preg_match( '/'. preg_quote( '['. $this->field['id'] .']' ) .'/', $this->parent ) ) {
 
-        if( in_array( $field['type'], $unallows ) ) { $field['_notice'] = true; }
+        echo '<div class="csf-notice csf-notice-danger">'. esc_html__( 'Error: Nested field id can not be same with another nested field id.', 'csf' ) .'</div>';
 
-        $field_unique  = ( ! empty( $this->unique ) ) ? '_nonce['. $this->field['id'] .'][num]' : '_nonce[num]';
-        $field_default = ( isset( $field['default'] ) ) ? $field['default'] : '';
+      } else {
 
-        CSF::field( $field, $field_default, $field_unique, 'field/repeater' );
+        echo $this->field_before();
 
-      }
-      echo '</div>';
-      echo '<div class="csf-cloneable-helper">';
-      echo '<div class="csf-cloneable-helper-inner">';
-      echo '<i class="csf-cloneable-sort fa fa-arrows"></i>';
-      echo '<i class="csf-cloneable-clone fa fa-clone"></i>';
-      echo '<i class="csf-cloneable-remove fa fa-times"></i>';
-      echo '</div>';
-      echo '</div>';
-      echo '</div>';
+        echo '<div class="csf-repeater-item csf-repeater-hidden">';
+        echo '<div class="csf-repeater-content">';
+        foreach ( $fields as $field ) {
 
-      echo '<div class="csf-cloneable-wrapper" data-unique-id="'. $unique_id .'" data-max="'. $args['max'] .'" data-min="'. $args['min'] .'">';
+          $field_parent  = $this->parent .'['. $this->field['id'] .']';
+          $field_default = ( isset( $field['default'] ) ) ? $field['default'] : '';
 
-      if( ! empty( $this->value ) ) {
+          CSF::field( $field, $field_default, '_nonce', 'field/repeater', $field_parent );
 
-        $num = 0;
+        }
+        echo '</div>';
+        echo '<div class="csf-repeater-helper">';
+        echo '<div class="csf-repeater-helper-inner">';
+        echo '<i class="csf-repeater-sort fa fa-arrows"></i>';
+        echo '<i class="csf-repeater-clone fa fa-clone"></i>';
+        echo '<i class="csf-repeater-remove csf-confirm fa fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'csf' ) .'"></i>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
 
-        foreach ( $this->value as $key => $value ) {
+        echo '<div class="csf-repeater-wrapper csf-data-wrapper" data-unique-id="'. $this->unique .'" data-field-id="['. $this->field['id'] .']" data-max="'. $args['max'] .'" data-min="'. $args['min'] .'">';
 
-          echo '<div class="csf-cloneable-item">';
+        if( ! empty( $this->value ) ) {
 
-          echo '<div class="csf-cloneable-content">';
-          foreach ( $fields as $field ) {
+          $num = 0;
 
-            if( in_array( $field['type'], $unallows ) ) { $field['_notice'] = true; }
+          foreach ( $this->value as $key => $value ) {
 
-            $field_unique = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
-            $field_value  = ( isset( $field['id'] ) && isset( $this->value[$key][$field['id']] ) ) ? $this->value[$key][$field['id']] : '';
+            echo '<div class="csf-repeater-item">';
 
-            CSF::field( $field, $field_value, $field_unique, 'field/repeater' );
+            echo '<div class="csf-repeater-content">';
+            foreach ( $fields as $field ) {
+
+              $field_parent = $this->parent .'['. $this->field['id'] .']';
+              $field_unique = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
+              $field_value  = ( isset( $field['id'] ) && isset( $this->value[$key][$field['id']] ) ) ? $this->value[$key][$field['id']] : '';
+
+              CSF::field( $field, $field_value, $field_unique, 'field/repeater', $field_parent );
+
+            }
+            echo '</div>';
+
+            echo '<div class="csf-repeater-helper">';
+            echo '<div class="csf-repeater-helper-inner">';
+            echo '<i class="csf-repeater-sort fa fa-arrows"></i>';
+            echo '<i class="csf-repeater-clone fa fa-clone"></i>';
+            echo '<i class="csf-repeater-remove csf-confirm fa fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'csf' ) .'"></i>';
+            echo '</div>';
+            echo '</div>';
+
+            echo '</div>';
+
+            $num++;
 
           }
-          echo '</div>';
-
-          echo '<div class="csf-cloneable-helper">';
-          echo '<div class="csf-cloneable-helper-inner">';
-          echo '<i class="csf-cloneable-sort fa fa-arrows"></i>';
-          echo '<i class="csf-cloneable-clone fa fa-clone"></i>';
-          echo '<i class="csf-cloneable-remove fa fa-times"></i>';
-          echo '</div>';
-          echo '</div>';
-
-          echo '</div>';
-
-          $num++;
 
         }
 
+        echo '</div>';
+
+        echo '<div class="csf-repeater-alert csf-repeater-max">'. esc_html__( 'You can not add more than', 'csf' ) .' '. $args['max'] .'</div>';
+        echo '<div class="csf-repeater-alert csf-repeater-min">'. esc_html__( 'You can not remove less than', 'csf' ) .' '. $args['min'] .'</div>';
+
+        echo '<a href="#" class="button button-primary csf-repeater-add">'. $args['button_title'] .'</a>';
+
+        echo $this->field_after();
+
       }
-
-      echo '</div>';
-
-      echo '<div class="csf-cloneable-alert csf-cloneable-max">'. esc_html__( 'You can not add more than', 'csf' ) .' '. $args['max'] .'</div>';
-      echo '<div class="csf-cloneable-alert csf-cloneable-min">'. esc_html__( 'You can not remove less than', 'csf' ) .' '. $args['min'] .'</div>';
-
-      echo '<a href="#" class="button button-primary csf-cloneable-add">'. $args['button_title'] .'</a>';
-
-      echo $this->field_after();
 
     }
 
