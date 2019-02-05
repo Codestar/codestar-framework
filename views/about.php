@@ -144,7 +144,7 @@
 
 <?php if( CSF::$premium ) { ?>
 <hr />
-<h5>You can disable this page with:</h5>
+<h5>You can force to disable this page with (it would works for only premium users):</h5>
 <div class="csf-code-block">
 <pre>
 add_filter( 'csf_welcome_page', '__return_false' );

@@ -14,7 +14,7 @@ if( ! class_exists( 'CSF_Welcome' ) ) {
 
     public function __construct() {
 
-      if( CSF::$premium && apply_filters( 'csf_welcome_page', true ) === false ) { return; }
+      if( CSF::$premium && ( ! CSF::is_used_as_plugin() || apply_filters( 'csf_welcome_page', true ) === false ) ) { return; }
 
       add_action( 'admin_menu', array( &$this, 'add_about_menu' ), 0 );
       add_filter( 'plugin_action_links', array( &$this, 'add_plugin_action_links' ), 10, 5 );
@@ -116,6 +116,7 @@ if( ! class_exists( 'CSF_Welcome' ) ) {
           CSF::include_plugin_file( 'samples/metabox.samples.php'           );
           CSF::include_plugin_file( 'samples/shortcoder.samples.php'        );
           CSF::include_plugin_file( 'samples/taxonomy-options.samples.php'  );
+          CSF::include_plugin_file( 'samples/widgets.samples.php'           );
 
         }
 

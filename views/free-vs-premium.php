@@ -43,6 +43,12 @@
     </tr>
 
     <tr>
+      <td>Widget Option Framework</td>
+      <td><i class="fa fa-times"></i></td>
+      <td><i class="fa fa-check"></i></td>
+    </tr>
+
+    <tr>
       <td>All Option Fields</td>
       <td><i class="fa fa-times"></i></td>
       <td><i class="fa fa-check"></i></td>
@@ -79,7 +85,7 @@
     </tr>
 
     <tr>
-      <td>Support Service</td>
+      <td>Support Forum</td>
       <td><i class="fa fa-times"></i></td>
       <td><i class="fa fa-check"></i></td>
     </tr>
