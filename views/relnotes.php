@@ -1,5 +1,22 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly. ?>
 
+<h3>v2.0.3</h3>
+<ul>
+  <li>Added: Widget Options Framework (bonus).</li>
+  <li>Added: Nested Group support.</li>
+  <li>Added: Nested Repeater support.</li>
+  <li>Added: Spanish Translation po/mo.</li>
+  <li>Added: Date range "from" and "to" for Date field.</li>
+  <li>Added: New param "empty_message" if options not provided for Select, Checkbox, Radio.</li>
+  <li>Fixed: Metabox framework php notices in 404 page etc.</li>
+  <li>Fixed: WP Editor field save issue.</li>
+  <li>Improved: Validate email function.</li>
+  <li>Improved: Group field arguments.</li>
+  <li>Improved: Font-Awesome library.</li>
+  <li>Improved: Hide to "welcome" page automatically if not used as plugin.</li>
+  <li>Improved: Confirm alert box messages translations.</li>
+</ul>
+
 <h3>v2.0.2</h3>
 <ul>
   <li>Added: Page Templates "default" option for spesific metabox hide/show.</li>
