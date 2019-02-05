@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Codestar Framework package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Codestar Framework 2.0.2\n"
+"Project-Id-Version: Codestar Framework 2.0.3\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/codestar-framework\n"
 "MIME-Version: 1.0\n"
@@ -66,20 +66,32 @@ msgstr ""
 msgid "Reset Section"
 msgstr ""
 
+#: classes/options.class.php:576 classes/options.class.php:695
+msgid "Are you sure to reset this section options?"
+msgstr ""
+
 #: classes/options.class.php:577 classes/options.class.php:696
 #: fields/backup/backup.php:34
 msgid "Reset All"
 msgstr ""
 
-#: classes/setup.class.php:372
+#: classes/options.class.php:577 classes/options.class.php:696
+msgid "Are you sure to reset all options?"
+msgstr ""
+
+#: classes/setup.class.php:365
+msgid "Are you sure?"
+msgstr ""
+
+#: classes/setup.class.php:402
 msgid "Ooops! This field type (%s) can not be used here, yet."
 msgstr ""
 
-#: classes/setup.class.php:414
+#: classes/setup.class.php:444
 msgid "This field class is not available!"
 msgstr ""
 
-#: classes/setup.class.php:418
+#: classes/setup.class.php:448
 msgid "This type is not found!"
 msgstr ""
 
@@ -111,6 +123,11 @@ msgstr ""
 msgid "Please be sure for reset all of options."
 msgstr ""
 
+#: fields/checkbox/checkbox.php:44 fields/radio/radio.php:43
+#: fields/select/select.php:73
+msgid "No data provided for this option type."
+msgstr ""
+
 #: fields/gallery/gallery.php:20
 msgid "Add Gallery"
 msgstr ""
@@ -127,20 +144,20 @@ msgstr ""
 msgid "Add New"
 msgstr ""
 
-#: fields/group/group.php:24 fields/icon/icon.php:21
-msgid "Remove Icon"
+#: fields/group/group.php:35 fields/repeater/repeater.php:30
+msgid "Error: Nested field id can not be same with another nested field id."
 msgstr ""
 
-#: fields/group/group.php:58 fields/media/media.php:24
-#: fields/upload/upload.php:22
-msgid "Remove"
+#: fields/group/group.php:46 fields/group/group.php:86
+#: fields/repeater/repeater.php:51 fields/repeater/repeater.php:82
+msgid "Are you sure to delete this item?"
 msgstr ""
 
-#: fields/group/group.php:113 fields/repeater/repeater.php:94
+#: fields/group/group.php:121 fields/repeater/repeater.php:96
 msgid "You can not add more than"
 msgstr ""
 
-#: fields/group/group.php:114 fields/repeater/repeater.php:95
+#: fields/group/group.php:122 fields/repeater/repeater.php:97
 msgid "You can not remove less than"
 msgstr ""
 
@@ -148,16 +165,20 @@ msgstr ""
 msgid "Add Icon"
 msgstr ""
 
+#: fields/icon/icon.php:21
+msgid "Remove Icon"
+msgstr ""
+
 #: fields/media/media.php:23 fields/upload/upload.php:21
 msgid "Upload"
 msgstr ""
 
-#: fields/media/media.php:46
-msgid "No media selected"
+#: fields/media/media.php:24 fields/upload/upload.php:22
+msgid "Remove"
 msgstr ""
 
-#: fields/select/select.php:72
-msgid "No data provided for this option type."
+#: fields/media/media.php:46
+msgid "No media selected"
 msgstr ""
 
 #: fields/sorter/sorter.php:21
@@ -260,7 +281,7 @@ msgid "Please write a numeric data!"
 msgstr ""
 
 #: functions/validate.php:50 functions/validate.php:126
-msgid "Fatal Error! This field is required!"
+msgid "Error! This field is required!"
 msgstr ""
 
 #: functions/validate.php:68 functions/validate.php:146
