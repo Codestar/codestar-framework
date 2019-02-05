@@ -92,6 +92,7 @@ Read the documentation for details :closed_book: [documentation](http://codestar
 | Metabox Option Framework     | :x:                | :heavy_check_mark:
 | Taxonomy Option Framework    | :x:                | :heavy_check_mark:
 | Shortcode Generate Framework | :x:                | :heavy_check_mark:
+| Widget Option Framework      | :x:                | :heavy_check_mark:
 | All Option Fields            | :x:                | :heavy_check_mark:
 | Developer Packages           | :x:                | :heavy_check_mark:
 | Unminfy Library              | :x:                | :heavy_check_mark:
@@ -108,10 +109,12 @@ Read the documentation for details :closed_book: [documentation](http://codestar
 - Added: Filters/Actions for change to configs
 - Added: Output css featue
 - Added: Auto enqueue/load for google web fonts
-- Improved: Load time performance
+- Added: Widget option framework
+- Added: Group and Repeater fields nested usage
 - Improved: Config array
 - Improved: Javascripts
 - Improved: PHP Functions/Classes
+- Improved: Load time performance
 
 #### Admin Option Framework
 - Added: Framework header title change parameter
@@ -158,7 +161,7 @@ Read the documentation for details :closed_book: [documentation](http://codestar
 
 ## Support
 
-We are provide [support service](http://support.codestarthemes.com/) for premium version users. You can join to support service for submit any question after purchasing. Free version users support is limited on [github](https://github.com/Codestar/codestar-framework/issues).
+We are provide [support forum](http://support.codestarthemes.com/) for premium version users. You can join to support forum for submit any question after purchasing. Free version users support is limited on [github](https://github.com/Codestar/codestar-framework/issues).
 
 ## Release Notes
 Check out the [release notes](http://codestarframework.com/documentation/#/relnotes)
