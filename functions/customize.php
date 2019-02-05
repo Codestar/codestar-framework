@@ -66,7 +66,7 @@ if( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize_
     public function render_content() {
 
       $unallows   = array( 'sortable' );
-      $complex    = array( 'accordion', 'background', 'backup', 'border', 'button_set', 'checkbox', 'color_group', 'dimensions', 'fieldset', 'group', 'image_select', 'link_color', 'media', 'palette', 'repeater', 'sortable', 'sorter', 'switcher', 'tabbed' );
+      $complex    = array( 'accordion', 'background', 'backup', 'border', 'button_set', 'checkbox', 'color_group', 'date', 'dimensions', 'fieldset', 'group', 'image_select', 'link_color', 'media', 'palette', 'repeater', 'sortable', 'sorter', 'switcher', 'tabbed' );
       $field_id   = ( ! empty( $this->field['id'] ) ) ? $this->field['id'] : '';
       $custom     = ( ! empty( $this->field['customizer'] ) ) ? true : false;
       $is_complex = ( in_array( $this->field['type'], $complex ) ) ? true : false;
