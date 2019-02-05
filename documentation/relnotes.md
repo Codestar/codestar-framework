@@ -1,5 +1,18 @@
 # Release Notes
 
+## v2.0.3
+- Added: Widget Options Framework (bonus).
+- Added: Nested Group support.
+- Added: Nested Repeater support.
+- Added: Spanish Translation po/mo.
+- Added: Date range "from" and "to" for Date field.
+- Added: New param "empty_message" if options not provided for Select, Checkbox, Radio.
+- Fixed: Metabox framework php notices in 404 page etc.
+- Fixed: WP Editor field save issue.
+- Improved: Validate email function.
+- Improved: Group field arguments.
+- Improved: Font-Awesome library.
+
 ## v2.0.2
 - Added: Page Templates "default" option for spesific metabox hide/show.
 - Added: Post Formats "default" option for spesific metabox hide/show.

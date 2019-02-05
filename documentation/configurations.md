@@ -643,7 +643,6 @@ if( class_exists( 'CSF' ) ) {
   CSF::createMetabox( $prefix, array(
     'title'     => 'My Post Options',
     'post_type' => 'post',
-    'data_type' => 'serialize', // The type of the database save options. `serialize` or `unserialize`
   ) );
 
   //
@@ -697,7 +696,6 @@ if( class_exists( 'CSF' ) ) {
   CSF::createMetabox( $prefix, array(
     'title'     => 'My Post Options',
     'post_type' => 'post',
-    'data_type' => 'serialize', // The type of the database save options. `serialize` or `unserialize`
     'context'   => 'side', // The context within the screen where the boxes should display. `normal`, `side`, `advanced`
   ) );
 
@@ -801,25 +799,6 @@ if( class_exists( 'CSF' ) ) {
 <div class="clear"></div>
 </div>
 
-<div class="pre-heading">Usage in data type => serialize</div>
-
-```php
-//
-// You should use my_post_options as this is the id for your key declared into config
-$meta = get_post_meta( get_the_ID(), 'my_post_options', true );
-
-echo $meta['opt-text']; // id of the field
-echo $meta['opt-textarea']; // id of the field
-```
-<div class="pre-heading">Usage in data type => unserialize</div>
-
-```php
-//
-// Get options
-echo get_post_meta( get_the_ID(), 'opt-text', true ); // id of the field
-echo get_post_meta( get_the_ID(), 'opt-textarea', true ); // id of the field
-```
-
 <div class="pre-heading">Arguments</div>
 
 | Name                 | Type          | Default    | Description |
@@ -836,6 +815,29 @@ echo get_post_meta( get_the_ID(), 'opt-textarea', true ); // id of the field
 | `enqueue_webfont`    | bool          | true       | Flag to load web fonts of the framework.
 | `async_webfont`      | bool          | false      | Flag to load google fonts with *async* method of the framework.
 | `output_css`         | bool          | true       | Flag to load output css of the framework.
+
+<div class="pre-heading">Note: How to get value if using <span class="csf-tolowercase">data_type => serialize</span></div>
+
+```php
+//
+// data_type => serialize is default
+// You should use my_post_options as this is the id for your key declared into config
+//
+$meta = get_post_meta( get_the_ID(), 'my_post_options', true );
+
+echo $meta['opt-text'];
+echo $meta['opt-textarea'];
+```
+<div class="pre-heading">Note: How to get value if using <span class="csf-tolowercase">data_type => unserialize</span></div>
+
+```php
+//
+// data_type => unserialize is optional
+// You should to use option id directly declared into field config
+//
+echo get_post_meta( get_the_ID(), 'opt-text', true );
+echo get_post_meta( get_the_ID(), 'opt-textarea', true );
+```
 
 ---
 
@@ -1251,3 +1253,73 @@ array(
 | `shortcode_name`   | string  | Set a unique slug-like name of shortcode.
 | `group_shortcode`  | string  | Set a unique slug-like name of group shortcode.
 | `group_fields`     | array   | An associative array containing fields for the fieldsets.
+
+---
+
+## Widget Option Framework
+
+<div class="pre-heading">Config Examples</div>
+
+```php
+// Control core classes for avoid errors
+if( class_exists( 'CSF' ) ) {
+
+  //
+  // Create a widget 1
+  //
+  CSF::createWidget( 'csf_widget_example_1', array(
+    'title'       => 'Codestar Widget Example 1',
+    'classname'   => 'csf-widget-classname',
+    'description' => 'A description for widget example 1',
+    'fields'      => array(
+
+      array(
+        'id'      => 'opt-text',
+        'type'    => 'text',
+        'title'   => 'Text',
+        'default' => 'Default text value'
+      ),
+
+      array(
+        'id'    => 'opt-textarea',
+        'type'  => 'textarea',
+        'title' => 'Textarea',
+        'help'  => 'The help text of the field.',
+      ),
+
+    )
+  ) );
+
+  //
+  // Front-end display of widget example 1
+  // Attention: This function named considering above widget base id.
+  //
+  if( ! function_exists( 'csf_widget_example_1' ) ) {
+    function csf_widget_example_1( $args, $instance ) {
+
+      echo $args['before_widget'];
+
+      if ( ! empty( $instance['title'] ) ) {
+        echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+      }
+
+      // var_dump( $args ); // Widget arguments
+      // var_dump( $instance ); // Saved values from database
+      echo $instance['opt-text'];
+
+      echo $args['after_widget'];
+
+    }
+  }
+
+}
+```
+
+<div class="pre-heading">Arguments</div>
+
+| Name          | Type    | Default  | Description |
+|---------------|---------|----------|-------------|
+| `title`       | string  |          | Title of widget in the backend.
+| `description` | string  |          | Description of widget in the backend.
+| `classname`   | string  |          | CSS classes (space separated) to append to the front-end widget area.
+| `width`       | number  | 250      | Width of the fully expanded control form (but try hard to use the default width).

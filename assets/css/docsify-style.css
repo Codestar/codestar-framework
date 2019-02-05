@@ -67,6 +67,11 @@
   text-transform: uppercase;
 }
 
+/* Helpers */
+.markdown-section .csf-tolowercase{
+  text-transform: lowercase;
+}
+
 /* More Link */
 .markdown-section .csf-more-link{
   display: inline-block;

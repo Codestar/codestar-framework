@@ -535,6 +535,7 @@ array(
 | `sanitize`       | string         |             | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
 | `validate`       | string         |             | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---            | ---         | ---
+| `empty_message`  | string         |             | Display to empty text if options empty.
 | `label`          | string         |             | The text to display with the checkbox, when use to single checkbox.
 | `options`        | array\|string  |             | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars`
 | `query_args`     | array          |             | An associative array of query arguments.
@@ -833,7 +834,7 @@ array(
   'type'     => 'date',
   'title'    => 'Date Advanced',
   'settings' => array(
-    'format'          => 'mm/dd/yy'
+    'dateFormat'      => 'mm/dd/yy'
     'changeMonth'     => true,
     'changeYear'      => true,
     'showWeek'        => true,
@@ -1140,6 +1141,7 @@ array(
 <div class="csf-tab-buttons">
 <span class="csf-tab-title csf-tab-active">Simple</span>
 <span class="csf-tab-title">Group w/ Default</span>
+<span class="csf-tab-title">Group w/ Nested</span>
 </div>
 <div class="csf-tab-contents">
 <div class="csf-tab-content csf-tab-active">
@@ -1208,6 +1210,58 @@ array(
 ),
 ```
 </div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'        => 'opt-group-3',
+  'type'      => 'group',
+  'title'     => 'Group',
+  'fields'    => array(
+    array(
+      'id'    => 'opt-text',
+      'type'  => 'text',
+      'title' => 'Text',
+    ),
+    array(
+      'id'        => 'opt-group-nested',
+      'type'      => 'group',
+      'title'     => 'Group',
+      'fields'    => array(
+        array(
+          'id'    => 'opt-text',
+          'type'  => 'text',
+          'title' => 'Text',
+        ),
+      ),
+    ),
+    array(
+      'id'    => 'opt-textarea',
+      'type'  => 'textarea',
+      'title' => 'Textarea',
+    ),
+  ),
+  'default'   => array(
+    array(
+      'opt-text'     => 'This is text 1',
+      'opt-group-nested' => array(
+        array(
+          'opt-text' => 'Nested text 1',
+        ),
+        array(
+          'opt-text' => 'Nested text 2',
+        ),
+      ),
+      'opt-textarea' => 'This is textarea 1',
+    ),
+    array(
+      'opt-text'     => 'This is text 2',
+      'opt-textarea' => 'This is textarea 2',
+    ),
+  ),
+),
+```
+</div>
 </div>
 <div class="clear"></div>
 </div>
@@ -1235,9 +1289,9 @@ array(
 | `max`                     | number       | 0          | Maximum number of items the user can add.
 | `min`                     | number       | 0          | Minimum number of items the user can add.
 | `button_title`            | string       | Add New    | Text to display on the *add* button.
-| `remove_title`            | string       | Remove     | Text to display on the *remove* button.
 | `accordion_title_prefix`  | string       |            | The text to display before title.
-| `accordion_title_count`   | bool         | false      | Number to display before title. *for eg.* `1- Title` `2- Title`
+| `accordion_title_number`  | bool         | false      | Number to display before title. *for eg.* `1- Title` `2- Title`
+| `accordion_title_auto`    | bool         | true       | Listen first input text value for title.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1654,6 +1708,7 @@ array(
 | `sanitize`       | string         |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
 | `validate`       | string         |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---            | ---      | ---
+| `empty_message`  | string         |          | Display to empty text if options empty.
 | `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars`
 | `query_args`     | array          |          | An associative array of query arguments.
 
@@ -1946,6 +2001,7 @@ array(
 | `sanitize`       | string         |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
 | `validate`       | string         |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---            | ---      | ---
+| `empty_message`  | string         |          | Display to empty text if options empty.
 | `placeholder`    | string         |          | The placeholder to be displayed when nothing is selected.
 | `chosen`         | bool           | false    | Flag to enable [ChosenJS](https://harvesthq.github.io/chosen/) style select.
 | `multiple`       | bool           | false    | Flag to allows multiple options choose.
