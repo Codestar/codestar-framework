@@ -37,6 +37,11 @@ if( ! class_exists( 'CSF_Field_radio' ) ) {
             echo '<li><label><input type="radio" name="'. $this->field_name() .'" value="'. $option_key .'"'. $this->field_attributes() . $checked .'/> '. $option_value .'</label></li>';
           }
           echo '</ul>';
+
+        } else {
+
+          echo ( ! empty( $this->field['empty_message'] ) ) ? $this->field['empty_message'] : esc_html__( 'No data provided for this option type.', 'csf' );
+
         }
 
       } else {

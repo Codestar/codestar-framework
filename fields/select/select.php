@@ -69,7 +69,9 @@ if( ! class_exists( 'CSF_Field_select' ) ) {
           echo '</select>';
 
         } else {
-          echo esc_html__( 'No data provided for this option type.', 'csf' );
+
+          echo ( ! empty( $this->field['empty_message'] ) ) ? $this->field['empty_message'] : esc_html__( 'No data provided for this option type.', 'csf' );
+
         }
 
       }
