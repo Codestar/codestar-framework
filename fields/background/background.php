@@ -113,7 +113,7 @@ if( ! class_exists( 'CSF_Field_background' ) ) {
       // Background Image
       if( ! empty( $args['background_image'] ) ) {
 
-        echo '<div class="csf--block csf--image">';
+        echo '<div class="csf--block csf--media">';
 
         CSF::field( array(
           'id'          => 'background-image',
