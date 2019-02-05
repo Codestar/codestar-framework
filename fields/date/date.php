@@ -24,7 +24,30 @@ if( ! class_exists( 'CSF_Field_date' ) ) {
       $settings = wp_parse_args( $settings, $default_settings );
 
       echo $this->field_before();
-      echo '<input type="text" name="'. $this->field_name() .'" value="'. $this->value .'" data-settings="'. esc_attr( json_encode( $settings ) ) .'"'. $this->field_attributes() .'/>';
+
+      if( ! empty( $this->field['from_to'] ) ) {
+
+        $args = wp_parse_args( $this->field, array(
+          'text_from' => 'From',
+          'text_to'   => 'To',
+        ) );
+
+        $value = wp_parse_args( $this->value, array(
+          'from' => '',
+          'to'   => '',
+        ) );
+
+        echo '<label class="csf--from">'. $args['text_from'] .' <input type="text" name="'. $this->field_name('[from]') .'" value="'. $value['from'] .'"'. $this->field_attributes() .'/></label>';
+        echo '<label class="csf--to">'. $args['text_to'] .' <input type="text" name="'. $this->field_name('[to]') .'" value="'. $value['to'] .'"'. $this->field_attributes() .'/></label>';
+
+      } else {
+
+        echo '<input type="text" name="'. $this->field_name() .'" value="'. $this->value .'"'. $this->field_attributes() .'/>';
+
+      }
+
+      echo '<div class="csf-date-settings" data-settings="'. esc_attr( json_encode( $settings ) ) .'"></div>';
+
       echo $this->field_after();
 
     }
