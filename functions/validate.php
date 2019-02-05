@@ -10,7 +10,7 @@
 if( ! function_exists( 'csf_validate_email' ) ) {
   function csf_validate_email( $value ) {
 
-    if ( ! sanitize_email( $value ) ) {
+    if ( ! filter_var( $value, FILTER_VALIDATE_EMAIL ) ) {
       return esc_html__( 'Please write a valid email address!', 'csf' );
     }
 
@@ -47,7 +47,7 @@ if( ! function_exists( 'csf_validate_required' ) ) {
   function csf_validate_required( $value ) {
 
     if ( empty( $value ) ) {
-      return esc_html__( 'Fatal Error! This field is required!', 'csf' );
+      return esc_html__( 'Error! This field is required!', 'csf' );
     }
 
   }
@@ -123,7 +123,7 @@ if( ! function_exists( 'csf_customize_validate_required' ) ) {
   function csf_customize_validate_required( $validity, $value, $wp_customize ) {
 
     if ( empty( $value ) ) {
-      $validity->add( 'required', esc_html__( 'Fatal Error! This field is required!', 'csf' ) );
+      $validity->add( 'required', esc_html__( 'Error! This field is required!', 'csf' ) );
     }
 
     return $validity;
