@@ -12,6 +12,8 @@
 - Improved: Validate email function.
 - Improved: Group field arguments.
 - Improved: Font-Awesome library.
+- Improved: Hide to "welcome" page automatically if not used as plugin.
+- Improved: Confirm alert box messages translations.
 
 ## v2.0.2
 - Added: Page Templates "default" option for spesific metabox hide/show.
