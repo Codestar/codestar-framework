@@ -87,6 +87,23 @@
   vertical-align: top;
 }
 
+.csf-half{
+  float: left;
+  width: 50%;
+  padding-right: 10px;
+}
+
+.csf-half-last{
+  padding-right: 0;
+  padding-left: 10px;
+}
+
+.csf-divide{
+  clear: both;
+  width: 100%;
+  border-bottom: 2px solid #eee;
+}
+
 /* Tabs */
 .csf-tabs{
   margin-top: 20px;
@@ -289,6 +306,12 @@
 }
 
 @media screen and (max-width: 768px){
+
+  .csf-half{
+    width: 100%;
+    float: none;
+    padding: 0;
+  }
 
   /* Sidebar Toogle Edit */
   .sidebar-toggle{

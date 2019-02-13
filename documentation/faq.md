@@ -425,6 +425,8 @@ if( ! function_exists( 'csf_customize_validate_url' ) ) {
 <div class="clear"></div>
 </div>
 
+---
+
 ### How to use common arguments ?
 
 <div class="csf-tabs">
@@ -531,6 +533,8 @@ array(
 <div class="clear"></div>
 </div>
 
+---
+
 ### How to add a new field ?
 
 1. Create your field class php file.
@@ -577,6 +581,8 @@ array(
 ),
 ```
 
+---
+
 ### How to enqueue your custom css/js ?
 
 ```php
@@ -593,6 +599,8 @@ if( ! function_exists( 'csf_add_my_custom_css' ) ) {
   add_action('csf/enqueue', 'csf_add_my_custom_css' );
 }
 ```
+
+---
 
 ### How to use Customizer JS
 
@@ -656,6 +664,8 @@ if( ! function_exists('csf_customize_preview_init') ) {
 }
 ```
 
+---
+
 ### How to add custom icons ?
 
 1. Use **csf_field_icon_add_icons** filter for add custom icons.
@@ -691,6 +701,8 @@ function my_custom_icons( $icons ) {
 }
 ```
 
+---
+
 ### How to add custom font family ?
 
 1. Use **csf_field_typography_customwebfonts** filter for add custom font family.
@@ -713,6 +725,8 @@ function my_custom_font_family( $fonts ) {
 }
 ```
 
+---
+
 ### How to add custom color palette ?
 
 1. Use **csf_color_palette** filter for add custom color palette.
@@ -725,6 +739,8 @@ if( ! function_exists( 'my_custom_color_palette' ) ) {
   add_filter( 'csf_color_palette', 'my_custom_color_palette' );
 }
 ```
+
+---
 
 ### How to add post formats metabox ?
 
@@ -822,6 +838,8 @@ CSF::createSection( $prefix_page_opts, array(
 </div>
 <div class="clear"></div>
 </div>
+
+---
 
 ### How to add page templates metabox ?
 
@@ -949,6 +967,8 @@ CSF::createSection( $prefix_page_opts, array(
 <div class="clear"></div>
 </div>
 
+---
+
 ### How to override files ?
 
 You can modify framework files without touch main files. Only create a `csf-override` folder inside theme root. for eg:
@@ -967,3 +987,398 @@ You can modify framework files without touch main files. Only create a `csf-over
 ```
 
 Attention: Be sure for do not change or remove javascript id/classnames on elements.
+
+---
+
+
+### How to Migrate v1.x to v2.x ?
+
+All development has been moved to https://github.com/Codestar/codestar-framework repo effective from January 12th 2019
+
+- Installation is similar. You can be used it as plugin or inside a theme.
+
+<div class="csf-divide"></div>
+
+##### Admin Option Framework Migration
+
+<div class="csf-half">
+<div class="pre-heading">Admin Option Create in v1.x</div>
+
+```php
+$settings      = array(
+  'menu_title' => 'Framework',
+  'menu_slug'  => 'cs-framework',
+);
+
+$options      = array();
+
+$options[]    = array(
+  'name'      => 'overwiew',
+  'title'     => 'Overview',
+  'icon'      => 'fa fa-star',
+  'fields'    => array(
+
+    array(
+      'id'    => 'opt-text',
+      'type'  => 'text',
+      'title' => 'Text',
+    ),
+  ),
+);
+
+CSFramework::instance( $settings, $options );
+```
+</div>
+
+<div class="csf-half csf-half-last">
+<div class="pre-heading">Admin Option Create in v2.x</div>
+
+```php
+if( class_exists( 'CSF' ) ) {
+
+  $prefix = 'my_framework';
+
+  CSF::createOptions( $prefix, array(
+    'menu_title' => 'My Framework',
+    'menu_slug'  => 'my-framework',
+  ) );
+
+  CSF::createSection( $prefix, array(
+    'title'  => 'Tab Title 1',
+    'fields' => array(
+
+      array(
+        'id'    => 'opt-text',
+        'type'  => 'text',
+        'title' => 'Text',
+      ),
+
+    )
+  ) );
+
+}
+```
+</div>
+
+<div class="clear"></div>
+
+<div class="csf-half">
+<div class="pre-heading">Get Admin Option in v1.x</div>
+
+```php
+echo cs_get_option( 'opt-text' );
+echo cs_get_option( 'opt-text', 'default value' );
+```
+</div>
+
+<div class="csf-half csf-half-last">
+<div class="pre-heading">Get Admin Option in v2.x</div>
+
+```php
+// cs_get_option deprecated in v2.x
+// because the new version offers multiple instance.
+// but you can create a similar function like cs_get_option
+// btw can used cs_get_option instead of your_prefix_get_option.
+
+if ( ! function_exists( 'your_prefix_get_option' ) ) {
+  function your_prefix_get_option( $option = '', $default = null ) {
+
+    // Attention: Its your unique id of the framework
+    $options = get_option( 'my_framework' );
+
+    return ( isset( $options[$option] ) ) ? $options[$option] : $default;
+
+  }
+}
+
+echo your_prefix_get_option( 'opt-text' );
+echo your_prefix_get_option( 'opt-text', 'default value' );
+```
+</div>
+
+<div class="clear"></div>
+<div class="csf-divide"></div>
+
+##### Customize Option Framework Migration
+
+<div class="csf-half">
+<div class="pre-heading">Customize Option Create in v1.x</div>
+
+```php
+$options      = array();
+
+$options[]    = array(
+  'name'      => 'overwiew',
+  'title'     => 'Overview',
+  'icon'      => 'fa fa-star',
+  'fields'    => array(
+    array(
+      'id'    => 'opt-text',
+      'type'  => 'text',
+      'title' => 'Text',
+    ),
+  ),
+);
+
+CSFramework_Customize::instance( $options );
+```
+</div>
+
+<div class="csf-half csf-half-last">
+<div class="pre-heading">Customize Option Create in v2.x</div>
+
+```php
+if( class_exists( 'CSF' ) ) {
+
+  $prefix = 'my_customize_framework';
+
+  CSF::createCustomizeOptions( $prefix );
+
+  CSF::createSection( $prefix, array(
+    'title'  => 'Tab Title 1',
+    'fields' => array(
+      array(
+        'id'    => 'opt-text',
+        'type'  => 'text',
+        'title' => 'Text',
+      ),
+    )
+  ) );
+
+}
+```
+</div>
+
+<div class="clear"></div>
+
+<div class="csf-half">
+<div class="pre-heading">Get Customize Option in v1.x</div>
+
+```php
+echo cs_get_customize_option( 'opt-text' );
+echo cs_get_customize_option( 'opt-text', 'default value' );
+```
+</div>
+
+<div class="csf-half csf-half-last">
+<div class="pre-heading">Get Customize Option in v2.x</div>
+
+```php
+// Its 100% same with GET ADMIN OPTION IN V2.X
+```
+</div>
+
+<div class="clear"></div>
+<div class="csf-divide"></div>
+
+##### Metabox Option Framework Migration
+
+<div class="csf-half">
+<div class="pre-heading">Metabox Option Create in v1.x</div>
+
+```php
+$options      = array();
+
+$options[]    = array(
+  'id'        => '_custom_post_options',
+  'title'     => 'Custom Post Options',
+  'post_type' => 'post',
+  'context'   => 'normal',
+  'priority'  => 'default',
+  'sections'  => array(
+    array(
+      'name'  => 'section_1',
+      'title' => 'Section 1',
+      'icon'  => 'fa fa-cog',
+      'fields' => array(
+        array(
+          'id'    => 'opt-text',
+          'type'  => 'text',
+          'title' => 'Simple Text',
+        ),
+      ),
+    ),
+  ),
+);
+
+CSFramework_Metabox::instance( $options );
+```
+</div>
+
+<div class="csf-half csf-half-last">
+<div class="pre-heading">Metabox Option Create in v2.x</div>
+
+```php
+if( class_exists( 'CSF' ) ) {
+
+  $prefix = '_custom_post_options';
+
+  CSF::createMetabox( $prefix, array(
+    'title'     => 'My Post Options',
+    'post_type' => 'post',
+  ) );
+
+  CSF::createSection( $prefix, array(
+    'title'  => 'Tab Title 1',
+    'fields' => array(
+      array(
+        'id'    => 'opt-text',
+        'type'  => 'text',
+        'title' => 'Simple Text',
+      ),
+    )
+  ) );
+
+}
+```
+</div>
+
+<div class="clear"></div>
+
+<div class="pre-heading">Get Metabox Option in v1.x and v2.x</div>
+
+```php
+// Its same.
+$meta = get_post_meta( get_the_ID(), '_custom_post_options', true );
+
+echo $meta['opt-text'];
+```
+
+<div class="clear"></div>
+<div class="csf-divide"></div>
+
+##### Taxonomy Option Framework Migration
+
+<div class="csf-half">
+<div class="pre-heading">Taxonomy Option Create in v1.x</div>
+
+```php
+$options     = array();
+
+$options[]   = array(
+  'id'       => '_custom_taxonomy_options',
+  'taxonomy' => 'category',
+  'fields'   => array(
+    array(
+      'id'    => 'opt-text',
+      'type'  => 'text',
+      'title' => 'Text',
+    ),
+  ),
+);
+
+CSFramework_Taxonomy::instance( $options );
+```
+</div>
+
+<div class="csf-half csf-half-last">
+<div class="pre-heading">Taxonomy Option Create in v2.x</div>
+
+```php
+if( class_exists( 'CSF' ) ) {
+
+  $prefix = '_custom_taxonomy_options';
+
+  CSF::createTaxonomyOptions( $prefix, array(
+    'taxonomy'  => 'category',
+  ) );
+
+  CSF::createSection( $prefix, array(
+    'fields' => array(
+      array(
+        'id'    => 'opt-text',
+        'type'  => 'text',
+        'title' => 'Text',
+      ),
+    )
+  ) );
+
+}
+
+```
+</div>
+
+<div class="clear"></div>
+
+<div class="pre-heading">Get Taxonomy Option in v1.x and v2.x</div>
+
+```php
+// Its same.
+$term = get_category_by_slug( 'uncategorized' );
+$meta = get_term_meta( $term->term_id, '_custom_taxonomy_options', true );
+
+echo $meta['opt-text'];
+```
+
+<div class="clear"></div>
+<div class="csf-divide"></div>
+
+##### Shortcode Generate Framework Migration
+
+<div class="csf-half">
+<div class="pre-heading">Shortcode Create in v1.x</div>
+
+```php
+$options          = array();
+
+$options[]        = array(
+  'title'         => 'Basic Shortcode Examples',
+  'shortcodes'    => array(
+    array(
+      'name'      => 'cs_shortcode_1',
+      'title'     => 'Basic Shortcode 1',
+      'fields'    => array(
+        array(
+          'id'    => 'text',
+          'type'  => 'text',
+          'title' => 'Text',
+        ),
+        array(
+          'id'    => 'content',
+          'type'  => 'textarea',
+          'title' => 'Textarea',
+        )
+      ),
+    ),
+  ),
+);
+
+CSFramework_Shortcode_Manager::instance( $options );
+```
+</div>
+
+<div class="csf-half csf-half-last">
+<div class="pre-heading">Shortcode Create in v2.x</div>
+
+```php
+if( class_exists( 'CSF' ) ) {
+
+  $prefix = 'my_shortcodes';
+
+  CSF::createShortcoder( $prefix, array(
+    'button_title' => 'Add Shortcode',
+  ) );
+
+  CSF::createSection( $prefix, array(
+    'title'     => 'Shortcode Basic 1',
+    'view'      => 'normal',
+    'shortcode' => 'my_shortcode',
+    'fields'    => array(
+      array(
+        'id'    => 'text',
+        'type'  => 'text',
+        'title' => 'Text',
+      ),
+      array(
+        'id'    => 'content',
+        'type'  => 'textarea',
+        'title' => 'Textarea',
+      ),
+    )
+  ) );
+
+}
+```
+</div>
+
+<div class="clear"></div>

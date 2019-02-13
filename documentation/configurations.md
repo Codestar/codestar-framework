@@ -1,4 +1,4 @@
-## Admin Options Framework
+## Admin Option Framework
 
 <div class="pre-heading">Config Examples</div>
 <div class="csf-tabs">
@@ -285,6 +285,9 @@ if( class_exists( 'CSF' ) ) {
     // others
     'output_css' => true,
 
+    // theme
+    'theme' => 'dark',
+
   ) );
 
   //
@@ -375,6 +378,7 @@ echo $options['opt-textarea']; // id of the field
 | `enqueue_webfont`          | bool      | true           | Flag to load web fonts of the framework.
 | `async_webfont`            | bool      | false          | Flag to load google fonts with *async* method of the framework.
 | `output_css`               | bool      | true           | Flag to load output css of the framework.
+| `theme`                    | string    | dark           | The theme of the framework. *for eg.* `dark` - `light`
 
 <div class="pre-heading">Section Arguments</div>
 
@@ -748,7 +752,7 @@ if( class_exists( 'CSF' ) ) {
   //
   // Create a metabox
   CSF::createMetabox( $prefix, array(
-    'title'              => 'My Post Options',
+    'title'              => '',
     'post_type'          => 'post',
     'data_type'          => 'serialize',
     'context'            => 'normal',
@@ -757,6 +761,10 @@ if( class_exists( 'CSF' ) ) {
     'page_templates'     => '',
     'post_formats'       => '',
     'show_restore'       => false,
+    'enqueue_webfont'    => true,
+    'async_webfont'      => false,
+    'output_css'         => true,
+    'theme'              => 'dark',
   ) );
 
   //
@@ -815,6 +823,7 @@ if( class_exists( 'CSF' ) ) {
 | `enqueue_webfont`    | bool          | true       | Flag to load web fonts of the framework.
 | `async_webfont`      | bool          | false      | Flag to load google fonts with *async* method of the framework.
 | `output_css`         | bool          | true       | Flag to load output css of the framework.
+| `theme`              | string        | dark       | The theme of the framework. *for eg.* `dark` - `light`
 
 <div class="pre-heading">Note: How to get value if using <span class="csf-tolowercase">data_type => serialize</span></div>
 
@@ -858,7 +867,7 @@ if( class_exists( 'CSF' ) ) {
   CSF::createTaxonomyOptions( $prefix, array(
     'taxonomy'  => 'category',
     'data_type' => 'serialize', // The type of the database save options. `serialize` or `unserialize`
-  ) );;
+  ) );
 
   //
   // Create a section

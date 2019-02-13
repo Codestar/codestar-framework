@@ -2518,6 +2518,7 @@ array(
 <span class="csf-tab-title csf-tab-active">Simple</span>
 <span class="csf-tab-title">Switcher w/ Label</span>
 <span class="csf-tab-title">Switcher w/ Dependency</span>
+<span class="csf-tab-title">Switcher w/ Custom Texts</span>
 </div>
 <div class="csf-tab-contents">
 <div class="csf-tab-content csf-tab-active">
@@ -2561,6 +2562,27 @@ array(
 ),
 ```
 </div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'       => 'opt-switcher-4'
+  'type'     => 'switcher',
+  'title'    => 'Switcher with Yes/No',
+  'text_on'  => 'Yes',
+  'text_off' => 'No',
+),
+
+array(
+  'id'         => 'opt-switcher-5'
+  'type'       => 'switcher',
+  'title'      => 'Switcher with Enabled/Disabled',
+  'text_on'    => 'Enabled',
+  'text_off'   => 'Disabled',
+  'text_width' => 100
+),
+```
+</div>
 </div>
 <div class="clear"></div>
 </div>
@@ -2584,6 +2606,9 @@ array(
 | `sanitize`    | string   |           | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
 | `validate`    | string   |           | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**    | ---      | ---       | ---
+| `text_on`     | string   | ON        | Text to display on the "ON" label.
+| `text_off`    | string   | OFF       | Text to display on the "OFF" label.
+| `text_width`  | number   | 60        | The width of the switcher.
 | `label`       | string   |           | The text to display along with the switcher.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
