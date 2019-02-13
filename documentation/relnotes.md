@@ -39,8 +39,8 @@
 - Fixed: Multiple given post formats metabox hide/show issue.
 - Fixed: Minor bugs.
 
-## v2.0
+## v2.0.0
 - Premium version release.
 
-## v1.0
+## v1.0.0
 - Initial release.
