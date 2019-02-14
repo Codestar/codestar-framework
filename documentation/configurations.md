@@ -330,15 +330,29 @@ if( class_exists( 'CSF' ) ) {
 <div class="clear"></div>
 </div>
 
-<div class="pre-heading">Usage</div>
+<div class="pre-heading">Get an option value</div>
 
 ```php
-//
 // Get options
 $options = get_option( 'my_framework' ); // unique id of the framework
 
 echo $options['opt-text']; // id of the field
 echo $options['opt-textarea']; // id of the field
+```
+
+<div class="pre-heading">Get an option value (advanced)</div>
+
+```php
+// A Custom function for get an option
+if ( ! function_exists( 'prefix_get_option' ) ) {
+  function prefix_get_option( $option = '', $default = null ) {
+    $options = get_option( 'my_framework' ); // Attention: Set your unique id of the framework
+    return ( isset( $options[$option] ) ) ? $options[$option] : $default;
+  }
+}
+
+echo prefix_get_option( 'opt-text' );
+echo prefix_get_option( 'opt-text', 'default value' );
 ```
 
 <div class="pre-heading">Arguments</div>
@@ -597,15 +611,29 @@ if( class_exists( 'CSF' ) ) {
 <div class="clear"></div>
 </div>
 
-<div class="pre-heading">Usage</div>
+<div class="pre-heading">Get an option value</div>
 
 ```php
-//
 // Get options
 $options = get_option( 'my_framework' ); // unique id of the framework
 
 echo $options['opt-text']; // id of the field
 echo $options['opt-textarea']; // id of the field
+```
+
+<div class="pre-heading">Get an option value (advanced)</div>
+
+```php
+// A Custom function for get an option
+if ( ! function_exists( 'prefix_get_option' ) ) {
+  function prefix_get_option( $option = '', $default = null ) {
+    $options = get_option( 'my_framework' ); // Attention: Set your unique id of the framework
+    return ( isset( $options[$option] ) ) ? $options[$option] : $default;
+  }
+}
+
+echo prefix_get_option( 'opt-text' );
+echo prefix_get_option( 'opt-text', 'default value' );
 ```
 
 <div class="pre-heading">Arguments</div>
@@ -825,7 +853,7 @@ if( class_exists( 'CSF' ) ) {
 | `output_css`         | bool          | true       | Flag to load output css of the framework.
 | `theme`              | string        | dark       | The theme of the framework. *for eg.* `dark` - `light`
 
-<div class="pre-heading">Note: How to get value if using <span class="csf-tolowercase">data_type => serialize</span></div>
+<div class="pre-heading">Get an option value ( <span class="csf-tolowercase">data_type => serialize</span> )</div>
 
 ```php
 //
@@ -837,7 +865,7 @@ $meta = get_post_meta( get_the_ID(), 'my_post_options', true );
 echo $meta['opt-text'];
 echo $meta['opt-textarea'];
 ```
-<div class="pre-heading">Note: How to get value if using <span class="csf-tolowercase">data_type => unserialize</span></div>
+<div class="pre-heading">Get an option value ( <span class="csf-tolowercase">data_type => unserialize</span> )</div>
 
 ```php
 //
@@ -892,7 +920,7 @@ if( class_exists( 'CSF' ) ) {
 }
 ```
 
-<div class="pre-heading">Usage: Data type as serialize</div>
+<div class="pre-heading">Get an option value ( <span class="csf-tolowercase">data_type => serialize</span> )</div>
 
 ```php
 //
@@ -903,7 +931,7 @@ $meta = get_term_meta( $term->term_id, 'my_taxonomy_options', true );
 echo $meta['opt-text']; // id of the field
 echo $meta['opt-textarea']; // id of the field
 ```
-<div class="pre-heading">Usage: Data type as unserialize</div>
+<div class="pre-heading">Get an option value ( <span class="csf-tolowercase">data_type => unserialize</span> )</div>
 
 ```php
 //
