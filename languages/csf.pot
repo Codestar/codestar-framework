@@ -1,0 +1,289 @@
+# Copyright (C) 2019 Codestar
+# This file is distributed under the same license as the Codestar Framework package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Codestar Framework 2.0.4\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/codestar-framework\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: classes/metabox.class.php:233 classes/options.class.php:670
+msgid "No option provided by developer."
+msgstr ""
+
+#: classes/metabox.class.php:251
+msgid "Restore"
+msgstr ""
+
+#: classes/metabox.class.php:252
+msgid "update post for restore "
+msgstr ""
+
+#: classes/metabox.class.php:252
+msgid "Cancel"
+msgstr ""
+
+#: classes/options.class.php:235 functions/actions.php:43
+#: functions/actions.php:104 functions/actions.php:126
+msgid "Error while saving."
+msgstr ""
+
+#: classes/options.class.php:278
+msgid "Success. Imported backup options."
+msgstr ""
+
+#: classes/options.class.php:300
+msgid "Default options restored."
+msgstr ""
+
+#: classes/options.class.php:326
+msgid "Default options restored for only this section."
+msgstr ""
+
+#: classes/options.class.php:384
+msgid "Settings saved."
+msgstr ""
+
+#: classes/options.class.php:570
+msgid "show all options"
+msgstr ""
+
+#: classes/options.class.php:572
+msgid "Search option(s)"
+msgstr ""
+
+#: classes/options.class.php:575 classes/options.class.php:694
+msgid "Save"
+msgstr ""
+
+#: classes/options.class.php:575 classes/options.class.php:694
+msgid "Saving..."
+msgstr ""
+
+#: classes/options.class.php:576 classes/options.class.php:695
+msgid "Reset Section"
+msgstr ""
+
+#: classes/options.class.php:576 classes/options.class.php:695
+msgid "Are you sure to reset this section options?"
+msgstr ""
+
+#: classes/options.class.php:577 classes/options.class.php:696
+#: fields/backup/backup.php:34
+msgid "Reset All"
+msgstr ""
+
+#: classes/options.class.php:577 classes/options.class.php:696
+msgid "Are you sure to reset all options?"
+msgstr ""
+
+#: classes/setup.class.php:364
+msgid "Are you sure?"
+msgstr ""
+
+#: classes/setup.class.php:401
+msgid "Ooops! This field type (%s) can not be used here, yet."
+msgstr ""
+
+#: classes/setup.class.php:443
+msgid "This field class is not available!"
+msgstr ""
+
+#: classes/setup.class.php:447
+msgid "This type is not found!"
+msgstr ""
+
+#: classes/shortcoder.class.php:228
+msgid "Add one more"
+msgstr ""
+
+#: classes/shortcoder.class.php:265
+msgid "Security check"
+msgstr ""
+
+#: fields/background/background.php:34
+msgid "No background selected"
+msgstr ""
+
+#: fields/backup/backup.php:26
+msgid "Import"
+msgstr ""
+
+#: fields/backup/backup.php:27
+msgid "copy-paste your backup string here"
+msgstr ""
+
+#: fields/backup/backup.php:31
+msgid "Export and Download Backup"
+msgstr ""
+
+#: fields/backup/backup.php:35
+msgid "Please be sure for reset all of options."
+msgstr ""
+
+#: fields/checkbox/checkbox.php:44 fields/radio/radio.php:43
+#: fields/select/select.php:74
+msgid "No data provided for this option type."
+msgstr ""
+
+#: fields/gallery/gallery.php:20
+msgid "Add Gallery"
+msgstr ""
+
+#: fields/gallery/gallery.php:21
+msgid "Edit Gallery"
+msgstr ""
+
+#: fields/gallery/gallery.php:22
+msgid "Clear"
+msgstr ""
+
+#: fields/group/group.php:23
+msgid "Add New"
+msgstr ""
+
+#: fields/group/group.php:35 fields/repeater/repeater.php:30
+msgid "Error: Nested field id can not be same with another nested field id."
+msgstr ""
+
+#: fields/group/group.php:46 fields/group/group.php:86
+#: fields/repeater/repeater.php:51 fields/repeater/repeater.php:82
+msgid "Are you sure to delete this item?"
+msgstr ""
+
+#: fields/group/group.php:121 fields/repeater/repeater.php:96
+msgid "You can not add more than"
+msgstr ""
+
+#: fields/group/group.php:122 fields/repeater/repeater.php:97
+msgid "You can not remove less than"
+msgstr ""
+
+#: fields/icon/icon.php:20 functions/actions.php:148
+msgid "Add Icon"
+msgstr ""
+
+#: fields/icon/icon.php:21
+msgid "Remove Icon"
+msgstr ""
+
+#: fields/media/media.php:23 fields/upload/upload.php:21
+msgid "Upload"
+msgstr ""
+
+#: fields/media/media.php:24 fields/upload/upload.php:22
+msgid "Remove"
+msgstr ""
+
+#: fields/media/media.php:46
+msgid "No media selected"
+msgstr ""
+
+#: fields/sorter/sorter.php:21
+msgid "Enabled"
+msgstr ""
+
+#: fields/sorter/sorter.php:22
+msgid "Disabled"
+msgstr ""
+
+#: fields/textarea/textarea.php:37
+msgid "Add Shortcode"
+msgstr ""
+
+#: fields/typography/typography.php:82
+msgid "Font Family"
+msgstr ""
+
+#: fields/typography/typography.php:83
+msgid "Select a font"
+msgstr ""
+
+#: fields/typography/typography.php:91
+msgid "Backup Font Family"
+msgstr ""
+
+#: fields/typography/typography.php:105 fields/typography/typography.php:118
+#: fields/typography/typography.php:131 fields/typography/typography.php:146
+#: fields/typography/typography.php:162 fields/typography/typography.php:175
+#: fields/typography/typography.php:189 fields/typography/typography.php:207
+msgid "Default"
+msgstr ""
+
+#: fields/typography/typography.php:116
+msgid "Font Style"
+msgstr ""
+
+#: fields/typography/typography.php:130 fields/typography/typography.php:131
+msgid "Load Extra Styles"
+msgstr ""
+
+#: fields/typography/typography.php:144
+msgid "Subset"
+msgstr ""
+
+#: fields/typography/typography.php:154
+msgid "Text Align"
+msgstr ""
+
+#: fields/typography/typography.php:170
+msgid "Font Variant"
+msgstr ""
+
+#: fields/typography/typography.php:183
+msgid "Text Transform"
+msgstr ""
+
+#: fields/typography/typography.php:197
+msgid "Text Decoration"
+msgstr ""
+
+#: fields/typography/typography.php:219
+msgid "Font Size"
+msgstr ""
+
+#: fields/typography/typography.php:231
+msgid "Line Height"
+msgstr ""
+
+#: fields/typography/typography.php:243
+msgid "Letter Spacing"
+msgstr ""
+
+#: fields/typography/typography.php:255
+msgid "Word Spacing"
+msgstr ""
+
+#: fields/typography/typography.php:269
+msgid "Font Color"
+msgstr ""
+
+#: fields/typography/typography.php:280
+msgid "Custom Style"
+msgstr ""
+
+#: functions/actions.php:35
+msgid "No data provided by developer"
+msgstr ""
+
+#: functions/actions.php:152
+msgid "Search a Icon..."
+msgstr ""
+
+#: functions/validate.php:14 functions/validate.php:86
+msgid "Please write a valid email address!"
+msgstr ""
+
+#: functions/validate.php:32 functions/validate.php:106
+msgid "Please write a numeric data!"
+msgstr ""
+
+#: functions/validate.php:50 functions/validate.php:126
+msgid "Error! This field is required!"
+msgstr ""
+
+#: functions/validate.php:68 functions/validate.php:146
+msgid "Please write a valid url!"
+msgstr ""
