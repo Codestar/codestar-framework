@@ -1,5 +1,17 @@
 # Release Notes
 
+## v2.0.4
+- Added: Dark and Light themes.
+- Added: New params to change on/off texts for Switcher field.
+- Added: Shortcode generate framework support for Elementor text editor.
+- Fixed: Sortable and Sorter fields ordering save issue in Customizer.
+- Fixed: Radio, Button Set and Image Select fields issue in Group field.
+- Fixed: Color picker default/clear button issue in Customizer.
+- Improved: RTL style of framework.
+- Improved: Media and Upload fields remove buttons.
+- Improved: Framework style css.
+- Changed: Backup field data type "json" instead of "serialize".
+
 ## v2.0.3
 - Added: Widget Options Framework (bonus).
 - Added: Nested Group support.
