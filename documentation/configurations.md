@@ -843,7 +843,7 @@ if( class_exists( 'CSF' ) ) {
 | `post_type`          | array\|string | post       | Provide any number of post_types for a given metabox to appear.
 | `data_type`          | string        | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
 | `context`            | string        | normal     | The context within the screen where the boxes should display. *for eg* `normal`, `side`, `advanced`
-| `priority`           | string        | default    | Where you want to place your metabox. Normal and advanced are the to left and side is, well, to the side.
+| `priority`           | string        | default    | The priority within the context where the boxes should show. *for eg* `high`, `low`, `default`
 | `exclude_post_types` | array         |            | Array of post types to exclude. *for eg* `post`, `page`, `products`
 | `page_templates`     | array\|string |            | Bind visibility of a metabox to any number of page templates. The value will be equal to the filename of the custom page template. <a href="#/faq?id=how-to-add-page-templates-metabox-" class="csf-more-link">?</a>
 | `post_formats`       | array\|string |            | Bind the visibility of a metabox to a given post format. <a href="https://codex.wordpress.org/Post_Formats#Supported_FormatsList"> List of post formats.</a> <a href="#/faq?id=how-to-add-post-formats-metabox-" class="csf-more-link">?</a>
