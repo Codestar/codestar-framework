@@ -189,6 +189,25 @@ array(
 
 Available dependency conditions: `==`  `!=` `>=` `>` `<=` `<` `any` `not-any`
 
+**Note**: Default dependency system controls only parent section elements for avoid conflict. But For eg. If you need to control for  among separate sections or between two metaboxes fields only set **4th** param as "**all**" or "**true**". See below:
+
+```php
+// A Switcher Field located at Metabox A.
+array(
+  'id'    => 'opt-switcher',
+  'type'  => 'Switcher',
+  'title' => 'Switcher',
+),
+
+// A Text Field located at Metabox B.
+array(
+  'id'         => 'opt-text',
+  'type'       => 'text',
+  'title'      => 'Text',
+  'dependency' => array( 'opt-switcher', '==', 'true', 'all' ), // Set 4th param as "all" or "true".
+),
+```
+
 ---
 
 ### How to use attributes ?
