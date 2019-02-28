@@ -3,6 +3,7 @@
 ## v2.0.5
 - Added: Dependency controls for among separate sections fields.
 - Added: Border field new border style properties.
+- Added: Taxonomy Framework section title param.
 - Fixed: Metabox section title issue.
 - Fixed: Typography refresh issue in Customizer.
 - Fixed: Group and Repeater fields without title parameter.
