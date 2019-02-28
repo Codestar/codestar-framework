@@ -1,5 +1,15 @@
 # Release Notes
 
+## v2.0.5
+- Added: Dependency controls for among separate sections fields.
+- Added: Border field new border style properties.
+- Fixed: Metabox section title issue.
+- Fixed: Typography refresh issue in Customizer.
+- Fixed: Group and Repeater fields without title parameter.
+- Fixed: Color field default issue in Background, Typography, Border fields.
+- Fixed: RevSlider CodeMirror conflict.
+- Fixed: Shortcode Generate Framework Group/Repeater nested issue.
+
 ## v2.0.4
 - Added: Dark and Light themes.
 - Added: New params to change on/off texts for Switcher field.

@@ -189,7 +189,7 @@ array(
 
 Available dependency conditions: `==`  `!=` `>=` `>` `<=` `<` `any` `not-any`
 
-**Note**: Default dependency system controls only parent section elements for avoid conflict. But For eg. If you need to control for  among separate sections or between two metaboxes fields only set **4th** param as "**all**" or "**true**". See below:
+**Note**: Default dependency system controls only parent section elements for avoid conflict. But For eg. If you need to control for among separate sections or between two metaboxes fields only set **4th** param as "**all**" or "**true**". See below:
 
 ```php
 // A Switcher Field located at Metabox A.
