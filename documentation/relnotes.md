@@ -1,5 +1,16 @@
 # Release Notes
 
+## v2.0.6
+- Added: Default values from a external array as optional for all frameworks.
+- Added: Widget Title sync support in Widgets Framework.
+- Added: WP Roles select field options.
+- Fixed: Initialization issue inside after_theme_setup action.
+- Fixed: Backup export button issue.
+- Fixed: WP Media uploaded item selected issue.
+- Improved: Reset and Import UI messages in the Customize Framework.
+- Improved: Translation .POT file.
+- Improved: Global dependency controls.
+
 ## v2.0.5
 - Added: Dependency controls for among separate sections fields.
 - Added: Border field new border style properties.

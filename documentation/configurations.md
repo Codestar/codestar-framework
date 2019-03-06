@@ -288,6 +288,9 @@ if( class_exists( 'CSF' ) ) {
     // theme
     'theme' => 'dark',
 
+    // external default values
+    'defaults' => array(),
+
   ) );
 
   //
@@ -393,6 +396,7 @@ echo prefix_get_option( 'opt-text', 'default value' );
 | `async_webfont`            | bool      | false          | Flag to load google fonts with *async* method of the framework.
 | `output_css`               | bool      | true           | Flag to load output css of the framework.
 | `theme`                    | string    | dark           | The theme of the framework. *for eg.* `dark` - `light`
+| `defaults`                 | array     |                | Sets all default values from a external array. (optional)
 
 <div class="pre-heading">Section Arguments</div>
 
@@ -647,7 +651,7 @@ echo prefix_get_option( 'opt-text', 'default value' );
 | `enqueue_webfont`  | bool     | true           | Flag to load web fonts of the framework.
 | `async_webfont`    | bool     | false          | Flag to load google fonts with *async* method of the framework.
 | `output_css`       | bool     | true           | Flag to load output css of the framework.
-
+| `defaults`         | array    |                | Sets all default values from a external array. (optional)
 ---
 
 ## Metabox Option Framework
@@ -783,7 +787,7 @@ if( class_exists( 'CSF' ) ) {
     'title'              => '',
     'post_type'          => 'post',
     'data_type'          => 'serialize',
-    'context'            => 'normal',
+    'context'            => 'advanced',
     'priority'           => 'default',
     'exclude_post_types' => array(),
     'page_templates'     => '',
@@ -842,7 +846,7 @@ if( class_exists( 'CSF' ) ) {
 | `title`              | string        |            | Title of the meta box.
 | `post_type`          | array\|string | post       | Provide any number of post_types for a given metabox to appear.
 | `data_type`          | string        | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
-| `context`            | string        | normal     | The context within the screen where the boxes should display. *for eg* `normal`, `side`, `advanced`
+| `context`            | string        | advanced   | The context within the screen where the boxes should display. *for eg* `normal`, `side`, `advanced`
 | `priority`           | string        | default    | The priority within the context where the boxes should show. *for eg* `high`, `low`, `default`
 | `exclude_post_types` | array         |            | Array of post types to exclude. *for eg* `post`, `page`, `products`
 | `page_templates`     | array\|string |            | Bind visibility of a metabox to any number of page templates. The value will be equal to the filename of the custom page template. <a href="#/faq?id=how-to-add-page-templates-metabox-" class="csf-more-link">?</a>
@@ -852,6 +856,7 @@ if( class_exists( 'CSF' ) ) {
 | `async_webfont`      | bool          | false      | Flag to load google fonts with *async* method of the framework.
 | `output_css`         | bool          | true       | Flag to load output css of the framework.
 | `theme`              | string        | dark       | The theme of the framework. *for eg.* `dark` - `light`
+| `defaults`           | array         |            | Sets all default values from a external array. (optional)
 
 <div class="pre-heading">Get an option value ( <span class="csf-tolowercase">data_type => serialize</span> )</div>
 
@@ -947,7 +952,7 @@ echo get_term_meta( $term->term_id, 'opt-textarea', true ); // id of the field
 |--------------|---------------|------------|-------------|
 | `taxonomy`   | array/string  |            | Provide any number of taxonomy slugs for a given “term” box to appear.
 | `data_type`  | string        | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
-
+| `defaults`   | array         |            | Sets all default values from a external array. (optional)
 ---
 
 ## Shortcode Generate Framework
@@ -1281,6 +1286,7 @@ array(
 | `select_title`    | string  | Select a shortcode | Placeholder to be displayed when nothing is selected.
 | `insert_title`    | string  | Insert Shortcode   | Text to display on the insert button.
 | `show_in_editor`  | bool    | true               | Flag to display media insert/upload buttons.
+| `defaults`        | array   |                    | Sets all default values from a external array. (optional)
 
 <div class="pre-heading">EXtra Section Arguments for Shortcoder</div>
 
@@ -1311,17 +1317,29 @@ if( class_exists( 'CSF' ) ) {
     'fields'      => array(
 
       array(
-        'id'      => 'opt-text',
+        'id'      => 'title',
         'type'    => 'text',
-        'title'   => 'Text',
-        'default' => 'Default text value'
+        'title'   => 'Title',
       ),
 
       array(
-        'id'    => 'opt-textarea',
-        'type'  => 'textarea',
-        'title' => 'Textarea',
-        'help'  => 'The help text of the field.',
+        'id'      => 'opt-text',
+        'type'    => 'text',
+        'title'   => 'Text',
+        'default' => 'Default text value',
+      ),
+
+      array(
+        'id'      => 'opt-switcher',
+        'type'    => 'switcher',
+        'title'   => 'Switcher',
+      ),
+
+      array(
+        'id'      => 'opt-textarea',
+        'type'    => 'textarea',
+        'title'   => 'Textarea',
+        'help'    => 'The help text of the field.',
       ),
 
     )
@@ -1342,7 +1360,10 @@ if( class_exists( 'CSF' ) ) {
 
       // var_dump( $args ); // Widget arguments
       // var_dump( $instance ); // Saved values from database
+      echo $instance['title'];
       echo $instance['opt-text'];
+      echo $instance['opt-switcher'];
+      echo $instance['opt-textarea'];
 
       echo $args['after_widget'];
 
@@ -1360,3 +1381,4 @@ if( class_exists( 'CSF' ) ) {
 | `description` | string  |          | Description of widget in the backend.
 | `classname`   | string  |          | CSS classes (space separated) to append to the front-end widget area.
 | `width`       | number  | 250      | Width of the fully expanded control form (but try hard to use the default width).
+| `defaults`    | array   |          | Sets all default values from a external array. (optional)

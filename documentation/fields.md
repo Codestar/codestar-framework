@@ -537,7 +537,7 @@ array(
 | **Extras**       | ---            | ---         | ---
 | `empty_message`  | string         |             | Display to empty text if options empty.
 | `label`          | string         |             | The text to display with the checkbox, when use to single checkbox.
-| `options`        | array\|string  |             | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars`
+| `options`        | array\|string  |             | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars` `roles`
 | `query_args`     | array          |             | An associative array of query arguments.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -1709,7 +1709,7 @@ array(
 | `validate`       | string         |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---            | ---      | ---
 | `empty_message`  | string         |          | Display to empty text if options empty.
-| `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars`
+| `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars` `roles`
 | `query_args`     | array          |          | An associative array of query arguments.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -1947,9 +1947,18 @@ array(
 array(
   'id'          => 'opt-select-9',
   'type'        => 'select',
-  'title'       => 'Selec with Sidebars',
+  'title'       => 'Selec with sidebars',
   'placeholder' => 'Select a sidebar',
   'options'     => 'sidebars',
+),
+
+// Select with WP Roles
+array(
+  'id'          => 'opt-select-9',
+  'type'        => 'select',
+  'title'       => 'Selec with wp roles',
+  'placeholder' => 'Select a wp role',
+  'options'     => 'roles',
 ),
 
 // Select with CPT (custom post type) pages
@@ -2005,7 +2014,7 @@ array(
 | `placeholder`    | string         |          | The placeholder to be displayed when nothing is selected.
 | `chosen`         | bool           | false    | Flag to enable [ChosenJS](https://harvesthq.github.io/chosen/) style select.
 | `multiple`       | bool           | false    | Flag to allows multiple options choose.
-| `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars`
+| `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars` `roles`
 | `query_args`     | array          |          | An associative array of query arguments.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
