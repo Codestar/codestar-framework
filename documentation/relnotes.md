@@ -1,5 +1,14 @@
 # Release Notes
 
+## v2.0.7
+- Added: Profile Options Framework (bonus).
+- Added: Media field fallback function for easy migration from v1.x to v2.x.
+- Fixed: A minor PHP notice in the Shortcode Generate Framework.
+- Improved: Link Color field output for given array elements.
+- Improved: Elementor integration for Shortcode Generate Framework.
+- Improved: Backup field UI fallback in the Customize Framework.
+- Improved: Global dependency controls.
+
 ## v2.0.6
 - Added: Default values from a external array as optional for all frameworks.
 - Added: Widget Title sync support in Widgets Framework.
