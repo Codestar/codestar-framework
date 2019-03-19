@@ -2924,7 +2924,7 @@ array(
 | `color`              | bool           | true       | Flag to display *color* of the field. (specifies the color of text)
 | `subset`             | bool           | true       | Flag to display *subset* of the field. (specifies the languages of font)
 | `chosen`             | bool           | true       | Flag to enable [ChosenJS](https://harvesthq.github.io/chosen/) style select.
-| `preview`            | bool           | true       | Flag to display *preview font area* of the field.
+| `preview`            | bool           | true       | Flag to display *preview font area* of the field. `true` `false` or set `always` for show preview always.
 | `backup_font_family` | bool           | false      | Flag to display *backup_font_family* of the field. (specifies the generic font family backup)
 | `font_variant`       | bool           | false      | Flag to display *font_variant* of the field. (specifies whether or not a text should be displayed in a small-caps font)
 | `word_spacing`       | bool           | false      | Flag to display *word_spacing* of the field. (increases or decreases the white space between words.)

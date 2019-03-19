@@ -953,6 +953,164 @@ echo get_term_meta( $term->term_id, 'opt-textarea', true ); // id of the field
 | `taxonomy`   | array/string  |            | Provide any number of taxonomy slugs for a given “term” box to appear.
 | `data_type`  | string        | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
 | `defaults`   | array         |            | Sets all default values from a external array. (optional)
+
+---
+
+## Profile Option Framework
+
+<div class="pre-heading">Config Examples</div>
+
+```php
+// Control core classes for avoid errors
+if( class_exists( 'CSF' ) ) {
+
+  //
+  // Set a unique slug-like ID
+  $prefix = 'my_profile_options';
+
+  //
+  // Create profile options
+  CSF::createProfileOptions( $prefix, array(
+    'data_type' => 'serialize', // The type of the database save options. `serialize` or `unserialize`
+  ) );
+
+  //
+  // Create a section
+  CSF::createSection( $prefix, array(
+    'fields' => array(
+
+      array(
+        'id'    => 'opt-text',
+        'type'  => 'text',
+        'title' => 'Text',
+      ),
+
+      array(
+        'id'    => 'opt-textarea',
+        'type'  => 'textarea',
+        'title' => 'Textarea',
+      ),
+
+    )
+  ) );
+
+}
+```
+
+<div class="pre-heading">Get an option value ( <span class="csf-tolowercase">data_type => serialize</span> )</div>
+
+```php
+//
+// You should use my_profile_options as this is the id for your key declared into config
+$user_id   = get_current_user_id();
+$user_meta = get_user_meta( $user_id, 'my_profile_options', true );
+
+echo $user_meta['opt-text']; // id of the field
+echo $user_meta['opt-textarea']; // id of the field
+```
+<div class="pre-heading">Get an option value ( <span class="csf-tolowercase">data_type => unserialize</span> )</div>
+
+```php
+//
+// Get options
+$user_id = get_current_user_id();
+echo get_user_meta( $user_id, 'opt-text', true ); // id of the field
+echo get_user_meta( $user_id, 'opt-textarea', true ); // id of the field
+```
+
+<div class="pre-heading">Arguments</div>
+
+| Name         | Type   | Default    | Description |
+|--------------|--------|------------|-------------|
+| `data_type`  | string | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
+| `defaults`   | array  |            | Sets all default values from a external array. (optional)
+
+---
+
+## Widget Option Framework
+
+<div class="pre-heading">Config Examples</div>
+
+```php
+// Control core classes for avoid errors
+if( class_exists( 'CSF' ) ) {
+
+  //
+  // Create a widget 1
+  //
+  CSF::createWidget( 'csf_widget_example_1', array(
+    'title'       => 'Codestar Widget Example 1',
+    'classname'   => 'csf-widget-classname',
+    'description' => 'A description for widget example 1',
+    'fields'      => array(
+
+      array(
+        'id'      => 'title',
+        'type'    => 'text',
+        'title'   => 'Title',
+      ),
+
+      array(
+        'id'      => 'opt-text',
+        'type'    => 'text',
+        'title'   => 'Text',
+        'default' => 'Default text value',
+      ),
+
+      array(
+        'id'      => 'opt-switcher',
+        'type'    => 'switcher',
+        'title'   => 'Switcher',
+      ),
+
+      array(
+        'id'      => 'opt-textarea',
+        'type'    => 'textarea',
+        'title'   => 'Textarea',
+        'help'    => 'The help text of the field.',
+      ),
+
+    )
+  ) );
+
+  //
+  // Front-end display of widget example 1
+  // Attention: This function named considering above widget base id.
+  //
+  if( ! function_exists( 'csf_widget_example_1' ) ) {
+    function csf_widget_example_1( $args, $instance ) {
+
+      echo $args['before_widget'];
+
+      if ( ! empty( $instance['title'] ) ) {
+        echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+      }
+
+      // var_dump( $args ); // Widget arguments
+      // var_dump( $instance ); // Saved values from database
+      echo $instance['title'];
+      echo $instance['opt-text'];
+      echo $instance['opt-switcher'];
+      echo $instance['opt-textarea'];
+
+      echo $args['after_widget'];
+
+    }
+  }
+
+}
+```
+
+<div class="pre-heading">Arguments</div>
+
+| Name          | Type    | Default  | Description |
+|---------------|---------|----------|-------------|
+| `title`       | string  |          | Title of widget in the backend.
+| `description` | string  |          | Description of widget in the backend.
+| `classname`   | string  |          | CSS classes (space separated) to append to the front-end widget area.
+| `width`       | number  | 250      | Width of the fully expanded control form (but try hard to use the default width).
+| `defaults`    | array   |          | Sets all default values from a external array. (optional)
+
 ---
 
 ## Shortcode Generate Framework
@@ -1296,89 +1454,3 @@ array(
 | `shortcode_name`   | string  | Set a unique slug-like name of shortcode.
 | `group_shortcode`  | string  | Set a unique slug-like name of group shortcode.
 | `group_fields`     | array   | An associative array containing fields for the fieldsets.
-
----
-
-## Widget Option Framework
-
-<div class="pre-heading">Config Examples</div>
-
-```php
-// Control core classes for avoid errors
-if( class_exists( 'CSF' ) ) {
-
-  //
-  // Create a widget 1
-  //
-  CSF::createWidget( 'csf_widget_example_1', array(
-    'title'       => 'Codestar Widget Example 1',
-    'classname'   => 'csf-widget-classname',
-    'description' => 'A description for widget example 1',
-    'fields'      => array(
-
-      array(
-        'id'      => 'title',
-        'type'    => 'text',
-        'title'   => 'Title',
-      ),
-
-      array(
-        'id'      => 'opt-text',
-        'type'    => 'text',
-        'title'   => 'Text',
-        'default' => 'Default text value',
-      ),
-
-      array(
-        'id'      => 'opt-switcher',
-        'type'    => 'switcher',
-        'title'   => 'Switcher',
-      ),
-
-      array(
-        'id'      => 'opt-textarea',
-        'type'    => 'textarea',
-        'title'   => 'Textarea',
-        'help'    => 'The help text of the field.',
-      ),
-
-    )
-  ) );
-
-  //
-  // Front-end display of widget example 1
-  // Attention: This function named considering above widget base id.
-  //
-  if( ! function_exists( 'csf_widget_example_1' ) ) {
-    function csf_widget_example_1( $args, $instance ) {
-
-      echo $args['before_widget'];
-
-      if ( ! empty( $instance['title'] ) ) {
-        echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-      }
-
-      // var_dump( $args ); // Widget arguments
-      // var_dump( $instance ); // Saved values from database
-      echo $instance['title'];
-      echo $instance['opt-text'];
-      echo $instance['opt-switcher'];
-      echo $instance['opt-textarea'];
-
-      echo $args['after_widget'];
-
-    }
-  }
-
-}
-```
-
-<div class="pre-heading">Arguments</div>
-
-| Name          | Type    | Default  | Description |
-|---------------|---------|----------|-------------|
-| `title`       | string  |          | Title of widget in the backend.
-| `description` | string  |          | Description of widget in the backend.
-| `classname`   | string  |          | CSS classes (space separated) to append to the front-end widget area.
-| `width`       | number  | 250      | Width of the fully expanded control form (but try hard to use the default width).
-| `defaults`    | array   |          | Sets all default values from a external array. (optional)
