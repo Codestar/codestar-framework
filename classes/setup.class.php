@@ -232,11 +232,11 @@ if( ! class_exists( 'CSF' ) ) {
 
       // we need this path-finder code for set URL of framework
       $dirname        = wp_normalize_path( dirname( dirname( __FILE__ ) ) );
-      $theme_dir      = wp_normalize_path( get_theme_file_path() );
+      $theme_dir      = wp_normalize_path( get_parent_theme_file_path() );
       $plugin_dir     = wp_normalize_path( WP_PLUGIN_DIR );
       $located_plugin = ( preg_match( '#'. self::sanitize_dirname( $plugin_dir ) .'#', self::sanitize_dirname( $dirname ) ) ) ? true : false;
       $directory      = ( $located_plugin ) ? $plugin_dir : $theme_dir;
-      $directory_uri  = ( $located_plugin ) ? WP_PLUGIN_URL : get_theme_file_uri();
+      $directory_uri  = ( $located_plugin ) ? WP_PLUGIN_URL : get_parent_theme_file_uri();
       $foldername     = str_replace( $directory, '', $dirname );
 
       self::$dir = $dirname;
