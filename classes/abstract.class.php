@@ -83,7 +83,7 @@ if( ! class_exists( 'CSF_Abstract' ) ) {
 
       if( ! empty( $this->typographies ) && empty( $this->args['async_webfont'] ) ) {
 
-        $query  = array( 'family' => urlencode( implode( '|', $this->typographies ) ) );
+        $query  = array( 'family' => implode( '|', $this->typographies ) );
         $api    = '//fonts.googleapis.com/css';
         $handle = 'csf-google-web-fonts-'. $this->unique;
         $src    = esc_url( add_query_arg( $query, $api ) );
