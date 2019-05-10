@@ -233,63 +233,64 @@ if( class_exists( 'CSF' ) ) {
   CSF::createOptions( $prefix, array(
 
     // framework title
-    'framework_title' => 'Codestar Framework <small>by Codestar</small>',
-    'framework_class' => '',
+    'framework_title'         => 'Codestar Framework <small>by Codestar</small>',
+    'framework_class'         => '',
 
     // menu settings
-    'menu_title'      => '',
-    'menu_slug'       => '',
-    'menu_type'       => 'menu',
-    'menu_capability' => 'manage_options',
-    'menu_icon'       => null,
-    'menu_position'   => null,
-    'menu_hidden'     => false,
-    'menu_parent'     => '',
+    'menu_title'              => '',
+    'menu_slug'               => '',
+    'menu_type'               => 'menu',
+    'menu_capability'         => 'manage_options',
+    'menu_icon'               => null,
+    'menu_position'           => null,
+    'menu_hidden'             => false,
+    'menu_parent'             => '',
 
     // menu extras
-    'show_bar_menu'      => true,
-    'show_sub_menu'      => true,
-    'show_network_menu'  => true,
-    'show_in_customizer' => false,
+    'show_bar_menu'           => true,
+    'show_sub_menu'           => true,
+    'show_network_menu'       => true,
+    'show_in_customizer'      => false,
 
-    'show_search'        => true,
-    'show_reset_all'     => true,
-    'show_reset_section' => true,
-    'show_footer'        => true,
-    'show_all_options'   => true,
-    'sticky_header'      => true,
-    'save_defaults'      => true,
-    'ajax_save'          => true,
+    'show_search'             => true,
+    'show_reset_all'          => true,
+    'show_reset_section'      => true,
+    'show_footer'             => true,
+    'show_all_options'        => true,
+    'sticky_header'           => true,
+    'save_defaults'           => true,
+    'ajax_save'               => true,
 
     // admin bar menu settings
     'admin_bar_menu_icon'     => '',
     'admin_bar_menu_priority' => 80,
 
     // footer
-    'footer_text'   => '',
-    'footer_after'  => '',
-    'footer_credit' => '',
+    'footer_text'             => '',
+    'footer_after'            => '',
+    'footer_credit'           => '',
 
     // database model
-    'database'       => '', // options, transient, theme_mod, network
-    'transient_time' => 0,
+    'database'                => '', // options, transient, theme_mod, network
+    'transient_time'          => 0,
 
     // contextual help
     'contextual_help'         => array(),
     'contextual_help_sidebar' => '',
 
     // typography options
-    'enqueue_webfont' => true,
-    'async_webfont'   => false,
+    'enqueue_webfont'         => true,
+    'async_webfont'           => false,
 
     // others
-    'output_css' => true,
+    'output_css'              => true,
 
-    // theme
-    'theme' => 'dark',
+    // theme and wrapper classname
+    'theme'                   => 'dark',
+    'class'                   => '',
 
     // external default values
-    'defaults' => array(),
+    'defaults'                => array(),
 
   ) );
 
@@ -363,7 +364,6 @@ echo prefix_get_option( 'opt-text', 'default value' );
 | Name                       | Type      | Default        | Description |
 |----------------------------|-----------|----------------|-------------|
 | `framework_title`          | string    |                | Text to display in the framework header.
-| `framework_class`          | string    |                | Extra CSS classes (space separated) to append to the main framework wrapper.
 | `menu_title`               | string    |                | On-screen name text for the menu.
 | `menu_slug`                | string    |                | Slug name to refer to this menu by (should be unique for this menu).
 | `menu_type`                | string    | menu           | Menu type. *for eg.* `menu` `submenu`
@@ -396,6 +396,7 @@ echo prefix_get_option( 'opt-text', 'default value' );
 | `async_webfont`            | bool      | false          | Flag to load google fonts with *async* method of the framework.
 | `output_css`               | bool      | true           | Flag to load output css of the framework.
 | `theme`                    | string    | dark           | The theme of the framework. *for eg.* `dark` - `light`
+| `class`                    | string    |                | Extra CSS classes (space separated) to append to the main framework wrapper.
 | `defaults`                 | array     |                | Sets all default values from a external array. (optional)
 
 <div class="pre-heading">Section Arguments</div>
@@ -797,6 +798,7 @@ if( class_exists( 'CSF' ) ) {
     'async_webfont'      => false,
     'output_css'         => true,
     'theme'              => 'dark',
+    'class'              => '',
   ) );
 
   //
@@ -856,6 +858,7 @@ if( class_exists( 'CSF' ) ) {
 | `async_webfont`      | bool          | false      | Flag to load google fonts with *async* method of the framework.
 | `output_css`         | bool          | true       | Flag to load output css of the framework.
 | `theme`              | string        | dark       | The theme of the framework. *for eg.* `dark` - `light`
+| `class`              | string        |            | Extra CSS classes (space separated) to append to the main framework wrapper.
 | `defaults`           | array         |            | Sets all default values from a external array. (optional)
 
 <div class="pre-heading">Get an option value ( <span class="csf-tolowercase">data_type => serialize</span> )</div>
@@ -953,6 +956,7 @@ echo get_term_meta( $term->term_id, 'opt-textarea', true ); // id of the field
 | `taxonomy`   | array/string  |            | Provide any number of taxonomy slugs for a given “term” box to appear.
 | `data_type`  | string        | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
 | `defaults`   | array         |            | Sets all default values from a external array. (optional)
+| `class`      | string        |            | Extra CSS classes (space separated) to append to the main framework wrapper.
 
 ---
 
@@ -1024,6 +1028,7 @@ echo get_user_meta( $user_id, 'opt-textarea', true ); // id of the field
 |--------------|--------|------------|-------------|
 | `data_type`  | string | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
 | `defaults`   | array  |            | Sets all default values from a external array. (optional)
+| `class`      | string |            | Extra CSS classes (space separated) to append to the main framework wrapper.
 
 ---
 
@@ -1110,6 +1115,7 @@ if( class_exists( 'CSF' ) ) {
 | `classname`   | string  |          | CSS classes (space separated) to append to the front-end widget area.
 | `width`       | number  | 250      | Width of the fully expanded control form (but try hard to use the default width).
 | `defaults`    | array   |          | Sets all default values from a external array. (optional)
+| `class`       | string  |          | Extra CSS classes (space separated) to append to the main framework wrapper.
 
 ---
 
@@ -1445,6 +1451,7 @@ array(
 | `insert_title`    | string  | Insert Shortcode   | Text to display on the insert button.
 | `show_in_editor`  | bool    | true               | Flag to display media insert/upload buttons.
 | `defaults`        | array   |                    | Sets all default values from a external array. (optional)
+| `class`           | string  |                    | Extra CSS classes (space separated) to append to the main framework wrapper.
 
 <div class="pre-heading">EXtra Section Arguments for Shortcoder</div>
 

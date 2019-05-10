@@ -106,6 +106,17 @@ array(
   'title'      => 'Text',
   'dependency' => array( 'opt-switcher|opt-select', '==|==', 'true|opt-2' ),
 ),
+
+// another usage for more human readable way
+array(
+  'id'         => 'opt-text',
+  'type'       => 'text',
+  'title'      => 'Text',
+  'dependency' => array(
+    array( 'opt-switcher', '==', 'true' ),
+    array( 'opt-select',   '==', 'opt-2' ),
+  ),
+),
 ```
 </div>
 <div class="csf-tab-content">
@@ -180,6 +191,17 @@ array(
   'style'      => 'success',
   'content'    => 'Success: Switched to (ON) and selected to (Blue).',
   'dependency' => array( 'opt-depend-switcher-1|opt-depend-select-1', '==|==', 'true|blue' ),
+),
+
+// another usage for more human readable way
+array(
+  'type'       => 'notice',
+  'style'      => 'success',
+  'content'    => 'Success: Switched to (ON) and selected to (Blue).',
+  'dependency' => array(
+    array( 'opt-depend-switcher-1', '==', 'true' ),
+    array( 'opt-depend-select-1',   '==', 'blue' ),
+  ),
 ),
 ```
 </div>

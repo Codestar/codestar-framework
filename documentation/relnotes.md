@@ -1,5 +1,17 @@
 # Release Notes
 
+## v2.0.8
+- Added: Framework wrapper classname param as "class" for override css styles.
+- Added: Checkbox and Radio field group option like Select field group.
+- Added: Attachment post type metabox support.
+- Fixed: Auto-filled issue for framework search input.
+- Fixed: Spacing field refresh issue in Customizer.
+- Fixed: Radio field checked issue in category id select.
+- Fixed: Metabox single option save issue.
+- Fixed: Metabox wp editor loaded issue.
+- Improved: Dependency hide/show for a text field after the value is written.
+- Improved: Dependency parameter for multiple conditions.
+
 ## v2.0.7
 - Added: Profile Options Framework (bonus).
 - Added: Media field fallback function for easy migration from v1.x to v2.x.
