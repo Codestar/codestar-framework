@@ -750,7 +750,7 @@ array(
 array(
   'id'        => 'opt-color-group-1',
   'type'      => 'color_group',
-  'title'     => 'Color',
+  'title'     => 'Color Group',
   'options'   => array(
     'color-1' => 'Color 1',
     'color-2' => 'Color 2',
@@ -765,7 +765,7 @@ array(
 array(
   'id'        => 'opt-color-group-2',
   'type'      => 'color_group',
-  'title'     => 'Color',
+  'title'     => 'Color Group',
   'options'   => array(
     'color-1' => 'Color 1',
     'color-2' => 'Color 2',
