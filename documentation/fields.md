@@ -749,7 +749,7 @@ array(
 ```php
 array(
   'id'        => 'opt-color-group-1',
-  'type'      => 'color',
+  'type'      => 'color_group',
   'title'     => 'Color',
   'options'   => array(
     'color-1' => 'Color 1',
@@ -764,7 +764,7 @@ array(
 ```php
 array(
   'id'        => 'opt-color-group-2',
-  'type'      => 'color',
+  'type'      => 'color_group',
   'title'     => 'Color',
   'options'   => array(
     'color-1' => 'Color 1',
