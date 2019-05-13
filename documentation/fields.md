@@ -681,7 +681,7 @@ array(
 <div class="csf-tab-content">
 
 ```php
-// Output Example 1
+// Output for default color
 array(
   'id'     => 'opt-color-3',
   'type'   => 'color',
@@ -689,20 +689,29 @@ array(
   'output' => '.element-1'
 ),
 
-// Output Example 2
+// Output for background color
 array(
-  'id'     => 'opt-color-4',
+  'id'          => 'opt-color-4',
+  'type'        => 'color',
+  'title'       => 'Color',
+  'output'      => '.element-2'
+  'output_mode' => 'background-color' // Supports css properties like ( border-color, color, background-color etc )
+),
+
+// Output for multiple element
+array(
+  'id'     => 'opt-color-5',
   'type'   => 'color',
   'title'  => 'Color',
   'output' => array( '.element-1', '.element-2', '.element-3' )
 ),
 
-// Output Example 3
+// Output for multiple element with different property
 array(
-  'id'     => 'opt-color-5',
+  'id'     => 'opt-color-6',
   'type'   => 'color',
   'title'  => 'Color',
-  'output' => array( 'background-color' => '.element-1', '.element-2', '.element-3' )
+  'output' => array( 'background-color' => '.element-1', 'color' => '.element-2', 'border-color' => '.element-3' )
 ),
 ```
 </div>
