@@ -79,6 +79,31 @@ $options = get_option( 'my_framework' ); // unique id of the framework
 
 echo $options['opt-text']; // id of the field
 echo $options['opt-textarea']; // id of the field
+
+
+//or  you can use this function
+// make function for get theme option value
+if( class_exists( 'CSF' ) ) {
+
+  function get_csf_option($csf_id = NULL, $csf_id_two = NULL){
+
+    $csf_theme_options = get_option('my_framework'); // unique id of the framework
+
+    if(!empty($csf_id_two)) {
+      $csf_option_value = $csf_theme_options[$csf_id][$csf_id_two];
+    }else {
+      $csf_option_value = $csf_theme_options[$option_id];
+    }
+    return $csf_option_value;
+  }
+}
+
+//display value
+echo get_csf_option('your-field-id');
+
+// double array value like
+
+echo get_csf_option('field-id', 'url');
 ```
 
 ## Documentation
