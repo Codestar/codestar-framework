@@ -971,7 +971,7 @@ array(
 | `height_icon`       | string         | height-icon  | The icon/text to display on the *height* of the field.
 | `width`             | bool           | true         | Flag to display *width* of the field.
 | `height`            | bool           | true         | Flag to display *height* of the field.
-| `unit`              | bool           | true         | Flag to display *unit selector* of the field.
+| `show_units`        | bool           | true         | Flag to display *unit selector* of the field.
 | `units`             | array          |              | The CSS measurement units, *for eg.* `px` `em` `%` `cm` `pt`
 | `output`            | array\|string  |              | CSS elements selector.
 | `output_prefix`     | string         |              | The setting for add `max` / `min` to output CSS property of element. *for eg.* `max-width` `max-height`
@@ -2410,7 +2410,7 @@ array(
 | `bottom`            | bool           | true         | Flag to display *bottom* of the field.
 | `left`              | bool           | true         | Flag to display *left* of the field.
 | `all`               | bool           | false        | Flag to display *all corners* of the field.
-| `unit`              | bool           | true         | Flag to display *unit selector* of the field.
+| `show_units`        | bool           | true         | Flag to display *unit selector* of the field.
 | `units`             | array          |              | The CSS measurement units, *for eg.* `px` `em` `%` `cm` `pt`
 | `output`            | array\|string  |              | CSS elements selector.
 | `output_mode`       | string         | padding      | Output CSS property of an element. for eg. `relative` `padding` `margin`
