@@ -5,6 +5,7 @@
 - Fixed: Metabox save php notices when using "serialize" and "unserialize" in same time.
 - Fixed: Multiple instances save data issue.
 - Fixed: Spacing field all_icon parameter.
+- Fixed: Admin options show in customizer parameter "show_in_customizer".
 - Improved: Media field specific type of uploads.
 - Improved: Spacing and dimensions fields unit parameter.
 - Improved: "empty_message" parameter for checkbox, radio and select fields.
