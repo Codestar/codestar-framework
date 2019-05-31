@@ -419,6 +419,7 @@ echo prefix_get_option( 'opt-text', 'default value' );
 <span class="csf-tab-title csf-tab-active">Simple</span>
 <span class="csf-tab-title">Options w/ Tabs</span>
 <span class="csf-tab-title">Options w/ Fully Arguments</span>
+<span class="csf-tab-title">Assign Predefined Section</span>
 </div>
 <div class="csf-tab-contents">
 <div class="csf-tab-content csf-tab-active">
@@ -444,9 +445,9 @@ if( class_exists( 'CSF' ) ) {
       //
       // A text field
       array(
-        'id'    => 'opt-text',
+        'id'    => 'opt-text-1',
         'type'  => 'text',
-        'title' => 'Simple Text',
+        'title' => 'Text 1',
       ),
 
     )
@@ -455,14 +456,32 @@ if( class_exists( 'CSF' ) ) {
   //
   // Create a section
   CSF::createSection( $prefix, array(
-    'title'  => 'Tab Title 2',
+    'assign' => 'title_tagline',
     'fields' => array(
 
-      // A textarea field
+      //
+      // A text field
       array(
-        'id'    => 'opt-textarea',
-        'type'  => 'textarea',
-        'title' => 'Simple Textarea',
+        'id'    => 'opt-text-2',
+        'type'  => 'text',
+        'title' => 'Text 2',
+      ),
+
+    )
+  ) );
+
+  //
+  // Create a section
+  CSF::createSection( $prefix, array(
+    'assign' => 'static_front_page',
+    'fields' => array(
+
+      //
+      // A text field
+      array(
+        'id'    => 'opt-text-3',
+        'type'  => 'text',
+        'title' => 'Text 3',
       ),
 
     )

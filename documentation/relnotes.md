@@ -1,5 +1,14 @@
 # Release Notes
 
+## v2.0.9
+- Added: Framework fields support for predefined customizer sections.
+- Fixed: Metabox save php notices when using "serialize" and "unserialize" in same time.
+- Fixed: Multiple instances save data issue.
+- Fixed: Spacing field all_icon parameter.
+- Improved: Media field specific type of uploads.
+- Improved: Spacing and dimensions fields unit parameter.
+- Improved: "empty_message" parameter for checkbox, radio and select fields.
+
 ## v2.0.8
 - Added: Framework wrapper classname param as "class" for override css styles.
 - Added: Checkbox and Radio field group option like Select field group.
