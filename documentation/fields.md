@@ -1850,23 +1850,23 @@ array(
 
 ```php
 array(
-  'id'            => 'opt-select-2',
-  'type'          => 'select',
-  'title'         => 'Select',
-  'placeholder'   => 'Select an option',
-  'options'       => array(
-    'Group Title' => array(
-      'option-1'  => 'Option 1',
-      'option-2'  => 'Option 2',
-      'option-3'  => 'Option 3',
+  'id'           => 'opt-select-2',
+  'type'         => 'select',
+  'title'        => 'Select',
+  'placeholder'  => 'Select an option',
+  'options'      => array(
+    'Group 1'    => array(
+      'option-1' => 'Option 1',
+      'option-2' => 'Option 2',
+      'option-3' => 'Option 3',
     ),
-    'Group Title' => array(
-      'option-4'  => 'Option 4',
-      'option-5'  => 'Option 5',
-      'option-6'  => 'Option 6',
+    'Group 2'    => array(
+      'option-4' => 'Option 4',
+      'option-5' => 'Option 5',
+      'option-6' => 'Option 6',
     ),
   ),
-  'default'       => array( 'option-2', 'option-5' )
+  'default'      => array( 'option-2', 'option-5' )
 ),
 ```
 </div>
