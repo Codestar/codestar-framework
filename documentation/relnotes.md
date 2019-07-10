@@ -1,5 +1,11 @@
 # Release Notes
 
+## v2.1.0
+- Added: SSL protocol control for library files.
+- Added: SCSS style files to main files again.
+- Fixed: Default value issue in Taxonomy Framework.
+- Fixed: Customize option refresh/save issue in existing customizer section.
+
 ## v2.0.9
 - Added: Framework fields support for predefined customizer sections.
 - Fixed: Metabox save php notices when using "serialize" and "unserialize" in same time.
