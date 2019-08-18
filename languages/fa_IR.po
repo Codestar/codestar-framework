@@ -1,0 +1,642 @@
+# Copyright (C) 2019 Codestar
+# This file is distributed under the same license as the Codestar Framework package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Codestar Framework 2.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/codestar-"
+"framework\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.0.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: fa_IR\n"
+
+#: classes/metabox.class.php:252 classes/options.class.php:654
+msgid "No option provided by developer."
+msgstr "هیچ تنظیماتی توسط توسعه دهنده ارائه نشده است."
+
+#: classes/metabox.class.php:270
+msgid "Restore"
+msgstr "بازگردانی"
+
+#: classes/metabox.class.php:271
+msgid "update post for restore "
+msgstr "بروزرسانی پست برای بازگردانی"
+
+#: classes/metabox.class.php:271
+msgid "Cancel"
+msgstr "لغو کردن"
+
+#: classes/options.class.php:237 functions/actions.php:43
+#: functions/actions.php:104 functions/actions.php:126
+msgid "Error while saving."
+msgstr "خطا در ذخیره سازی."
+
+#: classes/options.class.php:284
+msgid "Success. Imported backup options."
+msgstr "موفقیت گزینه های پشتیبان وارد شده"
+
+#: classes/options.class.php:294
+msgid "Default options restored."
+msgstr "تنظیمات پیشفرض برگردانده شد."
+
+#: classes/options.class.php:308
+msgid "Default options restored for only this section."
+msgstr "گزینه های پیش فرض برای این بخش بازسازی شده اند."
+
+#: classes/options.class.php:366
+msgid "Settings saved."
+msgstr "تنظیمات بروز رسانی شد."
+
+#: classes/options.class.php:554
+msgid "show all options"
+msgstr "نمایش همه گزینه ها"
+
+#: classes/options.class.php:556
+msgid "Search option(s)"
+msgstr "جستجو در تنظیمات"
+
+#: classes/options.class.php:559 classes/options.class.php:678
+msgid "Save"
+msgstr "ذخیره"
+
+#: classes/options.class.php:559 classes/options.class.php:678
+msgid "Saving..."
+msgstr "در حال ذخیره سازی ..."
+
+#: classes/options.class.php:560 classes/options.class.php:679
+msgid "Reset Section"
+msgstr "بازگردانی کردن بخش"
+
+#: classes/options.class.php:560 classes/options.class.php:679
+msgid "Are you sure to reset this section options?"
+msgstr "مطمئن هستید که تنظیمات بخش را بازنشانی می کنید؟"
+
+#: classes/options.class.php:561 classes/options.class.php:680
+#: fields/backup/backup.php:34
+msgid "Reset All"
+msgstr "بازگردانی تمامی مقادیر"
+
+#: classes/options.class.php:561 classes/options.class.php:680
+msgid "Are you sure to reset all options?"
+msgstr "آیا می خواهید تنظیمات بازگردانی شوند؟"
+
+#: classes/setup.class.php:401
+msgid "Are you sure?"
+msgstr "آیا مطمئن هستید؟"
+
+#: classes/setup.class.php:402
+msgid "Restoring options."
+msgstr "تنظیمات بازنشانی."
+
+#: classes/setup.class.php:403
+msgid "Importing options."
+msgstr "تنظیمات وارد کردن."
+
+#: classes/setup.class.php:440
+msgid "Ooops! This field type (%s) can not be used here, yet."
+msgstr "اوووپس! این نوع فیلد(%s) هنوز نمی تواند در اینجا استفاده شود."
+
+#: classes/setup.class.php:503
+msgid "This field class is not available!"
+msgstr "این کلاس فیلد در دسترس نیست!"
+
+#: classes/setup.class.php:507
+msgid "This type is not found!"
+msgstr "این نوع یافت نمی شود!"
+
+#: classes/shortcoder.class.php:242
+msgid "Add one more"
+msgstr "یکی دیگر اضافه کن"
+
+#: classes/shortcoder.class.php:279
+msgid "Security check"
+msgstr "بازرسی امنیتی"
+
+#: fields/background/background.php:34
+msgid "No background selected"
+msgstr "پس زمینه‌ای انتخاب نشده است"
+
+#: fields/background/background.php:62 fields/date/date.php:31
+msgid "From"
+msgstr "از"
+
+#: fields/background/background.php:79 fields/date/date.php:32
+msgid "To"
+msgstr "به"
+
+#: fields/background/background.php:96
+msgid "Direction"
+msgstr "جهت"
+
+#: fields/background/background.php:102
+msgid "Gradient Direction"
+msgstr "جهت گرادینت"
+
+#: fields/background/background.php:103
+msgid "&#8659; top to bottom"
+msgstr "&#8659; بالا به پایین"
+
+#: fields/background/background.php:104
+msgid "&#8658; left to right"
+msgstr "&#8658; چپ به راست"
+
+#: fields/background/background.php:105
+msgid "&#8664; corner top to right"
+msgstr "&#8664; گوشه بالا به راست"
+
+#: fields/background/background.php:106
+msgid "&#8665; corner top to left"
+msgstr ""
+
+#: fields/background/background.php:145
+msgid "Background Position"
+msgstr "موقعیت زمینه"
+
+#: fields/background/background.php:146
+msgid "Left Top"
+msgstr "بالا چپ "
+
+#: fields/background/background.php:147
+msgid "Left Center"
+msgstr "چپ به وسط"
+
+#: fields/background/background.php:148
+msgid "Left Bottom"
+msgstr "چپ پایین"
+
+#: fields/background/background.php:149
+msgid "Center Top"
+msgstr "مرکز بالا"
+
+#: fields/background/background.php:150
+msgid "Center Center"
+msgstr "مرکز مرکز"
+
+#: fields/background/background.php:151
+msgid "Center Bottom"
+msgstr "مرکز پایین"
+
+#: fields/background/background.php:152
+msgid "Right Top"
+msgstr "راست بالا"
+
+#: fields/background/background.php:153
+msgid "Right Center"
+msgstr "راست وسط"
+
+#: fields/background/background.php:154
+msgid "Right Bottom"
+msgstr "راست پایین"
+
+#: fields/background/background.php:171
+msgid "Background Repeat"
+msgstr "تکرار تصویر زمینه"
+
+#: fields/background/background.php:172
+msgid "Repeat"
+msgstr "تکرار"
+
+#: fields/background/background.php:173
+msgid "No Repeat"
+msgstr "با تکرار"
+
+#: fields/background/background.php:174
+msgid "Repeat Horizontally"
+msgstr "تکرار افقی"
+
+#: fields/background/background.php:175
+msgid "Repeat Vertically"
+msgstr "تکرار عمودی"
+
+#: fields/background/background.php:192
+msgid "Background Attachment"
+msgstr "پیوست پس‌زمینه"
+
+#: fields/background/background.php:193
+msgid "Scroll"
+msgstr "اسکرول "
+
+#: fields/background/background.php:194
+msgid "Fixed"
+msgstr "ثابت "
+
+#: fields/background/background.php:211
+msgid "Background Size"
+msgstr "ابعاد پس زمینه"
+
+#: fields/background/background.php:212
+msgid "Cover"
+msgstr "کاور"
+
+#: fields/background/background.php:213
+msgid "Contain"
+msgstr "شامل"
+
+#: fields/background/background.php:230
+msgid "Background Origin"
+msgstr "منبع پس زمینه"
+
+#: fields/background/background.php:231 fields/background/background.php:252
+msgid "Padding Box"
+msgstr "جعبه بالشتک"
+
+#: fields/background/background.php:232 fields/background/background.php:251
+msgid "Border Box"
+msgstr "جعبه مرزی"
+
+#: fields/background/background.php:233 fields/background/background.php:253
+msgid "Content Box"
+msgstr "جعبه محتوا"
+
+#: fields/background/background.php:250
+msgid "Background Clip"
+msgstr "کلیپ پس زمینه"
+
+#: fields/background/background.php:270
+msgid "Background Blend Mode"
+msgstr "حالت مخلوط پس زمینه"
+
+#: fields/background/background.php:271 fields/link_color/link_color.php:36
+#: fields/typography/typography.php:173
+msgid "Normal"
+msgstr "معمولی "
+
+#: fields/background/background.php:272
+msgid "Multiply"
+msgstr "ضرب"
+
+#: fields/background/background.php:273
+msgid "Screen"
+msgstr "صحنه"
+
+#: fields/background/background.php:274
+msgid "Overlay"
+msgstr "پوششی"
+
+#: fields/background/background.php:275
+msgid "Darken"
+msgstr "تیره کردن"
+
+#: fields/background/background.php:276
+msgid "Lighten"
+msgstr "روشن کردن"
+
+#: fields/background/background.php:277
+msgid "Color Dodge"
+msgstr "رنگ دوج"
+
+#: fields/background/background.php:278
+msgid "Saturation"
+msgstr "چرخش"
+
+#: fields/background/background.php:279
+msgid "Color"
+msgstr "رنگ"
+
+#: fields/background/background.php:280
+msgid "Luminosity"
+msgstr "درخشش"
+
+#: fields/backup/backup.php:26
+msgid "Import"
+msgstr "ایمپورت"
+
+#: fields/backup/backup.php:27
+msgid "copy-paste your backup string here"
+msgstr "رونویسی پشتیبان خود را اینجا کپی کنید"
+
+#: fields/backup/backup.php:31
+msgid "Export and Download Backup"
+msgstr "صادرات و دانلود پشتیبان گیری"
+
+#: fields/backup/backup.php:35
+msgid "Please be sure for reset all of options."
+msgstr "لطفاً برای بازنشانی همه تنظیمات اطمینان حاصل کنید."
+
+#: fields/border/border.php:25 fields/spacing/spacing.php:25
+msgid "top"
+msgstr "بالا"
+
+#: fields/border/border.php:26 fields/spacing/spacing.php:26
+msgid "right"
+msgstr "راست"
+
+#: fields/border/border.php:27 fields/spacing/spacing.php:27
+msgid "bottom"
+msgstr "پایین"
+
+#: fields/border/border.php:28 fields/spacing/spacing.php:28
+msgid "left"
+msgstr "چپ"
+
+#: fields/border/border.php:29 fields/spacing/spacing.php:29
+msgid "all"
+msgstr "همه"
+
+#: fields/border/border.php:51 fields/typography/typography.php:201
+msgid "Solid"
+msgstr "ساده"
+
+#: fields/border/border.php:52 fields/typography/typography.php:204
+msgid "Dashed"
+msgstr "نقطه چین"
+
+#: fields/border/border.php:53 fields/typography/typography.php:203
+msgid "Dotted"
+msgstr "نقطه دار"
+
+#: fields/border/border.php:54 fields/typography/typography.php:202
+msgid "Double"
+msgstr "دوتایی"
+
+#: fields/border/border.php:55
+msgid "Inset"
+msgstr "Inset"
+
+#: fields/border/border.php:56
+msgid "Outset"
+msgstr "Outset"
+
+#: fields/border/border.php:57
+msgid "Groove"
+msgstr "Groove"
+
+#: fields/border/border.php:58
+msgid "ridge"
+msgstr "ridge"
+
+#: fields/border/border.php:59 fields/typography/typography.php:186
+#: fields/typography/typography.php:200
+msgid "None"
+msgstr "هیچ"
+
+#: fields/checkbox/checkbox.php:62 fields/radio/radio.php:61
+#: fields/select/select.php:74
+msgid "No data provided for this option type."
+msgstr "تنظیماتی برای این نوع گزینه ارائه نشده است."
+
+#: fields/dimensions/dimensions.php:22
+msgid "width"
+msgstr "عرض"
+
+#: fields/dimensions/dimensions.php:23
+msgid "height"
+msgstr "ارتفاع"
+
+#: fields/gallery/gallery.php:20
+msgid "Add Gallery"
+msgstr "افزودن گالری"
+
+#: fields/gallery/gallery.php:21
+msgid "Edit Gallery"
+msgstr "ویرایش گالری"
+
+#: fields/gallery/gallery.php:22
+msgid "Clear"
+msgstr "پاک کردن"
+
+#: fields/group/group.php:23
+msgid "Add New"
+msgstr "افزودن"
+
+#: fields/group/group.php:35 fields/repeater/repeater.php:30
+msgid "Error: Nested field id can not be same with another nested field id."
+msgstr "خطا: شناسه زمینه نمی‌تواند با شناسه زمینه دیگر یکسان باشد."
+
+#: fields/group/group.php:46 fields/group/group.php:86
+#: fields/repeater/repeater.php:51 fields/repeater/repeater.php:82
+msgid "Are you sure to delete this item?"
+msgstr "آیا مطمئن هستید این آیتم را حذف می کنید؟"
+
+#: fields/group/group.php:121 fields/repeater/repeater.php:96
+msgid "You can not add more than"
+msgstr "شما نمی توانید بیش از یک محصول فروشنده در سبد خرید اضافه کنید"
+
+#: fields/group/group.php:122 fields/repeater/repeater.php:97
+msgid "You can not remove less than"
+msgstr "شما نمی توانید حذف کنید کمتر از"
+
+#: fields/icon/icon.php:20 functions/actions.php:148
+msgid "Add Icon"
+msgstr "افزودن آیکون"
+
+#: fields/icon/icon.php:21
+msgid "Remove Icon"
+msgstr "حذف آیکون"
+
+#: fields/link_color/link_color.php:37
+msgid "Hover"
+msgstr "هوور"
+
+#: fields/link_color/link_color.php:38
+msgid "Active"
+msgstr "فعال "
+
+#: fields/link_color/link_color.php:39
+msgid "Visited"
+msgstr "مشاهده شده"
+
+#: fields/link_color/link_color.php:40
+msgid "Focus"
+msgstr "تمرکز"
+
+#: fields/media/media.php:23 fields/upload/upload.php:21
+msgid "Upload"
+msgstr "بارگذاری کردن"
+
+#: fields/media/media.php:24 fields/upload/upload.php:22
+msgid "Remove"
+msgstr "حذف کردن"
+
+#: fields/media/media.php:57
+msgid "No media selected"
+msgstr "فایلی انتخاب نشده"
+
+#: fields/sorter/sorter.php:21
+msgid "Enabled"
+msgstr "فعال"
+
+#: fields/sorter/sorter.php:22
+msgid "Disabled"
+msgstr "نا موجود"
+
+#: fields/switcher/switcher.php:20
+msgid "On"
+msgstr "روشن"
+
+#: fields/switcher/switcher.php:21
+msgid "Off"
+msgstr "غیرفعال"
+
+#: fields/textarea/textarea.php:37
+msgid "Add Shortcode"
+msgstr "افزودن کد کوتاه"
+
+#: fields/typography/typography.php:83
+msgid "Font Family"
+msgstr "خانواده فونت "
+
+#: fields/typography/typography.php:84
+msgid "Select a font"
+msgstr "انتخاب یک فونت"
+
+#: fields/typography/typography.php:92
+msgid "Backup Font Family"
+msgstr "پشتیبان گیری خانواده فونت"
+
+#: fields/typography/typography.php:106 fields/typography/typography.php:119
+#: fields/typography/typography.php:132 fields/typography/typography.php:147
+#: fields/typography/typography.php:163 fields/typography/typography.php:176
+#: fields/typography/typography.php:190 fields/typography/typography.php:208
+msgid "Default"
+msgstr "پیش فرض"
+
+#: fields/typography/typography.php:117
+msgid "Font Style"
+msgstr "استایل فونت "
+
+#: fields/typography/typography.php:131 fields/typography/typography.php:132
+msgid "Load Extra Styles"
+msgstr "سبک های اضافی را بارگیری کنید"
+
+#: fields/typography/typography.php:145
+msgid "Subset"
+msgstr "زیرمجموعه"
+
+#: fields/typography/typography.php:155
+msgid "Text Align"
+msgstr "ترازبندی متن"
+
+#: fields/typography/typography.php:157
+msgid "Inherit"
+msgstr "ارث بری"
+
+#: fields/typography/typography.php:158
+msgid "Left"
+msgstr "چپ "
+
+#: fields/typography/typography.php:159
+msgid "Center"
+msgstr "میانه"
+
+#: fields/typography/typography.php:160
+msgid "Right"
+msgstr "چپ"
+
+#: fields/typography/typography.php:161
+msgid "Justify"
+msgstr "ترازبندی"
+
+#: fields/typography/typography.php:162
+msgid "Initial"
+msgstr "اولیه"
+
+#: fields/typography/typography.php:171
+msgid "Font Variant"
+msgstr "نوع فونت"
+
+#: fields/typography/typography.php:174
+msgid "Small Caps"
+msgstr "کلاه های کوچک"
+
+#: fields/typography/typography.php:175
+msgid "All Small Caps"
+msgstr "همه کلاه های کوچک"
+
+#: fields/typography/typography.php:184
+msgid "Text Transform"
+msgstr "نوع افکت حرکتی متن "
+
+#: fields/typography/typography.php:187
+msgid "Capitalize"
+msgstr "نوشتن با حروف بزرگ"
+
+#: fields/typography/typography.php:188
+msgid "Uppercase"
+msgstr "حروف درشت"
+
+#: fields/typography/typography.php:189
+msgid "Lowercase"
+msgstr "حروف کوچک"
+
+#: fields/typography/typography.php:198
+msgid "Text Decoration"
+msgstr "دکور متن"
+
+#: fields/typography/typography.php:205
+msgid "Wavy"
+msgstr "موج دار"
+
+#: fields/typography/typography.php:206
+msgid "Overline"
+msgstr "خط بیش از حد"
+
+#: fields/typography/typography.php:207
+msgid "Line-through"
+msgstr "از طریق خط"
+
+#: fields/typography/typography.php:220
+msgid "Font Size"
+msgstr "اندازه آیکون"
+
+#: fields/typography/typography.php:232
+msgid "Line Height"
+msgstr "ارتفاع سطر"
+
+#: fields/typography/typography.php:244
+msgid "Letter Spacing"
+msgstr "فاصله حروف "
+
+#: fields/typography/typography.php:256
+msgid "Word Spacing"
+msgstr "فاصله کلمات"
+
+#: fields/typography/typography.php:271
+msgid "Font Color"
+msgstr "رنگ قلم"
+
+#: fields/typography/typography.php:282
+msgid "Custom Style"
+msgstr "استایل سفارشی"
+
+#: fields/typography/typography.php:349
+msgid "Custom Web Fonts"
+msgstr "قلمهای وب سفارشی"
+
+#: fields/typography/typography.php:355
+msgid "Safe Web Fonts"
+msgstr "فونت های وب ایمن"
+
+#: fields/typography/typography.php:375
+msgid "Google Web Fonts"
+msgstr "فونت های گوگل"
+
+#: functions/actions.php:35
+msgid "No data provided by developer"
+msgstr "هیچ داده ای توسط توسعه دهنده ارائه نشده است"
+
+#: functions/actions.php:152
+msgid "Search a Icon..."
+msgstr "جستجوی یک آیکون..."
+
+#: functions/validate.php:14 functions/validate.php:86
+msgid "Please write a valid email address!"
+msgstr "لطفا یک آدرس ایمیل معتبر بنویسید!"
+
+#: functions/validate.php:32 functions/validate.php:106
+msgid "Please write a numeric data!"
+msgstr "لطفا اطلاعات عددی را بنویسید!"
+
+#: functions/validate.php:50 functions/validate.php:126
+msgid "Error! This field is required!"
+msgstr "خطا! این زمینه الزامی است!"
+
+#: functions/validate.php:68 functions/validate.php:146
+msgid "Please write a valid url!"
+msgstr "لطفاً یک آدرس معتبر وارد کنید!"
