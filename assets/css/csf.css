@@ -1902,6 +1902,16 @@
   margin: 0;
   width: 100%;
 }
+
+/**
+ * 03. 31. Field: password
+ */
+.csf-field-password input {
+  width: 340px;
+  max-width: 100%;
+}
+
+
 .csf-field-typography .csf--title {
   color: #999;
   margin: 0 0 2px 0;
