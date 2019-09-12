@@ -503,13 +503,24 @@ array(
 array(
   'id'         => 'opt-checkbox-3',
   'type'       => 'checkbox',
-  'title'      => 'Checkbox with Pages',
-  'options'    => 'categories', // pages, posts, tags, menus
+  'title'      => 'Checkbox with Categories',
+  'options'    => 'categories',
   'query_args' => array(
-    'order'    => 'title',
-    'orderby'  => 'name',
+    'orderby'  => 'post_title',
+    'order'    => 'ASC',
   ),
 ),
+
+// Available Options
+'options' => 'pages',
+'options' => 'posts',
+'options' => 'categories',
+'options' => 'tags',
+'options' => 'menus',
+'options' => 'users',
+'options' => 'sidebars',
+'options' => 'roles',
+'options' => 'post_types',
 ```
 </div>
 </div>
@@ -537,8 +548,21 @@ array(
 | **Extras**       | ---            | ---         | ---
 | `empty_message`  | string         |             | Display to empty text if options empty.
 | `label`          | string         |             | The text to display with the checkbox, when use to single checkbox.
-| `options`        | array\|string  |             | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars` `roles`
+| `options`        | array\|string  |             | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `categories` `tags` `menus` `users` `sidebars` `roles` `post_types`
 | `query_args`     | array          |             | An associative array of query arguments.
+
+<div class="pre-heading">query_args Arguments</div>
+
+| Name              | Type       | Default     | Description |
+|-------------------|------------|-------------|-------------|
+| `post_type`       | string     |             | Custom post type name. Uses by `posts`
+| `taxonomy`        | string     |             | Custom taxonomy name. Uses by `categories` `tags`
+| `posts_per_page`  | number     |             | Maximum number of post to show. Uses by `pages` `posts`
+| `number`          | number     |             | Maximum number of post to show. Uses by `categories` `tags` `menus`
+| `orderby`         | string     | post_title  | Sort retrieved posts by parameter. Uses by `pages` `posts` `categories` `tags` `menus`
+| `order`           | string     | ASC         | Designates the ascending or descending order of the `orderby` parameter *ASC* or *DESC*. Uses by `pages` `posts` `categories` `tags` `menus`
+
+Get more query arguments for ( *posts, pages:* [wp_query](https://developer.wordpress.org/reference/classes/wp_query/) ) and ( *categories, tags, menus:* [wp_term_query](https://developer.wordpress.org/reference/classes/wp_term_query/) )
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1718,7 +1742,7 @@ array(
 | `validate`       | string         |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---            | ---      | ---
 | `empty_message`  | string         |          | Display to empty text if options empty.
-| `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars` `roles`
+| `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `categories` `tags` `menus` `users` `sidebars` `roles` `post_types`
 | `query_args`     | array          |          | An associative array of query arguments.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -1825,7 +1849,8 @@ array(
 <span class="csf-tab-title csf-tab-active">Simple</span>
 <span class="csf-tab-title">Select w/ Groups</span>
 <span class="csf-tab-title">Select w/ Chosen</span>
-<span class="csf-tab-title">Select w/ Multiple Chosen</span>
+<span class="csf-tab-title">Select w/ Chosen Multiple</span>
+<span class="csf-tab-title">Select w/ Chosen AJAX Search</span>
 <span class="csf-tab-title">Select w/ WP Query</span>
 </div>
 <div class="csf-tab-contents">
@@ -1898,8 +1923,8 @@ array(
   'id'          => 'opt-select-4',
   'type'        => 'select',
   'title'       => 'Select',
-  'multiple'    => true,
   'chosen'      => true,
+  'multiple'    => true,
   'placeholder' => 'Select an option',
   'options'     => array(
     'option-1'  => 'Option 1',
@@ -1916,9 +1941,90 @@ array(
 <div class="csf-tab-content">
 
 ```php
-// Select with pages
+// Select with AJAX search Pages
 array(
   'id'          => 'opt-select-5',
+  'type'        => 'select',
+  'title'       => 'Select with pages',
+  'placeholder' => 'Select a page',
+  'chosen'      => true,
+  'ajax'        => true,
+  'options'     => 'pages',
+),
+
+// Select with multiple and sortable AJAX search Posts
+array(
+  'id'          => 'opt-select-6',
+  'type'        => 'select',
+  'title'       => 'Select with posts',
+  'placeholder' => 'Select posts',
+  'chosen'      => true,
+  'ajax'        => true,
+  'multiple'    => true,
+  'sortable'    => true,
+  'options'     => 'posts',
+),
+
+// Select with multiple and sortable AJAX search Categories
+array(
+  'id'          => 'opt-select-7',
+  'type'        => 'select',
+  'title'       => 'Select with categories',
+  'placeholder' => 'Select categories',
+  'chosen'      => true,
+  'ajax'        => true,
+  'multiple'    => true,
+  'sortable'    => true,
+  'options'     => 'categories',
+),
+
+// Select with AJAX search CPT (custom post type) Posts
+array(
+  'id'          => 'opt-select-8',
+  'type'        => 'select',
+  'title'       => 'Select with CPT (custom post type) posts',
+  'placeholder' => 'Select a post',
+  'chosen'      => true,
+  'ajax'        => true,
+  'options'     => 'posts',
+  'query_args'  => array(
+    'post_type' => 'your_post_type_name'
+  )
+),
+
+// Select with AJAX search CPT (custom post type) Categories
+array(
+  'id'          => 'opt-select-9',
+  'type'        => 'select',
+  'title'       => 'Select with CPT (custom post type) categories',
+  'placeholder' => 'Select a category',
+  'chosen'      => true,
+  'ajax'        => true,
+  'options'     => 'categories',
+  'query_args'  => array(
+    'taxonomy'  => 'your_taxonomy_name'
+  )
+),
+
+// Available Options
+'options' => 'pages',
+'options' => 'posts',
+'options' => 'categories',
+'options' => 'tags',
+'options' => 'menus',
+'options' => 'users',
+'options' => 'sidebars',
+'options' => 'roles',
+'options' => 'post_types',
+
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+// Select with pages
+array(
+  'id'          => 'opt-select-10',
   'type'        => 'select',
   'title'       => 'Select with pages',
   'placeholder' => 'Select a page',
@@ -1927,7 +2033,7 @@ array(
 
 // Select with posts
 array(
-  'id'          => 'opt-select-6',
+  'id'          => 'opt-select-11',
   'type'        => 'select',
   'title'       => 'Select with posts',
   'placeholder' => 'Select a post',
@@ -1936,43 +2042,16 @@ array(
 
 // Select with categories
 array(
-  'id'          => 'opt-select-7',
+  'id'          => 'opt-select-12',
   'type'        => 'select',
   'title'       => 'Select with categories',
   'placeholder' => 'Select a category',
   'options'     => 'categories',
 ),
 
-// Select with menus
-array(
-  'id'          => 'opt-select-8',
-  'type'        => 'select',
-  'title'       => 'Select with menus',
-  'placeholder' => 'Select a menu',
-  'options'     => 'menus',
-),
-
-// Select with Sidebars
-array(
-  'id'          => 'opt-select-9',
-  'type'        => 'select',
-  'title'       => 'Selec with sidebars',
-  'placeholder' => 'Select a sidebar',
-  'options'     => 'sidebars',
-),
-
-// Select with WP Roles
-array(
-  'id'          => 'opt-select-9',
-  'type'        => 'select',
-  'title'       => 'Selec with wp roles',
-  'placeholder' => 'Select a wp role',
-  'options'     => 'roles',
-),
-
 // Select with CPT (custom post type) pages
 array(
-  'id'          => 'opt-select-10',
+  'id'          => 'opt-select-13',
   'type'        => 'select',
   'title'       => 'Selec with CPT (custom post type) pages',
   'placeholder' => 'Select a page',
@@ -1984,16 +2063,26 @@ array(
 
 // Select with CPT (custom post type) categories
 array(
-  'id'          => 'opt-select-11',
+  'id'          => 'opt-select-14',
   'type'        => 'select',
   'title'       => 'Selec with CPT (custom post type) category',
   'placeholder' => 'Select a category',
   'options'     => 'categories',
   'query_args'  => array(
-    'type'      => 'your_post_type_name',
     'taxonomy'  => 'your_taxonomy_name',
   ),
 ),
+
+// Available Options
+'options' => 'pages',
+'options' => 'posts',
+'options' => 'categories',
+'options' => 'tags',
+'options' => 'menus',
+'options' => 'users',
+'options' => 'sidebars',
+'options' => 'roles',
+'options' => 'post_types',
 ```
 </div>
 </div>
@@ -2023,8 +2112,34 @@ array(
 | `placeholder`    | string         |          | The placeholder to be displayed when nothing is selected.
 | `chosen`         | bool           | false    | Flag to enable [ChosenJS](https://harvesthq.github.io/chosen/) style select.
 | `multiple`       | bool           | false    | Flag to allows multiple options choose.
-| `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `menus` `sidebars` `roles`
-| `query_args`     | array          |          | An associative array of query arguments.
+| `sortable`       | bool           | false    | Flag to allows sortable options choose.
+| `ajax`           | bool           | false    | Flag to allows ajax search options choose.
+| `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `categories` `tags` `menus` `users` `sidebars` `roles` `post_types`
+| `query_args`     | array          |          | An associative array of query arguments. Using with `pages` `posts` `categories` `tags` `menus`
+| `settings`       | array          |          | An associative array containing arguments for the chosen setting.
+
+<div class="pre-heading">query_args Arguments</div>
+
+| Name              | Type       | Default     | Description |
+|-------------------|------------|-------------|-------------|
+| `post_type`       | string     |             | Custom post type name. Uses by `posts`
+| `taxonomy`        | string     |             | Custom taxonomy name. Uses by `categories` `tags`
+| `posts_per_page`  | number     |             | Maximum number of post to show. Uses by `pages` `posts`
+| `number`          | number     |             | Maximum number of post to show. Uses by `categories` `tags` `menus`
+| `orderby`         | string     | post_title  | Sort retrieved posts by parameter. Uses by `pages` `posts` `categories` `tags` `menus`
+| `order`           | string     | ASC         | Designates the ascending or descending order of the `orderby` parameter *ASC* or *DESC*. Uses by `pages` `posts` `categories` `tags` `menus`
+
+Get more query arguments for ( *posts, pages:* [wp_query](https://developer.wordpress.org/reference/classes/wp_query/) ) and ( *categories, tags, menus:* [wp_term_query](https://developer.wordpress.org/reference/classes/wp_term_query/) )
+
+<div class="pre-heading">Settings Arguments</div>
+
+| Name              | Type       | Default                                | Description |
+|-------------------|------------|----------------------------------------|-------------|
+| `min_length`      | number     | 3                                      | Minimum search input length for trigger ajax search.
+| `width`           | string     | auto                                   | Chosen style width. *for eg.* `50%` `100%` `250px` `auto`
+| `typing_text`     | string     | *Please enter %s or more characters*   | Chosen ajax typing text
+| `searching_text`  | string     | *Searching...*                         | Chosen ajax searching text
+| `no_results_text` | string     | *No results match*                     | Chosen ajax no results text
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
