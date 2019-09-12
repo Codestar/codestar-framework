@@ -6,10 +6,10 @@
 - Added: Chosen select keep options order.
 - Added: Users select field options.
 - Fixed: Single shortcode insert issue.
-- Fixed: Minor bug fixes and improvements.
 - Fixed: Taxonomy Framework multiple save issue.
 - Fixed: Widgets Framework chosen select save issue.
 - Fixed: Chosen multiple select refresh issue in Customizer.
+- Fixed: Minor bug fixes and improvements.
 
 ## v2.1.0
 - Added: SSL protocol control for library files.
