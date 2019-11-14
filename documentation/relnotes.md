@@ -1,5 +1,16 @@
 # Release Notes
 
+## v2.1.2
+- Added: WP 5.3 "Kirk" UI compatibility.
+- Added: Comment Metabox Framework (bonus).
+- Added: New field "number".
+- Fixed: Media field dependency issue.
+- Fixed: Button set field default selected issue.
+- Fixed: Select field empty message issue.
+- Fixed: Multiple chosen select issue in Shortcode Framework.
+- Fixed: Checkbox field confict with Repeater and Group field issue.
+- Fixed: Image Select and Multiple Checkbox fields refresh issue in Customize Framework.
+
 ## v2.1.1
 - Added: Chosen select AJAX search option.
 - Added: Chosen select sortable option.
@@ -100,7 +111,7 @@
 ## v2.0.2
 - Added: Page Templates "default" option for spesific metabox hide/show.
 - Added: Post Formats "default" option for spesific metabox hide/show.
-- Added: Only allow number inputs for Spacing, Dimensions, Border, Slider, Spinner, Typography etc.
+- Added: Only allow numeric inputs for Spacing, Dimensions, Slider, Spinner, Typography etc.
 - Added: ChosenJS custom options support and improved width and css style.
 - Fixed: Taxonomy framework jquery triggers. It was not working again after saving. It fixed now.
 - Fixed: Code Editor style issue for used inside Group/Repeater.

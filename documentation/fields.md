@@ -1662,6 +1662,82 @@ array(
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
+## Number
+
+<div class="pre-heading">Config Examples</div>
+
+<div class="csf-tabs">
+<div class="csf-tab-buttons">
+<span class="csf-tab-title csf-tab-active">Simple</span>
+<span class="csf-tab-title">Number w/ Default</span>
+<span class="csf-tab-title">Number w/ Output</span>
+</div>
+<div class="csf-tab-contents">
+<div class="csf-tab-content csf-tab-active">
+
+```php
+array(
+  'id'    => 'opt-number-1',
+  'type'  => 'number',
+  'title' => 'Number',
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'      => 'opt-number-2',
+  'type'    => 'number',
+  'title'   => 'Number',
+  'default' => 50,
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'          => 'opt-number-4',
+  'type'        => 'number',
+  'title'       => 'Number',
+  'unit'        => '%',
+  'output'      => '.heading',
+  'output_mode' => 'width',
+  'default'     => 100,
+),
+```
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="pre-heading">Arguments</div>
+
+| Name                | Type           | Default | Description |
+|---------------------|----------------|---------|-------------|
+| `id`                | string         |         | A unique **ID**. This **ID** will be used to get the value.
+| `type`              | string         | number  | Type of the field.
+| `title`             | string         |         | Title of the field.
+| `default`           | string         |         | Default value from database, if the option doesn't exist.
+| `subtitle`          | string         |         | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`              | string         |         | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`              | string         |         | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `class`             | string         |         | Extra CSS classes (space separated) to append to the field.
+| `before`            | string         |         | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`             | string         |         | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`        | array          |         | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`        | array          |         | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`          | string         |         | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`          | string         |         | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
+| **Extras**          | ---            | ---     | ---
+| `unit`              | string         | px      | The unit to display of the field, also sets output CSS property unit value.
+| `output`            | array\|string  |         | CSS elements selector.
+| `output_mode`       | string         | width   | Output CSS property of an element. for eg. `width` `height` `max-width` etc.
+| `output_important`  | bool           | false   | Flag to add **!important** rule on output css.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Palette
 
 <div class="pre-heading">Config Examples</div>

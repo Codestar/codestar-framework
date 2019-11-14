@@ -864,7 +864,7 @@ if( class_exists( 'CSF' ) ) {
 
 | Name                 | Type          | Default    | Description |
 |----------------------|---------------|------------|-------------|
-| `title`              | string        |            | Title of the meta box.
+| `title`              | string        |            | Title of the metabox.
 | `post_type`          | array\|string | post       | Provide any number of post_types for a given metabox to appear.
 | `data_type`          | string        | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
 | `context`            | string        | advanced   | The context within the screen where the boxes should display. *for eg* `normal`, `side`, `advanced`
@@ -1135,6 +1135,190 @@ if( class_exists( 'CSF' ) ) {
 | `width`       | number  | 250      | Width of the fully expanded control form (but try hard to use the default width).
 | `defaults`    | array   |          | Sets all default values from a external array. (optional)
 | `class`       | string  |          | Extra CSS classes (space separated) to append to the main framework wrapper.
+
+---
+
+## Comment Metabox Framework
+
+<div class="pre-heading">Config Examples</div>
+<div class="csf-tabs">
+<div class="csf-tab-buttons">
+<span class="csf-tab-title csf-tab-active">Simple</span>
+<span class="csf-tab-title">Comment Metabox w/ Fully Arguments</span>
+</div>
+<div class="csf-tab-contents">
+<div class="csf-tab-content csf-tab-active">
+
+```php
+// Control core classes for avoid errors
+if( class_exists( 'CSF' ) ) {
+
+  //
+  // Set a unique slug-like ID
+  $prefix = 'my_comment_options';
+
+  //
+  // Create a comment metabox
+  CSF::createCommentMetabox( $prefix, array(
+    'title' => 'My Comment Options',
+  ) );
+
+  //
+  // Create a section
+  CSF::createSection( $prefix, array(
+
+    'fields' => array(
+
+      //
+      // A text field
+      array(
+        'id'      => 'opt-text',
+        'type'    => 'text',
+        'title'   => 'Text',
+      ),
+
+      array(
+        'id'      => 'opt-textarea',
+        'type'    => 'textarea',
+        'title'   => 'Textarea',
+      ),
+
+      array(
+        'id'      => 'opt-color',
+        'type'    => 'color',
+        'title'   => 'Color',
+      ),
+
+      array(
+        'id'      => 'opt-select',
+        'type'    => 'select',
+        'title'   => 'Select',
+        'options' => array(
+          'opt-1' => 'Option 1',
+          'opt-2' => 'Option 2',
+          'opt-3' => 'Option 3',
+        )
+      ),
+
+    )
+  ) );
+
+}
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+// Control core classes for avoid errors
+if( class_exists( 'CSF' ) ) {
+
+  //
+  // Set a unique slug-like ID
+  $prefix = 'my_comment_options';
+
+  //
+  // Create a metabox
+  CSF::createCommentMetabox( $prefix, array(
+    'title'        => 'My Comment Options',
+    'data_type'    => 'serialize',
+    'priority'     => 'default',
+    'show_restore' => false,
+    'theme'        => 'dark',
+    'class'        => '',
+  ) );
+
+  //
+  // Create a section
+  CSF::createSection( $prefix, array(
+    'title'  => 'Tab Title 1',
+    'fields' => array(
+
+      //
+      // A text field
+      array(
+        'id'      => 'opt-text',
+        'type'    => 'text',
+        'title'   => 'Text',
+      ),
+
+
+      array(
+        'id'      => 'opt-color',
+        'type'    => 'color',
+        'title'   => 'Color',
+      ),
+
+      array(
+        'id'      => 'opt-select',
+        'type'    => 'select',
+        'title'   => 'Select',
+        'options' => array(
+          'opt-1' => 'Option 1',
+          'opt-2' => 'Option 2',
+          'opt-3' => 'Option 3',
+        )
+      ),
+
+    )
+  ) );
+
+  //
+  // Create a section
+  CSF::createSection( $prefix, array(
+    'title'  => 'Tab Title 2',
+    'fields' => array(
+
+      // A textarea field
+      array(
+        'id'    => 'opt-textarea',
+        'type'  => 'textarea',
+        'title' => 'Textarea',
+      ),
+
+    )
+  ) );
+
+}
+```
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="pre-heading">Arguments</div>
+
+| Name           | Type   | Default   | Description |
+|----------------|--------|-----------|-------------|
+| `title`        | string |           | Title of the comment metabox.
+| `data_type`    | string | serialize | Database save option type. *for eg* `serialize` or `unserialize`
+| `priority`     | string | default   | The priority within the context where the boxes should show. *for eg* `high`, `low`, `default`
+| `show_restore` | bool   | false     | Flag to display *restore button* of the comment metabox.
+| `theme`        | string | dark      | The theme of the framework. *for eg.* `dark` - `light`
+| `class`        | string |           | Extra CSS classes (space separated) to append to the main framework wrapper.
+| `defaults`     | array  |           | Sets all default values from a external array. (optional)
+
+<div class="pre-heading">Get an option value ( <span class="csf-tolowercase">data_type => serialize</span> )</div>
+
+```php
+//
+// data_type => serialize is default
+// You should use my_comment_options as this is the id for your key declared into config
+//
+$meta = get_comment_meta( get_comment_ID(), 'my_comment_options', true );
+
+echo $meta['opt-text'];
+echo $meta['opt-textarea'];
+```
+<div class="pre-heading">Get an option value ( <span class="csf-tolowercase">data_type => unserialize</span> )</div>
+
+```php
+//
+// data_type => unserialize is optional
+// You should to use option id directly declared into field config
+//
+echo get_comment_meta( get_comment_ID(), 'opt-text', true );
+echo get_comment_meta( get_comment_ID(), 'opt-textarea', true );
+```
 
 ---
 
