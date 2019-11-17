@@ -256,13 +256,17 @@ h1,h2,h3,h4,h5,h6,strong{
 }
 
 .csf-frameworks h4{
-  font-size: 16px;
+  font-size: 15px;
   padding: 0 10px;
 }
 
 .csf-frameworks-texts{
   position: relative;
   z-index: 10;
+  padding: 20px 10px 10px 10px;
+  margin: 30px 0 50px 0;
+  border: 1px dashed transparent;
+  border-radius: 4px;
 }
 
 .csf-frameworks-texts .fa{
@@ -278,43 +282,20 @@ h1,h2,h3,h4,h5,h6,strong{
   color: #e14d43;
 }
 
-.csf-frameworks-button{
+.csf-button{
   position: relative;
+  margin-bottom: -25px;
 }
 
-.csf-frameworks-button a{
-  position: relative;
-  z-index: 10;
+.csf-framework-free{
+  border-color: #999;
 }
 
-.csf-frameworks-button:before{
-  position: absolute;
-  content: " ";
-  left: 10px;
-  right: 10px;
-  top: -60px;
-  height: 75px;
-  border: 1px dashed transparent;
-  border-top: 0;
-}
-
-.csf-frameworks-button-download{
-  flex-basis: 20%;
-}
-
-.csf-frameworks-button-download:before{
-  border-color: #6c757d;
-}
-
-.csf-frameworks-button-buy{
-  flex-basis: 80%;
-}
-
-.csf-frameworks-button-buy:before{
+.csf-framework-premium{
   border-color: #28a745;
 }
 
-.csf-5-in-1{
+.csf-8-in-1{
   font-size: 75px;
   line-height: 1em;
 }
@@ -552,8 +533,19 @@ h1,h2,h3,h4,h5,h6,strong{
 }
 
 /**
+ * FAQ
+ */
+.csf-faq .csf-faq-equal{
+  min-height: 220px;
+}
+
+/**
  * Helpers
  */
+.csf-space-10{
+  height: 10px;
+}
+
 .csf-space-25{
   height: 25px;
 }
@@ -710,5 +702,11 @@ h1,h2,h3,h4,h5,h6,strong{
 
   .csf-faq .m-4{
     margin-bottom: 1.5rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
   }
 }
