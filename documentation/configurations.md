@@ -401,13 +401,14 @@ echo prefix_get_option( 'opt-text', 'default value' );
 
 <div class="pre-heading">Section Arguments</div>
 
-| Name      | Type    | Description |
-|-----------|---------|-------------|
-| `id`      | string  | A unique slug ID.
-| `parent`  | string  | Slug id for the parent section.
-| `title`   | string  | Title of the section.
-| `icon`    | string  | Icon of the section.
-| `fields`  | array   | Associative array containing fields for the field sets.
+| Name       | Type    | Description |
+|------------|---------|-------------|
+| `id`       | string  | A unique slug ID.
+| `parent`   | string  | Slug id for the parent section.
+| `priority` | number  | The priority within the context where the tabs should show.
+| `title`    | string  | Title of the section.
+| `icon`     | string  | Icon of the section.
+| `fields`   | array   | Associative array containing fields for the field sets.
 
 ---
 
@@ -674,6 +675,16 @@ echo prefix_get_option( 'opt-text', 'default value' );
 | `defaults`         | array    |                | Sets all default values from a external array. (optional)
 ---
 
+<div class="pre-heading">Section Arguments</div>
+
+| Name       | Type    | Description |
+|------------|---------|-------------|
+| `id`       | string  | A unique slug ID.
+| `parent`   | string  | Slug id for the parent section.
+| `priority` | number  | The priority within the context where the tabs should show.
+| `title`    | string  | Title of the section.
+| `fields`   | array   | Associative array containing fields for the field sets.
+
 ## Metabox Option Framework
 
 <div class="pre-heading">Config Examples</div>
@@ -860,26 +871,6 @@ if( class_exists( 'CSF' ) ) {
 <div class="clear"></div>
 </div>
 
-<div class="pre-heading">Arguments</div>
-
-| Name                 | Type          | Default    | Description |
-|----------------------|---------------|------------|-------------|
-| `title`              | string        |            | Title of the metabox.
-| `post_type`          | array\|string | post       | Provide any number of post_types for a given metabox to appear.
-| `data_type`          | string        | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
-| `context`            | string        | advanced   | The context within the screen where the boxes should display. *for eg* `normal`, `side`, `advanced`
-| `priority`           | string        | default    | The priority within the context where the boxes should show. *for eg* `high`, `low`, `default`
-| `exclude_post_types` | array         |            | Array of post types to exclude. *for eg* `post`, `page`, `products`
-| `page_templates`     | array\|string |            | Bind visibility of a metabox to any number of page templates. The value will be equal to the filename of the custom page template. <a href="#/faq?id=how-to-add-page-templates-metabox-" class="csf-more-link">?</a>
-| `post_formats`       | array\|string |            | Bind the visibility of a metabox to a given post format. <a href="https://codex.wordpress.org/Post_Formats#Supported_FormatsList"> List of post formats.</a> <a href="#/faq?id=how-to-add-post-formats-metabox-" class="csf-more-link">?</a>
-| `show_restore`       | bool          | false      | Flag to display *restore button* of the metabox.
-| `enqueue_webfont`    | bool          | true       | Flag to load web fonts of the framework.
-| `async_webfont`      | bool          | false      | Flag to load google fonts with *async* method of the framework.
-| `output_css`         | bool          | true       | Flag to load output css of the framework.
-| `theme`              | string        | dark       | The theme of the framework. *for eg.* `dark` - `light`
-| `class`              | string        |            | Extra CSS classes (space separated) to append to the main framework wrapper.
-| `defaults`           | array         |            | Sets all default values from a external array. (optional)
-
 <div class="pre-heading">Get an option value ( <span class="csf-tolowercase">data_type => serialize</span> )</div>
 
 ```php
@@ -902,6 +893,34 @@ echo $meta['opt-textarea'];
 echo get_post_meta( get_the_ID(), 'opt-text', true );
 echo get_post_meta( get_the_ID(), 'opt-textarea', true );
 ```
+
+<div class="pre-heading">Arguments</div>
+
+| Name                 | Type          | Default    | Description |
+|----------------------|---------------|------------|-------------|
+| `title`              | string        |            | Title of the metabox.
+| `post_type`          | array\|string | post       | Provide any number of post_types for a given metabox to appear.
+| `data_type`          | string        | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
+| `context`            | string        | advanced   | The context within the screen where the boxes should display. *for eg* `normal`, `side`, `advanced`
+| `priority`           | string        | default    | The priority within the context where the boxes should show. *for eg* `high`, `low`, `default`
+| `exclude_post_types` | array         |            | Array of post types to exclude. *for eg* `post`, `page`, `products`
+| `page_templates`     | array\|string |            | Bind visibility of a metabox to any number of page templates. The value will be equal to the filename of the custom page template. <a href="#/faq?id=how-to-add-page-templates-metabox-" class="csf-more-link">?</a>
+| `post_formats`       | array\|string |            | Bind the visibility of a metabox to a given post format. <a href="https://codex.wordpress.org/Post_Formats#Supported_FormatsList"> List of post formats.</a> <a href="#/faq?id=how-to-add-post-formats-metabox-" class="csf-more-link">?</a>
+| `show_restore`       | bool          | false      | Flag to display *restore button* of the metabox.
+| `enqueue_webfont`    | bool          | true       | Flag to load web fonts of the framework.
+| `async_webfont`      | bool          | false      | Flag to load google fonts with *async* method of the framework.
+| `output_css`         | bool          | true       | Flag to load output css of the framework.
+| `theme`              | string        | dark       | The theme of the framework. *for eg.* `dark` - `light`
+| `class`              | string        |            | Extra CSS classes (space separated) to append to the main framework wrapper.
+| `defaults`           | array         |            | Sets all default values from a external array. (optional)
+
+<div class="pre-heading">Section Arguments</div>
+
+| Name       | Type    | Description |
+|------------|---------|-------------|
+| `title`    | string  | Title of the section.
+| `icon`     | string  | Icon of the section.
+| `fields`   | array   | Associative array containing fields for the field sets.
 
 ---
 
@@ -977,6 +996,14 @@ echo get_term_meta( $term->term_id, 'opt-textarea', true ); // id of the field
 | `defaults`   | array         |            | Sets all default values from a external array. (optional)
 | `class`      | string        |            | Extra CSS classes (space separated) to append to the main framework wrapper.
 
+<div class="pre-heading">Section Arguments</div>
+
+| Name       | Type    | Description |
+|------------|---------|-------------|
+| `title`    | string  | Title of the section.
+| `icon`     | string  | Icon of the section.
+| `fields`   | array   | Associative array containing fields for the field sets.
+
 ---
 
 ## Profile Option Framework
@@ -1048,6 +1075,14 @@ echo get_user_meta( $user_id, 'opt-textarea', true ); // id of the field
 | `data_type`  | string | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
 | `defaults`   | array  |            | Sets all default values from a external array. (optional)
 | `class`      | string |            | Extra CSS classes (space separated) to append to the main framework wrapper.
+
+<div class="pre-heading">Section Arguments</div>
+
+| Name       | Type    | Description |
+|------------|---------|-------------|
+| `title`    | string  | Title of the section.
+| `icon`     | string  | Icon of the section.
+| `fields`   | array   | Associative array containing fields for the field sets.
 
 ---
 
@@ -1285,18 +1320,6 @@ if( class_exists( 'CSF' ) ) {
 <div class="clear"></div>
 </div>
 
-<div class="pre-heading">Arguments</div>
-
-| Name           | Type   | Default   | Description |
-|----------------|--------|-----------|-------------|
-| `title`        | string |           | Title of the comment metabox.
-| `data_type`    | string | serialize | Database save option type. *for eg* `serialize` or `unserialize`
-| `priority`     | string | default   | The priority within the context where the boxes should show. *for eg* `high`, `low`, `default`
-| `show_restore` | bool   | false     | Flag to display *restore button* of the comment metabox.
-| `theme`        | string | dark      | The theme of the framework. *for eg.* `dark` - `light`
-| `class`        | string |           | Extra CSS classes (space separated) to append to the main framework wrapper.
-| `defaults`     | array  |           | Sets all default values from a external array. (optional)
-
 <div class="pre-heading">Get an option value ( <span class="csf-tolowercase">data_type => serialize</span> )</div>
 
 ```php
@@ -1319,6 +1342,26 @@ echo $meta['opt-textarea'];
 echo get_comment_meta( get_comment_ID(), 'opt-text', true );
 echo get_comment_meta( get_comment_ID(), 'opt-textarea', true );
 ```
+
+<div class="pre-heading">Arguments</div>
+
+| Name           | Type   | Default   | Description |
+|----------------|--------|-----------|-------------|
+| `title`        | string |           | Title of the comment metabox.
+| `data_type`    | string | serialize | Database save option type. *for eg* `serialize` or `unserialize`
+| `priority`     | string | default   | The priority within the context where the boxes should show. *for eg* `high`, `low`, `default`
+| `show_restore` | bool   | false     | Flag to display *restore button* of the comment metabox.
+| `theme`        | string | dark      | The theme of the framework. *for eg.* `dark` - `light`
+| `class`        | string |           | Extra CSS classes (space separated) to append to the main framework wrapper.
+| `defaults`     | array  |           | Sets all default values from a external array. (optional)
+
+<div class="pre-heading">Section Arguments</div>
+
+| Name       | Type    | Description |
+|------------|---------|-------------|
+| `title`    | string  | Title of the section.
+| `icon`     | string  | Icon of the section.
+| `fields`   | array   | Associative array containing fields for the field sets.
 
 ---
 
