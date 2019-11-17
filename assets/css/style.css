@@ -270,16 +270,23 @@ h1,h2,h3,h4,h5,h6,strong{
 }
 
 .csf-frameworks-texts .fa{
-  font-size: 36px;
+  display: inline-block;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
   margin-bottom: 10px;
+  border-radius: 100%;
+  color: #fff;
 }
 
-.csf-frameworks-texts .fa-check-circle{
-  color: #5cb85c;
+.csf-frameworks-texts .fa-check{
+  background: #5cb85c;
 }
 
-.csf-frameworks-texts .fa-times-circle{
-  color: #e14d43;
+.csf-frameworks-texts .fa-unlock{
+  background: #6c757d;
 }
 
 .csf-button{
