@@ -383,7 +383,7 @@ array(
 // Validate numeric function (This function has been defined, this is only for FYI)
 if( ! function_exists( 'csf_validate_url' ) ) {
   function csf_validate_url( $value ) {
-    if ( ! is_numeric( $value ) ) {
+    if( ! filter_var( $value, FILTER_VALIDATE_URL ) ) {
       return esc_html__( 'Please write a numeric data!', 'csf' );
     }
   }
