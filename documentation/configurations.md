@@ -257,6 +257,7 @@ if( class_exists( 'CSF' ) ) {
     'show_reset_section'      => true,
     'show_footer'             => true,
     'show_all_options'        => true,
+    'show_form_warning'       => true,
     'sticky_header'           => true,
     'save_defaults'           => true,
     'ajax_save'               => true,
@@ -380,6 +381,7 @@ echo prefix_get_option( 'opt-text', 'default value' );
 | `show_reset_all`           | bool      | true           | Flag to display *reset button* of the framework.
 | `show_reset_section`       | bool      | true           | Flag to display *reset section button* of the framework.
 | `show_all_options`         | bool      | true           | Flag to display *show all options* of the framework.
+| `show_form_warning`        | bool      | true           | Flag to display "form warning" when changed any option of the framework.
 | `sticky_header`            | bool      | true           | Flag to display *sticky header* feature of the framework.
 | `save_defaults`            | bool      | true           | Flag to save to default values of the framework.
 | `ajax_save`                | bool      | true           | Flag to enable *ajax save* feature of the framework.

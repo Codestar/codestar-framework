@@ -1574,6 +1574,122 @@ array(
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
+## Map
+
+<div class="pre-heading">Config Examples</div>
+<div class="csf-tabs">
+<div class="csf-tab-buttons">
+<span class="csf-tab-title csf-tab-active">Simple</span>
+<span class="csf-tab-title">Map w/ Default</span>
+<span class="csf-tab-title">Map w/ Assign Address Field</span>
+<span class="csf-tab-title">Map w/ Advanced</span>
+</div>
+<div class="csf-tab-contents">
+<div class="csf-tab-content csf-tab-active">
+
+```php
+array(
+  'id'    => 'opt-map-1',
+  'type'  => 'map',
+  'title' => 'Map',
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'          => 'opt-map-2',
+  'type'        => 'map',
+  'title'       => 'Map with Default',
+  'default'     => array(
+    'address'   => 'New York, United States of America',
+    'latitude'  => '40.7127281',
+    'longitude' => '-74.0060152',
+    'zoom'      => '12',
+  )
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'            => 'my-address-text',
+  'type'          => 'text',
+  'title'         => 'Address',
+),
+
+array(
+  'id'            => 'opt-map-3',
+  'type'          => 'map',
+  'title'         => 'Map',
+  'desc'          => 'Using custom <strong>address_field</strong> field',
+  'address_field' => 'my-address-text',
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'       => 'opt-map-4',
+  'type'     => 'map',
+  'title'    => 'Map',
+  'height'   => '500px',
+  'settings' => array(
+    'scrollWheelZoom' => true,
+  )
+),
+```
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="pre-heading">Arguments</div>
+
+| Name              | Type           | Default                | Description |
+|-------------------|----------------|------------------------|-------------|
+| `id`              | string         |                        | A unique **ID**. This **ID** will be used to get the value.
+| `type`            | string         | media                  | Type of the field.
+| `title`           | string         |                        | Title of the field.
+| `default`         | array          |                        | Default value from database, if the option doesn't exist.
+| `subtitle`        | string         |                        | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`            | string         |                        | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`            | string         |                        | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `class`           | string         |                        | Extra CSS classes (space separated) to append to the field.
+| `before`          | string         |                        | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`           | string         |                        | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`      | array          |                        | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`      | array          |                        | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`        | string         |                        | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`        | string         |                        | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
+| **Extras**        | ---            | ---                    | ---
+| `placeholder`     | string         | Search your address... | The placeholder to be displayed when nothing is selected.
+| `latitude_text`   | string         | Latitude               | The text to display on the latitude field top.
+| `longitude_text`  | string         | Longitude              | The text to display on the longitude field top.
+| `height`          | string         | 250px                  | Value to set the default map height.
+
+<div class="pre-heading">Default Arguments</div>
+
+| Name           | Type    | Description |
+|----------------|---------|-------------|
+| `address`      | string  | String representing the default address of map.
+| `latitude`     | number  | Number representing latitude in degrees.
+| `longitude`    | number  | Number representing longitude in degrees.
+| `zoom`         | number  | Number representing map zoom level.
+
+<div class="pre-heading">Settings Arguments</div>
+
+| Name              | Type    | Default | Description |
+|-------------------|---------|---------|-------------|
+| `scrollWheelZoom` | bool    | false   | Whether the map can be zoomed by using the mouse wheel.
+
+Get more informations for [settings arguments](https://leafletjs.com/reference-1.6.0.html)
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Media
 
 <div class="pre-heading">Config Examples</div>
