@@ -1,5 +1,14 @@
 # Release Notes
 
+## v2.1.3
+- Added: New field "map".
+- Added: Quick save (ctrl+s,command+s) for Option Framework.
+- Added: Form warning when changed any option for Option Framework.
+- Fixed: Output CSS twice times issue.
+- Updated: Google Web Fonts array.
+- Updated: Customizer Framework samples.
+- Improved: Background field for auto hide/show background attributes.
+
 ## v2.1.2
 - Added: WP 5.3 "Kirk" UI compatibility.
 - Added: Comment Metabox Framework (bonus).

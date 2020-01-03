@@ -146,7 +146,7 @@ array(
   'background_gradient'             => true,
   'background_origin'               => true,
   'background_clip'                 => true,
-  'background_blend-mode'           => true,
+  'background_blend_mode'           => true,
   'default'                         => array(
     'background-color'              => '#111',
     'background-gradient-color'     => '#555',
@@ -164,36 +164,37 @@ array(
 
 <div class="pre-heading">Arguments</div>
 
-| Name                       | Type          | Default     | Description |
-|----------------------------|---------------|-------------|-------------|
-| `id`                       | string        |             | A unique **ID**. This **ID** will be used to get the value.
-| `type`                     | string        | background  | Type of the field.
-| `title`                    | string        |             | Title of the field.
-| `default`                  | array         |             | Default value to return if the option does not exist in the database
-| `subtitle`                 | string        |             | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
-| `desc`                     | string        |             | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
-| `help`                     | string        |             | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
-| `class`                    | string        |             | Extra CSS classes (space separated) to append to the field.
-| `before`                   | string        |             | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
-| `after`                    | string        |             | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
-| `dependency`               | array         |             | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
-| `attributes`               | array         |             | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
-| `sanitize`                 | string        |             | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
-| `validate`                 | string        |             | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
-| **Extras**                 | ---           | ---         | ---
-| `background_color`         | bool          | true        | Flag to display *background color* of the field.
-| `background_image`         | bool          | true        | Flag to display *background image* of the field.
-| `background_position`      | bool          | true        | Flag to display *background position* of the field.
-| `background_repeat`        | bool          | true        | Flag to display *background repeat* of the field.
-| `background_attachment`    | bool          | true        | Flag to display *background attachment* of the field.
-| `background_size`          | bool          | true        | Flag to display *background size* of the field.
-| `background_origin`        | bool          | false       | Flag to display *background origin* of the field.
-| `background_clip`          | bool          | false       | Flag to display *background clip* of the field.
-| `background_blend_mode`    | bool          | false       | Flag to display *background blend mode* of the field.
-| `background_gradient`      | bool          | false       | Flag to display *background gradient* of the field.
-| `background_image_preview` | bool          | true        | Flag to display *background image preview* of the field.
-| `output`                   | array\|string |             | CSS elements selector.
-| `output_important`         | bool          | false       | Flag to add **!important** rule on output css..
+| Name                         | Type          | Default     | Description |
+|------------------------------|---------------|-------------|-------------|
+| `id`                         | string        |             | A unique **ID**. This **ID** will be used to get the value.
+| `type`                       | string        | background  | Type of the field.
+| `title`                      | string        |             | Title of the field.
+| `default`                    | array         |             | Default value to return if the option does not exist in the database
+| `subtitle`                   | string        |             | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`                       | string        |             | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`                       | string        |             | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `class`                      | string        |             | Extra CSS classes (space separated) to append to the field.
+| `before`                     | string        |             | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`                      | string        |             | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`                 | array         |             | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`                 | array         |             | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`                   | string        |             | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`                   | string        |             | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
+| **Extras**                   | ---           | ---         | ---
+| `background_color`           | bool          | true        | Flag to display *background color* of the field.
+| `background_image`           | bool          | true        | Flag to display *background image* of the field.
+| `background_position`        | bool          | true        | Flag to display *background position* of the field.
+| `background_repeat`          | bool          | true        | Flag to display *background repeat* of the field.
+| `background_attachment`      | bool          | true        | Flag to display *background attachment* of the field.
+| `background_size`            | bool          | true        | Flag to display *background size* of the field.
+| `background_origin`          | bool          | false       | Flag to display *background origin* of the field.
+| `background_clip`            | bool          | false       | Flag to display *background clip* of the field.
+| `background_blend_mode`      | bool          | false       | Flag to display *background blend mode* of the field.
+| `background_gradient`        | bool          | false       | Flag to display *background gradient* of the field.
+| `background_auto_attributes` | bool          | false       | Flag to display *background auto attributes* of the field.
+| `background_image_preview`   | bool          | true        | Flag to display *background image preview* of the field.
+| `output`                     | array\|string |             | CSS elements selector.
+| `output_important`           | bool          | false       | Flag to add **!important** rule on output css..
 
 <div class="pre-heading">Default Arguments</div>
 
