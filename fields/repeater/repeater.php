@@ -55,7 +55,7 @@ if( ! class_exists( 'CSF_Field_repeater' ) ) {
 
         echo '<div class="csf-repeater-wrapper csf-data-wrapper" data-unique-id="'. $this->unique .'" data-field-id="['. $this->field['id'] .']" data-max="'. $args['max'] .'" data-min="'. $args['min'] .'">';
 
-        if( ! empty( $this->value ) ) {
+        if( ! empty( $this->value ) && is_array( $this->value ) ) {
 
           $num = 0;
 
