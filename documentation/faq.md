@@ -707,6 +707,32 @@ if( ! function_exists('csf_customize_preview_init') ) {
 
 ---
 
+### How to use Font Awesome 5 ?
+
+We have updated Font Awesome 5 icon package for **Icon Field** ( *but still you can use version 4* )
+
+If still you want to use **Font Awesome 4** only add this filter.
+
+```php
+add_filter( 'csf_fa4', '__return_true' );
+```
+
+or upgrade *Font Awesome Free 5* with a front-end enqueue style. You know that already.
+
+```php
+if( ! function_exists( 'your_prefix_enqueue_fa5' ) ) {
+  function your_prefix_enqueue_fa5() {
+    wp_enqueue_style( 'fa5', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css', array(), '5.13.0', 'all' );
+    wp_enqueue_style( 'fa5-v4-shims', 'https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css', array(), '5.13.0', 'all' );
+  }
+  add_action( 'wp_enqueue_scripts', 'your_prefix_enqueue_fa5' );
+}
+```
+
+Click to here for more https://fontawesome.com/how-to-use/on-the-web/setup/upgrading-from-version-4
+
+---
+
 ### How to add custom icons ?
 
 1. Use **csf_field_icon_add_icons** filter for add custom icons.

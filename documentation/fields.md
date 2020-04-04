@@ -393,6 +393,7 @@ array(
 <div class="csf-tab-buttons">
 <span class="csf-tab-title csf-tab-active">Simple</span>
 <span class="csf-tab-title">Multiple Options</span>
+<span class="csf-tab-title">WP Query Options</span>
 </div>
 <div class="csf-tab-contents">
 <div class="csf-tab-content csf-tab-active">
@@ -431,6 +432,47 @@ array(
 ),
 ```
 </div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'      => 'opt-button-set-3',
+  'type'    => 'button_set',
+  'title'   => 'Button Set with categories',
+  'options' => 'categories',
+),
+
+array(
+  'id'      => 'opt-button-set-4',
+  'type'    => 'button_set',
+  'title'   => 'Button Set with tags',
+  'options' => 'tags',
+),
+
+// Available Options
+'options' => 'pages',
+'options' => 'posts',
+'options' => 'categories',
+'options' => 'tags',
+'options' => 'menus',
+'options' => 'users',
+'options' => 'sidebars',
+'options' => 'roles',
+'options' => 'post_types',
+
+// Or use your own custom callback function
+'options' => 'prefix_get_something',
+
+function prefix_get_something() {
+  // return custom query array.
+  return array(
+    'opt-1' => 'Option 1',
+    'opt-2' => 'Option 2',
+    'opt-3' => 'Option 3',
+  );
+}
+```
+</div>
 </div>
 <div class="clear"></div>
 </div>
@@ -455,7 +497,22 @@ array(
 | `validate`       | string         |             | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---            | ---         | ---
 | `multiple`       | bool           | false       | Flag to allows multiple options to choose.
-| `options`        | array          |             | An array of object containing key/value pairs representing the options.
+| `empty_message`  | string         |             | Display to empty text if options empty.
+| `options`        | array\|string  |             | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `categories` `tags` `menus` `users` `sidebars` `roles` `post_types`
+| `query_args`     | array          |             | An associative array of query arguments.
+
+<div class="pre-heading">query_args Arguments</div>
+
+| Name              | Type       | Default     | Description |
+|-------------------|------------|-------------|-------------|
+| `post_type`       | string     |             | Custom post type name. Uses by `posts`
+| `taxonomy`        | string     |             | Custom taxonomy name. Uses by `categories` `tags`
+| `posts_per_page`  | number     |             | Maximum number of post to show. Uses by `pages` `posts`
+| `number`          | number     |             | Maximum number of post to show. Uses by `categories` `tags` `menus`
+| `orderby`         | string     | post_title  | Sort retrieved posts by parameter. Uses by `pages` `posts` `categories` `tags` `menus`
+| `order`           | string     | ASC         | Designates the ascending or descending order of the `orderby` parameter *ASC* or *DESC*. Uses by `pages` `posts` `categories` `tags` `menus`
+
+Get more query arguments for ( *posts, pages:* [wp_query](https://developer.wordpress.org/reference/classes/wp_query/) ) and ( *categories, tags, menus:* [wp_term_query](https://developer.wordpress.org/reference/classes/wp_term_query/) )
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -522,6 +579,18 @@ array(
 'options' => 'sidebars',
 'options' => 'roles',
 'options' => 'post_types',
+
+// Or use your own custom callback function
+'options' => 'prefix_get_something',
+
+function prefix_get_something() {
+  // return custom query array.
+  return array(
+    'opt-1' => 'Option 1',
+    'opt-2' => 'Option 2',
+    'opt-3' => 'Option 3',
+  );
+}
 ```
 </div>
 </div>
@@ -1364,6 +1433,30 @@ array(
 <div class="clear"></div>
 </div>
 
+<div class="pre-heading">Usage</div>
+
+As you know, the Icon field works only in backend and you should to include the icon css file in front-end by yourself. For eg. take a look below enqueue styles example or use your own enqueue styles method.
+
+```php
+if( ! function_exists( 'your_prefix_enqueue_fa5' ) ) {
+  function your_prefix_enqueue_fa5() {
+    wp_enqueue_style( 'fa5', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css', array(), '5.13.0', 'all' );
+    wp_enqueue_style( 'fa5-v4-shims', 'https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css', array(), '5.13.0', 'all' );
+  }
+  add_action( 'wp_enqueue_scripts', 'your_prefix_enqueue_fa5' );
+}
+```
+
+The **v4-shim** is optional. It may necessary if you used old version and upgrading the framework.
+
+<div class="pre-heading">Still want to use Font Awesome 4 ?</div>
+
+If still you want to use **Font Awesome 4** only add this filter anywhere.
+
+```php
+add_filter( 'csf_fa4', '__return_true' );
+```
+
 <div class="pre-heading">Arguments</div>
 
 | Name             | Type         | Default      | Description |
@@ -2199,7 +2292,7 @@ array(
   )
 ),
 
-// Available Options
+// Available Options.
 'options' => 'pages',
 'options' => 'posts',
 'options' => 'categories',
@@ -2209,7 +2302,6 @@ array(
 'options' => 'sidebars',
 'options' => 'roles',
 'options' => 'post_types',
-
 ```
 </div>
 <div class="csf-tab-content">
@@ -2222,6 +2314,9 @@ array(
   'title'       => 'Select with pages',
   'placeholder' => 'Select a page',
   'options'     => 'pages',
+  'query_args'  => array(
+    'posts_per_page' => -1 // for get all pages (also it's same for posts).
+  )
 ),
 
 // Select with posts
@@ -2276,6 +2371,18 @@ array(
 'options' => 'sidebars',
 'options' => 'roles',
 'options' => 'post_types',
+
+// Or use your own custom callback function
+'options' => 'prefix_get_something',
+
+function prefix_get_something() {
+  // return custom query array.
+  return array(
+    'opt-1' => 'Option 1',
+    'opt-2' => 'Option 2',
+    'opt-3' => 'Option 3',
+  );
+}
 ```
 </div>
 </div>
@@ -3249,7 +3356,8 @@ array(
 | `custom_style`       | bool           | false      | Flag to display *custom_style* of the field.
 | `extra_styles`       | bool           | false      | Flag to display *extra_styles* of the field. (sets allows multiple choose the font styles)
 | `exclude`            | string         |            | Define a comma-separated list of font family group to be excluded from the list. *for eg.* `google` `custom,safe`
-| `unit`               | string         | px         | Unit to display on the border inputs, also sets output CSS property unit value.
+| `unit`               | string         | px         | Unit to display on the *font size*, *line-height*, *letter-spacing* etc, also sets output CSS property unit value.
+| `line_height_unit`   | string         | px         | Unit to display on the *line-height* for support `em` `rem`, also sets output CSS property unit value.
 | `output`             | array\|string  |            | CSS elements selector.
 | `output_important`   | bool           | false      | Flag to add **!important** rule on output css.
 
@@ -3413,10 +3521,10 @@ array(
 <span class="csf-tab-title">Submessage</span>
 <span class="csf-tab-title">Notice</span>
 <span class="csf-tab-title">Content</span>
+<span class="csf-tab-title">Callback</span>
 </div>
 <div class="csf-tab-contents">
 <div class="csf-tab-content csf-tab-active">
-<div class="pre-heading">Config Examples</div>
 
 ```php
 // A Heading
@@ -3435,7 +3543,6 @@ array(
 
 </div>
 <div class="csf-tab-content">
-<div class="pre-heading">Config Examples</div>
 
 ```php
 // A Subheading
@@ -3454,7 +3561,6 @@ array(
 
 </div>
 <div class="csf-tab-content">
-<div class="pre-heading">Config Examples</div>
 
 ```php
 // A Submessage
@@ -3475,7 +3581,6 @@ array(
 
 </div>
 <div class="csf-tab-content">
-<div class="pre-heading">Config Examples</div>
 
 ```php
 // A Notice
@@ -3496,7 +3601,6 @@ array(
 
 </div>
 <div class="csf-tab-content">
-<div class="pre-heading">Config Examples</div>
 
 ```php
 // A Content Field Example
@@ -3511,6 +3615,30 @@ array(
 |------------|---------|----------|-------------|
 | `type`     | string  | content  | Type of the field.
 | `content`  | string  |          | The content of the field.
+
+</div>
+<div class="csf-tab-content">
+
+```php
+// A Callback function
+function my_callback_function() {
+  echo "<h1>Hello world</h1>";
+}
+
+// A Callback Field Example
+array(
+  'type'     => 'callback',
+  'function' => 'my_callback_function',
+),
+```
+
+<div class="pre-heading">Arguments</div>
+
+| Name       | Type          | Default  | Description |
+|------------|---------------|----------|-------------|
+| `type`     | string        | callback | Type of the field.
+| `function` | string        |          | The callable function name.
+| `args`     | array\|string |          | The function arguments.
 
 </div>
 </div>

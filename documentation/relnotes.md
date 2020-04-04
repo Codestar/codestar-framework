@@ -1,5 +1,14 @@
 # Release Notes
 
+## v2.1.4
+Added: "Font Awesome 5 Free" package for "Icon" field ( v4 is still can be used ).
+Added: "Button Set" field custom options types like "Select" field categories, pages etc.
+Added: New field "callback". This field allows to make custom html output with a function.
+Added: Data sanitization and escaping for all framework attributes/data.
+Fixed: Backup field and Ajax-save stripslashes issue.
+Improved: Form warning message on reset button.
+Improved: Map search field autocomplete (caching same requests in typing).
+
 ## v2.1.3
 - Added: New field "map".
 - Added: Quick save (ctrl+s,command+s) for Option Framework.
