@@ -307,6 +307,40 @@ if( ! function_exists( 'csf_sanitize_replace_a_to_b' ) ) {
 }
 ```
 
+**Note:** Due to WordPress core rule some html tags are sanitizing by default. ( iframe, script, ie. ) If needed it can be disabled like this:
+
+```php
+array(
+  'id'       => 'opt-text',
+  'type'     => 'text',
+  'title'    => 'Text',
+  'sanitize' => false,
+),
+
+array(
+  'id'       => 'opt-textarea',
+  'type'     => 'textarea',
+  'title'    => 'Textarea',
+  'sanitize' => false,
+),
+
+array(
+  'id'       => 'opt-code-editor',
+  'type'     => 'code_editor',
+  'title'    => 'Code Editor',
+  'sanitize' => false,
+),
+
+array(
+  'id'       => 'opt-wp-editor',
+  'type'     => 'wp_editor',
+  'title'    => 'WP Editor',
+  'sanitize' => false,
+),
+
+// and more...
+```
+
 ---
 
 ### How to use validate ?

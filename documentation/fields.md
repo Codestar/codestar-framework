@@ -707,6 +707,18 @@ array(
 <div class="clear"></div>
 </div>
 
+<div class="pre-heading">Sanitize</div>
+Due to WordPress core rule some html tags are sanitizing by default. ( iframe, script, ie. ) If needed it can be disabled like this:
+
+```php
+array(
+  'id'       => 'opt-code-editor-5',
+  'type'     => 'code_editor',
+  'title'    => 'Code Editor without sanitize',
+  'sanitize' => false,
+),
+```
+
 <div class="pre-heading">Arguments</div>
 
 | Name             | Type         | Default      | Description |
@@ -3485,6 +3497,18 @@ array(
 </div>
 <div class="clear"></div>
 </div>
+
+<div class="pre-heading">Sanitize</div>
+Due to WordPress core rule some html tags are sanitizing by default. ( iframe, script, ie. ) If needed it can be disabled like this:
+
+```php
+array(
+  'id'       => 'opt-wp-editor-3',
+  'type'     => 'wp_editor',
+  'title'    => 'WP Editor without sanitize',
+  'sanitize' => false,
+),
+```
 
 <div class="pre-heading">Arguments</div>
 

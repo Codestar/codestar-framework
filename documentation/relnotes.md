@@ -1,5 +1,14 @@
 # Release Notes
 
+## v2.1.5
+Added: Sub menu item title argument for Option Framework.
+Added: A parameter "sanitize => false" for allow to script/iframe or any html code.
+Fixed: Reset section issue for Option Framework.
+Fixed: A few bugs fixed caused by sanitize have been.
+Fixed: Output CSS sanitize issue.
+Updated: "Font Awesome 5 Free" package and added new icons.
+Improved: Data sanitization and escaping.
+
 ## v2.1.4
 Added: "Font Awesome 5 Free" package for "Icon" field ( v4 is still can be used ).
 Added: "Button Set" field custom options types like "Select" field categories, pages etc.
