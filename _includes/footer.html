@@ -24,5 +24,12 @@
 
   <script src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.0/dist/baguetteBox.min.js"></script>
   <script src="{{ "/assets/js/site.js" | prepend: site.baseurl }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.0.0/quicklink.umd.js"></script>
+  <script>
+  window.addEventListener('load', () => {
+    quicklink.listen();
+  });
+  </script>
+
 </body>
 </html>
