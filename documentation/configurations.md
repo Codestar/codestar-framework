@@ -1315,7 +1315,7 @@ if( class_exists( 'CSF' ) ) {
 
 ---
 
-## Comment Metabox Framework
+## Comment Option Framework
 
 <div class="pre-heading">Config Examples</div>
 <div class="csf-tabs">
@@ -1508,7 +1508,7 @@ echo get_comment_meta( get_comment_ID(), 'opt-textarea', true );
 
 ---
 
-## Shortcode Generate Framework
+## Shortcode Option Framework
 
 <div class="pre-heading">Config Examples</div>
 <div class="csf-tabs">
