@@ -619,6 +619,7 @@ function prefix_get_something() {
 | `empty_message`  | string         |             | Display to empty text if options empty.
 | `label`          | string         |             | The text to display with the checkbox, when use to single checkbox.
 | `options`        | array\|string  |             | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `categories` `tags` `menus` `users` `sidebars` `roles` `post_types`
+| `inline`         | bool           | false       | Flag to display the options horizontally.
 | `query_args`     | array          |             | An associative array of query arguments.
 
 <div class="pre-heading">query_args Arguments</div>
@@ -2041,6 +2042,7 @@ array(
 | **Extras**       | ---            | ---      | ---
 | `empty_message`  | string         |          | Display to empty text if options empty.
 | `options`        | array\|string  |          | An array of object containing key/value pairs representing the options or use a predefined options. *for eg.* `pages` `posts` `categories` `tags` `menus` `users` `sidebars` `roles` `post_types`
+| `inline`         | bool           | false    | Flag to display the options horizontally.
 | `query_args`     | array          |          | An associative array of query arguments.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------

@@ -230,6 +230,288 @@ array(
 ),
 ```
 
+**Note**: You can set visible dependency instead of hiding. See below:
+
+
+```php
+array(
+  'id'    => 'opt-switcher',
+  'type'  => 'switcher',
+  'title' => 'Switcher',
+),
+
+array(
+  'id'         => 'opt-text',
+  'type'       => 'text',
+  'title'      => 'Text',
+  'dependency' => array( 'opt-switcher', '==', 'true', '', 'visible' ), // Set 5th param as "visible" or "true".
+),
+```
+
+---
+
+### How to use output css ?
+
+**Note:** Only these fields has output css feature. ( and this feature only can be used *admin*, *customize* and *metabox* option frameworks. )
+
+`background` `border` `color` `dimensions` `link_color` `number` `slider` `spacing` `spinner` `typography`
+
+**Note:** Also can be used output css feature only inside these combine fields. ( *group* and *repeater* does not support. )
+
+`accordion` `fieldset` `tabbed`
+
+<div class="pre-heading">Examples</div>
+
+<div class="csf-tabs">
+<div class="csf-tab-buttons">
+<span class="csf-tab-title csf-tab-active">Color</span>
+<span class="csf-tab-title">Background</span>
+<span class="csf-tab-title">Border</span>
+<span class="csf-tab-title">Dimensions</span>
+<span class="csf-tab-title">Number</span>
+<span class="csf-tab-title">Slider</span>
+<span class="csf-tab-title">Spinner</span>
+<span class="csf-tab-title">Spacing</span>
+<span class="csf-tab-title">Typography</span>
+<span class="csf-tab-title">Link Color</span>
+</div>
+<div class="csf-tab-contents">
+<div class="csf-tab-content csf-tab-active">
+
+```php
+array(
+  'id'     => 'opt-color-output-1',
+  'type'   => 'color',
+  'title'  => 'Basic Color',
+  'output' => '.class-name-1',
+),
+
+array(
+  'id'     => 'opt-color-output-2',
+  'type'   => 'color',
+  'title'  => 'Multiple Selector Color',
+  'output' => 'body, .class-name-1, .class-name-2 .nested, #id-name',
+),
+
+array(
+  'id'          => 'opt-color-output-3',
+  'type'        => 'color',
+  'title'       => 'Specific Property Color',
+  'output'      => '.class-name-1',
+  'output_mode' => 'background-color', // default is "color"
+),
+
+array(
+  'id'          => 'opt-color-output-4',
+  'type'        => 'color',
+  'title'       => 'Specific Property Color',
+  'output'      => '.class-name-1',
+  'output_mode' => 'border-color',
+),
+
+array(
+  'id'               => 'opt-color-output-5',
+  'type'             => 'color',
+  'title'            => 'Important Property Color',
+  'output'           => '.class-name-1',
+  'output_mode'      => 'background-color',
+  'output_important' => true, // It adds "!important" to css property and all "output" has this parameter.
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'     => 'opt-background-output-1',
+  'type'   => 'background',
+  'title'  => 'Background',
+  'output' => '.class-name-1',
+),
+
+array(
+  'id'     => 'opt-background-output-2',
+  'type'   => 'background',
+  'title'  => 'Background',
+  'output' => '.class-name-1, .classname-2',
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'     => 'opt-border-output-1',
+  'type'   => 'border',
+  'title'  => 'Border',
+  'output' => '.class-name-1',
+),
+
+array(
+  'id'     => 'opt-border-output-2',
+  'type'   => 'border',
+  'title'  => 'Border',
+  'output' => '.class-name-1, .class-name-2',
+  'unit'   => 'em', // default is "px"
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'     => 'opt-dimensions-output-1',
+  'type'   => 'dimensions',
+  'title'  => 'Dimensions',
+  'output' => '.class-name-1',
+  // default properties are "width" and "height" size as "px"
+),
+
+array(
+  'id'            => 'opt-dimensions-output-2',
+  'type'          => 'dimensions',
+  'title'         => 'Dimensions',
+  'output'        => '.class-name-1',
+  'output_prefix' => 'max', // It makes max-width, max-height
+  'unit'          => 'em', // default is "px"
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'     => 'opt-number-output-1',
+  'type'   => 'number',
+  'title'  => 'Number',
+  'output' => '.class-name-1',
+  // default property is "width" and size is "px"
+),
+
+array(
+  'id'          => 'opt-number-output-2',
+  'type'        => 'number',
+  'title'       => 'Number',
+  'output'      => '.class-name-1',
+  'output_mode' => 'height', // default mode is "width"
+  'unit'        => '%', // default is "px"
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'     => 'opt-slider-output-1',
+  'type'   => 'slider',
+  'title'  => 'Slider',
+  'output' => '.class-name-1',
+  // default property is "width" and size is "px"
+),
+
+array(
+  'id'          => 'opt-slider-output-2',
+  'type'        => 'slider',
+  'title'       => 'Slider',
+  'output'      => '.class-name-1',
+  'output_mode' => 'height', // default mode is "width"
+  'unit'        => '%', // default is "px"
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'     => 'opt-spinner-output-1',
+  'type'   => 'spinner',
+  'title'  => 'Spinner',
+  'output' => '.class-name-1',
+  // default property is "width" and size is "px"
+),
+
+array(
+  'id'          => 'opt-spinner-output-2',
+  'type'        => 'spinner',
+  'title'       => 'Spinner',
+  'output'      => '.class-name-1',
+  'output_mode' => 'height', // default mode is "width"
+  'unit'        => '%', // default is "px"
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'     => 'opt-spacing-output-1',
+  'type'   => 'spacing',
+  'title'  => 'Spacing',
+  'output' => '.class-name-1',
+  // default property is "padding" and size is "px"
+),
+
+array(
+  'id'          => 'opt-spacing-output-2',
+  'type'        => 'spacing',
+  'title'       => 'Spacing',
+  'output'      => '.class-name-1',
+  'output_mode' => 'margin', // default mode is "padding"
+  'unit'        => 'em', // default is "px"
+),
+
+array(
+  'id'          => 'opt-spacing-output-2',
+  'type'        => 'spacing',
+  'title'       => 'Spacing',
+  'output'      => '.class-name-1',
+  'output_mode' => 'none', // It removes property for only needed ( left, right, top, bottom ). for eg. it makes from "padding-left" to "left"
+  'unit'        => 'em', // default is "px"
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'     => 'opt-typography-output-1',
+  'type'   => 'typography',
+  'title'  => 'Typography',
+  'output' => '.class-name-1',
+),
+
+array(
+  'id'     => 'opt-typography-output-2',
+  'type'   => 'typography',
+  'title'  => 'Typography',
+  'output' => '.class-name-1, .classname-2',
+),
+
+// This field loads automatically google web fonts in the front-page.
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'     => 'opt-link-color-output-1',
+  'type'   => 'link_color',
+  'title'  => 'Link Color',
+  'output' => '.class-name-1',
+),
+
+array(
+  'id'     => 'opt-link-color-output-2',
+  'type'   => 'link_color',
+  'title'  => 'Link Color',
+  'output' => '.class-name-1, .classname-2',
+),
+```
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
 ---
 
 ### How to use attributes ?

@@ -249,7 +249,7 @@ if( class_exists( 'CSF' ) ) {
     // menu extras
     'show_bar_menu'           => true,
     'show_sub_menu'           => true,
-    'show_network_menu'       => true,
+    'show_in_network'         => true,
     'show_in_customizer'      => false,
 
     'show_search'             => true,
@@ -375,8 +375,8 @@ echo prefix_get_option( 'opt-text', 'default value' );
 | `menu_hidden`              | bool      | false          | Flag to display menu in the admin panel.
 | `show_bar_menu`            | bool      | true           | Flag to display menu in the admin bar.
 | `show_sub_menu`            | bool      | true           | Flag to display sub menus in the admin bar.
-| `show_network_menu`        | bool      | true           | Flag to diplay menu in the network bar.
-| `show_in_customizer`       | bool      | false          | Flag to display option panel in customizer.
+| `show_in_network`          | bool      | true           | Flag to diplay menu in the network admin.
+| `show_in_customizer`       | bool      | false          | Flag to display same options in the wp-customize as well.
 | `show_search`              | bool      | true           | Flag to display *search* of the framework.
 | `show_reset_all`           | bool      | true           | Flag to display *reset button* of the framework.
 | `show_reset_section`       | bool      | true           | Flag to display *reset section button* of the framework.
@@ -410,6 +410,7 @@ echo prefix_get_option( 'opt-text', 'default value' );
 | `priority` | number  | The priority within the context where the tabs should show.
 | `title`    | string  | Title of the section.
 | `icon`     | string  | Icon of the section.
+| `class`    | string  | Extra CSS classes of the section.
 | `fields`   | array   | Associative array containing fields for the field sets.
 
 ---
@@ -922,6 +923,145 @@ echo get_post_meta( get_the_ID(), 'opt-textarea', true );
 |------------|---------|-------------|
 | `title`    | string  | Title of the section.
 | `icon`     | string  | Icon of the section.
+| `class`    | string  | Extra CSS classes of the section.
+| `fields`   | array   | Associative array containing fields for the field sets.
+
+---
+
+## Nav Menu Option Framework
+
+<div class="pre-heading">Config Examples</div>
+
+```php
+// Control core classes for avoid errors
+if( class_exists( 'CSF' ) ) {
+
+  //
+  // Set a unique slug-like ID
+  $prefix = '_prefix_menu_options';
+
+  //
+  // Create profile options
+  CSF::createNavMenuOptions( $prefix, array(
+    'data_type' => 'serialize', // The type of the database save options. `serialize` or `unserialize`
+  ) );
+
+  //
+  // Create a section
+  CSF::createSection( $prefix, array(
+    'fields' => array(
+
+      array(
+        'id'    => 'icon',
+        'type'  => 'icon',
+        'title' => 'Icon',
+      ),
+
+      array(
+        'id'    => 'text',
+        'type'  => 'text',
+        'title' => 'Text',
+      ),
+
+    )
+  ) );
+
+}
+```
+
+<div class="pre-heading">How to get menu item value</div>
+
+As you know there are some ways for create for your menus. Walker Nav Menu or Filter/Action(s).
+
+**1. Let's suppose you're using walker nav menu class.**
+
+```php
+if( ! class_exists( 'YOUR_Walker_Nav_Menu' ) ) {
+  class YOUR_Walker_Nav_Menu extends Walker_Nav_Menu{
+
+    public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+
+      // ------------------------------------------------------------------------------
+      // "data_type => serialize" usage.
+      $meta = get_post_meta( $item->ID, '_prefix_menu_options', true );
+      // alternative: $meta = $item->_prefix_menu_options;
+
+      if( ! empty( $meta['icon'] ) ) {
+        $item->title = '<i class="'. $meta['icon'] .'"></i>' . $item->title;
+      }
+      // ------------------------------------------------------------------------------
+
+      // ------------------------------------------------------------------------------
+      // "data_type => unserialize" usage.
+      $icon = get_post_meta( $item->ID, 'icon', true );
+      // alternative: $icon = $item->icon;
+
+      if( ! empty( $icon ) ) {
+        $item->title = '<i class="'. $icon .'"></i>' . $item->title;
+      }
+      // ------------------------------------------------------------------------------
+
+      parent::start_el( $output, $item, $depth, $args, $id );
+
+    }
+
+  }
+}
+
+// As you know use this walker like this:
+// echo wp_nav_menu( array( 'walker' => new YOUR_Walker_Nav_Menu() ) );
+```
+
+**2. Let's suppose you're using filter.**
+
+```php
+function prefix_wp_nav_menu_objects( $items, $args ) {
+
+  foreach ( $items as &$item ) {
+
+    // ------------------------------------------------------------------------------
+    // "data_type => serialize" usage.
+    $meta = get_post_meta( $item->ID, '_prefix_menu_options', true );
+    // alternative: $meta = $item->_prefix_menu_options;
+
+    if( ! empty( $meta['icon'] ) ) {
+      $item->title = '<i class="'. $meta['icon'] .'"></i>' . $item->title;
+    }
+    // ------------------------------------------------------------------------------
+
+    // ------------------------------------------------------------------------------
+    // "data_type => unserialize" usage.
+    $icon = get_post_meta( $item->ID, 'icon', true );
+    // alternative: $icon = $item->icon;
+
+    if( ! empty( $icon ) ) {
+      $item->title = '<i class="'. $icon .'"></i>' . $item->title;
+    }
+    // ------------------------------------------------------------------------------
+
+  }
+
+  return $items;
+
+}
+
+add_filter( 'wp_nav_menu_objects', 'prefix_wp_nav_menu_objects', 10, 2 );
+```
+
+<div class="pre-heading">Arguments</div>
+
+| Name         | Type   | Default    | Description |
+|--------------|--------|------------|-------------|
+| `data_type`  | string | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
+| `defaults`   | array  |            | Sets all default values from a external array. (optional)
+| `class`      | string |            | Extra CSS classes (space separated) to append to the main framework wrapper.
+
+<div class="pre-heading">Section Arguments</div>
+
+| Name       | Type    | Description |
+|------------|---------|-------------|
+| `title`    | string  | Title of the section.
+| `icon`     | string  | Icon of the section.
 | `fields`   | array   | Associative array containing fields for the field sets.
 
 ---
@@ -1363,6 +1503,7 @@ echo get_comment_meta( get_comment_ID(), 'opt-textarea', true );
 |------------|---------|-------------|
 | `title`    | string  | Title of the section.
 | `icon`     | string  | Icon of the section.
+| `class`    | string  | Extra CSS classes of the section.
 | `fields`   | array   | Associative array containing fields for the field sets.
 
 ---

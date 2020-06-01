@@ -1,27 +1,41 @@
 # Release Notes
 
+## v2.1.6
+- Added: Nav Menu Option Framework (bonus).
+- Added: Section "class" paramter for Admin, Metabox Option Frameworks.
+- Added: Fields with output css feature can be used in Accordion, Tabbed and Fieldset fields.
+- Added: Visible dependency instead of hiding.
+- Fixed: Background field gradient transparent issue.
+- Improved: Admin Option Framework tab anchors (#tab-1, #tab-2 etc.) with the actual tab names.
+- Improved: Data sanitization and escaping.
+- Improved: All of framework scripts and styles loads only when needed.
+- Improved: Output css feature and documentation.
+- Improved: Network menus and options integration.
+- Improved: Google web fonts load method.
+- Improved: Some js and css coding.
+
 ## v2.1.5
-Added: Sub menu item title argument for Option Framework.
-Added: A parameter "sanitize => false" for allow to script/iframe or any html code.
-Fixed: Reset section issue for Option Framework.
-Fixed: A few bugs fixed caused by sanitize have been.
-Fixed: Output CSS sanitize issue.
-Updated: "Font Awesome 5 Free" package and added new icons.
-Improved: Data sanitization and escaping.
+- Added: Sub menu item title argument for Admin Option Framework.
+- Added: A parameter "sanitize => false" for allow to script/iframe or any html code.
+- Fixed: Reset section issue for Admin Option Framework.
+- Fixed: A few bugs fixed caused by sanitize have been.
+- Fixed: Output CSS sanitize issue.
+- Updated: "Font Awesome 5 Free" package and added new icons.
+- Improved: Data sanitization and escaping.
 
 ## v2.1.4
-Added: "Font Awesome 5 Free" package for "Icon" field ( v4 is still can be used ).
-Added: "Button Set" field custom options types like "Select" field categories, pages etc.
-Added: New field "callback". This field allows to make custom html output with a function.
-Added: Data sanitization and escaping for all framework attributes/data.
-Fixed: Backup field and Ajax-save stripslashes issue.
-Improved: Form warning message on reset button.
-Improved: Map search field autocomplete (caching same requests in typing).
+- Added: "Font Awesome 5 Free" package for "Icon" field ( v4 is still can be used ).
+- Added: "Button Set" field custom options types like "Select" field categories, pages etc.
+- Added: New field "callback". This field allows to make custom html output with a function.
+- Added: Data sanitization and escaping for all framework attributes/data.
+- Fixed: Backup field and Ajax-save stripslashes issue.
+- Improved: Form warning message on reset button.
+- Improved: Map search field autocomplete (caching same requests in typing).
 
 ## v2.1.3
 - Added: New field "map".
-- Added: Quick save (ctrl+s,command+s) for Option Framework.
-- Added: Form warning when changed any option for Option Framework.
+- Added: Quick save (ctrl+s,command+s) for Admin Option Framework.
+- Added: Form warning when changed any option for Admin Option Framework.
 - Fixed: Output CSS twice times issue.
 - Updated: Google Web Fonts array.
 - Updated: Customizer Framework samples.
@@ -78,7 +92,7 @@ Improved: Map search field autocomplete (caching same requests in typing).
 - Improved: Dependency parameter for multiple conditions.
 
 ## v2.0.7
-- Added: Profile Options Framework (bonus).
+- Added: Profile Option Framework (bonus).
 - Added: Media field fallback function for easy migration from v1.x to v2.x.
 - Fixed: A minor PHP notice in the Shortcode Generate Framework.
 - Improved: Link Color field output for given array elements.
