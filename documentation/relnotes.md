@@ -6,7 +6,7 @@
 - Added: Fields with output css feature can be used in Accordion, Tabbed and Fieldset fields.
 - Added: Visible dependency instead of hiding.
 - Fixed: Background field gradient transparent issue.
-- Improved: Admin Option Framework tab anchors (#tab-1, #tab-2 etc.) with the actual tab names.
+- Improved: Admin Option Framework tab anchors (#tab-1,2 etc.) with the actual tab names.
 - Improved: Data sanitization and escaping.
 - Improved: All of framework scripts and styles loads only when needed.
 - Improved: Output css feature and documentation.
