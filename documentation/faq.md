@@ -1366,7 +1366,6 @@ Let's suppose you typed "**powerx**" prefix and generated it. Your new configura
 // Installation
 require_once get_theme_file_path() .'/inc/powerx-framework/powerx-framework.php';
 
-
 // Configuration
 if( class_exists( 'POWERX' ) ) {
 
