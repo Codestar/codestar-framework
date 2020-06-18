@@ -1360,9 +1360,14 @@ We have a simple plugin for create your underscores based framework.
 
 You can download from <a href="/assets/plugins/csf-underscore.zip" target="_blank">csf-underscore.zip</a>
 
-Let's suppose you typed "**powerx**" prefix and generated it. Your configurations must be set up like this:
+Let's suppose you typed "**powerx**" prefix and generated it. Your new configurations must be set up like this:
 
 ```php
+// Installation
+require_once get_theme_file_path() .'/inc/powerx-framework/powerx-framework.php';
+
+
+// Configuration
 if( class_exists( 'POWERX' ) ) {
 
   POWERX::createOptions( ... );
@@ -1379,7 +1384,7 @@ if( class_exists( 'POWERX' ) ) {
 
 }
 
-// Also "actions" and "filters" must be use like this:
+// Also "actions" and "filters".
 powerx_init
 powerx_loaded
 powerx_{$prefix}_saved
