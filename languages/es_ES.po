@@ -1,0 +1,696 @@
+# Copyright (C) 2019 Codestar
+# This file is distributed under the same license as the Codestar Framework package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Codestar Framework 2.0.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/codestar-"
+"framework\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Brenda Mayuri <brenda@themes.pe>\n"
+"Language-Team: https://doothemes.com\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: classes/comment-metabox.class.php:198 classes/metabox.class.php:259
+#: classes/options.class.php:683
+msgid "No option provided by developer."
+msgstr "Ninguna opción proporcionada por el desarrollador."
+
+#: classes/comment-metabox.class.php:217 classes/metabox.class.php:278
+msgid "Restore"
+msgstr "Restaurar"
+
+#: classes/comment-metabox.class.php:218 classes/metabox.class.php:279
+msgid "update post for restore "
+msgstr "actualizar la publicación para restaurar "
+
+#: classes/comment-metabox.class.php:218 classes/metabox.class.php:279
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: classes/options.class.php:228
+msgid "Error while saving."
+msgstr "Error durante el guardado."
+
+#: classes/options.class.php:288
+msgid "Success. Imported backup options."
+msgstr "Excelente. Todas las opciones han sido importadas."
+
+#: classes/options.class.php:300
+msgid "Default options restored."
+msgstr "Opciones por defecto restauradas."
+
+#: classes/options.class.php:316
+msgid "Default options restored for only this section."
+msgstr "Opciones predeterminadas restauradas sólo para esta sección."
+
+#: classes/options.class.php:387
+msgid "Settings saved."
+msgstr "Ajustes guardados."
+
+#: classes/options.class.php:574
+msgid "Settings have changed, you should save them!"
+msgstr "La configuración ha cambiado, debe guardarlas!"
+
+#: classes/options.class.php:576
+msgid "show all options"
+msgstr "ver todas las opciones"
+
+#: classes/options.class.php:578
+msgid "Search option(s)"
+msgstr "Buscar opciones"
+
+#: classes/options.class.php:581 classes/options.class.php:708
+msgid "Save"
+msgstr "Guardar"
+
+#: classes/options.class.php:581 classes/options.class.php:708
+msgid "Saving..."
+msgstr "Guardando…"
+
+#: classes/options.class.php:582 classes/options.class.php:709
+msgid "Reset Section"
+msgstr "Restablecer sección"
+
+#: classes/options.class.php:582 classes/options.class.php:709
+msgid "Are you sure to reset this section options?"
+msgstr "¿Está seguro de restablecer las opciones de esta sección?"
+
+#: classes/options.class.php:583 classes/options.class.php:710
+#: fields/backup/backup.php:34
+msgid "Reset All"
+msgstr "Restablecer todo"
+
+#: classes/options.class.php:583 classes/options.class.php:710
+msgid "Are you sure to reset all options?"
+msgstr "¿Está seguro de restablecer todas las opciones?"
+
+#: classes/setup.class.php:434
+msgid "Are you sure?"
+msgstr "¿Estás seguro?"
+
+#: classes/setup.class.php:435
+msgid "Restoring options."
+msgstr "Restauración de opciones."
+
+#: classes/setup.class.php:436
+msgid "Importing options."
+msgstr "Importación de opciones."
+
+#: classes/setup.class.php:439
+msgid "Please enter %s or more characters"
+msgstr "Por favor, introduzca %s o más caracteres"
+
+#: classes/setup.class.php:440
+msgid "Searching..."
+msgstr "Buscando..."
+
+#: classes/setup.class.php:441
+msgid "No results match"
+msgstr "No se encontraron resultados"
+
+#: classes/setup.class.php:512
+msgid "Ooops! This field type (%s) can not be used here, yet."
+msgstr "Ooops! Este tipo de campo (%s) no se puede utilizar aquí, todavía."
+
+#: classes/setup.class.php:582
+msgid "This field class is not available!"
+msgstr "¡Esta clase de campo no está disponible!"
+
+#: classes/setup.class.php:586
+msgid "This type is not found!"
+msgstr "¡ Este tipo no se encuentra!"
+
+#: classes/shortcoder.class.php:246
+msgid "Add one more"
+msgstr "Añadir una más"
+
+#: classes/shortcoder.class.php:283 functions/actions.php:16
+#: functions/actions.php:68 functions/actions.php:106 functions/actions.php:141
+#: functions/actions.php:170
+msgid "Error: Nonce verification has failed. Please try again."
+msgstr ""
+"Error: La verificación de Nonce ha fallado. Por favor, inténtelo de nuevo."
+
+#: fields/background/background.php:35
+msgid "No background selected"
+msgstr "No hay fondo seleccionado"
+
+#: fields/background/background.php:66 fields/date/date.php:31
+msgid "From"
+msgstr "De"
+
+#: fields/background/background.php:84 fields/date/date.php:32
+msgid "To"
+msgstr "A"
+
+#: fields/background/background.php:102
+msgid "Direction"
+msgstr "Dirección"
+
+#: fields/background/background.php:108
+msgid "Gradient Direction"
+msgstr "Dirección del gradiente"
+
+#: fields/background/background.php:109
+msgid "&#8659; top to bottom"
+msgstr "&#8659; de arriba hacia abajo"
+
+#: fields/background/background.php:110
+msgid "&#8658; left to right"
+msgstr "&#8658; de izquierda a derecha"
+
+#: fields/background/background.php:111
+msgid "&#8664; corner top to right"
+msgstr "&#8664; esquina de arriba a derecha"
+
+#: fields/background/background.php:112
+msgid "&#8665; corner top to left"
+msgstr "&#8665; esquina de arriba a izquierda"
+
+#: fields/background/background.php:155
+msgid "Background Position"
+msgstr "Posición de fondo"
+
+#: fields/background/background.php:156
+msgid "Left Top"
+msgstr "Izquierda superior"
+
+#: fields/background/background.php:157
+msgid "Left Center"
+msgstr "Izquierda centro"
+
+#: fields/background/background.php:158
+msgid "Left Bottom"
+msgstr "Izquierda abajo"
+
+#: fields/background/background.php:159
+msgid "Center Top"
+msgstr "Centro Arriba"
+
+#: fields/background/background.php:160
+msgid "Center Center"
+msgstr "Centro Centro"
+
+#: fields/background/background.php:161
+msgid "Center Bottom"
+msgstr "Centro Abajo"
+
+#: fields/background/background.php:162
+msgid "Right Top"
+msgstr "Derecha superior"
+
+#: fields/background/background.php:163
+msgid "Right Center"
+msgstr "Derecha centro"
+
+#: fields/background/background.php:164
+msgid "Right Bottom"
+msgstr "Derecha abajo"
+
+#: fields/background/background.php:178
+msgid "Background Repeat"
+msgstr "Repetir fondo"
+
+#: fields/background/background.php:179
+msgid "Repeat"
+msgstr "Repetir"
+
+#: fields/background/background.php:180
+msgid "No Repeat"
+msgstr "No repetir"
+
+#: fields/background/background.php:181
+msgid "Repeat Horizontally"
+msgstr "Repetir Horizontalmente"
+
+#: fields/background/background.php:182
+msgid "Repeat Vertically"
+msgstr "Repetir Verticalmente"
+
+#: fields/background/background.php:196
+msgid "Background Attachment"
+msgstr "Archivo adjunto de fondo"
+
+#: fields/background/background.php:197
+msgid "Scroll"
+msgstr "Scroll"
+
+#: fields/background/background.php:198
+msgid "Fixed"
+msgstr "Fixed"
+
+#: fields/background/background.php:212
+msgid "Background Size"
+msgstr "Tamaño de fondo"
+
+#: fields/background/background.php:213
+msgid "Cover"
+msgstr "Cover"
+
+#: fields/background/background.php:214
+msgid "Contain"
+msgstr "Contenido"
+
+#: fields/background/background.php:228
+msgid "Background Origin"
+msgstr "Origen del Fondo"
+
+#: fields/background/background.php:229 fields/background/background.php:247
+msgid "Padding Box"
+msgstr "Padding Box"
+
+#: fields/background/background.php:230 fields/background/background.php:246
+msgid "Border Box"
+msgstr "Border Box"
+
+#: fields/background/background.php:231 fields/background/background.php:248
+msgid "Content Box"
+msgstr "Content Box"
+
+#: fields/background/background.php:245
+msgid "Background Clip"
+msgstr "Recorte del fondo"
+
+#: fields/background/background.php:262
+msgid "Background Blend Mode"
+msgstr "Background Blend Mode"
+
+#: fields/background/background.php:263 fields/link_color/link_color.php:36
+#: fields/typography/typography.php:175
+msgid "Normal"
+msgstr "Normal"
+
+#: fields/background/background.php:264
+msgid "Multiply"
+msgstr "Multiplicar"
+
+#: fields/background/background.php:265
+msgid "Screen"
+msgstr "Pantalla"
+
+#: fields/background/background.php:266
+msgid "Overlay"
+msgstr "Cubrir"
+
+#: fields/background/background.php:267
+msgid "Darken"
+msgstr "Oscurecer"
+
+#: fields/background/background.php:268
+msgid "Lighten"
+msgstr "Aclarar"
+
+#: fields/background/background.php:269
+msgid "Color Dodge"
+msgstr "Sobreexposición del color"
+
+#: fields/background/background.php:270
+msgid "Saturation"
+msgstr "Saturación"
+
+#: fields/background/background.php:271
+msgid "Color"
+msgstr "Color"
+
+#: fields/background/background.php:272
+msgid "Luminosity"
+msgstr "Luminosidad"
+
+#: fields/backup/backup.php:26
+msgid "Import"
+msgstr "Importar"
+
+#: fields/backup/backup.php:27
+msgid "copy-paste your backup string here"
+msgstr "copie-pegue su cadena de respaldo aquí"
+
+#: fields/backup/backup.php:31
+msgid "Export and Download Backup"
+msgstr "Exportar y Descargar Copia de Seguridad"
+
+#: fields/backup/backup.php:35
+msgid "Please be sure for reset all of options."
+msgstr "Por favor, asegúrese de restablecer todas las opciones."
+
+#: fields/border/border.php:25 fields/spacing/spacing.php:25
+msgid "top"
+msgstr "arriba"
+
+#: fields/border/border.php:26 fields/spacing/spacing.php:26
+msgid "right"
+msgstr "derecha"
+
+#: fields/border/border.php:27 fields/spacing/spacing.php:27
+msgid "bottom"
+msgstr "abajo"
+
+#: fields/border/border.php:28 fields/spacing/spacing.php:28
+msgid "left"
+msgstr "izquierda"
+
+#: fields/border/border.php:29 fields/spacing/spacing.php:29
+msgid "all"
+msgstr "todo"
+
+#: fields/border/border.php:51 fields/typography/typography.php:203
+msgid "Solid"
+msgstr "Sólido"
+
+#: fields/border/border.php:52 fields/typography/typography.php:206
+msgid "Dashed"
+msgstr "Discontinua"
+
+#: fields/border/border.php:53 fields/typography/typography.php:205
+msgid "Dotted"
+msgstr "Punteado"
+
+#: fields/border/border.php:54 fields/typography/typography.php:204
+msgid "Double"
+msgstr "Doble"
+
+#: fields/border/border.php:55
+msgid "Inset"
+msgstr "Recuadro"
+
+#: fields/border/border.php:56
+msgid "Outset"
+msgstr "Exterior"
+
+#: fields/border/border.php:57
+msgid "Groove"
+msgstr "Ranura"
+
+#: fields/border/border.php:58
+msgid "ridge"
+msgstr "rugoso"
+
+#: fields/border/border.php:59 fields/typography/typography.php:188
+#: fields/typography/typography.php:202
+msgid "None"
+msgstr "Ninguno"
+
+#: fields/button_set/button_set.php:56 fields/checkbox/checkbox.php:63
+#: fields/radio/radio.php:62 fields/select/select.php:113
+msgid "No data provided for this option type."
+msgstr "No hay datos proporcionados para este tipo de opción."
+
+#: fields/dimensions/dimensions.php:22
+msgid "width"
+msgstr "ancho"
+
+#: fields/dimensions/dimensions.php:23
+msgid "height"
+msgstr "altura"
+
+#: fields/gallery/gallery.php:20
+msgid "Add Gallery"
+msgstr "Agregar Galería"
+
+#: fields/gallery/gallery.php:21
+msgid "Edit Gallery"
+msgstr "Editar Galería"
+
+#: fields/gallery/gallery.php:22
+msgid "Clear"
+msgstr "Limpiar"
+
+#: fields/group/group.php:23
+msgid "Add New"
+msgstr "Añadir nuevo"
+
+#: fields/group/group.php:35 fields/repeater/repeater.php:30
+msgid "Error: Nested field id can not be same with another nested field id."
+msgstr ""
+"Error: el ID de campo anidado no puede ser el mismo con otro ID de campo "
+"anidado."
+
+#: fields/group/group.php:46 fields/group/group.php:87
+#: fields/repeater/repeater.php:51 fields/repeater/repeater.php:82
+msgid "Are you sure to delete this item?"
+msgstr "¿Está seguro de eliminar este elemento?"
+
+#: fields/group/group.php:122 fields/repeater/repeater.php:96
+msgid "You can not add more than"
+msgstr "No se puede agregar más de"
+
+#: fields/group/group.php:123 fields/repeater/repeater.php:97
+msgid "You can not remove less than"
+msgstr "No se puede quitar menos de"
+
+#: fields/icon/icon.php:20 functions/actions.php:209
+msgid "Add Icon"
+msgstr "Añadir Icono"
+
+#: fields/icon/icon.php:21
+msgid "Remove Icon"
+msgstr "Eliminar Icono"
+
+#: fields/link_color/link_color.php:37
+msgid "Hover"
+msgstr "Hover"
+
+#: fields/link_color/link_color.php:38
+msgid "Active"
+msgstr "Activo"
+
+#: fields/link_color/link_color.php:39
+msgid "Visited"
+msgstr "Visitado"
+
+#: fields/link_color/link_color.php:40
+msgid "Focus"
+msgstr "Enfoque"
+
+#: fields/map/map.php:23
+msgid "Search your address..."
+msgstr "Busca en tu dirección..."
+
+#: fields/map/map.php:24
+msgid "Latitude"
+msgstr "Latitud"
+
+#: fields/map/map.php:25
+msgid "Longitude"
+msgstr "Longitud"
+
+#: fields/media/media.php:23 fields/upload/upload.php:21
+msgid "Upload"
+msgstr "Cargar"
+
+#: fields/media/media.php:24 fields/upload/upload.php:22
+msgid "Remove"
+msgstr "Quitar"
+
+#: fields/media/media.php:57
+msgid "No media selected"
+msgstr "No se ha seleccionado ningún medio"
+
+#: fields/sorter/sorter.php:21
+msgid "Enabled"
+msgstr "Habilitado"
+
+#: fields/sorter/sorter.php:22
+msgid "Disabled"
+msgstr "Deshabilitado"
+
+#: fields/switcher/switcher.php:20
+msgid "On"
+msgstr "On"
+
+#: fields/switcher/switcher.php:21
+msgid "Off"
+msgstr "Off"
+
+#: fields/textarea/textarea.php:37
+msgid "Add Shortcode"
+msgstr "Añadir Shortcode"
+
+#: fields/typography/typography.php:85
+msgid "Font Family"
+msgstr "Familia de Fuente"
+
+#: fields/typography/typography.php:86
+msgid "Select a font"
+msgstr "Seleccione una fuente"
+
+#: fields/typography/typography.php:94
+msgid "Backup Font Family"
+msgstr "Tipografía de respaldo"
+
+#: fields/typography/typography.php:108 fields/typography/typography.php:121
+#: fields/typography/typography.php:134 fields/typography/typography.php:149
+#: fields/typography/typography.php:165 fields/typography/typography.php:178
+#: fields/typography/typography.php:192 fields/typography/typography.php:210
+msgid "Default"
+msgstr "Predeterminado"
+
+#: fields/typography/typography.php:119
+msgid "Font Style"
+msgstr "Estilo de Fuente"
+
+#: fields/typography/typography.php:133 fields/typography/typography.php:134
+msgid "Load Extra Styles"
+msgstr "Cargar estilos adicionales"
+
+#: fields/typography/typography.php:147
+msgid "Subset"
+msgstr "Subconjunto"
+
+#: fields/typography/typography.php:157
+msgid "Text Align"
+msgstr "Texto alineado"
+
+#: fields/typography/typography.php:159
+msgid "Inherit"
+msgstr "Heredar"
+
+#: fields/typography/typography.php:160
+msgid "Left"
+msgstr "Izquierda"
+
+#: fields/typography/typography.php:161
+msgid "Center"
+msgstr "Centro"
+
+#: fields/typography/typography.php:162
+msgid "Right"
+msgstr "Derecha"
+
+#: fields/typography/typography.php:163
+msgid "Justify"
+msgstr "Justificar"
+
+#: fields/typography/typography.php:164
+msgid "Initial"
+msgstr "Inicial"
+
+#: fields/typography/typography.php:173
+msgid "Font Variant"
+msgstr "Variante de fuente"
+
+#: fields/typography/typography.php:176
+msgid "Small Caps"
+msgstr "Mayúsculas pequeñas"
+
+#: fields/typography/typography.php:177
+msgid "All Small Caps"
+msgstr "Todas las mayusculas pequeñas"
+
+#: fields/typography/typography.php:186
+msgid "Text Transform"
+msgstr "Transformación de texto"
+
+#: fields/typography/typography.php:189
+msgid "Capitalize"
+msgstr "Capitalizar"
+
+#: fields/typography/typography.php:190
+msgid "Uppercase"
+msgstr "Mayúsculas"
+
+#: fields/typography/typography.php:191
+msgid "Lowercase"
+msgstr "Minúsculas"
+
+#: fields/typography/typography.php:200
+msgid "Text Decoration"
+msgstr "Decoración del texto"
+
+#: fields/typography/typography.php:207
+msgid "Wavy"
+msgstr "Ondulado"
+
+#: fields/typography/typography.php:208
+msgid "Overline"
+msgstr "Sobrerayado"
+
+#: fields/typography/typography.php:209
+msgid "Line-through"
+msgstr "Tachada"
+
+#: fields/typography/typography.php:222
+msgid "Font Size"
+msgstr "Tamaño de fuente"
+
+#: fields/typography/typography.php:234
+msgid "Line Height"
+msgstr "Altura de la línea"
+
+#: fields/typography/typography.php:246
+msgid "Letter Spacing"
+msgstr "Espacio entre letras"
+
+#: fields/typography/typography.php:258
+msgid "Word Spacing"
+msgstr "Espaciado entre palabras"
+
+#: fields/typography/typography.php:273
+msgid "Font Color"
+msgstr "Color de fuente"
+
+#: fields/typography/typography.php:284
+msgid "Custom Style"
+msgstr "Estilo personalizado"
+
+#: fields/typography/typography.php:351
+msgid "Custom Web Fonts"
+msgstr "Fuentes web personalizadas"
+
+#: fields/typography/typography.php:357
+msgid "Safe Web Fonts"
+msgstr "Fuentes Web Seguras"
+
+#: fields/typography/typography.php:377
+msgid "Google Web Fonts"
+msgstr "Fuentes web de Google"
+
+#: functions/actions.php:41
+msgid "No data provided by developer"
+msgstr "No hay datos proporcionados por el desarrollador"
+
+#: functions/actions.php:72 functions/actions.php:110
+msgid "Error: Options unique id could not valid."
+msgstr "Error: Las opciones unique id no pudieron ser válidas."
+
+#: functions/actions.php:114
+msgid "Error: Import data could not valid."
+msgstr "Error: Los datos de importación no pueden ser válidos."
+
+#: functions/actions.php:174
+msgid "Error: Missing request arguments."
+msgstr "Error: faltan argumentos de solicitud."
+
+#: functions/actions.php:180
+msgid "You do not have required permissions to access."
+msgstr "No tiene permisos necesarios para acceder."
+
+#: functions/actions.php:213
+msgid "Search a Icon..."
+msgstr "Buscar un Icono…"
+
+#: functions/validate.php:14 functions/validate.php:86
+msgid "Please write a valid email address!"
+msgstr "¡Por favor escriba una dirección válida de correo electrónico!"
+
+#: functions/validate.php:32 functions/validate.php:106
+msgid "Please write a numeric data!"
+msgstr "¡Por favor introduce un dato numérico!"
+
+#: functions/validate.php:50 functions/validate.php:126
+msgid "Error! This field is required!"
+msgstr "¡Error! ¡Este campo es obligatorio!"
+
+#: functions/validate.php:68 functions/validate.php:146
+msgid "Please write a valid url!"
+msgstr "Por favor, escriba una URL válida!"
+
+#~ msgid "Security check"
+#~ msgstr "Verificación de seguridad"
