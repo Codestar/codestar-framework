@@ -1388,6 +1388,8 @@ powerx_init
 powerx_loaded
 powerx_{$prefix}_saved
 powerx_{$prefix}_save_after
+
+// All "csf/CSF" prefix has become "powerx/POWERX".
 ```
 
 **Note:** The underscore mode avantage is prevent possible 5% conflicts with other codestar frameworks.
