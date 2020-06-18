@@ -1352,6 +1352,44 @@ CSF::createSection( $prefix_page_opts, array(
 
 ---
 
+### How to create underscore framework ?
+
+We have a simple plugin for create your underscores based framework.
+
+<img src="/assets/images/underscore.png" />
+
+You can download from <a href="/assets/plugins/csf-underscore.zip" target="_blank">csf-underscore.zip</a>
+
+Let's suppose you typed "**powerx**" prefix and generated it. Your configurations must be set up like this:
+
+```php
+if( class_exists( 'POWERX' ) ) {
+
+  POWERX::createOptions( ... );
+  POWERX::createMetabox( ... );
+  POWERX::createCustomizeOptions( ... );
+  POWERX::createNavMenuOptions( ... );
+  POWERX::createTaxonomyOptions( ... );
+  POWERX::createProfileOptions( ... );
+  POWERX::createWidget( ... );
+  POWERX::createCommentMetabox( ... );
+  POWERX::createShortcoder( ... );
+  // and
+  POWERX::createSection( ... );
+
+}
+
+// Also "actions" and "filters" must be use like this:
+powerx_init
+powerx_loaded
+powerx_{$prefix}_saved
+powerx_{$prefix}_save_after
+```
+
+**Note:** The underscore mode avantage is prevent possible 5% conflicts with other codestar frameworks.
+
+---
+
 ### How to override files ?
 
 You can modify framework files without touch main files. Only create a `csf-override` folder inside theme root. for eg:

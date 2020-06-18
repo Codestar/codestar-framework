@@ -1,5 +1,13 @@
 # Release Notes
 
+## v2.1.7
+- Fixed: Sortable field append new fields after saved issue.
+- Fixed: Customizer dependency issue after v2.1.6 update.
+- Fixed: Typography field "Normal 400" style embed issue.
+- Updated: Assets library (csf.css to style.css, csf.js to main.js).
+- Improved: Sanitize/Validate callback method.
+- Improved: Global dependency feature.
+
 ## v2.1.6
 - Added: Nav Menu Option Framework (bonus).
 - Added: Section "class" paramter for Admin, Metabox Option Frameworks.
