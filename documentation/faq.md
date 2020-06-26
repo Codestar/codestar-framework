@@ -1396,6 +1396,20 @@ powerx_{$prefix}_save_after
 
 ---
 
+### How to translate or localization ?
+
+Localization is ready for 20+ languages. The language files has located in **/languages** folder:
+
+- If you want to **edit** existing translate or **add** something. Open any **.po** file with text-editor or <a href="https://poedit.net/" target="_blank">po-editor</a>. ( for eg Spanish/Español: **languages/es_ES.po** )
+
+- If you want to translate a **new** language. Create the prefixed file inside **/languages** folder.( for eg Spanish/Mexico: **es_MX.po**, Afrikaans: **af.po** )
+
+Finally, Do not forget to send us the edited file via *routewp[at]gmail[dot]com*. We'll compile and add to next updates.
+
+Thanks for contribute.
+
+---
+
 ### How to override files ?
 
 You can modify framework files without touch main files. Only create a `csf-override` folder inside theme root. for eg:
