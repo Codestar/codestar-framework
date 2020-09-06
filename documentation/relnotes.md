@@ -1,5 +1,14 @@
 # Release Notes
 
+## v2.1.8
+- Added: Localized 20+ languages support.
+- Improved: Group/Repeater nested usage feature.
+- Improved: Font Awesome 4 package usage.
+- Updated: "Font Awesome 5 Free" package and added new icons.
+- Updated: Google Web Fonts array.
+- Fixed: Shortcode Framework usage inside plugin issue.
+- Fixed: Spinner and Slider field fractional numbers step validation issue.
+
 ## v2.1.7
 - Fixed: Sortable field append new fields after saved issue.
 - Fixed: Customizer dependency issue after v2.1.6 update.
