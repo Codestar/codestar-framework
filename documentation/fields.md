@@ -1225,6 +1225,22 @@ array(
 <div class="clear"></div>
 </div>
 
+<div class="pre-heading">Usage</div>
+
+```php
+$gallery_opt = $option['opt-gallery-1']; // for eg. 15,50,70,125
+$gallery_ids = explode( ',', $gallery_opt );
+
+if ( ! empty( $gallery_ids ) ) {
+  foreach ( $gallery_ids as $gallery_item_id ) {
+    // echo wp_get_attachment_image( $gallery_item_id, 'full' );
+    // echo wp_get_attachment_url( $gallery_item_id );
+    // echo wp_get_attachment_image_src( $gallery_item_id, 'full' );
+    // var_dump( wp_get_attachment_metadata( $gallery_item_id ) );
+  }
+}
+```
+
 <div class="pre-heading">Arguments</div>
 
 | Name             | Type         | Default        | Description |
@@ -1563,6 +1579,91 @@ array(
 | `multiple`          | bool           | false         | Flag to allows multiple options choose.
 | `output`            | array\|string  |               | CSS elements selector.
 | `output_important`  | bool           | false         | Flag to add **!important** rule on output css.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+## Link
+
+<div class="pre-heading">Config Examples</div>
+<div class="csf-tabs">
+<div class="csf-tab-buttons">
+<span class="csf-tab-title csf-tab-active">Simple</span>
+<span class="csf-tab-title">Link w/ Default</span>
+<span class="csf-tab-title">Link w/ Custom Title</span>
+</div>
+<div class="csf-tab-contents">
+<div class="csf-tab-content csf-tab-active">
+
+```php
+array(
+  'id'    => 'opt-link-1',
+  'type'  => 'link',
+  'title' => 'Link',
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'       => 'opt-link-2',
+  'type'     => 'link',
+  'title'    => 'Link',
+  'default'  => array(
+    'url'    => 'http://codestarframework.com/',
+    'text'   => 'Codestar Framework',
+    'target' => '_blank'
+  ),
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'           => 'opt-link-3',
+  'type'         => 'link',
+  'title'        => 'Link',
+  'add_title'    => 'Add Link',
+  'edit_title'   => 'Edit Link',
+  'remove_title' => 'Remove Link',
+),
+```
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="pre-heading">Arguments</div>
+
+| Name             | Type         | Default        | Description |
+|------------------|--------------|----------------|-------------|
+| `id`             | string       |                | A unique **ID**. This **ID** will be used to get the value.
+| `type`           | string       | gallery        | Type of the field.
+| `title`          | string       |                | Title of the field.
+| `default`        | string       |                | Default value from database, if the option doesn't exist.
+| `subtitle`       | string       |                | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string       |                | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string       |                | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `class`          | string       |                | Extra CSS classes (space separated) to append to the field.
+| `before`         | string       |                | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string       |                | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array        |                | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array        |                | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string       |                | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string       |                | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
+| **Extras**       | ---          | ---            | ---
+| `add_title`      | string       | Add Link       | Text to display on the *add* button.
+| `edit_title`     | string       | Edit Link      | Text to display on the *edit* button.
+| `remove_title`   | string       | Remove Link    | Text to display on the *remove* button.
+
+<div class="pre-heading">Default Arguments</div>
+
+| Name      | Type    | Description |
+|-----------|---------|-------------|
+| `url`     | string  | Specifies the URL of the page the link goes to.
+| `text`    | string  | Specifies the text in the link.
+| `target`  | string  | Specifies where to open the linked document.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 

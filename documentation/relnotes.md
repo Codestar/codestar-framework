@@ -1,5 +1,11 @@
 # Release Notes
 
+## v2.1.9
+- Added: New field "link" using wplink.
+- Added: Image field "inline" list style.
+- Improved: Data sanitization and escaping.
+- Improved: RTL styles.
+
 ## v2.1.8
 - Added: Localized 20+ languages support.
 - Improved: Group/Repeater nested usage feature.
