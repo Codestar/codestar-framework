@@ -1,5 +1,14 @@
 # Release Notes
 
+## v2.2.0
+- Added: Output feature for Taxonomy Framework fields.
+- Fixed: Option Framework first section "restore" issue.
+- Fixed: Link field open dialog issue.
+- Updated: Google Web Fonts array.
+- Updated: JS libraries (codemirror, leaflet, etc).
+- Updated: "Font Awesome 5 Free" package and added new icons.
+- Improved: Typography field enqueue methods.
+
 ## v2.1.9
 - Added: New field "link" using wplink.
 - Added: Image field "inline" list style.

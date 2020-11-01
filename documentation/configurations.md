@@ -1131,12 +1131,15 @@ echo get_term_meta( $term->term_id, 'opt-textarea', true ); // id of the field
 
 <div class="pre-heading">Arguments</div>
 
-| Name         | Type          | Default    | Description |
-|--------------|---------------|------------|-------------|
-| `taxonomy`   | array/string  |            | Provide any number of taxonomy slugs for a given “term” box to appear.
-| `data_type`  | string        | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
-| `defaults`   | array         |            | Sets all default values from a external array. (optional)
-| `class`      | string        |            | Extra CSS classes (space separated) to append to the main framework wrapper.
+| Name               | Type          | Default    | Description |
+|--------------------|---------------|------------|-------------|
+| `taxonomy`         | array/string  |            | Provide any number of taxonomy slugs for a given “term” box to appear.
+| `data_type`        | string        | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
+| `enqueue_webfont`  | bool          | true       | Flag to load web fonts of the framework.
+| `async_webfont`    | bool          | false      | Flag to load google fonts with *async* method of the framework.
+| `output_css`       | bool          | true       | Flag to load output css of the framework.
+| `defaults`         | array         |            | Sets all default values from a external array. (optional)
+| `class`            | string        |            | Extra CSS classes (space separated) to append to the main framework wrapper.
 
 <div class="pre-heading">Section Arguments</div>
 
