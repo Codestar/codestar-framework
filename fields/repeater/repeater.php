@@ -65,6 +65,10 @@ if ( ! class_exists( 'CSF_Field_repeater' ) ) {
               $field_unique = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
               $field_value  = ( isset( $field['id'] ) && isset( $this->value[$key][$field['id']] ) ) ? $this->value[$key][$field['id']] : '';
 
+              if (isset($args['_error_repeat']) && isset($args['_error_repeat'][$key]) && isset($args['_error_repeat'][$key][$field['id']])){
+                  $field['_error'] = $args['_error_repeat'][$key][$field['id']];
+              }
+              
               CSF::field( $field, $field_value, $field_unique, 'field/repeater' );
 
             }
