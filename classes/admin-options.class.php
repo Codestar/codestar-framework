@@ -216,7 +216,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
     }
     
-    public static function cl_fix_check($ajax, $importing, $args, $defaults, &$obj_def, &$obj_errs, &$obj){
+    public static function cl_fix_check($ajax, $importing, $args, $defaults, $obj_def, &$obj_errs, &$obj){
           $result = $defaults;
           if ((isset($args['fields']) && is_array($args['fields'])) || (isset($args['tabs']) && is_array($args['tabs']))){
               if (isset($args['fields']) && is_array($args['fields'])){
