@@ -229,13 +229,17 @@ if ( ! class_exists( 'CSF_Options' ) ) {
                       $field_id    = isset($main_field['id']) ? $main_field['id'] : '';
                       if (isset($main_field['fields']) && is_array($main_field['fields'])){
                           if ($main_field['type'] === 'repeater'){
-                              $total_repeaters = (count($defaults)-1);
-                              for($i = 0; $i <= $total_repeaters; $i++){
-                                  $collect_errs = false;
-                                  $result[$i][$field_id] = self::cl_fix_check($ajax, $importing, $main_field, $result[$i][$field_id], $obj_def[$i][$field_id], $collect_errs, $obj);
-                                  if (!empty($collect_errs)){
-                                      $obj_errs[$i][$field_id] = $collect_errs;
-                                      $collect_errs = false;
+                              if (isset($defaults) && is_array($defaults)) {
+                                  $total_repeaters = (count($defaults) - 1);
+                                  for ($i = 0; $i <= $total_repeaters; $i++) {
+                                      $collect_errs          = false;
+                                      $obj_def_data = isset($obj_def[$i][$field_id]) ? $obj_def[$i][$field_id] : '';
+                                      $result_data = isset($result[$i][$field_id]) ? $result[$i][$field_id] : '';
+                                      $result[$i][$field_id] = self::cl_fix_check($ajax, $importing, $main_field, $result_data, $obj_def_data, $collect_errs, $obj);
+                                      if (!empty($collect_errs)) {
+                                          $obj_errs[$i][$field_id] = $collect_errs;
+                                          $collect_errs            = false;
+                                      }
                                   }
                               }
                           }
@@ -261,29 +265,31 @@ if ( ! class_exists( 'CSF_Options' ) ) {
                           }
                       } else {
                           if ($args['type'] === 'repeater'){
-                              foreach ($defaults as $res_key => $res_val) {
-                                  $field_value = (!empty($res_val[$field_id])) ? $res_val[$field_id] : '';
-                                  if ( ! $ajax && ! $importing ) {
-                                      $field_value = wp_unslash( $field_value );
-                                  }
-                                  // Sanitize "post" request of field.
-                                  if ( ! isset( $main_field['sanitize'] ) ) {
-                                      if( is_array( $field_value ) ) {
-                                          $result[$res_key][$field_id] = wp_kses_post_deep( $field_value );
-                                      } else {
-                                          $result[$res_key][$field_id] = wp_kses_post( $field_value );
+                              if (isset($defaults) && is_array($defaults)) {
+                                  foreach ($defaults as $res_key => $res_val) {
+                                      $field_value = (!empty($res_val[$field_id])) ? $res_val[$field_id] : '';
+                                      if (!$ajax && !$importing) {
+                                          $field_value = wp_unslash($field_value);
                                       }
-                                  } else if( isset( $main_field['sanitize'] ) && function_exists( $main_field['sanitize'] ) ) {
-                                      $result[$res_key][$field_id] = call_user_func( $main_field['sanitize'], $field_value );
-                                  } else {
-                                      $result[$res_key][$field_id] = $field_value;
-                                  }
-                                  // Validate "post" request of field.
-                                  if ( isset( $main_field['validate'] ) && function_exists( $main_field['validate'] ) ) {
-                                      $has_validated = call_user_func( $main_field['validate'], $field_value );
-                                      if ( ! empty( $has_validated ) ) {
-                                          $result[$res_key][$field_id] = ( isset( $obj_def[$res_key][$field_id] ) ) ? $obj_def[$res_key][$field_id] : '';
-                                          $obj_errs[$res_key][$field_id] = $has_validated;
+                                      // Sanitize "post" request of field.
+                                      if (!isset($main_field['sanitize'])) {
+                                          if (is_array($field_value)) {
+                                              $result[$res_key][$field_id] = wp_kses_post_deep($field_value);
+                                          } else {
+                                              $result[$res_key][$field_id] = wp_kses_post($field_value);
+                                          }
+                                      } else if (isset($main_field['sanitize']) && function_exists($main_field['sanitize'])) {
+                                          $result[$res_key][$field_id] = call_user_func($main_field['sanitize'], $field_value);
+                                      } else {
+                                          $result[$res_key][$field_id] = $field_value;
+                                      }
+                                      // Validate "post" request of field.
+                                      if (isset($main_field['validate']) && function_exists($main_field['validate'])) {
+                                          $has_validated = call_user_func($main_field['validate'], $field_value);
+                                          if (!empty($has_validated)) {
+                                              $result[$res_key][$field_id]   = (isset($obj_def[$res_key][$field_id])) ? $obj_def[$res_key][$field_id] : '';
+                                              $obj_errs[$res_key][$field_id] = $has_validated;
+                                          }
                                       }
                                   }
                               }
@@ -321,29 +327,31 @@ if ( ! class_exists( 'CSF_Options' ) ) {
               if (!empty($args['id'])) {
                   $field_id    = $args['id'];
                   if ($args['type'] === 'repeater'){
-                      foreach($defaults as $res_key => $res_val){
-                          $field_value = isset($res_val[$field_id]) ? $res_val[$field_id] : '';
-                          if ( ! $ajax && ! $importing ) {
-                              $field_value = wp_unslash( $field_value );
-                          }
-                          // Sanitize "post" request of field.
-                          if ( ! isset( $args['sanitize'] ) ) {
-                              if( is_array( $field_value ) ) {
-                                  $result[$res_key][$field_id] = wp_kses_post_deep( $field_value );
-                              } else {
-                                  $result[$res_key][$field_id] = wp_kses_post( $field_value );
+                      if (isset($defaults) && is_array($defaults)) {
+                          foreach ($defaults as $res_key => $res_val) {
+                              $field_value = isset($res_val[$field_id]) ? $res_val[$field_id] : '';
+                              if (!$ajax && !$importing) {
+                                  $field_value = wp_unslash($field_value);
                               }
-                          } else if( isset( $args['sanitize'] ) && function_exists( $args['sanitize'] ) ) {
-                              $result[$res_key][$field_id] = call_user_func( $args['sanitize'], $field_value );
-                          } else {
-                              $result[$res_key][$field_id] = $field_value;
-                          }
-                          // Validate "post" request of field.
-                          if ( isset( $args['validate'] ) && function_exists( $args['validate'] ) ) {
-                              $has_validated = call_user_func( $args['validate'], $field_value );
-                              if ( ! empty( $has_validated ) ) {
-                                  $result[$res_key][$field_id] = ( isset( $obj_def[$res_key][$field_id] ) ) ? $obj_def[$res_key][$field_id] : '';
-                                  $obj_errs[$res_key][$field_id] = $has_validated;
+                              // Sanitize "post" request of field.
+                              if (!isset($args['sanitize'])) {
+                                  if (is_array($field_value)) {
+                                      $result[$res_key][$field_id] = wp_kses_post_deep($field_value);
+                                  } else {
+                                      $result[$res_key][$field_id] = wp_kses_post($field_value);
+                                  }
+                              } else if (isset($args['sanitize']) && function_exists($args['sanitize'])) {
+                                  $result[$res_key][$field_id] = call_user_func($args['sanitize'], $field_value);
+                              } else {
+                                  $result[$res_key][$field_id] = $field_value;
+                              }
+                              // Validate "post" request of field.
+                              if (isset($args['validate']) && function_exists($args['validate'])) {
+                                  $has_validated = call_user_func($args['validate'], $field_value);
+                                  if (!empty($has_validated)) {
+                                      $result[$res_key][$field_id]   = (isset($obj_def[$res_key][$field_id])) ? $obj_def[$res_key][$field_id] : '';
+                                      $obj_errs[$res_key][$field_id] = $has_validated;
+                                  }
                               }
                           }
                       }
