@@ -264,7 +264,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
                               }
                           }
                       } else {
-                          if ($args['type'] === 'repeater'){
+                          if (isset($args['type']) && ($args['type'] === 'repeater' || $args['type'] === 'group')){
                               if (isset($defaults) && is_array($defaults)) {
                                   foreach ($defaults as $res_key => $res_val) {
                                       $field_value = (!empty($res_val[$field_id])) ? $res_val[$field_id] : '';
