@@ -228,7 +228,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
                   if ((isset($main_field['id']) && !empty($main_field['id'])) || isset($args['tabs'])){
                       $field_id    = isset($main_field['id']) ? $main_field['id'] : '';
                       if (isset($main_field['fields']) && is_array($main_field['fields'])){
-                          if ($main_field['type'] === 'repeater'){
+                          if (isset($main_field['type']) && ($main_field['type'] === 'repeater' || $main_field['type'] === 'group')){
                               if (isset($defaults) && is_array($defaults)) {
                                   $total_repeaters = (count($defaults) - 1);
                                   for ($i = 0; $i <= $total_repeaters; $i++) {
