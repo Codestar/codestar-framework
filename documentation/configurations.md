@@ -287,6 +287,7 @@ if( class_exists( 'CSF' ) ) {
     'output_css'              => true,
 
     // theme and wrapper classname
+    'nav'                     => 'normal',
     'theme'                   => 'dark',
     'class'                   => '',
 
@@ -397,6 +398,7 @@ echo prefix_get_option( 'opt-text', 'default value' );
 | `enqueue_webfont`          | bool      | true           | Flag to load web fonts of the framework.
 | `async_webfont`            | bool      | false          | Flag to load google fonts with *async* method of the framework.
 | `output_css`               | bool      | true           | Flag to load output css of the framework.
+| `nav`                      | string    | normal         | The nav style of the framework. *for eg.* `normal` - `inline`
 | `theme`                    | string    | dark           | The theme of the framework. *for eg.* `dark` - `light`
 | `class`                    | string    |                | Extra CSS classes (space separated) to append to the main framework wrapper.
 | `defaults`                 | array     |                | Sets all default values from a external array. (optional)
@@ -830,6 +832,7 @@ if( class_exists( 'CSF' ) ) {
     'enqueue_webfont'    => true,
     'async_webfont'      => false,
     'output_css'         => true,
+    'nav'                => 'normal',
     'theme'              => 'dark',
     'class'              => '',
   ) );
@@ -902,7 +905,7 @@ echo get_post_meta( get_the_ID(), 'opt-textarea', true );
 | Name                 | Type          | Default    | Description |
 |----------------------|---------------|------------|-------------|
 | `title`              | string        |            | Title of the metabox.
-| `post_type`          | array\|string | post       | Provide any number of post_types for a given metabox to appear.
+| `post_type`          | array\|string | post       | Provide any number of post type(s) for a given *metabox* to appear.
 | `data_type`          | string        | serialize  | Database save option type. *for eg* `serialize` or `unserialize`
 | `context`            | string        | advanced   | The context within the screen where the boxes should display. *for eg* `normal`, `side`, `advanced`
 | `priority`           | string        | default    | The priority within the context where the boxes should show. *for eg* `high`, `low`, `default`
@@ -913,18 +916,20 @@ echo get_post_meta( get_the_ID(), 'opt-textarea', true );
 | `enqueue_webfont`    | bool          | true       | Flag to load web fonts of the framework.
 | `async_webfont`      | bool          | false      | Flag to load google fonts with *async* method of the framework.
 | `output_css`         | bool          | true       | Flag to load output css of the framework.
+| `nav`                | string        | normal     | The nav style of the framework. *for eg.* `normal` - `inline`
 | `theme`              | string        | dark       | The theme of the framework. *for eg.* `dark` - `light`
 | `class`              | string        |            | Extra CSS classes (space separated) to append to the main framework wrapper.
 | `defaults`           | array         |            | Sets all default values from a external array. (optional)
 
 <div class="pre-heading">Section Arguments</div>
 
-| Name       | Type    | Description |
-|------------|---------|-------------|
-| `title`    | string  | Title of the section.
-| `icon`     | string  | Icon of the section.
-| `class`    | string  | Extra CSS classes of the section.
-| `fields`   | array   | Associative array containing fields for the field sets.
+| Name        | Type          | Description |
+|-------------|---------------|-------------|
+| `title`     | string        | Title of the section.
+| `icon`      | string        | Icon of the section.
+| `class`     | string        | Extra CSS classes of the section.
+| `post_type` | array\|string | Show the *section* by specific post type(s). (this option can be used when set multiple post types instance)
+| `fields`    | array         | Associative array containing fields for the field sets.
 
 ---
 
@@ -1496,6 +1501,7 @@ echo get_comment_meta( get_comment_ID(), 'opt-textarea', true );
 | `data_type`    | string | serialize | Database save option type. *for eg* `serialize` or `unserialize`
 | `priority`     | string | default   | The priority within the context where the boxes should show. *for eg* `high`, `low`, `default`
 | `show_restore` | bool   | false     | Flag to display *restore button* of the comment metabox.
+| `nav`          | string | normal    | The nav style of the framework. *for eg.* `normal` - `inline`
 | `theme`        | string | dark      | The theme of the framework. *for eg.* `dark` - `light`
 | `class`        | string |           | Extra CSS classes (space separated) to append to the main framework wrapper.
 | `defaults`     | array  |           | Sets all default values from a external array. (optional)

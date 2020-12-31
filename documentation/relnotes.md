@@ -1,5 +1,12 @@
 # Release Notes
 
+## v2.2.1
+- Added: Metabox sections can be show by specific post_type option.
+- Added: Inline tabs style for Metabox and Options Frameworks.
+- Added: Nav menu "locations" select field options.
+- Fixed: Minor bug fixes and improvements.
+- Improved: Path-finder function for fix issue missing styles.
+
 ## v2.2.0
 - Added: Output feature for Taxonomy Framework fields.
 - Fixed: Option Framework first section "restore" issue.
