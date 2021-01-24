@@ -52,6 +52,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
       'sticky_header'           => true,
       'save_defaults'           => true,
       'ajax_save'               => true,
+      'form_action'             => '', // It's available only when ajax_save was false
 
       // admin bar menu settings
       'admin_bar_menu_icon'     => '',
@@ -533,6 +534,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
       $theme         = ( $this->args['theme'] ) ? ' csf-theme-'. $this->args['theme'] : '';
       $class         = ( $this->args['class'] ) ? ' '. $this->args['class'] : '';
       $nav_type      = ( $this->args['nav'] === 'inline' ) ? 'inline' : 'normal';
+      $form_action         = ( $this->args['form_action'] ) ? $this->args['form_action'] : '';
 
       do_action( 'csf_options_before' );
 
@@ -540,7 +542,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
         echo '<div class="csf-container">';
 
-        echo '<form method="post" action="" enctype="multipart/form-data" id="csf-form" autocomplete="off" novalidate="novalidate">';
+        echo '<form method="post" action="' . $form_action . '" enctype="multipart/form-data" id="csf-form" autocomplete="off" novalidate="novalidate">';
 
         echo '<input type="hidden" class="csf-section-id" name="csf_transient[section]" value="1">';
 
