@@ -488,7 +488,7 @@ if ( ! class_exists( 'CSF' ) ) {
         $enqueue = true;
       }
 
-      if ( ! $enqueue ) {
+      if ( ! apply_filters( 'csf_enqueue_assets', $enqueue ) ) {
         return;
       }
 
