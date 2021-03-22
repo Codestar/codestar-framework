@@ -1,5 +1,16 @@
 # Release Notes
 
+## v2.2.2
+- Added: WordPress 5.7 compatible.
+- Fixed: Spinner field unit issue in repeater fields.
+- Fixed: Media field svg preview issue.
+- Updated: Google Web Fonts array.
+- Updated: "Font Awesome 5 Free" package and added new icons.
+- Updated: JS libraries (codemirror, leaflet, etc).
+- Improved: Mobile device styles.
+- Improved: Multiple instances for avoid potential conflicts.
+- Improved: Callback field for class method calls.
+
 ## v2.2.1
 - Added: Metabox sections can be show by specific post_type option.
 - Added: Inline tabs style for Metabox and Options Frameworks.
