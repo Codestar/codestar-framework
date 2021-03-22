@@ -450,7 +450,7 @@ if ( ! class_exists( 'CSF' ) ) {
 
       if ( ! empty( self::$args['taxonomy_options'] ) ) {
         foreach ( self::$args['taxonomy_options'] as $argument ) {
-          if ( $wpscreen->taxonomy === $argument['taxonomy'] ) {
+          if ( in_array( $wpscreen->taxonomy, (array) $argument['taxonomy'] ) ) {
             $enqueue = true;
           }
         }
