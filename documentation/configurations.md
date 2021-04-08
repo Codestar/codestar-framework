@@ -459,40 +459,6 @@ if( class_exists( 'CSF' ) ) {
     )
   ) );
 
-  //
-  // Create a section
-  CSF::createSection( $prefix, array(
-    'assign' => 'title_tagline',
-    'fields' => array(
-
-      //
-      // A text field
-      array(
-        'id'    => 'opt-text-2',
-        'type'  => 'text',
-        'title' => 'Text 2',
-      ),
-
-    )
-  ) );
-
-  //
-  // Create a section
-  CSF::createSection( $prefix, array(
-    'assign' => 'static_front_page',
-    'fields' => array(
-
-      //
-      // A text field
-      array(
-        'id'    => 'opt-text-3',
-        'type'  => 'text',
-        'title' => 'Text 3',
-      ),
-
-    )
-  ) );
-
 }
 ```
 </div>
@@ -629,6 +595,57 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'opt-textarea',
         'type'  => 'textarea',
         'title' => 'Simple Textarea',
+      ),
+
+    )
+  ) );
+
+}
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+// Control core classes for avoid errors
+if( class_exists( 'CSF' ) ) {
+
+  //
+  // Set a unique slug-like ID
+  $prefix = 'my_framework';
+
+  //
+  // Create customize options
+  CSF::createCustomizeOptions( $prefix );
+
+  //
+  // Create a section
+  CSF::createSection( $prefix, array(
+    'assign' => 'title_tagline',
+    'fields' => array(
+
+      //
+      // A text field
+      array(
+        'id'    => 'opt-text-1',
+        'type'  => 'text',
+        'title' => 'Text 1',
+      ),
+
+    )
+  ) );
+
+  //
+  // Create a section
+  CSF::createSection( $prefix, array(
+    'assign' => 'static_front_page',
+    'fields' => array(
+
+      //
+      // A text field
+      array(
+        'id'    => 'opt-text-2',
+        'type'  => 'text',
+        'title' => 'Text 2',
       ),
 
     )
