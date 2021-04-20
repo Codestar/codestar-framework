@@ -127,7 +127,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
             //
             // Font Style Select
             echo '<div class="csf--block csf--block-font-style hidden">';
-            echo '<div class="csf--title">'. esc_html__( 'Font Style', 'csf') .'</div>';
+            echo '<div class="csf--title">'. esc_html__( 'Font Weight', 'csf') .'</div>';
             echo '<select class="csf--font-style-select" data-placeholder="Default">';
             echo '<option value="">'. ( ! $this->chosen ? esc_html__( 'Default', 'csf' ) : '' ) .'</option>';
             if ( ! empty( $this->value['font-weight'] ) || ! empty( $this->value['font-style'] ) ) {
