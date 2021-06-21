@@ -405,15 +405,16 @@ echo prefix_get_option( 'opt-text', 'default value' );
 
 <div class="pre-heading">Section Arguments</div>
 
-| Name       | Type    | Description |
-|------------|---------|-------------|
-| `id`       | string  | A unique slug ID.
-| `parent`   | string  | Slug id for the parent section.
-| `priority` | number  | The priority within the context where the tabs should show.
-| `title`    | string  | Title of the section.
-| `icon`     | string  | Icon of the section.
-| `class`    | string  | Extra CSS classes of the section.
-| `fields`   | array   | Associative array containing fields for the field sets.
+| Name          | Type    | Description |
+|---------------|---------|-------------|
+| `id`          | string  | A unique slug ID.
+| `parent`      | string  | Slug id for the parent section.
+| `priority`    | number  | The priority within the context where the tabs should show.
+| `title`       | string  | Title of the section.
+| `description` | string  | Description of the section.
+| `icon`        | string  | Icon of the section.
+| `class`       | string  | Extra CSS classes of the section.
+| `fields`      | array   | Associative array containing fields for the field sets.
 
 ---
 
@@ -699,13 +700,14 @@ echo prefix_get_option( 'opt-text', 'default value' );
 
 <div class="pre-heading">Section Arguments</div>
 
-| Name       | Type    | Description |
-|------------|---------|-------------|
-| `id`       | string  | A unique slug ID.
-| `parent`   | string  | Slug id for the parent section.
-| `priority` | number  | The priority within the context where the tabs should show.
-| `title`    | string  | Title of the section.
-| `fields`   | array   | Associative array containing fields for the field sets.
+| Name          | Type    | Description |
+|---------------|---------|-------------|
+| `id`          | string  | A unique slug ID.
+| `parent`      | string  | Slug id for the parent section.
+| `priority`    | number  | The priority within the context where the tabs should show.
+| `title`       | string  | Title of the section.
+| `description` | string  | Description of the section.
+| `fields`      | array   | Associative array containing fields for the field sets.
 
 ## Metabox Option Framework
 
@@ -940,13 +942,14 @@ echo get_post_meta( get_the_ID(), 'opt-textarea', true );
 
 <div class="pre-heading">Section Arguments</div>
 
-| Name        | Type          | Description |
-|-------------|---------------|-------------|
-| `title`     | string        | Title of the section.
-| `icon`      | string        | Icon of the section.
-| `class`     | string        | Extra CSS classes of the section.
-| `post_type` | array\|string | Show the *section* by specific post type(s). (this option can be used when set multiple post types instance)
-| `fields`    | array         | Associative array containing fields for the field sets.
+| Name          | Type          | Description |
+|---------------|---------------|-------------|
+| `title`       | string        | Title of the section.
+| `description` | string        | Description of the section.
+| `icon`        | string        | Icon of the section.
+| `class`       | string        | Extra CSS classes of the section.
+| `post_type`   | array\|string | Show the *section* by specific post type(s). (this option can be used when set multiple post types instance)
+| `fields`      | array         | Associative array containing fields for the field sets.
 
 ---
 
@@ -1080,11 +1083,12 @@ add_filter( 'wp_nav_menu_objects', 'prefix_wp_nav_menu_objects', 10, 2 );
 
 <div class="pre-heading">Section Arguments</div>
 
-| Name       | Type    | Description |
-|------------|---------|-------------|
-| `title`    | string  | Title of the section.
-| `icon`     | string  | Icon of the section.
-| `fields`   | array   | Associative array containing fields for the field sets.
+| Name          | Type    | Description |
+|---------------|---------|-------------|
+| `title`       | string  | Title of the section.
+| `description` | string  | Description of the section.
+| `icon`        | string  | Icon of the section.
+| `fields`      | array   | Associative array containing fields for the field sets.
 
 ---
 
@@ -1165,11 +1169,12 @@ echo get_term_meta( $term->term_id, 'opt-textarea', true ); // id of the field
 
 <div class="pre-heading">Section Arguments</div>
 
-| Name       | Type    | Description |
-|------------|---------|-------------|
-| `title`    | string  | Title of the section.
-| `icon`     | string  | Icon of the section.
-| `fields`   | array   | Associative array containing fields for the field sets.
+| Name          | Type    | Description |
+|---------------|---------|-------------|
+| `title`       | string  | Title of the section.
+| `description` | string  | Description of the section.
+| `icon`        | string  | Icon of the section.
+| `fields`      | array   | Associative array containing fields for the field sets.
 
 ---
 
@@ -1245,11 +1250,12 @@ echo get_user_meta( $user_id, 'opt-textarea', true ); // id of the field
 
 <div class="pre-heading">Section Arguments</div>
 
-| Name       | Type    | Description |
-|------------|---------|-------------|
-| `title`    | string  | Title of the section.
-| `icon`     | string  | Icon of the section.
-| `fields`   | array   | Associative array containing fields for the field sets.
+| Name          | Type    | Description |
+|---------------|---------|-------------|
+| `title`       | string  | Title of the section.
+| `description` | string  | Description of the section.
+| `icon`        | string  | Icon of the section.
+| `fields`      | array   | Associative array containing fields for the field sets.
 
 ---
 
@@ -1528,6 +1534,7 @@ echo get_comment_meta( get_comment_ID(), 'opt-textarea', true );
 | Name       | Type    | Description |
 |------------|---------|-------------|
 | `title`    | string  | Title of the section.
+| `description` | string  | Description of the section.
 | `icon`     | string  | Icon of the section.
 | `class`    | string  | Extra CSS classes of the section.
 | `fields`   | array   | Associative array containing fields for the field sets.

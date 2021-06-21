@@ -1,5 +1,10 @@
 # Release Notes
 
+## v2.2.3
+- Added: Upload field show "preview" option.
+- Added: "description" option for all framework create sections array.
+- Fixed: Option Framework admin sub-menu link click issue on Mobile.
+
 ## v2.2.2
 - Added: WordPress 5.7 compatible.
 - Fixed: Spinner field unit issue in repeater fields.
