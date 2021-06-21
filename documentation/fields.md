@@ -1964,12 +1964,14 @@ array(
 | `validate`        | string         |                   | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**        | ---            | ---               | ---
 | `url`             | bool           | true              | Flag to display *url* of the field.
-| `preview`         | bool           | true              | Flag to display *preview* of the field.
 | `library`         | array\|string  | all               | Tell the modal to show specific formats. for eg. `image` or `video` or both etc.
 | `placeholder`     | string         | No media selected | The placeholder to be displayed when nothing is selected.
-| `preview_size`    | string         | thumbnail         | The image size to use in preview. `thumbnail` or `full`
 | `button_title`    | string         | Upload            | Text to display on the *upload* button.
 | `remove_title`    | string         | Remove            | Text to display on the *remove* button.
+| `preview`         | bool           | true              | Flag to display *preview* of the field.
+| `preview_size`    | string         | thumbnail         | The image size to use in preview. `thumbnail` or `full`
+| `preview_width`   | number         | 120               | The max width of the *preview* image.
+| `preview_height`  | number         | 90                | The max height of the *preview* image.
 
 <div class="pre-heading">Default Arguments</div>
 
@@ -3561,6 +3563,9 @@ array(
 | `placeholder`     | string         |            | Placeholder to be displayed when nothing is selected.
 | `button_title`    | string         | Upload     | Text to display on the *upload* button.
 | `remove_title`    | string         | Remove     | Text to display on the *remove* button.
+| `preview`         | bool           | true       | Flag to display *preview* of the field.
+| `preview_width`   | number         | 120        | The max width of the *preview* image.
+| `preview_height`  | number         | 90         | The max height of the *preview* image.
 
 ---
 
