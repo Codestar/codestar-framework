@@ -2945,7 +2945,7 @@ array(
 | `show_units`        | bool           | true         | Flag to display *unit selector* of the field.
 | `units`             | array          |              | The CSS measurement units, *for eg.* `px` `em` `%` `cm` `pt`
 | `output`            | array\|string  |              | CSS elements selector.
-| `output_mode`       | string         | padding      | Output CSS property of an element. for eg. `relative` `padding` `margin`
+| `output_mode`       | string         | padding      | Output CSS property of an element. for eg. `relative` `padding` `margin` `border-radius`
 | `output_important`  | bool           | false        | Flag to add **!important** rule on output css.
 
 <div class="pre-heading">Default Arguments</div>
