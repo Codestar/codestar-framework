@@ -738,44 +738,48 @@ if ( ! class_exists( 'CSF' ) ) {
 
       }
 
-      // These attributes has been sanitized above.
-      echo '<div class="csf-field csf-field-'. $field_type . $is_pseudo . $class . $visible .'"'. $depend .'>';
+      if (!isset($field['attributes']['type']) || $field['attributes']['type'] !== 'hidden') {
 
-      if ( ! empty( $field_type ) ) {
+        // These attributes has been sanitized above.
+        echo '<div class="csf-field csf-field-' . $field_type . $is_pseudo . $class . $visible . '"' . $depend . '>';
+
+        if (!empty($field_type)) {
 
 
-        if ( ! empty( $field['fancy_title'] ) ) {
-          echo '<div class="csf-fancy-title">' . $field['fancy_title'] .'</div>';
-        }
+          if (!empty($field['fancy_title'])) {
+            echo '<div class="csf-fancy-title">' . $field['fancy_title'] . '</div>';
+          }
 
-        if ( ! empty( $field['title'] ) ) {
-          echo '<div class="csf-title">';
-          echo '<h4>'. $field['title'] .'</h4>';
-          echo ( ! empty( $field['subtitle'] ) ) ? '<div class="csf-subtitle-text">'. $field['subtitle'] .'</div>' : '';
-          echo '</div>';
-        }
+          if (!empty($field['title'])) {
+            echo '<div class="csf-title">';
+            echo '<h4>' . $field['title'] . '</h4>';
+            echo (!empty($field['subtitle'])) ? '<div class="csf-subtitle-text">' . $field['subtitle'] . '</div>' : '';
+            echo '</div>';
+          }
 
-        echo ( ! empty( $field['title'] ) || ! empty( $field['fancy_title'] ) ) ? '<div class="csf-fieldset">' : '';
+          echo (!empty($field['title']) || !empty($field['fancy_title'])) ? '<div class="csf-fieldset">' : '';
 
-        $value = ( ! isset( $value ) && isset( $field['default'] ) ) ? $field['default'] : $value;
-        $value = ( isset( $field['value'] ) ) ? $field['value'] : $value;
+          $value = (!isset($value) && isset($field['default'])) ? $field['default'] : $value;
+          $value = (isset($field['value'])) ? $field['value'] : $value;
 
-        $classname = 'CSF_Field_'. $field_type;
+          $classname = 'CSF_Field_' . $field_type;
 
-        if ( class_exists( $classname ) ) {
-          $instance = new $classname( $field, $value, $unique, $where, $parent );
-          $instance->render();
+          if (class_exists($classname)) {
+            $instance = new $classname($field, $value, $unique, $where, $parent);
+            $instance->render();
+          } else {
+            echo '<p>' . esc_html__('Field not found!', 'csf') . '</p>';
+          }
+
         } else {
-          echo '<p>'. esc_html__( 'Field not found!', 'csf' ) .'</p>';
+          echo '<p>' . esc_html__('Field not found!', 'csf') . '</p>';
         }
 
-      } else {
-        echo '<p>'. esc_html__( 'Field not found!', 'csf' ) .'</p>';
-      }
+        echo (!empty($field['title']) || !empty($field['fancy_title'])) ? '</div>' : '';
+        echo '<div class="clear"></div>';
+        echo '</div>';
 
-      echo ( ! empty( $field['title'] ) || ! empty( $field['fancy_title'] ) ) ? '</div>' : '';
-      echo '<div class="clear"></div>';
-      echo '</div>';
+      }
 
     }
 
