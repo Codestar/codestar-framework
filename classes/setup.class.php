@@ -738,10 +738,11 @@ if ( ! class_exists( 'CSF' ) ) {
 
       }
 
+      // These attributes has been sanitized above.
+      echo '<div class="csf-field csf-field-'. $field_type . $is_pseudo . $class . $visible .'"'. $depend .'>';
+
       if ( ! empty( $field_type ) ) {
 
-        // These attributes has been sanitized above.
-        echo '<div class="csf-field csf-field-'. $field_type . $is_pseudo . $class . $visible .'"'. $depend .'>';
 
         if ( ! empty( $field['fancy_title'] ) ) {
           echo '<div class="csf-fancy-title">' . $field['fancy_title'] .'</div>';
