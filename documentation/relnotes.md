@@ -1,5 +1,14 @@
 # Release Notes
 
+## v2.2.4
+- Added: WordPress 5.8 compatible.
+- Fixed: Widget Framework after WP 5.8 block-based widgets issue.
+- Fixed: Shortcode Framework "E"lementor" php8 error throw issue.
+- Updated: Google Web Fonts array.
+- Updated: "Font Awesome 5 Free" package and added new icons.
+- Updated: JS libraries (codemirror, leaflet, etc).
+- Improved: Some js and css coding.
+
 ## v2.2.3
 - Added: Upload field show "preview" option.
 - Added: "description" option for all framework create sections array.
