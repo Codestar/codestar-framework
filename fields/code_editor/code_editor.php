@@ -31,7 +31,7 @@ if ( ! class_exists( 'CSF_Field_code_editor' ) ) {
       $settings = wp_parse_args( $settings, $default_settings );
 
       echo $this->field_before();
-      echo '<textarea name="'. esc_attr( $this->field_name() ) .'"'. $this->field_attributes() .' data-editor="'. esc_attr( json_encode( $settings ) ) .'">'. esc_textarea($this)->value .'</textarea>';
+      echo '<textarea name="'. esc_attr( $this->field_name() ) .'"'. $this->field_attributes() .' data-editor="'. esc_attr( json_encode( $settings ) ) .'">'. esc_textarea( $this->value ) .'</textarea>';
       echo $this->field_after();
 
     }

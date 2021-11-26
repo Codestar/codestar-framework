@@ -18,7 +18,7 @@ if ( ! class_exists( 'CSF_Field_textarea' ) ) {
 
       echo $this->field_before();
       echo $this->shortcoder();
-      echo '<textarea name="'. esc_attr( $this->field_name() ) .'"'. $this->field_attributes() .'>'. $this->value .'</textarea>';
+      echo '<textarea name="'. esc_attr( $this->field_name() ) .'"'. $this->field_attributes() .'>'. esc_textarea( $this->value ) .'</textarea>';
       echo $this->field_after();
 
     }
