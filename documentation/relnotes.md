@@ -1,12 +1,12 @@
 # Release Notes
 
 ## v2.2.5
-- Fixed: Sortable field append new fields after saved issue.
-- Fixed: Customizer dependency issue after v2.1.6 update.
-- Fixed: Typography field "Normal 400" style embed issue.
-- Updated: Assets library (csf.css to style.css, csf.js to main.js).
-- Improved: Sanitize/Validate callback method.
-- Improved: Global dependency feature.
+- Added: Dependency new "contains" condition feature.
+- Fixed: Admin bar menu show in for non-admin capabilities.
+- Updated: Google Web Fonts array added 300+ new fonts.
+- Updated: "Font Awesome 5 Free" package and added new icons.
+- Updated: JS libraries (codemirror, leaflet, etc).
+- Improved: "Shortcode" and "Icon" modal popups responsive css.
 - Improved: Usage anywhere framework fields.
 
 ## v2.2.4
