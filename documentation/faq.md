@@ -784,6 +784,54 @@ if( ! function_exists( 'csf_customize_validate_url' ) ) {
 
 ---
 
+### How to use fields anywhere ?
+
+```php
+if ( class_alias( 'CSF' ) ) {
+
+  CSF::$enqueue = true;
+  CSF::add_admin_enqueue_scripts();
+
+  echo '<div class="csf-onload">';
+
+    /**
+     *  @field
+     *  @value
+     *  @unique
+    */
+    CSF::field( array(
+      'id'    => 'opt-text',
+      'type'  => 'text',
+      'title' => 'Text',
+    ), 'Hello World', 'my_field' );
+
+    CSF::field( array(
+      'id'    => 'opt-textarea',
+      'type'  => 'textarea',
+      'title' => 'Textarea',
+    ), 'Lorem Ipsum Dollar...', 'my_field' );
+
+    CSF::field( array(
+      'id'      => 'opt-switcher',
+      'type'    => 'switcher',
+      'title'   => 'Switcher',
+      'default' => false
+    ), true, 'my_field' );
+
+  echo '</div>';
+
+}
+```
+
+```js
+// If you using an ajax append/cloned areas, run the fields reload trigger:
+$yourAppendedArea.csf_reload_script();
+```
+
+**Note:** It's only for simple usage. ( Might be issue for complex usages. )
+
+---
+
 ### How to use common arguments ?
 
 <div class="csf-tabs">
