@@ -820,8 +820,9 @@ body {
   border-radius: 2px;
   color: #525252;
   display: block;
-  font-family: courier, monospace;
-  font-size: 0.8rem;
+  font-family: monospace;
+  font-size: 12.5px;
+  letter-spacing: -0.2px;
   line-height: inherit;
   margin: 0 2px;
   max-width: inherit;
