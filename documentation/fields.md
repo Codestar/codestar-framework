@@ -1016,7 +1016,7 @@ Get more informations for [jquery-ui-datepicker arguments](http://api.jqueryui.c
 <span class="csf-tab-title csf-tab-active">Date</span>
 <span class="csf-tab-title">Date and Time</span>
 <span class="csf-tab-title">Time</span>
-<span class="csf-tab-title">Date w/ From-To</span>
+<span class="csf-tab-title">Date (From-To)</span>
 <span class="csf-tab-title">Localize</span>
 </div>
 <div class="csf-tab-contents">
@@ -1071,28 +1071,6 @@ array(
 
 ```php
 array(
-  'id'       => 'opt-datetime-10',
-  'type'     => 'datetime',
-  'title'    => 'Date From - To',
-  'subtitle' => 'Date with "From" and "To"',
-  'from_to'  => true,
-),
-
-array(
-  'id'        => 'opt-datetime-11',
-  'type'      => 'datetime',
-  'title'     => 'Date Begin - End',
-  'subtitle'  => 'Date with "Begin" and "End" Custom Text',
-  'from_to'   => true,
-  'text_from' => 'Begin',
-  'text_to'   => 'End',
-),
-```
-</div>
-<div class="csf-tab-content">
-
-```php
-array(
   'id'       => 'opt-datetime-5',
   'type'     => 'datetime',
   'title'    => 'Time',
@@ -1114,6 +1092,28 @@ array(
     'dateFormat' => 'H:i',
     'time_24hr'  => true,
   ),
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'       => 'opt-datetime-10',
+  'type'     => 'datetime',
+  'title'    => 'Date From - To',
+  'subtitle' => 'Date with "From" and "To"',
+  'from_to'  => true,
+),
+
+array(
+  'id'        => 'opt-datetime-11',
+  'type'      => 'datetime',
+  'title'     => 'Date Begin - End',
+  'subtitle'  => 'Date with "Begin" and "End" Custom Text',
+  'from_to'   => true,
+  'text_from' => 'Begin',
+  'text_to'   => 'End',
 ),
 ```
 </div>
