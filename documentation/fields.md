@@ -1014,8 +1014,8 @@ Get more informations for [jquery-ui-datepicker arguments](http://api.jqueryui.c
 <div class="csf-tabs">
 <div class="csf-tab-buttons">
 <span class="csf-tab-title csf-tab-active">Date</span>
-<span class="csf-tab-title">Date and Time</span>
 <span class="csf-tab-title">Time</span>
+<span class="csf-tab-title">Date and Time</span>
 <span class="csf-tab-title">Date (From-To)</span>
 <span class="csf-tab-title">Localize</span>
 </div>
@@ -1057,20 +1057,6 @@ array(
 
 ```php
 array(
-  'id'       => 'opt-datetime-4',
-  'type'     => 'datetime',
-  'title'    => 'Date and Time',
-  'subtitle' => 'Date and Time Both',
-  'settings' => array(
-    'enableTime' => true,
-  ),
-),
-```
-</div>
-<div class="csf-tab-content">
-
-```php
-array(
   'id'       => 'opt-datetime-5',
   'type'     => 'datetime',
   'title'    => 'Time',
@@ -1091,6 +1077,20 @@ array(
     'enableTime' => true,
     'dateFormat' => 'H:i',
     'time_24hr'  => true,
+  ),
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'       => 'opt-datetime-4',
+  'type'     => 'datetime',
+  'title'    => 'Date and Time',
+  'subtitle' => 'Date and Time Both',
+  'settings' => array(
+    'enableTime' => true,
   ),
 ),
 ```

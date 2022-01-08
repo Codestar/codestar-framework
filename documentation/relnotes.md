@@ -1,5 +1,10 @@
 # Release Notes
 
+## v2.2.6
+- Added: WordPress 5.9 compatible.
+- Added: New field "DateTime" both date and time option.
+- Improved: Some JS and CSS coding.
+
 ## v2.2.5
 - Added: Dependency new "contains" condition feature.
 - Fixed: Admin bar menu show in for non-admin capabilities.
