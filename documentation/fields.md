@@ -985,6 +985,9 @@ array(
 | `sanitize`       | string   |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
 | `validate`       | string   |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
 | **Extras**       | ---      | ---      | ---
+| `from_to`        | bool     | false    | Flag to display *from* and *to* inputs.
+| `text_from`      | string   | from     | Text to display on the *from* label.
+| `text_to`        | string   | to       | Text to display on the *to* label.
 | `settings`       | array    |          | An associative array containing arguments for the setting.
 
 <div class="pre-heading">Settings Arguments</div>
@@ -1001,6 +1004,241 @@ array(
 | `dayNamesMin`      | array      |             | List of minimised day names, starting from Sunday, for use as column headers within the datepicker.
 
 Get more informations for [jquery-ui-datepicker arguments](http://api.jqueryui.com/datepicker/#options)
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+## Date Time
+
+<div class="pre-heading">Config Examples</div>
+
+<div class="csf-tabs">
+<div class="csf-tab-buttons">
+<span class="csf-tab-title csf-tab-active">Date</span>
+<span class="csf-tab-title">Date and Time</span>
+<span class="csf-tab-title">Time</span>
+<span class="csf-tab-title">Date w/ From-To</span>
+<span class="csf-tab-title">Localize</span>
+</div>
+<div class="csf-tab-contents">
+<div class="csf-tab-content csf-tab-active">
+
+```php
+array(
+  'id'    => 'opt-datetime-1',
+  'type'  => 'datetime',
+  'title' => 'Date',
+),
+
+array(
+  'id'       => 'opt-datetime-2',
+  'type'     => 'datetime',
+  'title'    => 'Date',
+  'subtitle' => 'Human-friendly Dates',
+  'settings' => array(
+    'altFormat'  => 'F j, Y',
+    'dateFormat' => 'Y-m-d',
+  ),
+),
+
+array(
+  'id'       => 'opt-datetime-3',
+  'type'     => 'datetime',
+  'title'    => 'Date',
+  'subtitle' => 'Start week on Monday',
+  'settings' => array(
+    'locale' => array(
+      'firstDayOfWeek' => 1,
+    ),
+  ),
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'       => 'opt-datetime-4',
+  'type'     => 'datetime',
+  'title'    => 'Date and Time',
+  'subtitle' => 'Date and Time Both',
+  'settings' => array(
+    'enableTime' => true,
+  ),
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'       => 'opt-datetime-10',
+  'type'     => 'datetime',
+  'title'    => 'Date From - To',
+  'subtitle' => 'Date with "From" and "To"',
+  'from_to'  => true,
+),
+
+array(
+  'id'        => 'opt-datetime-11',
+  'type'      => 'datetime',
+  'title'     => 'Date Begin - End',
+  'subtitle'  => 'Date with "Begin" and "End" Custom Text',
+  'from_to'   => true,
+  'text_from' => 'Begin',
+  'text_to'   => 'End',
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'       => 'opt-datetime-5',
+  'type'     => 'datetime',
+  'title'    => 'Time',
+  'subtitle' => 'Only Time',
+  'settings' => array(
+    'noCalendar' => true,
+    'enableTime' => true,
+  ),
+),
+
+array(
+  'id'       => 'opt-datetime-6',
+  'type'     => 'datetime',
+  'title'    => 'Time',
+  'subtitle' => '24-hour Time without PM:AM',
+  'settings' => array(
+    'noCalendar' => true,
+    'enableTime' => true,
+    'dateFormat' => 'H:i',
+    'time_24hr'  => true,
+  ),
+),
+```
+</div>
+<div class="csf-tab-content">
+
+```php
+array(
+  'id'       => 'opt-datetime-7',
+  'type'     => 'datetime',
+  'title'    => 'Date',
+  'subtitle' => 'Localize Example (Spanish)',
+  'settings' => array(
+    'locale' => array(
+      'time_24hr' => true,
+      'firstDayOfWeek' => 1,
+      'weekdays' => array(
+        'shorthand' => array( 'Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb' ),
+        'longhand'  => array(
+          'Domingo',
+          'Lunes',
+          'Martes',
+          'Miércoles',
+          'Jueves',
+          'Viernes',
+          'Sábado',
+        ),
+      ),
+      'months' => array(
+        'shortland' => array( 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic' ),
+        'longhand' => array(
+          'Enero',
+          'Febrero',
+          'Marzo',
+          'Abril',
+          'Mayo',
+          'Junio',
+          'Julio',
+          'Agosto',
+          'Septiembre',
+          'Octubre',
+          'Noviembre',
+          'Diciembre',
+        ),
+      ),
+    ),
+  ),
+),
+```
+
+Another way is enqueue language js method:
+
+```php
+if ( ! function_exists( 'prefix_enqueue_flatpickr_language' ) ) {
+  function prefix_enqueue_flatpickr_language() {
+    wp_enqueue_script( 'flatpickr-de', 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/l10n/de.js', array(), '4.6.9', true );
+    wp_enqueue_script( 'flatpickr-it', 'https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/l10n/it.js', array(), '4.6.9', true );
+  }
+  add_action( 'admin_enqueue_scripts', 'prefix_enqueue_flatpickr_language' );
+}
+```
+
+then:
+
+```php
+array(
+  'id'       => 'opt-datetime-8',
+  'type'     => 'datetime',
+  'title'    => 'Date',
+  'subtitle' => 'Localize (German)',
+  'settings' => array(
+    'locale' => 'de',
+  ),
+),
+
+array(
+  'id'       => 'opt-datetime-9',
+  'type'     => 'datetime',
+  'title'    => 'Date',
+  'subtitle' => 'Localize (Italian)',
+  'settings' => array(
+    'locale' => 'it',
+  ),
+),
+```
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="pre-heading">Arguments</div>
+
+| Name             | Type     | Default  | Description |
+|------------------|----------|----------|-------------|
+| `id`             | string   |          | A unique **ID**. This **ID** will be used to get the value.
+| `type`           | string   | date     | Type of the field.
+| `title`          | string   |          | Title of the field.
+| `default`        | string   |          | Default value from database, if the option doesn't exist.
+| `subtitle`       | string   |          | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `desc`           | string   |          | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `help`           | string   |          | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `class`          | string   |          | Extra CSS classes (space separated) to append to the field.
+| `before`         | string   |          | Content to display before the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `after`          | string   |          | Content to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
+| `dependency`     | array    |          | Define field visibility depending on other field value. <a href="#/faq?id=how-to-use-dependencies-" class="csf-more-link">?</a>
+| `attributes`     | array    |          | Extra HTML attributes to append to the field. <a href="#/faq?id=how-to-use-attributes-" class="csf-more-link">?</a>
+| `sanitize`       | string   |          | Callback function for sanitizing value. <a href="#/faq?id=how-to-use-sanitize-" class="csf-more-link">?</a>
+| `validate`       | string   |          | Callback function for validating value. <a href="#/faq?id=how-to-use-validate-" class="csf-more-link">?</a>
+| **Extras**       | ---      | ---      | ---
+| `from_to`        | bool     | false    | Flag to display *from* and *to* inputs.
+| `text_from`      | string   | from     | Text to display on the *from* label.
+| `text_to`        | string   | to       | Text to display on the *to* label.
+| `settings`       | array    |          | An associative array containing arguments for the setting.
+
+<div class="pre-heading">Settings Arguments</div>
+
+| Name               | Type       | Default | Description |
+|--------------------|------------|---------|-------------|
+| `dateFormat`       | string     | m/d/Y   | A string of characters which are used to define how the date will be displayed in the input box.
+| `altFormat`        | string     |         | Exactly the same as date format, but for the altInput field.
+| `noCalendar`       | bool       |         | Hides the day selection in calendar.
+| `enableTime`       | bool       |         | Enables time picker.
+| `time_24hr`        | bool       |         | Displays time picker in 24 hour mode without AM/PM selection when enabled.
+| `allowInput`       | bool       |         | Allows the user to enter a date directly into the input field.
+
+Get more informations for [flatpickr arguments](https://flatpickr.js.org/options/) and [flatpickr examples](https://flatpickr.js.org/examples/)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
