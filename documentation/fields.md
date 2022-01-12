@@ -2360,6 +2360,7 @@ array(
     'option-3' => 'Option 3',
   ),
   'default'    => 'option-2'
+),
 ```
 
 <div class="pre-heading">Arguments</div>
