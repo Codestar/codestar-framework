@@ -3383,7 +3383,7 @@ array(
 | `id`          | string   |           | A unique **ID**. This **ID** will be used to get the value.
 | `type`        | string   | switcher  | Type of the field.
 | `title`       | string   |           | Title of the field.
-| `default`     | string   |           | Default value from database, if the option doesn't exist.
+| `default`     | boolean  |           | Default value from database, if the option doesn't exist.
 | `subtitle`    | string   |           | Subtitle to display below the title. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `desc`        | string   |           | Description to display after the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
 | `help`        | string   |           | Text to display on right-corner (as hover/popup) the field. <a href="#/faq?id=how-to-use-common-arguments-" class="csf-more-link">?</a>
