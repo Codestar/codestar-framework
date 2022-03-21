@@ -1,5 +1,12 @@
 # Release Notes
 
+## v2.2.7
+- Added: Number field "min", "max", "step" options.
+- Updated: Google Web Fonts array added new fonts.
+- Updated: JS libraries (codemirror, leaflet, etc).
+- Improved: Group field "custom title and prefix" option (samples added).
+- Improved: Some JS and CSS coding.
+
 ## v2.2.6
 - Added: WordPress 5.9 compatible.
 - Added: New field "DateTime" both date and time option.
