@@ -1,5 +1,8 @@
 # Release Notes
 
+## v2.2.8
+- Fixed: Free vs Pro version load priority conflict.
+
 ## v2.2.7
 - Added: Number field "min", "max", "step" options.
 - Updated: Google Web Fonts array added new fonts.
