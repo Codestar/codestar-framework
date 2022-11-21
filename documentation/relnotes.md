@@ -1,5 +1,12 @@
 # Release Notes
 
+## v2.2.9
+- Added: WordPress 6.1 compatible.
+- Fixed: Added check/uncheck all option for checkbox field.
+- Updated: Google Web Fonts array added new fonts.
+- Updated: JS libraries (codemirror, leaflet, etc).
+- Improved: Some JS and CSS coding.
+
 ## v2.2.8
 - Fixed: Free vs Pro version load priority conflict.
 
