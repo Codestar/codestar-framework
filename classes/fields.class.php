@@ -172,18 +172,19 @@ if ( ! class_exists( 'CSF_Fields' ) ) {
 
           if ( ! empty( $term ) ) {
 
-            $query      = new WP_User_Query( array(
+            $query      = new WP_User_Query( wp_parse_args( $query_args, array(
               'search'  => '*'. $term .'*',
               'number'  => 25,
               'orderby' => 'title',
               'order'   => 'ASC',
               'fields'  => array( 'display_name', 'ID' )
-            ) );
+            ) ) );
 
           } else {
 
-            $query = new WP_User_Query( array( 'fields' => array( 'display_name', 'ID' ) ) );
-
+            $query = new WP_User_Query( array( wp_parse_args( $query_args, array(
+              'fields' => array( 'display_name', 'ID' ),
+            ) ) );
           }
 
           if ( ! is_wp_error( $query ) && ! empty( $query->get_results() ) ) {
