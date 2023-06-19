@@ -1,5 +1,8 @@
 # Release Notes
 
+## v2.3.0
+- Added: WordPress 6.2 compatible.
+
 ## v2.2.9
 - Added: WordPress 6.1 compatible.
 - Fixed: Added check/uncheck all option for checkbox field.
