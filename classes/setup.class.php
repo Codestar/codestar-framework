@@ -449,6 +449,7 @@ if ( ! class_exists( 'CSF_Setup' ) ) {
         'typography',
         'upload',
         'wp_editor',
+        'divider',
       ) );
 
       if ( ! empty( $fields ) ) {
