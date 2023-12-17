@@ -259,7 +259,7 @@ if ( ! class_exists( 'CSF_Fields' ) ) {
         default:
 
           if ( is_callable( $type ) ) {
-            if ( ! empty( $term ) ) {
+            if ( empty( $term ) ) {
               $options = call_user_func( $type, $query_args );
             } else {
               $options = call_user_func( $type, $term, $query_args );
