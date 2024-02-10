@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access directly.
+<?php if ( ! defined( 'ABSPATH' ) ) { return; } // Cannot access directly.
 /**
  *
  * @package   Codestar Framework - WordPress Options Framework
