@@ -18,8 +18,14 @@ if ( ! function_exists( 'csf_get_icons' ) ) {
 
     ob_start();
 
-    $icon_library = ( apply_filters( 'csf_fa4', false ) ) ? 'fa4' : 'fa5';
+    $icon_library = 'fa6';
 
+    if ( apply_filters( 'csf_fa4', false ) ) {
+      $icon_library = 'fa4';
+    } elseif ( apply_filters( 'csf_fa5', false ) ) {
+      $icon_library = 'fa5';
+    }
+    
     CSF::include_plugin_file( 'fields/icon/'. $icon_library .'-icons.php' );
 
     $icon_lists = apply_filters( 'csf_field_icon_add_icons', csf_get_default_icons() );
